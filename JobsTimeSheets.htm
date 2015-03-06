@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>MyWork - TimeSheets
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />  
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+</script>
+ <style type='text/css'>
+ .checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+    .stripe{
+	background-color: lightgrey; 
+	color: black;
+}
+    .head{
+	background-color: lightgrey; 
+	color: black;
+}
+ .block {
+    border: 1px solid grey;
+    width: 95%;
+    
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+  .ui-btn-width {
+    width: 200px !important;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 95%;
+  margin: 20px auto;
+}
+textarea{
+    height: 150px !important;
+    max-height: 150px !important;
+    overflow:auto !important;  
+}
+  </style>
+
+  
+</head>
+<body>
+
+
+
+
+
+<div align="center" data-role="page" id="JobsTimeSheets"> 
+
+	<div  id="header" data-role="header" data-position="fixed">
+		<table width = "95%">
+			<TR height="50px">
+				<TD width = "20%"  align="left"><a style="font-size: 100%" href="javascript:window.location.href='JobsHome.htm'"  >
+				<i class="fa fa-home fa-2x pull-left fa-border"></i></a></td>
+			
+				<TD width = "60%"  align= "center"><h1 style="font-size: 100%"><B>MyJobs - Timesheets</B></H1>
+				<a href="#lastSyncDets" data-rel="popup"style="color: green; text-decoration:none;"> <Small><P id="lastsync"></p></A></small></TD>
+				
+				<TD width = "20%" align="right"></TD>
+			</TR>
+		</table>
+	</div> 
+	<div  id ="content" data-role="content">	
+
+		<div  align="center"> 
+			<div id="right1" align="center" class="block highlight">
+				<Table width="90%"><TR>
+				<TD align="left"><a style="font-size: 100%" onclick="setTheDate(-7)"  >
+					<i class="fa fa-arrow-left fa-2x pull-left fa-border"></i></a></td>
+					<TD align="center"><B><h4 style="font-size: 100%" id="weeklyTitle">Weekly Summary for 01/01/2011</h4></B></TD>
+					<TD align="right"><a style="font-size: 100%" onclick="setTheDate(7)"   >
+					<i class="fa fa-arrow-right fa-2x pull-right fa-border"></i></a></td>
+				</TR>
+				</TABLE>
+				<Table font-size = "small" width="90%">
+					<THEAD class="head"><TR><TD width = "5%"></TD><TD  width = "35%">Day</TD><TD align="right"  width = "15%">Time</TD><TD align="right"  width = "15%">O/T 1.5</TD><TD align="right"  width = "15%">O/T 2.0</TD><TD align="right"  width = "15%">Sub</TD></TR></THEAD>
+					<TBODY id = "TSSummary"></TBODY>
+					
+				</table>
+				<BR>
+			</div>
+			<div id="right1" align="center" class="block highlight">
+				<Table width="90%"><TR>
+				<TD width = "15%" align="left">
+				<a style="font-size: 100%" onClick="popupMode='CREATE'"  href="#popupEntry"  class="open-popup-link" >
+					<i class="fa fa-plus fa-2x pull-left fa-border"></i></a></td>				
+					<TD width = "70%" align="center"><B><h4 id="DayTitle"></h4></B></TD>
+					<TD width = "15%" align="right"><a style="font-size: 100%" onclick="window.location.href='JobsTimeSheets.htm'"   >
+					<i class="fa fa-paper-plane fa-2x pull-right fa-border"></i></a></td></TD>
+				</TR></TABLE>
+				<Table cellspacing="0" width="90%">
+					<THEAD class="head"><TR><TD width = "5%"></TD><TD  width = "35%">Job</TD><TD align="right" width = "15%">Time</TD><TD align="right"  width = "15%">O/T 1.5</TD><TD align="right"  width = "15%">O/T 2.0</TD><TD  width = "15%"></TD></TR></THEAD>
+				
+					<TBODY id="TSDaySummary"></TBODY>
+						
+				</table>
+
+				<BR>
+			</div>
+		</div>
+		<div style='display:none'>
+			<div  id="popupEntry" class="white-popup mfp-hide" >
+			<table width = "100%"><TR><TD align = "left"><a onClick="PopupClose('CANCEL')"  ><i class="fa fa-times fa-2x pull-left fa-border"></i></a></td><TD align="center"><B>Create Time Entry</B></TD><TD align="right"><a onClick="PopupClose('SAVE')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a></TD></TR></Table>
+				
+				<div  role="main"  class="ui-content" >
+
+				<TABLE width = "100%">
+				
+				<TR><TD width = "20%"><label data-mini="true" for="Jobs" class="select">Job:</label></TD>
+				<TD width = "80%"><select data-mini="true" name="Jobs" id="Jobs" ></select></TD></TR>
+				<TR><TD width = "20%"><label data-mini="true" for="Skills" class="select">Skill:</label></TD>
+				<TD width = "80%"><select data-mini="true" name="Skills" id="Skills" ></select></TD></TR>
+				<TR><TD width = "20%"><label data-mini="true" for="Activities" class="select">Activity:</label></TD>
+				<TD width = "80%"><select data-mini="true" name="Activities" id="Activities" ></select></TD></TR>
+				<TR><TD width = "20%"><label data-mini="true" for="Time" class="select">Time:</label></TD>
+				<TD width = "80%">
+				<input data-mini="true" id="Time" name="Time" type="number" data-clear-btn="true"  value=""></TD></TR>
+				<TR><TD width = "20%"><label data-mini="true" for="OT15" class="select">O/T 1.5:</label></TD>
+				<TD width = "80%"><input data-mini="true" id="OT15" name="OT15" type="number" data-clear-btn="true"  value=""></TD></TR>
+				<TR><TD width = "20%"><label data-mini="true" for="OT20" class="select">O/T 2.0:</label></TD>
+				<TD width = "80%"><input data-mini="true" id="OT20" name="OT20" type="number" data-clear-btn="true"  value=""></TD></TR>
+				</TABLE>
+
+								
+
+				
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+ 
+
+<SCRIPT>
+
+var CurrentStartOfWeek = getURLParameters("StartOfWeek");
+
+
+var StartOfWeek = new Date(CurrentStartOfWeek.substring(4,8), (CurrentStartOfWeek.substring(2,4)-1), CurrentStartOfWeek.substring(0,2));
+var SelectedDay = new Date()
+SelectedDay.setDate(StartOfWeek.getDate());
+
+$("#weeklyTitle").html("Weekly Summary for "+CurrentStartOfWeek.substring(0,2)+"/"+CurrentStartOfWeek.substring(2,4)+"/"+CurrentStartOfWeek.substring(4,8))
+BuidTSSummary(StartOfWeek)
+$("#DayTitle").html("Sunday "+CurrentStartOfWeek.substring(0,2)+"/"+CurrentStartOfWeek.substring(2,4)+"/"+CurrentStartOfWeek.substring(4,8))
+BuidDaySummary(StartOfWeek)
+function setTheDate(NoOfDays){
+StartOfWeek.setDate(StartOfWeek.getDate()+NoOfDays)
+newStartOfWeek=zeroFill1(StartOfWeek.getDate().toString()) + zeroFill1((StartOfWeek.getMonth()+1).toString() ) + zeroFill1(StartOfWeek.getFullYear().toString());
+window.location.href='JobsTimeSheets.htm?StartOfWeek='+newStartOfWeek
+}
+function changeDay(NoOfDays){
+switch (NoOfDays) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+        break;
+}
+
+
+
+SelectedDay.setDate(StartOfWeek.getDate())
+SelectedDay.setDate(SelectedDay.getDate()+NoOfDays)
+newSelectedDay=zeroFill1(SelectedDay.getDate().toString()) +"/"+ zeroFill1((SelectedDay.getMonth()+1).toString() ) +"/"+  zeroFill1(SelectedDay.getFullYear().toString());
+$("#DayTitle").html(day+" "+newSelectedDay)
+
+BuidDaySummary(SelectedDay)
+
+}
+var popupMode;
+
+var popupType;
+
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  closeOnBgClick: false,
+  showCloseBtn:false,
+  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  callbacks: {
+    beforeOpen: function() {
+		
+		BuildJobs();
+		BuildSkills();
+		if (popupMode == "CREATE"){
+			$("#popTitle").html("Create Time Entry")
+			$("#saveButton").text("Create")
+			}
+		if (popupMode == "MODIFY"){
+			$("#popTitle").html("Modify Time Entry")
+			$("#saveButton").text("Modify")
+			}
+		if (popupMode == "DELETE"){
+			$("#popTitle").html("Delete Time Entry")
+			$("#saveButton").text("Delete")
+			}
+		},
+    close: function() {
+
+
+
+		}
+	}
+})
+$('#Skills').on('change', function(e) {
+		var s = $(e.target);
+		BuildActivities(s.val());
+
+});
+
+function PopupClose(mode)
+{
+
+	if(mode=="SAVE"){	
+		if(popupMode=="CREATE"){CreateTimesheetEntry()}
+		if(popupMode=="MODIFY"){ModifyTimesheetEntry()}
+		if(popupMode=="DELETE"){DeleteTimesheetEntry()}
+		$.magnificPopup.close();
+		}
+	if(mode=="CANCEL"){	
+
+		$.magnificPopup.close();
+		}
+
+
+}
+function CreateTimesheetEntry(){
+TimesheetDate = zeroFill1(SelectedDay.getFullYear().toString()) + zeroFill1((SelectedDay.getMonth()+1).toString() ) +  zeroFill1(SelectedDay.getDate().toString());
+
+SQLStatement='INSERT INTO TSData ( date , job , skill, activity, time, ot15, ot20) VALUES ( '+ 
+							  '"'+TimesheetDate+'",'+
+							  '"'+$("#Jobs").find(":selected").val()+'",'+
+							  '"'+$("#Skills").find(":selected").val()+'",'+
+							  '"'+$("#Activities").find(":selected").val()+'",'+
+							  '"'+$("#Time").val()+'",'+
+							  '"'+$("#OT15").val()+'",'+
+							  '"'+$("#OT20").val()+'");'
+
+		
+
+		html5sql.process(SQLStatement,
+			 function(transaction, results, rowsArray){
+			 
+				BuidTSSummary(StartOfWeek)
+				BuidDaySummary(SelectedDay)
+				
+			 },
+			 function(error, statement){
+				alert("Failed Created TS Entry")
+			 }        
+			);
+}
+function ModifyTimesheetEntry(){
+SQLStatement='UPDATE TSData set '
+SQLStatement+='job = "'+$("#Jobs").find(":selected").val()+'",'
+SQLStatement+='skill = "'+$("#Skills").find(":selected").val()+'",'
+SQLStatement+='activity = "'+$("#Activities").find(":selected").val()+'",'
+SQLStatement+='time = "'+$("#Time").val()+'",'
+SQLStatement+='ot15 = "'+$("#OT15").val()+'",'
+SQLStatement+='ot20 = "'+$("#OT20").val()+' where id = "'+TimesheetID+'";'
+
+		
+
+		html5sql.process(SQLStatement,
+			 function(transaction, results, rowsArray){
+			 
+				alert("Updated TS Entry")
+				
+			 },
+			 function(error, statement){
+				
+			 }        
+			);
+}
+function DeleteTimesheetEntry(id){
+SQLStatement='delete from  TSData  where id = '+id+';'
+
+		
+
+		html5sql.process(SQLStatement,
+			 function(transaction, results, rowsArray){
+			 
+				BuidTSSummary(StartOfWeek)
+				BuidDaySummary(SelectedDay)
+				
+			 },
+			 function(error, statement){
+				
+			 }        
+			);
+}
+function BuildJobs(){
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+
+var FirstVal="";
+
+SQLStatement="select orderno as job, shorttext  as description from myorders union all "
+SQLStatement+="select JobNo as job, description from tsnpjobs where subtype = 0"
+var HTMLToOutput="";
+ 
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+		//alert("Found "+rowsArray.length +" Jobs")
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+				if (n==0){
+				FirstVal = item.job;
+				}
+				HTMLToOutput+= "<option value='"+item.job+"'>"+item.job+"-"+item.description+"</option>"
+			}
+			
+			$("#Jobs").html(HTMLToOutput);
+
+			$("#Jobs").trigger('create');
+			$("#Jobs").val(FirstVal).selectmenu('refresh',true);
+			
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function BuildSkills(){
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+
+var FirstVal="";
+
+SQLStatement="select * from tsactivities where subskill = '0'"
+var HTMLToOutput="";
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+				if (n==0){
+				FirstVal = item.code;
+				}
+				HTMLToOutput+= "<option value='"+item.code+"'>"+item.description+"</option>"
+			}
+
+			$( "#Skills").html(HTMLToOutput);
+
+
+	
+			$("#Skills").trigger('create');
+			$("#Skills").val(FirstVal).selectmenu('refresh',true);
+			BuildActivities(FirstVal)
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function BuildActivities(code){
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+
+var FirstVal="";
+
+SQLStatement="select * from tsactivities where subskill <> '0' and skill = '"+code+"'"
+var HTMLToOutput="";
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+				if (n==0){
+				FirstVal = item.code;
+				}
+				HTMLToOutput+= "<option value='"+item.code+"'>"+item.description+"</option>"
+			}
+			//alert(HTMLToOutput);
+			$( "#Activities").html(HTMLToOutput);
+
+			$( "#Activities").trigger('create');
+			$("#Activities").val(FirstVal).selectmenu('refresh',true);
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function BuidTSSummary(dt){
+var Sunday=[0,0,0,""]
+var Monday=[0,0,0,""]
+var Tuesday=[0,0,0,""]
+var Wednesday=[0,0,0,""]
+var Thursday=[0,0,0,""]
+var Friday=[0,0,0,""]
+var Saturday=[0,0,0,""]
+var HTMLToOutput=""
+var EndOfWeek = new Date();
+
+EndOfWeek.setDate(dt.getDate()+7)
+
+var SQLStatement="SELECT * From TSData where date>='"+zeroFill1(dt.getFullYear().toString()) +zeroFill1((dt.getMonth()+1).toString() ) +  zeroFill1(dt.getDate().toString())+"'" 
+SQLStatement+=" and date<'"+zeroFill1(EndOfWeek.getFullYear().toString()) +zeroFill1((EndOfWeek.getMonth()+1).toString() ) +  zeroFill1(EndOfWeek.getDate().toString())+"'" 
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+		for (var n = 0; n < rowsArray.length; n++) {
+			Item=rowsArray[n]
+		
+			EntryDate = new Date(Item.date.substring(0,4)+'-'+Item.date.substring(4,6)+'-'+Item.date.substring(6,8))
+			EntryDay=EntryDate.getDay()
+			if(EntryDay==0){
+				Sunday[0]+=Number(Item.time)
+				Sunday[1]+=Number(Item.ot15)
+				Sunday[2]+=Number(Item.ot20)
+			}
+			if(EntryDay==1){
+				Monday[0]+=Number(Item.time)
+				Monday[1]+=Number(Item.ot15)
+				Monday[2]+=Number(Item.ot20)
+			}
+			if(EntryDay==2){
+				Tuesday[0]+=Number(Item.time)
+				Tuesday[1]+=Number(Item.ot15)
+				Tuesday[2]+=Number(Item.ot20)
+			}
+			if(EntryDay==3){
+				Wednesday[0]+=Number(Item.time)
+				Wednesday[1]+=Number(Item.ot15)
+				Wednesday[2]+=Number(Item.ot20)
+			}
+			if(EntryDay==4){
+				Thursday[0]+=Number(Item.time)
+				Thursday[1]+=Number(Item.ot15)
+				Thursday[2]+=Number(Item.ot20)
+			}
+			if(EntryDay==5){
+				Friday[0]+=Number(Item.time)
+				Friday[1]+=Number(Item.ot15)
+				Friday[2]+=Number(Item.ot20)
+			}	
+			if(EntryDay==6){
+				Saturday[0]+=Number(Item.time)
+				Saturday[1]+=Number(Item.ot15)
+				Saturday[2]+=Number(Item.ot20)
+			}	
+		}
+		HTMLToOutput='<TR style="padding-top: 1px;padding-bottom: 1px; " ><TD></TD><TD><a  data-mini="true" onClick="changeDay(0)" style="width : 100px; padding-top: 1px;padding-bottom: 1px; " data-role="button" >Sunday</a></TD><TD align="right" >'+Sunday[0].toFixed(2)+'</TD><TD align="right" >'+Sunday[1].toFixed(2)+'</TD><TD align="right" >'+Sunday[2].toFixed(2)+'</TD><TD align="right" >'+Sunday[3]+'</TD></TR>'
+		HTMLToOutput+='<TR style="padding-top: 1px;padding-bottom: 1px; "><TD></TD><TD><a  data-mini="true" onClick="changeDay(1)" style="width : 100px; padding-top: 1px;padding-bottom: 1px; " data-role="button" >Monday</a></TD><TD align="right" >'+Monday[0].toFixed(2)+'</TD><TD align="right" >'+Monday[1].toFixed(2)+'</TD><TD align="right" >'+Monday[2].toFixed(2)+'</TD><TD align="right" >'+Monday[3]+'</TD></TR>'
+		HTMLToOutput+='<TR style="padding-top: 1px;padding-bottom: 1px; "><TD></TD><TD><a  data-mini="true" onClick="changeDay(2)" style="width : 100px; padding-top: 1px;padding-bottom: 1px;" data-role="button" >Tuesday</a></TD><TD align="right" >'+Tuesday[0].toFixed(2)+'</TD><TD align="right" >'+Tuesday[1].toFixed(2)+'</TD><TD align="right" >'+Tuesday[2].toFixed(2)+'</TD><TD align="right" >'+Tuesday[3]+'</TD></TR>'
+		HTMLToOutput+='<TR style="padding-top: 1px;padding-bottom: 1px; "><TD></TD><TD><a  data-mini="true" onClick="changeDay(3)" style="width : 100px; padding-top: 1px;padding-bottom: 1px;" data-role="button" >Wednesday</a></TD><TD align="right" >'+Wednesday[0].toFixed(2)+'</TD><TD align="right" >'+Wednesday[1].toFixed(2)+'</TD><TD align="right" >'+Wednesday[2].toFixed(2)+'</TD><TD align="right" >'+Wednesday[3]+'</TD></TR>'
+		HTMLToOutput+='<TR style="padding-top: 1px;padding-bottom: 1px; "><TD></TD><TD><a  data-mini="true" onClick="changeDay(4)" style="width : 100px; padding-top: 1px;padding-bottom: 1px;" data-role="button" >Thursday</a></TD><TD align="right" >'+Thursday[0].toFixed(2)+'</TD><TD align="right" >'+Thursday[1].toFixed(2)+'</TD><TD align="right" >'+Thursday[2].toFixed(2)+'</TD><TD align="right" >'+Thursday[3]+'</TD></TR>'
+		HTMLToOutput+='<TR style="padding-top: 1px;padding-bottom: 1px; "><TD></TD><TD><a  data-mini="true" onClick="changeDay(5)" style="width : 100px; padding-top: 1px;padding-bottom: 1px;" data-role="button" >Friday</a></TD><TD align="right" >'+Friday[0].toFixed(2)+'</TD><TD align="right" >'+Friday[1].toFixed(2)+'</TD><TD align="right" >'+Friday[2].toFixed(2)+'</TD><TD align="right" >'+Friday[3]+'</TD></TR>'					
+		HTMLToOutput+='<TR style="padding-top: 1px;padding-bottom: 1px; "><TD></TD><TD><a  data-mini="true" onClick="changeDay(6)" style="width : 100px; padding-top: 1px;padding-bottom: 1px;" data-role="button" >Saturday</a></TD><TD align="right" >'+Saturday[0].toFixed(2)+'</TD><TD align="right" >'+Saturday[1].toFixed(2)+'</TD><TD align="right" >'+Saturday[2].toFixed(2)+'</TD><TD align="right" >'+Saturday[3]+'</TD></TR>'
+		$( "#TSSummary").html(HTMLToOutput);
+
+		$( "#TSSummary").trigger('create');
+
+	 
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+}
+
+
+
+
+function BuidDaySummary(DayDate){
+
+var SQLStatement="SELECT * From TSData where date='"+zeroFill1(DayDate.getFullYear().toString()) +zeroFill1((DayDate.getMonth()+1).toString() ) +  zeroFill1(DayDate.getDate().toString())+"'" 
+var Productive = [0, 0, 0];
+var NonProductive = [0, 0, 0];
+var Total = [0, 0, 0];
+
+var HTMLToOutput=""
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+		for (var n = 0; n < rowsArray.length; n++) {
+					Item=rowsArray[n]
+					HTMLToOutput+='<TR><TD><a href="#" onClick="DeleteTimesheetEntry('+Item.id+')" ><img src="images\\delete.gif" width="20px" height="20px" ></A></TD><TD>'+Item.job+'</TD><TD align="right" >'+Number(Item.time).toFixed(2)+'</TD><TD align="right" >'+Number(Item.ot15).toFixed(2)+'</TD><TD align="right" >'+Number(Item.ot20).toFixed(2)+'</TD><TD></TD></TR>'
+					if (Item.job.substring(0,1)=='U'){
+							NonProductive[0]+=Number(Item.time)
+							NonProductive[1]+=Number(Item.ot15)
+							NonProductive[2]+=Number(Item.ot20)
+						}else{
+							Productive[0]+=Number(Item.time)
+							Productive[1]+=Number(Item.ot15)
+							Productive[2]+=Number(Item.ot20)
+						}
+						Total[0]+=Number(Item.time)
+						Total[1]+=Number(Item.ot15)
+						Total[2]+=Number(Item.ot20)
+		}
+	HTMLToOutput+='<TR><TD colspan ="6">&nbsp;</td></tr>'
+	HTMLToOutput+='<TR class="stripe">><TD></TD><TD>Productive</TD><TD align="right" >'+Productive[0].toFixed(2)+'</TD><TD align="right" >'+Productive[1].toFixed(2)+'</TD><TD align="right" >'+Productive[2].toFixed(2)+'</TD><TD></TD></TR>'
+	HTMLToOutput+='<TR  class="stripe"><TD></TD><TD>Non Productive</TD><TD align="right" >'+NonProductive[0].toFixed(2)+'</TD><TD align="right" >'+NonProductive[1].toFixed(2)+'</TD><TD align="right" >'+NonProductive[2].toFixed(2)+'</TD><TD></TD></TR>'
+	HTMLToOutput+='<TR class="stripe"><TD></TD><TD>Total</TD><TD align="right" >'+Total[0].toFixed(2)+'</TD><TD align="right" >'+Total[1].toFixed(2)+'</TD><TD align="right" >'+Total[2].toFixed(2)+'</TD><TD></TD></TR>'
+	$( "#TSDaySummary").html(HTMLToOutput);
+
+	$( "#TSDaySummary").trigger('create');
+	 
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+
+}
+</SCRIPT>
+</body>
+
+
+</html>

@@ -1,0 +1,84 @@
+{"equipment":
+				[
+					{
+						"id": "eq1",
+						"shorttext": "Equipment 1",
+						"name": "eq1",
+						"street": "street1",
+						"city": "city1",
+						"postcode": "pcode1",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					},
+					{
+						"id": "eq2",
+						"shorttext": "Equipment 2",
+						"name": "eq2",
+						"street": "street2",
+						"city": "city2",
+						"postcode": "pcode2",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					},
+					{
+						"id": "eq3",
+						"shorttext": "Equipment 3",
+						"name": "eq3",
+						"street": "street3",
+						"city": "city3",
+						"postcode": "pcode3",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					},
+					{
+						"id": "eq4",
+						"shorttext": "Equipment 4",
+						"name": "eq4",
+						"street": "street4",
+						"city": "city4",
+						"postcode": "pcode4",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					},
+										{
+						"id": "eq5",
+						"shorttext": "Equipment 5",
+						"name": "eq5",
+						"street": "street5",
+						"city": "city5",
+						"postcode": "pcode5",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					}
+				]
+}

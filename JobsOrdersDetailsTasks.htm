@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Jobs - OrderDetails- Tasks
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />
+
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+</script>
+
+
+ <style type='text/css'>
+  .stripe{
+	background-color: lightgrey; 
+	color: black;
+}
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+   .wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 250px;
+  overflow-y: auto;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+  .block {
+    border: 1px solid grey;
+    width: 180px;
+    height:150px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+
+border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }  
+                .box {
+    border: 1px solid #a1a1a1;
+    padding: 10px 10px; 
+    background: #dddddd;
+    
+    border-radius: 5px;
+}  
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 80%;
+  margin: 20px auto;
+}
+.ui-btn-width {
+    width: 200px !important;
+}
+  </style>
+ 
+</head>
+<body>
+<div align="center"  data-role="page" id="JobsOrderDetailsTask"> 
+
+	<div   data-role="header" data-position="fixed">
+		
+		<table width = "100%">
+			<TR height="70px">
+				<TD width = "20%" Valign="bottom" align="left"><a onclick="window.location.href='JobsOrders.htm'"  class="ui-btn-width ui-btn ui-btn-inline ui-icon-home ui-corner-all ui-shadow ui-btn-icon-left">
+				Orders</a></td>
+				<TD width = "20%" Valign="bottom" align="center"></TD>
+				<TD width = "20%" valign="Top" align= "center"><h1 style="font-size: 150%"><B><a onclick="window.location.href='JobsHome.htm'" style="text-decoration:none;">MyJobs - Tasks</a></B></H1></TD>
+				<TD width = "20%" Valign="bottom" align="center"><a href='#popupCreateTask'  class="open-popup-link ui-btn-width ui-btn ui-btn-inline ui-icon-plus ui-corner-all ui-shadow ui-btn-icon-left">	
+				Create</a>
+				<a href='#popupTaskStatus'  id="popTaskStatus" class="open-popup-link ui-btn-width ui-btn ui-btn-inline ui-icon-plus ui-corner-all ui-shadow ui-hidden"></a>
+				<a href='#popupLongText'  id="popLongText" class="open-popup-link ui-btn-width ui-btn ui-btn-inline ui-icon-plus ui-corner-all ui-shadow ui-hidden"></a>
+				</td>
+				<TD width = "20%" Valign="bottom" align="right"><a onclick="GoToActivities()"  class="ui-btn-width ui-btn ui-btn-inline ui-icon-forward ui-corner-all ui-shadow ui-btn-icon-left">
+				Activities</a></TD>
+			</TR>
+		</table>		
+	
+	</div> 	
+
+
+	<div   width = "100%" id="content" data-role="content">	
+
+			<table id="NotificationTaskList" name="NotificationTaskList" width = "90%" cellspacing="0"   style="border-spacing: 0;" class="tablesorter1">
+
+
+			</table>
+		<div style='display:none'>
+			<div  id="popupCreateTask" class="white-popup mfp-hide">
+				<div data-role="header" data-theme="a"><h1>Create Task</h1></div>
+				<div role="main"  class="ui-content" >
+
+				
+				
+					<div width = "95%"  data-role="fieldcontain">
+					   <label for="TaskGroup" class="select">Task Group:</label>
+					   <select name="TaskGroup" id="TaskGroup" width="40px">
+
+					   </select>
+					</div>
+					<div data-role="fieldcontain">
+					   <label for="TaskGroupCodes" class="select">Task Code:</label>
+					   <select name="TaskGroupCodes" id="TaskGroupCodes" width="40px">
+
+					   </select>
+					</div>
+					<div data-role="fieldcontain">
+					   <label for="Description" class="select">Description:</label>
+					   <input id="Description" name="Description" type="text"  value=""/>
+					</div>
+								
+					<div width="95%">
+					<TABLE width="100%">
+						<TR><TD align="left"><a onClick="PopupClose('CANCEL')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Cancel</a></TD>
+							<TD align="right"><a onClick="PopupClose('SAVE')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Save</a></TD></TR> 
+					</Table>
+					</div>
+				</div>
+			</div>
+
+			<div id="popupTaskStatus" class="white-popup mfp-hide">
+				<div data-role="header" data-theme="a"><h1>Select Task Status</h1></div>
+				<div role="main"  class="ui-content">
+					 <div id="x" style="overflow-y: auto; overflow-x: hidden; ">
+						<table width="100%">
+							<tr height="40"><TD>AB01</TD><TD>Abort-Non Meter Contractor job</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox1" id="flip-checkbox1" checked="" disabled="disabled"></td>
+							</TR> 
+							<tr height="40"><TD>AB02</TD><TD>Aborted - Raised in error</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox2" id="flip-checkbox2" ></td>
+							</TR	>					
+							<tr height="40"><TD>AB03</TD><TD>Aborted - Wrong job type used</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox3" id="flip-checkbox3" checked="" disabled="disabled"></td>
+							</TR>
+							<tr height="40"><TD>AB04</TD><TD>Aborted - Customer moved out</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox4" id="flip-checkbox4" checked="" disabled="disabled"></td>
+							</TR> 
+							<tr height="40"><TD>AB05</TD><TD>Abort-Customer changed mind</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox5" id="flip-checkbox5" ></td>
+							</TR	>					
+							<tr height="40"><TD>AB06</TD><TD>Aborted - Duplicate job</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox6" id="flip-checkbox6" ></td>
+							</TR>
+							<tr height="40"><TD>AB07</TD><TD>Abort-Incomplete wk det/Meter</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox7" id="flip-checkbox7" ></td>
+							</TR> 
+							<tr height="40"><TD>AB08</TD><TD>AAbort-Operation Not Approved</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox8" id="flip-checkbox8" ></td>
+							</TR	>					
+							<tr height="40"><TD>AB09</TD><TD>Aborted - Pipe trace required</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox9" id="flip-checkbox9" ></td>
+							</TR>
+							<tr height="40"><TD>AB10</TD><TD>Aborted - Resurvey required</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox10" id="flip-checkbox10" ></td>
+							</TR> 
+							<tr height="40"><TD>AB11</TD><TD>Abort-No access site/property</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox11" id="flip-checkbox11" ></td>
+							</TR	>					
+							<tr height="40"><TD>AB12</TD><TD>Abort-Cant find site/property</TD>
+								<TD><input type="checkbox" data-on-text="On" data-off-text="Off"  data-role="flipswitch" name="flip-checkbox12" id="flip-checkbox12" ></td>
+							</TR>							
+						</table>
+					</div>
+					<TABLE width="100%">
+						<TR><TD align="left"><a onClick="PopupClose('CANCEL')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Cancel</a></TD>
+							<TD align="right"><a onClick="PopupClose('STATUSSAVE')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Save</a></TD></TR> 
+					</Table>
+				</div>
+
+			</div>
+			<div id="popupLongText"  class="white-popup mfp-hide">
+				<div data-role="header" data-theme="a"><h1>Select Task Status</h1></div>
+				<div role="main"  class="ui-content">
+					<div id="x" style="overflow-y: auto; overflow-x: hidden; height:200px">
+
+						<textarea name="LongText" id="LongText">
+						
+						</textarea>
+
+					</div>
+					<TABLE width="100%">
+						<TR><TD align="left"><a onClick="PopupClose('CANCEL')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Cancel</a></TD>
+							<TD align="right"><a onClick="PopupClose('LONGTEXTSAVE')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Save</a></TD></TR> 
+					</Table>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+		
+
+
+
+	
+
+</div>
+
+
+
+
+
+<Script>
+	if (localStorage.getItem("newTask") != null) {
+		var params=JSON.parse(localStorage.getItem("newTask"));
+		createTask(params[0],params[1],params[2],params[3],params[4],params[5])
+		localStorage.removeItem("newTask")
+		}
+	$('#popLongText').hide();
+	$('#popTaskStatus').hide();
+//var db = openDatabase('MyJobsDB', '1.0', 'MyJobsDB', 2000000);	
+var JobNo = getURLParameters("JobNo");
+var Status = getURLParameters("Status");
+var NotifNo = getURLParameters("NotifNo");
+var CurrentNotifTypeProfile="";
+var TasksOnScreen=[];
+var TasksNoOnScreen=[];
+var TasksOnScreenSelected=[];
+var TotalTasks=0;
+
+
+function BuildNotificationTaskList(){
+var Stripe="";
+var opMap="";
+var opAppt=""
+var HTMLToOutput='';
+var n=1;
+var SQLStatement="";
+
+HTMLToOutput = 	'<thead >'+
+				'	<tr class="stripe">'+
+				'	<th align="left" width = "4%"></th>'+
+				'		<th align="left" width = "6%">No</th>'+
+				'		<th align="left" width = "10%">Notif</th>'+
+				'		<th align="left" width = "10%">Group</th>'+
+				'		<th align="left" width = "5%">Task</th>'+
+				'		<th align="left" width = "15%">SLA Date</th>'+
+				'		<th align="left" width = "10%">Comp Date</th>'+
+				'		<th align="left" width = "7%">Time</th>'+
+				'		<th align="left" width = "6%">Status</th>'+
+				'		<th align="left" width = "5%">LT</th>'+
+				'		<th align="left" width = "5%">Del</th>'+
+				'		<th align="left" width = "8%">Comp</th>'+
+				'	</tr>'+
+				'</thead><tbody>';
+SQLStatement="SELECT * From MyTasks where notifno='"+NotifNo+"'"
+
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+		TotalTasks=rowsArray.length;	
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					opMap="";
+					opAppt="";
+					Stripe="";
+					var No=""
+					var ItemID=""
+					var realID = item.id
+					TasksOnScreen[n]=item.id;
+					TasksNoOnScreen[n]=item.item_id;
+					TasksOnScreenSelected[n]=false;
+					
+					var Delete ="&nbsp;"
+					if (isEven(n)){
+						Stripe='stripe';
+						}
+
+					No=item.notifno;
+					ItemID=item.item_id;
+					if(item.item_id=="NEW"){
+					
+						Delete="<a href='#' onClick='DeleteTask("+item.id+")' ><img src='images\\delete.gif'  ></A>"
+					
+					}
+					HTMLToOutput+= '	<tr class="'+Stripe+'">';	
+					HTMLToOutput+= '			<td valign="top"><input type="checkbox" value = "ON" id="checkbox-'+item.id+' " name="checkbox-'+item.id+'" onClick="setTask('+n+')"></td>';
+					;
+					HTMLToOutput+= '			<td>'+item.item_id+'</td>';
+					HTMLToOutput+= '			<td>'+item.notifno+'</td>';
+					HTMLToOutput+= '			<td>'+item.txt_taskgrp+'</td>';
+					HTMLToOutput+= '			<td>'+item.txt_taskcd+'</td>';
+					HTMLToOutput+= '			<td>'+item.sla_end_date+' '+item.sla_end_time+'</td>';
+					HTMLToOutput+= '		    <td>'+item.plnd_end_date+'</td>';
+					HTMLToOutput+= '			<td>'+item.plnd_end_time+'</td>';
+					HTMLToOutput+= '			<td rowspan="2"><a href="#popupTaskStatus" onclick="displayStatusPopup('+realID+')" class="open-popup-link" id="Status-'+item.id+' "><img src="images\\modify.gif"  ></A>	</td>';
+					HTMLToOutput+= '			<td rowspan="2"><a href="#popupLongText"  onclick="displayLongTextPopup('+realID+')" class="open-popup-link" id="LongText-'+item.id+' "><img src="images\\longtext.gif"  ></A>	</td>';
+					HTMLToOutput+= '			<td rowspan="2">'+Delete+'</td>';
+					HTMLToOutput+= '			<td rowspan="2"><input type="checkbox" data-on-text="Yes" data-off-text="No"  data-role="flipswitch" name="flip-checkbox1" id="flip-checkbox3"></td>';
+						
+					HTMLToOutput+= '	</tr>';	
+					HTMLToOutput+= '	<tr class="tablesorter-childRow '+Stripe+'"><td hidden >'+No+'</td><TD></TD><td colspan="8">'+item.task_text+'</td></tr>';
+	}
+
+			HTMLToOutput+= '	</tbody>';	
+			$( "#NotificationTaskList").html(HTMLToOutput);
+			$( "#NotificationTaskList").trigger('create');
+			//addRowHandlers();
+			SetTableSort();
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function updateTaskLongText(id,longtext)
+{
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+	html5sql.process("UPDATE MyTasks SET longtext = '"+longtext+"' where id = '"+id+"' ",
+	 function(transaction, results, rowsArray){
+
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+}
+function createTask(notifno,groupcd,codecd, grouptext, codetext, description)
+{
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+						
+	html5sql.process('INSERT INTO MyTasks (notifno , item_id, task_codegrp , task_code , txt_taskgrp, txt_taskcd , task_text, task_cat_typ, plnd_start_date, plnd_start_time, plnd_end_date, plnd_end_time, sla_end_date, sla_end_time, longtext, complete, status)'+
+					 ' Values("'+notifno+'", "NEW", "'+ groupcd+'","'+codecd+'","'+ grouptext+'","'+ codetext+'","'+ description+'","",'+'"'+ getDate()+'","'+ getTime()+'","", "","'+ getDate()+'","'+ getTime()+'", "", "", "")',
+	 function(transaction, results, rowsArray){
+
+
+	 },
+	 function(error, statement){
+		
+
+	 }        
+	);
+}
+function setTask(n)
+{
+//alert(n);
+if (TasksOnScreenSelected[n]==false){
+	TasksOnScreenSelected[n]=true;
+	}else{
+	TasksOnScreenSelected[n]=false;
+	}
+}
+var SelectedID;
+function displayStatusPopup(n){
+SelectedID=n;
+
+			$( "#popTaskStatus").click();
+
+
+}
+
+function displayLongTextPopup(n){
+SelectedID=n;
+SQLStatement="SELECT *  "
+SQLStatement+="from MyTasks "
+SQLStatement+="where id = '"+n+"'"
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			item = rowsArray[0];
+			$( "#LongText").html(item.longtext);
+
+			
+			$( "#LongText").trigger('create');
+			$( "#popLongText").click();
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+
+
+}
+function DeleteTask(id)
+{
+
+
+
+	html5sql.process("DELETE from MyTasks where id = '"+id+"'",
+	 function(transaction, results, rowsArray){
+			 location.reload();
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+	BuildNotificationTaskList()
+}
+function addRowHandlers() {
+    var table = document.getElementById("NotificationTaskList");
+    var rows = table.getElementsByTagName("tr");
+    for (i = 0; i < rows.length; i++) {
+        var currentRow = table.rows[i];
+        var createClickHandler = 
+            function(row) 
+            {
+                return function() { 
+                                        var cell = row.getElementsByTagName("td")[1];
+                                        var id = cell.innerHTML;
+
+										
+                                 };
+            };
+
+        currentRow.onclick = createClickHandler(currentRow);
+    }
+	SetTableSort();
+}
+function getSelected() {
+var TotSelected=0;
+var SelectedTask=0
+var SelectedTaskNo=""
+for (i = 0; i < TotalTasks; i++) {
+
+	if (TasksOnScreenSelected[i]==true){
+		SelectedTask=TasksOnScreen[i];
+		SelectedTaskNo=TasksNoOnScreen[i];
+		TotSelected+=1;
+	}
+}
+if (TotSelected==0){
+
+	alert("None Selected")
+	location.reload();
+}
+if (TotSelected>1){
+
+	alert("To Many Selected Selected")
+	location.reload();
+}
+if (TotSelected==1){
+	loc="JobsOrdersDetailsActivities.htm?JobNo="+JobNo+"&NotifNo="+NotifNo+"&Task="+SelectedTaskNo+"&Profile="+CurrentNotifTypeProfile //CurrentNotifType
+	window.location.href=loc;
+
+}
+}
+
+
+
+
+var PopupCloseType="";
+function PopupClose(mode)
+{
+
+	PopupCloseType=mode;
+	if(mode=="SAVE"){
+
+		
+		newTask = [NotifNo,$('#TaskGroup').find(":selected").val(),$('#TaskGroupCodes').find(":selected").val(),$('#TaskGroup').find(":selected").text(),$('#TaskGroupCodes').find(":selected").text(),$('#Description').val()]
+
+		localStorage.setItem("newTask", JSON.stringify(newTask));
+
+		}
+		
+	if(mode=="STATUSSAVE"){
+	$.magnificPopup.close();
+		alert("Lets do some STATUS writing")
+		}
+	if(mode=="LONGTEXTSAVE"){
+	$.magnificPopup.close();
+		updateTaskLongText(SelectedID,$( "#LongText").val());
+		}
+	$.magnificPopup.close();
+
+}
+function GoToActivities()
+{
+getSelected();
+//loc="JobsOrdersDetailsActivities.htm?JobNo="+JobNo+"&NotifNo="+NotifNo+"&Profile="+CurrentNotifTypeProfile //CurrentNotifType
+//window.location.href=loc;
+}
+var FooterPos=0;
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+} 
+$("SavepopupTaskStatus").click(function() {
+   jQuery('#cboxClose').click();
+   
+});
+
+
+$(document).ready(function() {
+
+   BuildNotificationTaskList();
+
+
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  closeOnBgClick: false,
+  showCloseBtn:false,
+  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  callbacks: {
+    open: function() {
+
+
+//$("[data-role='footer']").hide();
+    },
+    close: function() {
+		if (PopupCloseType!="CANCEL"){
+	
+			location.reload(false);
+			}
+
+
+    }
+	}
+});
+
+GetNotifTypeProfile("ZM");
+	$('select[name="TaskGroup"]').change(function(e) {
+		var s = $(e.target);
+	
+		BuildTaskGroupCodes(s.val());
+
+   		});
+});
+function zeroFill( number, width )
+{
+  width -= number.toString().length;
+  if ( width > 0 )
+  {
+    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+  }
+  return number + ""; // always return a string
+}
+
+function GetNotifTypeProfile(Type){
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+var FirstVal="";
+SQLStatement="SELECT *  "
+SQLStatement+="from RefNotifprofile "
+SQLStatement+="where scenario = 'MAMDEMO' and notif_type = '"+Type+"'"
+var HTMLToOutput="";
+//alert(SQLStatement);
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+		item = rowsArray[0];;
+		CurrentNotifTypeProfile=item.profile;
+				BuildGroups();
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+
+
+function BuildGroups(){
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+var FirstVal="";
+SQLStatement="SELECT *  "
+SQLStatement+="from RefCodeGroups "
+SQLStatement+="where scenario = 'MAMDEMO' and catalog_type = '2' and profile = '"+CurrentNotifTypeProfile+"'"
+var HTMLToOutput="";
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+				if (n==0){
+				FirstVal = CurrentNotifTypeProfile+"|"+item.code_cat_group;
+				}
+				HTMLToOutput+= "<option value='"+CurrentNotifTypeProfile+"|"+item.code_cat_group+"'>"+item.codegroup_text+"</option>"
+			}
+			//alert(HTMLToOutput);
+			$( "#TaskGroup").html(HTMLToOutput);
+
+			 $("#TaskGroup option[value='"+FirstVal+"']").attr('selected', 'selected');
+			$( "#TaskGroup").trigger('create');
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function BuildTaskGroupCodes(Group){
+
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+var res = Group.split("|")
+var FirstVal="";
+SQLStatement="SELECT *  "
+SQLStatement+="from RefCodes "
+SQLStatement+="where scenario = 'MAMDEMO' and profile = '"+res[0]+"' and code_cat_group = '"+res[1]+"'"
+var HTMLToOutput="";
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+				if (n==0){
+				FirstVal = item['code'];
+				}
+				HTMLToOutput+= "<option value='"+item.code+"'>"+item.code_text+"</option>"
+			}
+			//alert(HTMLToOutput);
+			$( "#TaskGroupCodes").html(HTMLToOutput);
+
+			 $("#TaskGroupCodes option[value='"+FirstVal+"']").attr('selected', 'selected');
+			$( "#TaskGroupCodes").trigger('create');
+			
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+        
+ 
+
+</script>  
+  
+
+
+<script type='text/javascript'>
+
+function SetTableSort()
+{  
+	$('table').tablesorter({
+
+		// *** APPEARANCE ***
+		// Add a theme - try 'blackice', 'blue', 'dark', 'default'
+		//  'dropbox', 'green', 'grey' or 'ice'
+		// to use 'bootstrap' or 'jui', you'll need to add the "uitheme"
+		// widget and also set it to the same name
+		// this option only adds a table class name "tablesorter-{theme}"
+		theme: 'jui',
+
+		// fix the column widths
+		widthFixed: false,
+
+		// Show an indeterminate timer icon in the header when the table
+		// is sorted or filtered
+		showProcessing: false,
+
+		// header layout template (HTML ok); {content} = innerHTML,
+		// {icon} = <i/> (class from cssIcon)
+		headerTemplate: '{content}{icon}',
+
+		// return the modified template string
+		onRenderTemplate: null, // function(index, template){ return template; },
+
+		// called after each header cell is rendered, use index to target the column
+		// customize header HTML
+		onRenderHeader: function (index) {
+			// the span wrapper is added by default
+			$(this).find('div.tablesorter-header-inner').addClass('roundedCorners');
+		},
+
+		// *** FUNCTIONALITY ***
+		// prevent text selection in header
+		cancelSelection: true,
+
+		// other options: "ddmmyyyy" & "yyyymmdd"
+		dateFormat: "mmddyyyy",
+
+		// The key used to select more than one column for multi-column
+		// sorting.
+		sortMultiSortKey: "shiftKey",
+
+		// key used to remove sorting on a column
+		sortResetKey: 'ctrlKey',
+
+		// false for German "1.234.567,89" or French "1 234 567,89"
+		usNumberFormat: true,
+
+		// If true, parsing of all table cell data will be delayed
+		// until the user initializes a sort
+		delayInit: false,
+
+		// if true, server-side sorting should be performed because
+		// client-side sorting will be disabled, but the ui and events
+		// will still be used.
+		serverSideSorting: false,
+
+		// *** SORT OPTIONS ***
+		// These are detected by default,
+		// but you can change or disable them
+		// these can also be set using data-attributes or class names
+		headers: {
+			// set "sorter : false" (no quotes) to disable the column
+			0: {
+				sorter: "false"
+			},
+			1: {
+				sorter: "text"
+			},
+			2: {
+				sorter: "text"
+			},
+			3: {
+				sorter: "text"
+			},
+			4: {
+				sorter: "text"
+			},
+			5: {
+				sorter: "text"
+			},
+			6: {
+				sorter: "text"
+			},
+			7: {
+				sorter: "text"
+			},
+			8: {
+				sorter: "false"
+			},
+			9: {
+				sorter: "false"
+			},
+			10: {
+				sorter: "false"
+			},
+			11: {
+				sorter: "false"
+			}
+		},
+
+		// ignore case while sorting
+		ignoreCase: true,
+
+		// forces the user to have this/these column(s) sorted first
+		sortForce: null,
+		// initial sort order of the columns, example sortList: [[0,0],[1,0]],
+		// [[columnIndex, sortDirection], ... ]
+		sortList: [
+			[0, 0]
+
+		],
+		// default sort that is added to the end of the users sort
+		// selection.
+		sortAppend: null,
+
+		// starting sort direction "asc" or "desc"
+		sortInitialOrder: "asc",
+
+		// Replace equivalent character (accented characters) to allow
+		// for alphanumeric sorting
+		sortLocaleCompare: false,
+
+		// third click on the header will reset column to default - unsorted
+		sortReset: false,
+
+		// restart sort to "sortInitialOrder" when clicking on previously
+		// unsorted columns
+		sortRestart: false,
+
+		// sort empty cell to bottom, top, none, zero
+		emptyTo: "bottom",
+
+		// sort strings in numerical column as max, min, top, bottom, zero
+		stringTo: "max",
+
+		// extract text from the table - this is how is
+		// it done by default
+		textExtraction: {
+			0: function (node) {
+				return $(node).text();
+			},
+			1: function (node) {
+				return $(node).text();
+			}
+		},
+
+		// use custom text sorter
+		// function(a,b){ return a.sort(b); } // basic sort
+		textSorter: null,
+
+		// *** WIDGETS ***
+
+		// apply widgets on tablesorter initialization
+		initWidgets: true,
+
+		// include zebra and any other widgets, options:
+		// 'columns', 'filter', 'stickyHeaders' & 'resizable'
+		// 'uitheme' is another widget, but requires loading
+		// a different skin and a jQuery UI theme.
+		widgets: ['uitheme', 'zebra',  'columns'],
+
+		widgetOptions: {
+		  // extra class name added to the sticky header row
+		  stickyHeaders : '',
+		  // number or jquery selector targeting the position:fixed element
+		  stickyHeaders_offset : 50,
+		  // added to table ID, if it exists
+		  stickyHeaders_cloneId : '-sticky',
+		  // trigger "resize" event on headers
+		  stickyHeaders_addResizeEvent : true,
+		  // if false and a caption exist, it won't be included in the sticky header
+		  stickyHeaders_includeCaption : true,
+		  // The zIndex of the stickyHeaders, allows the user to adjust this to their needs
+		  stickyHeaders_zIndex : 2,
+		  // jQuery selector or object to attach sticky header to
+		  stickyHeaders_attachTo : null,
+		  // scroll table top into view after filtering
+		  stickyHeaders_filteredToTop: true,
+			// zebra widget: adding zebra striping, using content and
+			// default styles - the ui css removes the background
+			// from default even and odd class names included for this
+			// demo to allow switching themes
+			// [ "even", "odd" ]
+			zebra: [
+				"ui-widget-content even",
+				"ui-state-default odd"],
+
+			// uitheme widget: * Updated! in tablesorter v2.4 **
+			// Instead of the array of icon class names, this option now
+			// contains the name of the theme. Currently jQuery UI ("jui")
+			// and Bootstrap ("bootstrap") themes are supported. To modify
+			// the class names used, extend from the themes variable
+			// look for the "$.extend($.tablesorter.themes.jui" code below
+			uitheme: 'jui',
+
+			// columns widget: change the default column class names
+			// primary is the 1st column sorted, secondary is the 2nd, etc
+			columns: [
+				"primary",
+				"secondary",
+				"tertiary"],
+
+			// columns widget: If true, the class names from the columns
+			// option will also be added to the table tfoot.
+			columns_tfoot: true,
+
+			// columns widget: If true, the class names from the columns
+			// option will also be added to the table thead.
+			columns_thead: true,
+
+			// filter widget: If there are child rows in the table (rows with
+			// class name from "cssChildRow" option) and this option is true
+			// and a match is found anywhere in the child row, then it will make
+			// that row visible; default is false
+			filter_childRows: false,
+
+			// filter widget: If true, a filter will be added to the top of
+			// each table column.
+			filter_columnFilters: true,
+
+			// filter widget: css class applied to the table row containing the
+			// filters & the inputs within that row
+			filter_cssFilter: "tablesorter-filter",
+
+			// filter widget: Customize the filter widget by adding a select
+			// dropdown with content, custom options or custom filter functions
+			// see http://goo.gl/HQQLW for more details
+			filter_functions: null,
+
+			// filter widget: Set this option to true to hide the filter row
+			// initially. The rows is revealed by hovering over the filter
+			// row or giving any filter input/select focus.
+			filter_hideFilters: false,
+
+			// filter widget: Set this option to false to keep the searches
+			// case sensitive
+			filter_ignoreCase: true,
+
+			// filter widget: jQuery selector string of an element used to
+			// reset the filters.
+			filter_reset: null,
+
+			// Delay in milliseconds before the filter widget starts searching;
+			// This option prevents searching for every character while typing
+			// and should make searching large tables faster.
+			filter_searchDelay: 300,
+
+			// Set this option to true if filtering is performed on the server-side.
+			filter_serversideFiltering: false,
+
+			// filter widget: Set this option to true to use the filter to find
+			// text from the start of the column. So typing in "a" will find
+			// "albert" but not "frank", both have a's; default is false
+			filter_startsWith: false,
+
+			// filter widget: If true, ALL filter searches will only use parsed
+			// data. To only use parsed data in specific columns, set this option
+			// to false and add class name "filter-parsed" to the header
+			filter_useParsedData: false,
+
+			// Resizable widget: If this option is set to false, resized column
+			// widths will not be saved. Previous saved values will be restored
+			// on page reload
+			resizable: true,
+
+			// saveSort widget: If this option is set to false, new sorts will
+			// not be saved. Any previous saved sort will be restored on page
+			// reload.
+			saveSort: true,
+
+			// stickyHeaders widget: css class name applied to the sticky header
+			stickyHeaders: "tablesorter-stickyHeader"
+
+		},
+
+		// *** CALLBACKS ***
+		// function called after tablesorter has completed initialization
+		initialized: function (table) {},
+
+		// *** CSS CLASS NAMES ***
+		tableClass: 'tablesorter',
+		cssAsc: "tablesorter-headerSortUp",
+		cssDesc: "tablesorter-headerSortDown",
+		cssHeader: "tablesorter-header",
+		cssHeaderRow: "tablesorter-headerRow",
+		cssIcon: "tablesorter-icon",
+		cssChildRow: "tablesorter-childRow",
+		cssInfoBlock: "tablesorter-infoOnly",
+		cssProcessing: "tablesorter-processing",
+
+		// *** SELECTORS ***
+		// jQuery selectors used to find the header cells.
+		selectorHeaders: '> thead th, > thead td',
+
+		// jQuery selector of content within selectorHeaders
+		// that is clickable to trigger a sort.
+		selectorSort: "th, td",
+
+		// rows with this class name will be removed automatically
+		// before updating the table cache - used by "update",
+		// "addRows" and "appendCache"
+		selectorRemove: "tr.remove-me",
+
+		// *** DEBUGING ***
+		// send messages to console
+		debug: false
+
+	});
+}
+// Extend the themes to change any of the default class names ** NEW ** 
+$.extend($.tablesorter.themes.jui, {
+    // change default jQuery uitheme icons - find the full list of icons 
+    // here: http://jqueryui.com/themeroller/ (hover over them for their name) 
+    table: 'ui-widget ui-widget-content ui-corner-all', // table classes 
+    header: 'ui-widget-header ui-corner-all ui-state-default', // header classes 
+	footerRow: '',
+	footerCells: '',
+    icons: 'ui-icon',    // icon class added to the <i> in the header 
+    sortNone: 'ui-icon-carat-2-n-s',
+    sortAsc: 'ui-icon-carat-1-n',
+    sortDesc: 'ui-icon-carat-1-s',
+    active: 'ui-state-active', // applied when column is sorted 
+    hover: 'ui-state-hover', // hover class 
+    filterRow: '',
+    even: 'ui-widget-content', // even row zebra striping 
+    odd: 'ui-state-default' // odd row zebra striping 
+});
+
+$.extend($.tablesorter.themes.bootstrap, {
+    // these classes are added to the table. To see other table classes available,
+    // look here: http://twitter.github.com/bootstrap/base-css.html#tables
+    table: 'table table-bordered table-striped',
+    header: 'bootstrap-header', // give the header a gradient background
+	footerRow  : '',
+	footerCells: '',
+    icons: '', // add "icon-white" to make them white; class added to the <i>
+    sortNone: 'bootstrap-icon-unsorted',
+    sortAsc: 'icon-chevron-up',
+    sortDesc: 'icon-chevron-down',
+    active: '', // applied when column is sorted
+    hover: '', // use custom css here - bootstrap class may not override it
+    filterRow: '', // filter row class
+    even: '', // odd row zebra striping
+    odd: '' // even row zebra striping
+});
+	
+
+
+</script>
+
+
+</body>
+
+
+</html>
+

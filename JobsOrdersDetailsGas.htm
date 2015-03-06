@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Jobs - OrderDetails- Tasks
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+
+</script>
+
+
+ <style type='text/css'>
+  .stripe{
+	background-color: lightgrey; 
+	color: black;
+}
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+   .wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 250px;
+  overflow-y: auto;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+  .block {
+    border: 1px solid grey;
+    width: 180px;
+    height:150px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+
+border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }  
+                .box {
+    border: 1px solid #a1a1a1;
+    padding: 10px 10px; 
+    background: #dddddd;
+    
+    border-radius: 5px;
+}  
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 95%;
+  margin: 20px auto;
+}
+.ui-btn-width {
+    width: 200px !important;
+}
+textarea{
+    height: 80px !important;
+    max-height: 80px !important;
+    overflow:auto !important;  
+}
+
+  </style>
+ 
+</head>
+<body>
+<div align="center"  data-role="page" id="JobsOrderDetailsTask"> 
+  <div data-role="panel" id="options" data-position="right" data-display="overlay"> 
+    <h3>Options</h3>
+	<TABLE>
+		<TR height ="40px" ><TD align = "center">
+			<a   href='#popupCreateGAS'    		  class="open-popup-link  ui-btn ui-btn-inline ui-icon-home ui-corner-all ui-shadow "><i class="fa fa-plus"></i> Create</a></TD></TR>
+		<TR  height ="40px" ><TD align = "center">
+			<a   href='#popupDetail'  			  class="open-popup-link ui-btn ui-btn-inline ui-icon-home ui-corner-all ui-shadow "><i class="fa fa-align-justify"></i> Detail</a></TD></TR>
+		<TR  height ="40px" ><TD align = "center">
+			<a   href="javascript:GoGetSignature()" 			  class="ui-btn ui-btn-inline ui-icon-home ui-corner-all ui-shadow "><i class="fa fa-pencil"></i> Signature</a></TD></TR>
+		<TR height ="40px" ><TD align = "center">
+			<a     href='#popupPrint' 	onClick="BuildPrintScreen()"		  class="open-popup-link ui-btn ui-btn-inline ui-icon-home ui-corner-all ui-shadow "><i class="fa fa-print"></i> Print</a></TD></TR>
+	</table>
+  </div> 
+	<div   data-role="header" data-position="fixed">
+		
+		<table width = "100%">
+			<TR height="50px">
+				<TD width = "10%" Valign="middle" align="left"><a href="javascript:window.location.href='JobsOrders.htm'"  >
+					<i class="fa fa-arrow-left fa-2x pull-left fa-border""></i></a></td>
+				<TD width = "80%" valign="Top" align= "center"><h1 style="font-size: 150%"><B><a onclick="window.location.href='JobsHome.htm'" style="color:black; text-decoration:none;">MyJobs - GAS</a></B></H1>
+					<a href="#lastSyncDets" data-rel="popup"style="color: green; text-decoration:none;"> <Small><P id="lastsync"></p></A></small></TD>
+				<TD width = "10%" ><a href="#options" ><i class="fa fa-bars fa-2x pull-right fa-border"></i></a></TD>
+			</TR>
+		</table>		
+	
+	</div> 	
+
+
+	<div   width = "100%" id="content" data-role="content">	
+			<table id="Header" name="Header" width = "100%" cellspacing="1"   style="border-spacing: 1;" class="tablesorter1">
+
+
+			</table>
+			<table id="GASInspectionList" name="GASInspectionList" width = "90%" cellspacing="0"   style="border-spacing: 0;" class="tablesorter1">
+
+
+			</table>
+		<div style='display:none'>
+			<div  id="popupSignature" class="white-popup mfp-hide" >
+				<table width = "100%"><TR><TD width = "20%" align = "left"><a onClick="PopupClose('CANCEL')"  ><i class="fa fa-arrow-left fa-2x pull-left fa-border"></i></a></td><TD width = "60%"align="center"><B>Signature</B></TD>
+				<TD align="right"><a onClick="$('#sig').signature('clear'); "><i class="fa fa-times fa-2x pull-right fa-border"></i></a></TD>
+				<TD align="right"><a onClick="PopupClose('SAVESIGNATURE')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a></TD>
+				</TR></Table>
+
+				<div  role="main"  class="ui-content" >
+
+				<div id="signature" name="signature" ></div>
+				<DIV>
+					<textarea style="visibility:hidden" name="sigJSON" id ="sigJSON"></textarea>
+				
+
+								
+
+				</div>
+				</div>
+			</div>
+			<div  id="popupPrint" class="white-popup mfp-hide"  >
+
+				<div  id="printScreen" role="main"  class="ui-content" >
+
+				<div id="PrintLayout">
+				<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="974" >
+					<tr><td width="10%" align="left"><img border="0" src="images/cgi.jpg" width="89" height="83"></td><td width="80%" background: #99CCFF">
+					<p align="center"><font face="Arial" size="6"><B><CENTER><DIV id='GASCompany'></DIV></CENTER></B></font><font size="2" face="Arial"><CENTER><DIV id='GASAddress'></CENTER></DIV>
+					</font><font face="Arial" size="2"><CENTER> <DIV id='GASTelno'></DIV></CENTER></font><b><font face="Arial" size="4"><CENTER><DIV>GAS SAFETY CERTIFICATE</DIV></CENTER></font></b><BR></td>
+					<td width="10%" align="right"><img border="0" src="images/GasSafe.jpg" width="89" height="83"></td></td></tr></table>
+
+
+					<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="974" id="AutoNumber2" height="73">
+<tr><td width="2%" height="19"><font face="Arial" style="font-size: 9pt">Job No</font></td><td width="80%" height="19" colspan="6">
+<font face="Arial" style="font-size: 9pt"><DIV id='JobNo'></div></font></td><td width="2%" height="19"><font face="Arial" style="font-size: 9pt">Date:</font></td>
+<td align="right" height="19" colspan="1"><font face="Arial" style="font-size: 9pt"> <DIV id='JobDate'></div></font></TD>
+</tr><tr> <td width="2%" height="19"><font face="Arial" style="font-size: 9pt">Name</font></td><td width="41%" height="19" colspan="3">
+<font face="Arial" style="font-size: 9pt"><DIV id='CustomerName'></DIV></font></td><td width="18%" height="19" colspan="2"><font face="Arial" style="font-size: 9pt">Service Engineer</font></td>
+<td width="32%" height="19" colspan="3"><DIV id='EngineerName'></div></td></tr><tr><td width="2%" height="17" valign="top"><font face="Arial" style="font-size: 9pt">Address</font></td>
+<td width="41%" height="17" colspan="3" valign="top"><font face="Arial" style="font-size: 9pt"><DIV id='CustomerAddress'></DIV>
+</font></td><td width="24%" height="17" colspan="2" valign="top"><font face="Arial" style="font-size: 9pt">(Signature)</font></td>
+<td width="26%" height="17" colspan="3" valign="top"><img border="0" src="images/EngSig.gif" width="200" height="60"></td></tr><tr>
+<td width="2%" height="15"><font face="Arial" style="font-size: 9pt">Postcode</font></td><td width="10%" height="15"><font face="Arial" style="font-size: 9pt">
+<DIV id='CustomerPostcode'></div></font></td><td width="10%" height="15"><font face="Arial" style="font-size: 9pt">Tel No</font></td><td width="21%" height="15"><font face="Arial" style="font-size: 9pt">
+<DIV id='CustomerTelno'></div></font></td><td width="8%" height="15"><font face="Arial" style="font-size: 9pt">Company</font></td><td width="42%" height="15" colspan="4">
+<font face="Arial" style="font-size: 9pt"><DIV id='CompanyName'></div></font></td></tr><tr><td width="22%" height="30" rowspan="2" colspan="2">
+
+<font face="Arial" style="font-size: 9pt">Received by (Signature)</font></td><td  width="28%" rowspan="2" colspan="2"><DIV id="CustomerSignature" name="CustomerSignature"></DIV>
+
+</td><td width="10%" height="15"><font face="Arial" style="font-size: 9pt">Address</font></td><td width="40%" height="15" colspan="4">
+<font face="Arial" style="font-size: 9pt"><DIV id='CompanyAddress'></DIV></font></td></tr><tr><td width="10%" height="15"><font face="Arial" style="font-size: 9pt">
+Postcode</font></td><td width="7%" height="15" colspan="2"><font face="Arial" style="font-size: 9pt"><DIV id='CompanyPostcode'></div></font></td>
+<td width="6%" height="15"><font face="Arial" style="font-size: 9pt">Tel No</font></td><td width="21%" height="15">
+<font face="Arial" style="font-size: 9pt"><DIV id='CompanyTelno'></div></font></td></tr></table>
+
+
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="974" id="PrintDetails">
+</table>
+				
+			</div>
+								
+					<div width="95%">
+
+					<TABLE width="100%">
+						<TR><TD align="left"><a href="javascript:PopupClose('CANCEL')" style="color: black;background: lightgrey" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" ><i class="fa fa-times"></i> Cancel</a></TD>
+							<TD align="right"><a href="javascript:PopupClose('PRINT')" style="color: black;background: lightgrey"  class="ui-btn ui-corner-all ui-shadow ui-btn-inline" ><i class="fa fa-print"></i> Print</a></TD></TR> 
+					</Table> 
+					</div>
+
+				
+			</div>
+		</div>
+			<div  id="popupCreateGAS" class="white-popup mfp-hide">
+				<table width = "100%"><TR><TD align = "left"><a onClick="PopupClose('CANCEL')"  ><i class="fa fa-times fa-2x pull-left fa-border"></i></a></td><TD align="center"><B>Create Inspection</B></TD><TD align="right"><a onClick="PopupClose('SAVE')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a></TD></TR></Table>
+				<div  role="main"  class="ui-content" >
+					<table id = "Item"></table>
+				
+				
+
+								
+					<div width="95%">
+					<TABLE width="100%">
+						<TR><TD align = "center" width = "100%"><p style="color: red; font-size: 8pt" id = "ErrorMess" name = "ErrorMess" ></P></TD></TR> 
+					</Table> 
+					</div>
+				</div>
+			</div>
+<div data-role="popup"   data-dismissible="false" style="max-width:400px;">
+
+	<div id="popupPrintError" role="main" class="ui-content">
+		<h4 align="center" style="color:red" class="ui-title">All fields must be completed</h4>
+		
+		<div align="center">
+			<a href="javascript:$.magnificPopup.close();" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a ui-icon-delete  ui-btn-icon-left" >OK</a>
+			
+		</div>
+	</div>
+
+</div>
+			<div data-role="popup" id="lastSyncDets">
+			  <p id='referenceSyncDetails' ></p>
+			  <p id='transactionalSyncDetails' ></p>
+			  <p id='uploadSyncDetails' ></p>
+			</div>
+			<div  id="popupDetail" class="white-popup mfp-hide">
+				<table width = "100%"><TR><TD align = "left"><a onClick="PopupClose('CANCEL')"  ><i class="fa fa-times fa-2x pull-left fa-border"></i></a></td><TD align="center"><B>Details</B></TD><TD align="right"><a onClick="PopupClose('SAVE')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a></TD></TR></Table>
+				<div  role="main"  class="ui-content" >
+					<table>
+					<tr><td width = "20%">Details of Faults </TD><TD width = "80%"><textarea name="text1" id ="text1"></textarea></td><TR>
+					<tr><td>RemedialAction Taken </TD><TD><textarea name="text1" id ="text1"></textarea></td><TR>					
+					<tr><td>Work Carried out </TD><TD><textarea name="text1" id ="text1"></textarea></td><TR>
+					</table>
+
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+
+
+		
+
+
+
+	
+
+</div>
+
+
+
+
+
+<Script>
+function GoGetSignature(){
+window.location.href='JobsGetSignature.htm?JobNo='+JobNo+'&Status='+Status+'&NotifNo='+NotifNo
+}
+
+var JobNo = getURLParameters("JobNo");
+var Status = getURLParameters("Status");
+var NotifNo = getURLParameters("NotifNo");
+var res = JobNo.split('-')
+var OrderNo = res[0]
+var OpNo = res[1]
+
+function LoadSignature(){
+SQLStatement="SELECT * From GASSurveyHDR where orderno='"+OrderNo+"' and opno = '"+OpNo+"'" 
+var SigData="";
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+				//alert("Data Found")
+
+				if(rowsArray.length>0) {
+					SigData=unescape(rowsArray[0].signed)
+					//alert(SigData)
+					try{
+						var i = new Image()
+						i.src = 'data:image/svg+xml;base64,' + btoa( SigData)
+						
+						i.width=200
+						i.height=60
+						$('#CustomerSignature').html('')
+						$(i).appendTo($('#CustomerSignature'))
+					} catch (ex) {
+
+					} 				
+
+
+				}
+
+
+	 },
+	 function(error, statement){
+		//alert("Select Error"+SQLStatement);
+	 }        
+	);
+
+
+
+
+
+
+
+}
+function BuildGASInspectionList(){
+var Stripe="";
+var opMap="";
+var opAppt=""
+var HTMLToOutput='';
+var n=1;
+var SQLStatement="";
+//alert("got here")
+HTMLToOutput = 	'<thead >'+
+				'	<tr class="stripe">'+
+				'	<th align="left" width = "5%"></th>'+
+				'		<th align="left" width = "30%">Make</th>'+
+				'		<th align="left" width = "35%">Model</th>'+
+				'		<th align="left" width = "30%">Location</th>'+
+
+				'	</tr>'+
+				'</thead><tbody>';
+SQLStatement="SELECT * From GASSurvey where orderno='"+OrderNo+"' and opno = '"+OpNo+"'" 
+var rowno=-1
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+		TotalTasks=rowsArray.length;	
+
+				for (var n = 0; n < rowsArray.length; n++) {
+					ItemID=rowsArray[n].id
+					
+					Stripe="";
+					
+
+					var Delete ="&nbsp;"
+					if (isEven(n)){
+						Stripe='stripe';
+						}
+
+
+					
+						Delete="<a href='#' onClick='DeleteGAS("+ItemID+")' ><img src='images\\delete.gif' width='20px' height='20px' ></A>"
+					
+
+					HTMLToOutput+= '	<tr class="'+Stripe+'">';	
+					HTMLToOutput+= '			<td>'+Delete+'</td>';
+					HTMLToOutput+= '			<td>'+rowsArray[n].make+'</td>';
+					HTMLToOutput+= '			<td>'+rowsArray[n].model+'</td>';
+					HTMLToOutput+= '			<td>'+rowsArray[n].location+'</td>';
+
+					HTMLToOutput+= '	</tr>';	
+
+				}
+
+			HTMLToOutput+= '	</tbody>';	
+			$( "#GASInspectionList").html(HTMLToOutput);
+			$( "#GASInspectionList").trigger('create');
+			//addRowHandlers();
+			SetTableSort();
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+
+
+
+
+
+function DeleteGAS(id)
+{
+
+
+
+	html5sql.process("DELETE from GASSurvey where id = '"+id+"'",
+	 function(transaction, results, rowsArray){
+			 location.reload();
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+	BuildGASInspectionList()
+}
+
+
+
+
+
+var PopupCloseType="";
+function PopupClose(mode)
+{
+	SQLStatement=""
+	PopupCloseType=mode;
+	if(mode=="SAVE"){	
+
+		CreateSurveyEntry()
+			
+		}
+	if(mode=="SAVEHDR"){	
+
+		UpdateSurveyHDR()
+		}
+	if(mode=="SAVESIGNATURE"){	
+$.magnificPopup.close();
+		//UpdateSurveyHDR()
+		}
+	if(mode=="CANCEL"){	
+
+		$.magnificPopup.close();
+		}
+	if(mode=="PRINT"){	
+		printDiv('PrintLayout')
+		$.magnificPopup.close();
+		}
+	
+
+}
+function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+function CreateSurveyEntry()
+{
+if(
+($("#00001").find(":selected").val()==-1) ||
+($("#00002").find(":selected").val()==-1) ||
+($("#00003").find(":selected").val()==-1) ||
+($("#00004").find(":selected").val()==-1) ||
+($("#00005").find(":selected").val()==-1) ||
+($("#00006").find(":selected").val()==-1) ||
+($("#00007").find(":selected").val()==-1) ||
+($("#00008").val()=='') ||
+($("#00009").val()=='') ||
+($("#00010").find(":selected").val()==-1) ||
+($("#00011").find(":selected").val()==-1) ||
+($("#00012").find(":selected").val()==-1) ||
+($("#00013").find(":selected").val()==-1) ||
+($("#00014").find(":selected").val()==-1) ||
+($("#00015").find(":selected").val()==-1) ){
+	
+		$("#ErrorMess").html("<font color='red'><h5>All fields need to be completed</h5></font>");
+	}else{
+
+		SQLStatement='INSERT INTO GASSurvey (orderno , opno ,make,model,location, dv1,dv2,dv3,dv4,dv5,dv6,dv7,dv8,dv9,dv10,dv11,dv12,dv13,dv14,dv15 ) VALUES ( '+ 
+							  '"'+OrderNo+'",'+
+							  '"'+OpNo+'",'+
+							  '"'+$("#00003").find(":selected").val()+'",'+
+							  '"'+$("#00004").find(":selected").text()+'",'+ 
+							  '"'+$("#00005").find(":selected").text()+'",'+ 
+							  '"'+$("#00001").find(":selected").val()+'",'+
+							  '"'+$("#00002").find(":selected").val()+'",'+
+							  '"'+$("#00003").find(":selected").val()+'",'+
+							  '"'+$("#00004").find(":selected").val()+'",'+ 
+							  '"'+$("#00005").find(":selected").val()+'",'+ 
+							  '"'+$("#00006").find(":selected").val()+'",'+ 
+							  '"'+$("#00007").find(":selected").val()+'",'+ 
+							  '"'+$("#00008").val()+'",'+ 
+							  '"'+$("#00009").val()+'",'+ 
+							  '"'+$("#00010").find(":selected").val()+'",'+ 
+							  '"'+$("#00011").find(":selected").val()+'",'+ 
+							  '"'+$("#00012").find(":selected").val()+'",'+ 
+							  '"'+$("#00013").find(":selected").val()+'",'+ 
+							  '"'+$("#00014").find(":selected").val()+'",'+ 
+							  '"'+$("#00015").find(":selected").val()+'");'
+	//alert(SQLStatement)
+		html5sql.process(SQLStatement,
+			 function(transaction, results, rowsArray){
+			
+				//alert("detsuccess");
+				$.magnificPopup.close();	
+			 },
+			 function(error, statement){		
+				//alert("det fail")
+				$.magnificPopup.close();
+			 }        
+			);
+	}
+		
+}
+function CreateSurveyHDR()
+{
+
+		SQLStatement1='SELECT * from GASSurveyHDR where orderno = "'+OrderNo+'" and opno = "'+OpNo+'"'
+		SQLStatement2='INSERT INTO GASSurveyHDR (orderno , opno ,  date , signed , hv1, hv2, hv3, hv4, text1, text2, text3) VALUES ( '+ 
+							  '"'+OrderNo+'",'+
+							  '"'+OpNo+'",'+
+							   '"",'+
+							    '"",'+
+							  '"",'+
+							  '"",'+
+							  '"",'+
+							  '"",'+
+							  '"",'+
+							  '"",'+
+							  '"");'
+		
+
+		html5sql.process(SQLStatement1,
+			 function(transaction, results, rowsArray){
+			 
+				if (rowsArray.length < 1){
+				
+			 		html5sql.process(SQLStatement2,
+						function(transaction, results, rowsArray){
+				
+							},
+						function(error, statement){
+				
+						}        
+					);
+				}else{
+			
+				$("#text1").val(rowsArray[0].text1)
+				$("#text2").val(rowsArray[0].text2)
+				$("#text3").val(rowsArray[0].text3)
+
+				
+				$("#H00000").val(rowsArray[0].hv1).selectmenu('refresh',true);
+				$("#H00001").val(rowsArray[0].hv2).selectmenu('refresh',true);
+				$("#H00002").val(rowsArray[0].hv3).selectmenu('refresh',true);
+				$("#H00003").val(rowsArray[0].hv4).selectmenu('refresh',true);
+				$("#H00004").val(rowsArray[0].date)
+
+
+				}
+				
+			 },
+			 function(error, statement){
+				
+			 }        
+			);
+			
+}
+function UpdateSurveyHDR()
+{
+		//alert($("#H00000").val())
+
+		SQLStatement='UPDATE GASSurveyHDR '
+		SQLStatement+='set hv1 = "'+$("#H00000").find(":selected").val()+'", '
+		SQLStatement+='hv2 = "'+$("#H00000").find(":selected").val()+'", '
+		SQLStatement+='hv2 = "'+$("#H00001").find(":selected").val()+'", '
+		SQLStatement+='hv3 = "'+$("#H00002").find(":selected").val()+'", '
+		SQLStatement+='hv4 = "'+$("#H00003").find(":selected").val()+'", '
+
+		SQLStatement+='date = "'+$("#H00004").val()+'", '
+
+		SQLStatement+='text1 = "'+$("#text1").val()+'", '
+		SQLStatement+='text2 = "'+$("#text2").val()+'", '
+		SQLStatement+='text3 = "'+$("#text3").val()+'" where orderno = "'+OrderNo+'" and opno = "'+OpNo+'"'
+
+	//alert(SQLStatement)
+		html5sql.process(SQLStatement,
+			 function(transaction, results, rowsArray){
+			
+				//alert("hdrsuccess");
+				
+			 },
+			 function(error, statement){
+				//alert("hdrfail")
+			 }        
+			);
+		$.magnificPopup.close();	
+}
+
+function BuildItem(){
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+var LastQ="-1";
+var LastQType="";
+SQLStatement="SELECT *"  
+SQLStatement+="from GASSurveyQ "
+SQLStatement+="join GASSurveyA on GASSURVEYQ.qno =GASSurveyA.qno where GASSurveyA.type = 'Q' and GASSURVEYQ.type = 'Q'"
+var colcnt = 0;
+var Stripe=""
+var HTMLToOutput="";
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+			Stripe=""
+			if (isEven(n)){
+				Stripe='stripe';
+				}
+			if (LastQ!=item.qno){
+
+					if (LastQ!=-1){
+						HTMLToOutput+="</td></tr><TR class='"+Stripe+"'>"
+						}else{
+						HTMLToOutput+="<TR class='"+Stripe+"'>"
+						}
+					addSpacing=""
+
+						
+				if (LastQ!=-1){
+					HTMLToOutput+="<TD width = '40%'>"+addSpacing+item.description+"</TD><TD width='60%'>"
+					}else{
+					HTMLToOutput+="<TD width = '40%'>"+addSpacing+item.description+"</TD><TD width='60%'>"
+					}
+			}			
+			if(item.qtype=="LB")
+				{
+				if (LastQ!=item.qno){
+					HTMLToOutput+="<SELECT data-mini = 'true' id='"+item.qno+"' name='"+item.qno+"'>"
+					HTMLToOutput+="<option value='-1' >[Please Select]</option>"
+					
+					LastQ=item.qno
+					LastQType=item.qtype
+					}
+				HTMLToOutput+="<option value='"+item.qkey+"'>"+item.qvalue+"</option>"
+				}
+			if(item.qtype=="LDB")
+				{
+				if (LastQ!=item.qno){
+					HTMLToOutput+="<SELECT data-mini = 'true' id='"+item.qno+"' name='"+item.qno+"'>"
+					HTMLToOutput+="<option value='-1' >[Please Select]</option>"
+					LastQ=item.qno
+					LastQType="LB"
+					}
+
+				}
+			if(item.qtype=="NUM")
+				{
+				if (LastQ!=item.qno){
+					if (LastQType=="LB"){
+						HTMLToOutput+="</select>"
+						}
+					LastQ=item.qno
+					LastQType=item.qtype
+					}
+				HTMLToOutput+='<input data-mini = "true" id="'+item.qno+'" name="'+item.qno+'" type="number" data-clear-btn="true"  value="">'
+	
+				}
+			if(item.qtype=="TXT")
+				{
+				if (LastQ!=item.qno){
+					if (LastQType=="LB"){
+						HTMLToOutput+="</select>"
+						}
+					LastQ=item.qno
+					LastQType=item.qtype
+					}
+				HTMLToOutput+='<input data-mini = "true" id="'+item.qno+'" name="'+item.qno+'" type="text" data-clear-btn="true"  value="">'
+				}
+			
+			
+			}
+			//HTMLToOutput+"</TD></TR>"
+
+			$( "#Item").html(HTMLToOutput);
+
+			$( "#Item").trigger('create');
+			$('#00003').change(function(e) {
+				var s = $(e.target);
+	
+				BuildModels(s.val());
+
+				});
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function BuildHeader(){
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+var LastQ="-1";
+var LastQType="";
+SQLStatement="SELECT *"  
+SQLStatement+="from GASSurveyQ "
+SQLStatement+="join GASSurveyA on GASSURVEYQ.qno =GASSurveyA.qno where GASSurveyA.type = 'H' and GASSURVEYQ.type = 'H'"
+var colcnt = 0;
+var Stripe="";
+var HTMLToOutput="";
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+			Stripe=""
+			if (isEven(n)){
+				Stripe='stripe';
+				}
+			if (LastQ!=item.qno){
+
+					if (LastQ!=-1){
+						HTMLToOutput+="</td></tr><TR class='"+Stripe+"'>"
+						}else{
+						HTMLToOutput+="<TR class='"+Stripe+"'>"
+						}
+					addSpacing=""
+
+				if (LastQ!=-1){
+					HTMLToOutput+="<TD width = '70%'><font size='2em'>"+addSpacing+item.description+"</font></TD><TD align = 'right' width='30%'>"
+					}else{
+					HTMLToOutput+="<TD width = '70%'><font size='2em'>"+addSpacing+item.description+"</font></TD><TD align = 'right' width='30%'>"
+					}
+			}			
+			if(item.qtype=="LB")
+				{
+				if (LastQ!=item.qno){
+					HTMLToOutput+="<SELECT data-mini='true' id='H"+item.qno+"' name='H"+item.qno+"'>"
+					HTMLToOutput+="<option value='-1' selected>[Please Select]</option>"
+					
+					LastQ=item.qno
+					LastQType=item.qtype
+					}
+				HTMLToOutput+="<option value='"+item.qkey+"'>"+item.qvalue+"</option>"
+				}
+			if(item.qtype=="LDB")
+				{
+				if (LastQ!=item.qno){
+					HTMLToOutput+="<SELECT  data-mini='true' id='H"+item.qno+"' name='H"+item.qno+"'>"
+					HTMLToOutput+="<option value='-1' selected>[Please Select]</option>"
+					LastQ=item.qno
+					LastQType="LB"
+					}
+
+				}
+			if(item.qtype=="NUM")
+				{
+				if (LastQ!=item.qno){
+					if (LastQType=="LB"){
+						HTMLToOutput+="</select>"
+						}
+					LastQ=item.qno
+					LastQType=item.qtype
+					}
+				HTMLToOutput+='<input data-mini="true" id="H'+item.qno+'" name="H'+item.qno+'" type="number" data-clear-btn="true"  value="">'
+	
+				}
+			if(item.qtype=="TXT")
+				{
+				if (LastQ!=item.qno){
+					if (LastQType=="LB"){
+						HTMLToOutput+="</select>"
+						}
+					LastQ=item.qno
+					LastQType=item.qtype
+					}
+				HTMLToOutput+='<input data-mini="true" id="H'+item.qno+'" name="'+item.qno+'H" type="text" data-clear-btn="true"  value="">'
+				}
+			if(item.qtype=="DT")
+				{
+				if (LastQ!=item.qno){
+					if (LastQType=="LB"){
+						HTMLToOutput+="</select>"
+						}
+					LastQ=item.qno
+					LastQType=item.qtype
+					}
+				
+				HTMLToOutput+='<input data-mini="true"  type="date"  id="H'+item.qno+'" name="H'+item.qno+'" style=" text-align: center; font-weight:bold; font-size:12px" data-inline="false" >'
+							  
+				}			
+			
+			}
+			
+			//HTMLToOutput+"</TD></TR>"
+
+			$( "#Header").html(HTMLToOutput);
+
+			$( "#Header").trigger('create');
+			$('#H00000').change(function(e) {
+				var s = $(e.target);
+	
+				UpdateSurveyHDR();
+
+				});
+			$('#H00001').change(function(e) {
+				var s = $(e.target);
+	
+				UpdateSurveyHDR();
+
+				});
+			$('#H00002').change(function(e) {
+				var s = $(e.target);
+	
+				UpdateSurveyHDR();
+
+				});
+			$('#H00003').change(function(e) {
+				var s = $(e.target);
+	
+				UpdateSurveyHDR();
+
+				});
+			$('#H00004').change(function(e) {
+				var s = $(e.target);
+	
+				UpdateSurveyHDR();
+
+				});
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function BuildMakes(){
+
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+
+
+SQLStatement="SELECT *  "
+SQLStatement+="from GASSurveyMake "
+HTMLToOutput="<option value='-1' selected >[Please Select]</option>"
+
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+
+				HTMLToOutput+= "<option value='"+item.make+"'>"+item.description+"</option>"
+			}
+
+			$( "#00003").html(HTMLToOutput);
+
+			$( "#00003").trigger('create');
+			
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function BuildModels(make){
+
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+HTMLToOutput="<option value='-1' selected >[Please Select]</option>"
+SQLStatement="SELECT *  "
+SQLStatement+="from gassurveymodel where make ='"+make+"'"
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+
+				HTMLToOutput+= "<option value='"+item.model+"'>"+item.description+"</option>"
+			}
+			$("#00004 option[text='[Please Select]']").attr("selected","selected") ;
+			
+			$( "#00004").html(HTMLToOutput);
+
+			$( "#00004").trigger('change');
+			
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+
+function BuildTaskGroupCodes(Group){
+
+
+var HTMLToOutput='';
+
+var SQLStatement="";
+var res = Group.split("|")
+var FirstVal="";
+SQLStatement="SELECT *  "
+SQLStatement+="from RefCodes "
+SQLStatement+="where scenario = 'MAMDEMO' and profile = '"+res[0]+"' and code_cat_group = '"+res[1]+"'"
+var HTMLToOutput="";
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+				if (n==0){
+				FirstVal = item['code'];
+				}
+				HTMLToOutput+= "<option value='"+item.code+"'>"+item.code_text+"</option>"
+			}
+			//alert(HTMLToOutput);
+			$( "#TaskGroupCodes").html(HTMLToOutput);
+
+			 $("#TaskGroupCodes option[value='"+FirstVal+"']").attr('selected', 'selected');
+			$( "#TaskGroupCodes").trigger('create');
+			
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+
+function BuildPrintScreen(){
+
+if(
+($("#H00000").find(":selected").val()==-1) ||
+($("#H00001").find(":selected").val()==-1) ||
+($("#H00002").find(":selected").val()==-1) ||
+($("#H00003").find(":selected").val()==-1) ||
+($("#H00004").val()=='')){
+$("#printScreen").html($("#popupPrintError").html())
+//$("#popupPrintError").trigger('change')
+}else{
+
+GASCompany='GAS Company'
+GASAddress='Build 1 , The Street, The Rd, The Town, WE12 3LP'
+GASTelno = '01234 567890'
+JobNo='1111111'
+JobDate=$("#H00004").val()
+JobDetail=$("#text1").val()
+
+JobRemedial=$("#text2").val()
+JobWork=$("#text3").val()
+CustomerName='Paul Ostridge'
+CustomerAddress='2 Acacia Ave, Burnt Rd'
+CustomerPostcode='DS12 3EE'
+CustomerTelno='1234567890'
+CompanyName='GAS Inspection Company'
+CompanyAddress='The Depot, Industrial Park, The Rd, The Town'
+CompanyPostcode='A21 5TY'
+CompanyTelno='01234 567890'
+EngineerName='Charley Farley'
+
+$('#GASCompany').html(GASCompany)
+
+$('#GASAddress').html(GASAddress)
+
+$('#GASTelno').html(GASTelno)
+$('#JobNo').html(JobNo)
+$('#JobDate').html(JobDate)
+$('#CustomerName').html(CustomerName)
+$('#EngineerName').html(EngineerName)
+$('#CustomerAddress').html(CustomerAddress)
+
+$('#CustomerPostcode').html(CustomerPostcode)
+$('#CustomerTelno').html(CustomerTelno)
+$('#CompanyName').html(CompanyName)
+$('#CompanyAddress').html(CompanyAddress)
+$('#CompanyPostcode').html(CompanyPostcode)
+$('#CompanyTelno').html(CompanyTelno)
+$('#EngineerName').html(EngineerName)
+$('#CustomerAddress').html(CustomerAddress)
+
+
+<!--Inspected items--> 
+
+
+HTMLOutput ='<tr><td width="100%">'
+HTMLOutput +='<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">'
+HTMLOutput +='<tr><td width="2%" align="center">&nbsp;</td><td width="49%" colspan="7" align="center"><p align="center"><b><font face="Arial" size="2">Appliance Details</font></b></td>'
+HTMLOutput +='<td width="49%" colspan="7" align="center"><b><font face="Arial" size="2">Inspection Details</font></b></td></tr>'
+HTMLOutput +='    <tr><td width="2%" align="center">&nbsp;</td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Landlords appliance</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Inspected</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Type</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Location</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Make</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Model</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Flue Type</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Operating pressure (mbar)</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Combustion Analyser Reading</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Safety device(s) correct operation</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">ventilation provision satisfactory</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Visual condition of Flue and Termination Satisfactory</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Flue Flow Test</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Flue Spillage Test</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">Appliance Safe to Use</font></td>'
+HTMLOutput +='      </tr>'
+
+
+SQLStatement="SELECT * From GASSurvey where orderno='"+OrderNo+"' and opno = '"+OpNo+"'" 
+var rowno=-1
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+	
+
+				for (var n = 0; n < rowsArray.length; n++) {
+					HTMLOutput +='    <tr><td width="2%" align="center">&nbsp;</td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv1+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv2+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv6+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv5+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv3+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv4+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv7+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv8+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv9+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv10+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv11+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv12+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv13+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv14+'</font></td>'
+HTMLOutput +='        <td width="7%"><font face="Arial" style="font-size:  7pt">'+rowsArray[n].dv15+'</font></td>'
+HTMLOutput +='      </tr>'
+
+
+
+				}
+HTMLOutput +='  </table> '
+HTMLOutput +=' <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="974" id="AutoNumber5">'
+HTMLOutput +='   <tr>'
+HTMLOutput +='     <td width="21%"><b><font face="Arial" style="font-size:  8pt">Details of any faults</font></b></td>'
+HTMLOutput +='     <td width="33%"><b><font face="Arial" style="font-size:  8pt">Remedial Action Taken</font></b></td>'
+HTMLOutput +='     <td width="46%"><b><font face="Arial" style="font-size:  8pt">Work carried out</font></b></td>'
+HTMLOutput +='   </tr>'
+
+HTMLOutput +='   <tr>'
+ HTMLOutput +='    <td width="21%">'+JobDetail+'</td>'
+HTMLOutput +='     <td width="33%">'+JobRemedial+'</td>'
+HTMLOutput +='     <td width="46%">'+JobWork+'</td>'
+HTMLOutput +='   </tr></table></td></TR></table>'
+$( "#PrintDetails").html(HTMLOutput);
+$( "#PrintLayout").change()
+
+
+
+
+
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+        
+ 
+
+
+function SetTableSort()
+{  
+	$('table').tablesorter({
+
+		// *** APPEARANCE ***
+		// Add a theme - try 'blackice', 'blue', 'dark', 'default'
+		//  'dropbox', 'green', 'grey' or 'ice'
+		// to use 'bootstrap' or 'jui', you'll need to add the "uitheme"
+		// widget and also set it to the same name
+		// this option only adds a table class name "tablesorter-{theme}"
+		theme: 'jui',
+
+		// fix the column widths
+		widthFixed: false,
+
+		// Show an indeterminate timer icon in the header when the table
+		// is sorted or filtered
+		showProcessing: false,
+
+		// header layout template (HTML ok); {content} = innerHTML,
+		// {icon} = <i/> (class from cssIcon)
+		headerTemplate: '{content}{icon}',
+
+		// return the modified template string
+		onRenderTemplate: null, // function(index, template){ return template; },
+
+		// called after each header cell is rendered, use index to target the column
+		// customize header HTML
+		onRenderHeader: function (index) {
+			// the span wrapper is added by default
+			$(this).find('div.tablesorter-header-inner').addClass('roundedCorners');
+		},
+
+		// *** FUNCTIONALITY ***
+		// prevent text selection in header
+		cancelSelection: true,
+
+		// other options: "ddmmyyyy" & "yyyymmdd"
+		dateFormat: "mmddyyyy",
+
+		// The key used to select more than one column for multi-column
+		// sorting.
+		sortMultiSortKey: "shiftKey",
+
+		// key used to remove sorting on a column
+		sortResetKey: 'ctrlKey',
+
+		// false for German "1.234.567,89" or French "1 234 567,89"
+		usNumberFormat: true,
+
+		// If true, parsing of all table cell data will be delayed
+		// until the user initializes a sort
+		delayInit: false,
+
+		// if true, server-side sorting should be performed because
+		// client-side sorting will be disabled, but the ui and events
+		// will still be used.
+		serverSideSorting: false,
+
+		// *** SORT OPTIONS ***
+		// These are detected by default,
+		// but you can change or disable them
+		// these can also be set using data-attributes or class names
+		headers: {
+			// set "sorter : false" (no quotes) to disable the column
+			0: {
+				sorter: "false"
+			},
+			1: {
+				sorter: "text"
+			},
+			2: {
+				sorter: "text"
+			}
+		},
+
+		// ignore case while sorting
+		ignoreCase: true,
+
+		// forces the user to have this/these column(s) sorted first
+		sortForce: null,
+		// initial sort order of the columns, example sortList: [[0,0],[1,0]],
+		// [[columnIndex, sortDirection], ... ]
+		sortList: [
+			[0, 0]
+
+		],
+		// default sort that is added to the end of the users sort
+		// selection.
+		sortAppend: null,
+
+		// starting sort direction "asc" or "desc"
+		sortInitialOrder: "asc",
+
+		// Replace equivalent character (accented characters) to allow
+		// for alphanumeric sorting
+		sortLocaleCompare: false,
+
+		// third click on the header will reset column to default - unsorted
+		sortReset: false,
+
+		// restart sort to "sortInitialOrder" when clicking on previously
+		// unsorted columns
+		sortRestart: false,
+
+		// sort empty cell to bottom, top, none, zero
+		emptyTo: "bottom",
+
+		// sort strings in numerical column as max, min, top, bottom, zero
+		stringTo: "max",
+
+		// extract text from the table - this is how is
+		// it done by default
+		textExtraction: {
+			0: function (node) {
+				return $(node).text();
+			},
+			1: function (node) {
+				return $(node).text();
+			}
+		},
+
+		// use custom text sorter
+		// function(a,b){ return a.sort(b); } // basic sort
+		textSorter: null,
+
+		// *** WIDGETS ***
+
+		// apply widgets on tablesorter initialization
+		initWidgets: true,
+
+		// include zebra and any other widgets, options:
+		// 'columns', 'filter', 'stickyHeaders' & 'resizable'
+		// 'uitheme' is another widget, but requires loading
+		// a different skin and a jQuery UI theme.
+		widgets: ['uitheme', 'zebra',  'columns'],
+
+		widgetOptions: {
+		  // extra class name added to the sticky header row
+		  stickyHeaders : '',
+		  // number or jquery selector targeting the position:fixed element
+		  stickyHeaders_offset : 50,
+		  // added to table ID, if it exists
+		  stickyHeaders_cloneId : '-sticky',
+		  // trigger "resize" event on headers
+		  stickyHeaders_addResizeEvent : true,
+		  // if false and a caption exist, it won't be included in the sticky header
+		  stickyHeaders_includeCaption : true,
+		  // The zIndex of the stickyHeaders, allows the user to adjust this to their needs
+		  stickyHeaders_zIndex : 2,
+		  // jQuery selector or object to attach sticky header to
+		  stickyHeaders_attachTo : null,
+		  // scroll table top into view after filtering
+		  stickyHeaders_filteredToTop: true,
+			// zebra widget: adding zebra striping, using content and
+			// default styles - the ui css removes the background
+			// from default even and odd class names included for this
+			// demo to allow switching themes
+			// [ "even", "odd" ]
+			zebra: [
+				"ui-widget-content even",
+				"ui-state-default odd"],
+
+			// uitheme widget: * Updated! in tablesorter v2.4 **
+			// Instead of the array of icon class names, this option now
+			// contains the name of the theme. Currently jQuery UI ("jui")
+			// and Bootstrap ("bootstrap") themes are supported. To modify
+			// the class names used, extend from the themes variable
+			// look for the "$.extend($.tablesorter.themes.jui" code below
+			uitheme: 'jui',
+
+			// columns widget: change the default column class names
+			// primary is the 1st column sorted, secondary is the 2nd, etc
+			columns: [
+				"primary",
+				"secondary",
+				"tertiary"],
+
+			// columns widget: If true, the class names from the columns
+			// option will also be added to the table tfoot.
+			columns_tfoot: true,
+
+			// columns widget: If true, the class names from the columns
+			// option will also be added to the table thead.
+			columns_thead: true,
+
+			// filter widget: If there are child rows in the table (rows with
+			// class name from "cssChildRow" option) and this option is true
+			// and a match is found anywhere in the child row, then it will make
+			// that row visible; default is false
+			filter_childRows: false,
+
+			// filter widget: If true, a filter will be added to the top of
+			// each table column.
+			filter_columnFilters: true,
+
+			// filter widget: css class applied to the table row containing the
+			// filters & the inputs within that row
+			filter_cssFilter: "tablesorter-filter",
+
+			// filter widget: Customize the filter widget by adding a select
+			// dropdown with content, custom options or custom filter functions
+			// see http://goo.gl/HQQLW for more details
+			filter_functions: null,
+
+			// filter widget: Set this option to true to hide the filter row
+			// initially. The rows is revealed by hovering over the filter
+			// row or giving any filter input/select focus.
+			filter_hideFilters: false,
+
+			// filter widget: Set this option to false to keep the searches
+			// case sensitive
+			filter_ignoreCase: true,
+
+			// filter widget: jQuery selector string of an element used to
+			// reset the filters.
+			filter_reset: null,
+
+			// Delay in milliseconds before the filter widget starts searching;
+			// This option prevents searching for every character while typing
+			// and should make searching large tables faster.
+			filter_searchDelay: 300,
+
+			// Set this option to true if filtering is performed on the server-side.
+			filter_serversideFiltering: false,
+
+			// filter widget: Set this option to true to use the filter to find
+			// text from the start of the column. So typing in "a" will find
+			// "albert" but not "frank", both have a's; default is false
+			filter_startsWith: false,
+
+			// filter widget: If true, ALL filter searches will only use parsed
+			// data. To only use parsed data in specific columns, set this option
+			// to false and add class name "filter-parsed" to the header
+			filter_useParsedData: false,
+
+			// Resizable widget: If this option is set to false, resized column
+			// widths will not be saved. Previous saved values will be restored
+			// on page reload
+			resizable: true,
+
+			// saveSort widget: If this option is set to false, new sorts will
+			// not be saved. Any previous saved sort will be restored on page
+			// reload.
+			saveSort: true,
+
+			// stickyHeaders widget: css class name applied to the sticky header
+			stickyHeaders: "tablesorter-stickyHeader"
+
+		},
+
+		// *** CALLBACKS ***
+		// function called after tablesorter has completed initialization
+		initialized: function (table) {},
+
+		// *** CSS CLASS NAMES ***
+		tableClass: 'tablesorter',
+		cssAsc: "tablesorter-headerSortUp",
+		cssDesc: "tablesorter-headerSortDown",
+		cssHeader: "tablesorter-header",
+		cssHeaderRow: "tablesorter-headerRow",
+		cssIcon: "tablesorter-icon",
+		cssChildRow: "tablesorter-childRow",
+		cssInfoBlock: "tablesorter-infoOnly",
+		cssProcessing: "tablesorter-processing",
+
+		// *** SELECTORS ***
+		// jQuery selectors used to find the header cells.
+		selectorHeaders: '> thead th, > thead td',
+
+		// jQuery selector of content within selectorHeaders
+		// that is clickable to trigger a sort.
+		selectorSort: "th, td",
+
+		// rows with this class name will be removed automatically
+		// before updating the table cache - used by "update",
+		// "addRows" and "appendCache"
+		selectorRemove: "tr.remove-me",
+
+		// *** DEBUGING ***
+		// send messages to console
+		debug: false
+
+	});
+}
+// Extend the themes to change any of the default class names ** NEW ** 
+$.extend($.tablesorter.themes.jui, {
+    // change default jQuery uitheme icons - find the full list of icons 
+    // here: http://jqueryui.com/themeroller/ (hover over them for their name) 
+    table: 'ui-widget ui-widget-content ui-corner-all', // table classes 
+    header: 'ui-widget-header ui-corner-all ui-state-default', // header classes 
+	footerRow: '',
+	footerCells: '',
+    icons: 'ui-icon',    // icon class added to the <i> in the header 
+    sortNone: 'ui-icon-carat-2-n-s',
+    sortAsc: 'ui-icon-carat-1-n',
+    sortDesc: 'ui-icon-carat-1-s',
+    active: 'ui-state-active', // applied when column is sorted 
+    hover: 'ui-state-hover', // hover class 
+    filterRow: '',
+    even: 'ui-widget-content', // even row zebra striping 
+    odd: 'ui-state-default' // odd row zebra striping 
+});
+
+$.extend($.tablesorter.themes.bootstrap, {
+    // these classes are added to the table. To see other table classes available,
+    // look here: http://twitter.github.com/bootstrap/base-css.html#tables
+    table: 'table table-bordered table-striped',
+    header: 'bootstrap-header', // give the header a gradient background
+	footerRow  : '',
+	footerCells: '',
+    icons: '', // add "icon-white" to make them white; class added to the <i>
+    sortNone: 'bootstrap-icon-unsorted',
+    sortAsc: 'icon-chevron-up',
+    sortDesc: 'icon-chevron-down',
+    active: '', // applied when column is sorted
+    hover: '', // use custom css here - bootstrap class may not override it
+    filterRow: '', // filter row class
+    even: '', // odd row zebra striping
+    odd: '' // even row zebra striping
+});
+function setSelectByValue(eID,val)
+{ //Loop through sequentially//
+  var ele=document.getElementById(eID);
+  for(var ii=0; ii<ele.length; ii++)
+    if(ele.options[ii].value==val) { //Found!
+      ele.options[ii].selected=true;
+      return true;
+    }
+  return false;
+}	
+$(document).ready(function() {
+
+   BuildGASInspectionList();
+   BuildItem();
+   BuildHeader();
+   BuildMakes();
+     LoadSignature();
+
+	  CreateSurveyHDR()
+
+
+
+
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  closeOnBgClick: false,
+  showCloseBtn:false,
+  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  callbacks: {
+    open: function() {
+
+
+//$("[data-role='footer']").hide();
+		},
+    close: function() {
+		if (PopupCloseType!="CANCEL"){
+	
+			location.reload(false);
+			}
+
+
+		}
+	}
+})
+})
+var w = null; // initialize variable
+function startBGSync()
+{
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+   // First check whether Web Workers are supported
+   if (typeof(Worker)!=="undefined"){
+      // Check whether Web Worker has been created. If not, create a new Web Worker based on the Javascript file simple-timer.js
+      if (w==null){
+         w = new Worker("bgsync.js");
+      }
+      // Update timer div with output from Web Worker
+      w.onmessage = function (event) {      
+		 syncReference()
+		 syncTransactional()
+		 syncUpload()
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+
+		 };
+   } else {
+      // Web workers are not supported by your browser
+      document.getElementById("lastsync").innerHTML = "Sorry, your browser does not support Web Workers ...";
+   }
+}
+startBGSync()
+</script>
+
+
+</body>
+
+
+</html>
+

@@ -1,0 +1,474 @@
+{
+
+    "ACTIVITYRECORD": [
+      {
+        "CODE": "AS",
+        "SKILL": "AS",
+        "SUBSKILL": "0",
+        "DESC": "ASBESTOS"
+      },
+      {
+        "CODE": "CS001A",
+        "SKILL": "AS",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS002A",
+        "SKILL": "AS",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS003A",
+        "SKILL": "AS",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS004A",
+        "SKILL": "AS",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "PL",
+        "SKILL": "PL",
+        "SUBSKILL": "0",
+        "DESC": "PLASTERER"
+      },
+      {
+        "CODE": "CS044A",
+        "SKILL": "PL",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS045A",
+        "SKILL": "PL",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS046A",
+        "SKILL": "PL",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS047A",
+        "SKILL": "PL",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "RO",
+        "SKILL": "RO",
+        "SUBSKILL": "0",
+        "DESC": "Roofer"
+      },
+      {
+        "CODE": "CS058A",
+        "SKILL": "RO",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS059A",
+        "SKILL": "RO",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS060A",
+        "SKILL": "RO",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS061A",
+        "SKILL": "RO",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "SF",
+        "SKILL": "SF",
+        "SUBSKILL": "0",
+        "DESC": "Stove Fitter"
+      },
+      {
+        "CODE": "CS063A",
+        "SKILL": "SF",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS064A",
+        "SKILL": "SF",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS065A",
+        "SKILL": "SF",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS066A",
+        "SKILL": "SF",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "JS",
+        "SKILL": "JS",
+        "SUBSKILL": "0",
+        "DESC": "Joiners Shop"
+      },
+      {
+        "CODE": "CS038A",
+        "SKILL": "JS",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS039A",
+        "SKILL": "JS",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS040A",
+        "SKILL": "JS",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS041A",
+        "SKILL": "JS",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "BL",
+        "SKILL": "BL",
+        "SUBSKILL": "0",
+        "DESC": "Bricklayer"
+      },
+      {
+        "CODE": "CS009A",
+        "SKILL": "BL",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS010A",
+        "SKILL": "BL",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS011A",
+        "SKILL": "BL",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS012A",
+        "SKILL": "BL",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "CC",
+        "SKILL": "CC",
+        "SUBSKILL": "0",
+        "DESC": "Clean and Clear"
+      },
+      {
+        "CODE": "CS013A",
+        "SKILL": "CC",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "DL",
+        "SKILL": "DL",
+        "SUBSKILL": "0",
+        "DESC": "Driver/Labourer"
+      },
+      {
+        "CODE": "CS013A",
+        "SKILL": "DL",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "DR",
+        "SKILL": "DR",
+        "SUBSKILL": "0",
+        "DESC": "Driver Duties"
+      },
+      {
+        "CODE": "CS013A",
+        "SKILL": "DR",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "LB",
+        "SKILL": "LB",
+        "SUBSKILL": "0",
+        "DESC": "Labourer"
+      },
+      {
+        "CODE": "CS042A",
+        "SKILL": "LB",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "FC",
+        "SKILL": "FC",
+        "SUBSKILL": "0",
+        "DESC": "uPVC Factory"
+      },
+      {
+        "CODE": "CS053A",
+        "SKILL": "FC",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "ST",
+        "SKILL": "ST",
+        "SUBSKILL": "0",
+        "DESC": "Steel Fixers"
+      },
+      {
+        "CODE": "CS062A",
+        "SKILL": "ST",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "PT",
+        "SKILL": "PT",
+        "SUBSKILL": "0",
+        "DESC": "Painters"
+      },
+      {
+        "CODE": "CS043A",
+        "SKILL": "PT",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "EL",
+        "SKILL": "EL",
+        "SUBSKILL": "0",
+        "DESC": "Electrician"
+      },
+      {
+        "CODE": "CS014A",
+        "SKILL": "EL",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS015A",
+        "SKILL": "EL",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS016A",
+        "SKILL": "EL",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS017A",
+        "SKILL": "EL",
+        "SUBSKILL": "4YA",
+        "DESC": "4 Year"
+      },
+      {
+        "CODE": "CS018A",
+        "SKILL": "EL",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "GL",
+        "SKILL": "GL",
+        "SUBSKILL": "0",
+        "DESC": "Glazier"
+      },
+      {
+        "CODE": "CS024A",
+        "SKILL": "GL",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS025A",
+        "SKILL": "GL",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS026A",
+        "SKILL": "GL",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS027A",
+        "SKILL": "GL",
+        "SUBSKILL": "4YA",
+        "DESC": "4 Year"
+      },
+      {
+        "CODE": "CS028A",
+        "SKILL": "GL",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "HE",
+        "SKILL": "HE",
+        "SUBSKILL": "0",
+        "DESC": "Heating Engineer"
+      },
+      {
+        "CODE": "CS029A",
+        "SKILL": "HE",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS030A",
+        "SKILL": "HE",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS031A",
+        "SKILL": "HE",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS032A",
+        "SKILL": "HE",
+        "SUBSKILL": "4YA",
+        "DESC": "4 Year"
+      },
+      {
+        "CODE": "CS033A",
+        "SKILL": "HE",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "JO",
+        "SKILL": "JO",
+        "SUBSKILL": "0",
+        "DESC": "Joiner"
+      },
+      {
+        "CODE": "CS034A",
+        "SKILL": "JO",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS035A",
+        "SKILL": "JO",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS036A",
+        "SKILL": "JO",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS037A",
+        "SKILL": "JO",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "PB",
+        "SKILL": "PB",
+        "SUBSKILL": "0",
+        "DESC": "Plumber"
+      },
+      {
+        "CODE": "CS048A",
+        "SKILL": "PB",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS049A",
+        "SKILL": "PB",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS050A",
+        "SKILL": "PB",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS051A",
+        "SKILL": "PB",
+        "SUBSKILL": "4YA",
+        "DESC": "4 Year"
+      },
+      {
+        "CODE": "CS052A",
+        "SKILL": "PB",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      },
+      {
+        "CODE": "PV",
+        "SKILL": "PV",
+        "SUBSKILL": "0",
+        "DESC": "uPVC Fitter"
+      },
+      {
+        "CODE": "CS054A",
+        "SKILL": "PV",
+        "SUBSKILL": "1YA",
+        "DESC": "1 Year"
+      },
+      {
+        "CODE": "CS055A",
+        "SKILL": "PV",
+        "SUBSKILL": "2YA",
+        "DESC": "2 Year"
+      },
+      {
+        "CODE": "CS056A",
+        "SKILL": "PV",
+        "SUBSKILL": "3YA",
+        "DESC": "3 Year"
+      },
+      {
+        "CODE": "CS057A",
+        "SKILL": "PV",
+        "SUBSKILL": "FULL",
+        "DESC": "Qualified"
+      }
+    ]
+
+}

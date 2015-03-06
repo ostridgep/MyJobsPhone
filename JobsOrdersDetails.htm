@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Jobs - Order Details
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+
+  <link rel="stylesheet" href="css/jqm-inlinetabs.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jqm-inlinetabs.js"></script>
+  <link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+	
+  <style type='text/css'>
+  
+  .boxeddiv {border: 1px solid grey;
+      margin: 1em 1em  1em 1em;
+	
+	border-radius: 10px;}
+
+  .boxeddiv1 {border: 1px solid grey;
+      
+border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;}
+  
+  .stripe{
+	background-color: lightgrey; 
+	color: black;
+}
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+   .wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 250px;
+  overflow-y: auto;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+  .block {
+    border: 1px solid grey;
+    width: 180px;
+    height:150px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+
+border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }  
+                .box {
+    border: 1px solid #a1a1a1;
+    padding: 10px 10px; 
+    background: #dddddd;
+    
+    border-radius: 5px;
+}  
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 80%;
+  margin: 20px auto;
+}
+.ui-btn-width {
+    width: 500px !important;
+}
+
+  </style>
+
+
+</head>
+<body>
+
+
+<div align="center" data-role="page" id="JobsOrderDetails"> 
+  <div data-role="panel" id="options" data-position="right" data-display="overlay"> 
+    <h3>Job Status</h3>
+	<TABLE>
+	<TR height ="40px" hidden id="ButtonAcceptedRow"><TD align = "center"><a data-role="button" data-mini="true" id="ButtonAccepted" hidden href = "javascript:AcceptedPressed()"    style="color:green; ui-btn-width:400px" >
+	Accept</a></TD></TR>
+	<TR  height ="40px" hidden id="ButtonCancelRow"><TD align = "center"><a  data-role="button" data-mini="true" id="ButtonCancel"  hidden href = "javascript:RejectPressed()"      style="color:Red;" >
+	Reject   </a></TD></TR>
+	<TR  height ="40px" hidden id="ButtonOnRouteRow"  ><TD align = "center"><a data-role="button" data-mini="true" id="ButtonOnRoute"  hidden href = "javascript:OnRoutePressed()">
+	On-Route </a></TD></TR>
+	<TR height ="40px" hidden  id="ButtonOnSiteRow"><TD align = "center"><a data-role="button" data-mini="true" id="ButtonOnSite"    hidden href = "javascript:OnSitePressed()">
+	On-Site  </a></TD></TR>
+	<TR height ="40px" hidden id="ButtonSuspendedRow"><TD align = "center"><a data-role="button" data-mini="true" id="ButtonSuspended" hidden href = "javascript:SuspendedPressed()">
+	Suspended</a></TD></TR>
+	<TR height ="40px" hidden id="ButtonFinishedRow"><TD align = "center"><a data-role="button" data-mini="true" id="ButtonFinished"   hidden href = "javascript:FinishedPressed()">
+	Finished </a></TD></TR>
+	</table>
+  </div> 
+	<div   data-role="header" data-position="fixed">
+		<table width = "100%">
+			<TR height="40px">
+				<TD Valign="middle" align="left"><a style="font-size: 100%" href="javascript:gotoOrders()"  >
+				<i class="fa fa-bars fa-2x pull-left fa-border"></i></a></td>
+				<TD Valign="Middle" align="center"></TD>
+				<TD valign="Top" align= "center"><h1 style="font-size: 100%"><B>MyJobs - Details</B></H1>
+				<a href="#lastSyncDets" data-rel="popup" style="color: green; text-decoration:none;"> <Small><P id="lastsync"></p></A></small></TD>
+				<TD Valign="Middle" align="center">
+				<a id="CreateTConf"    hidden style="font-size: 100%" href='#popupCreateTConf'  class="open-popup-link"  >
+				<i class="fa fa-clock-o fa-2x pull-right fa-border"></i></a>			
+				</TD>
+				<TD Valign="middle" align="right">
+				<a id="ButtonGas"    hidden style="font-size: 100%" href="javascript:gotoGAS()"   >
+				<i class="fa pull-right fa-border"><img  src="images/gasTransparent.gif" style="max-width:100%;" ></i></a>
+
+				</TD>
+			</TR>
+		</table>		
+
+	
+	</div> 	
+
+	<div  id="OrderDetails" data-role="content" >	
+<div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true">
+<div data-role="collapsible" data-collapsed="false">
+	<H3>
+		<table style="font-size:small;" width="100%"  >
+			<TR style="font-size:100%;" height="50px">
+
+				<TD width = "80%" Valign="middle" align=""><h4 align="left">Order Details: <B id="OrderNo"></B></h4></td>
+				<TD width = "20%" Valign="middle" align="right" >
+					
+				</td>					
+			</TR>
+		</table>
+	<H3>
+	<table width="100%" style="font-size:small;"  >
+		<TR><TD align = "left" width ="30%">Description:&nbsp;<td colspan="2" width = "70%"><b id="OrderDesc"></b></td></TR>
+		<TR><TD align = "left" >Detail:&nbsp;</td><td colspan="2" ><b id="OperationDesc"></b></td></TR>
+		<TR><TD align = "left" >Location:&nbsp;</td><td width = "60%"><b id="OrderAddress"></b></td><td width = "10%">
+		<a href="javascript:showOnMap()" ><i class="fa  fa-lg fa-globe pull-right fa-border"></i></a></TD></TR>
+		<TR><TD align = "left" >Job Type:&nbsp;</td><td colspan="2" ><b id="OrderType"></b></td></TR>
+		<TR><TD align = "left" >Notification:&nbsp;</td><td width = "60%" ><b id="NotifNo"></b></td><TD>
+		<a href="javascript:gotoNotification()" ><i class="fa fa-lg fa-binoculars  pull-right fa-border"></i></a></td></TR>
+		<TR><TD align = "left" >Job Priority:&nbsp;</td><td colspan="2" ><b id="OperationPriority"></b></td></TR>
+	</table>
+</div>
+<div data-role="collapsible">
+	<h3>
+	<table style="font-size:small;" width="100%" >
+			<TR style="font-size:100%;" height="50px">
+				<TD width = "80%" align="left"><h4 align="left">Operation Details: <B id="OpNo"></B></h4></td>
+				<TD width = "20%" align="right" >
+					
+				</td></TR>
+		</table>
+	</h3>
+	<table style="font-size:small;" width = "100%" >
+		<TR ><TD align = "left" width ="30%">Status:<td  width = "60%"><b id="CurrentStatus"></B></td><td>
+		<a href="#options" ><i class="fa  pull-right fa-border"><img  src="images/status.gif" style="width:25px;height:25px" ></i></a>	</TD></TR>
+		<TR><TD width ="30%">Start Date:<td colspan="2" width = "80%"><b id="OperationStartdate"></B></td></TR>
+		<TR><TD >End Date:<td colspan="2" ><b id="OperationEnddate"></b></td></TR>
+		<TR><TD >Appt Start:<td colspan="2" ><B id="OperationApptStartdate"></B></td></TR>
+		<TR><TD >Appt End:<td colspan="2"  ><b id="OperationApptEnddate"></b></td></TR>
+		<TR><TD>Type:<td colspan="2" ><b id="OperationType"></b></td></TR>
+		<TR><TD >Duration:<td colspan="2"  ><b id="OperationDuration"></b></td></TR>	
+	</table>
+</div>
+<div data-role="collapsible">
+	<h3>
+	Other
+	</h3>
+			<div  align="left" data-role="inlinetabs"  data-theme="a" data-scroll="true" >
+		<ul >
+			<li data-tab="1" onclick="tabsClicked('Objects')">&nbsp;<img src="images/Orders/objects.gif"  height="20" width="20"></li>
+			<li data-tab="2" onclick="tabsClicked('Materials')">&nbsp;<img src="images/Orders/material.gif"  height="20" width="20"></li>
+			<li data-tab="3" onclick="tabsClicked('Partners')">&nbsp;<img src="images/Orders/partners.gif"  height="20" width="20"></li>
+			<li data-tab="4" onclick="tabsClicked('TimeConfs')">&nbsp;<img src="images/Orders/timeconf.gif"  height="20" width="20"></li>
+		</ul>				
+						
+				
+				<div data-tab="1"    >
+					
+					<table font-size="small" width="100%" id="ObjectsList">
+						
+					</table>
+				</div>					
+				<div data-tab="2"   >
+					
+					<table font-size="small" width="100%" id="MaterialsList">
+
+					</table>
+				  </div>
+					<div data-tab="3"   >
+					
+					<table font-size="small" width="100%" id="PartnersList">
+
+					</table>
+				  </div>
+					<div data-tab="4"   >
+
+					<table font-size="small" width="100%" id="TimeConfsList">
+
+					</table>
+				  </div>				  
+									
+				</div>
+</div>
+</div>
+		
+
+		</div>				
+				
+
+<div style='display:none'>	
+<div data-role="popup" id="lastSyncDets">
+  <p id='referenceSyncDetails' ></p>
+  <p id='transactionalSyncDetails' ></p>
+  <p id='uploadSyncDetails' ></p>
+</div>			
+
+
+<div data-role="popup" id="popupMaterial"  data-dismissible="false" style="width:300px" >
+    <div data-role="header" data-theme="a"><h1>Material Consumed</h1></div>
+    <div role="main"  class="ui-content">
+        <Table font-size = "small" width="100%">
+		    <TR><TD colspan="2"><label for="Material">Material:</label></TD></TR>
+            <TR><TD colspan="2"><input type="text" name="Material" id="Material" readonly></TD></TR>
+            <TR><TD colspan="2"><label for="Description">Description:</label></TD></TR>
+            <TR><TD colspan="2"><input type="text" name="Description" id="Description" readonly></TD></TR>
+            <TR><TD colspan="2"><label for="Quantity">Available:</label></TD></TR>
+            <TR><TD colspan="2"><input type="text" name="Quantity" id="Quantity" readonly></TD></TR>
+            <TR><TD colspan="2"><label for="Used">Used:</label></TD></TR>
+            <TR><TD colspan="2"><input type="text" name="Used" id="Used"></TD></TR>             
+            <TR><TD align="left"><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back">Cancel</a></TD>
+            <TD align="right"> <a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back" >Save</a></TD></TR> 
+        </Table>
+    </div><!--End Content-->
+                 
+
+</div>		
+			
+		
+			<div id="popupCreateTConf"  class="white-popup mfp-hide"  style="width:80%" >
+				
+				<div data-role="header" data-theme="a">
+					<TABLE width="100%">
+						<TR><TD align="left"><a href="javascript:PopupClose('CANCEL')" style="color: black;background: lightgrey" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" ><i class="fa fa-times fa-2x"></i></a></TD>
+							<TD align="center">Create Time Confirmation</TD>
+							<TD align="right"><a href="javascript:PopupClose('SAVE')" style="color: black;background: lightgrey"  class="ui-btn ui-corner-all ui-shadow ui-btn-inline" ><i class="fa fa-floppy-o fa-2x"></i></a></TD></TR> 
+					</Table>  
+				</div>
+				<div role="main"  class="ui-content" >
+					<Table  width="95%">
+						<TR><TD width="25%" ><label for="PersonelID">ID:</label></TD>
+							<TD >				  
+								<select  data-mini="true" style="text-align:right;" name="PersonelID" id="PersonelID" width="40px">
+
+							   </select>
+							</TD></TR>
+						<TR><TD><label for="ConfType">Type:</label></TD>
+							<TD >				  
+								<select  data-mini="true" name="ConfType" id="ConfType" >
+								  <option value="Work">Work</option>
+								  <option value="Travel">Travel</option>
+							   </select>
+							</TD></TR>
+						<TR><TD>Start Date:</TD><TD><input data-mini="true"  id="StartDate" type="date" data-format="dd-mm-yy" ></TD></TR>
+						<TR><TD>Start Time:</TD><TD><input data-mini="true" id="StartTime" type="time" ></TD></TR>
+						<TR><TD>End Date:</TD><TD><input  data-mini="true" id="EndDate"  type="date"></TD></TR>
+						<TR><TD>End Time:</TD><TD> <input data-mini="true"  id="EndTime" type="time"></TD></TR>
+						<TR><TD><label for="ActWork">Duration:</label></TD><TD ><input data-mini="true"  type="number" name="ActWork" id="ActWork" ></TD></TR>
+						<TR><TD><label for="FinalConf">Final:</label></TD><TD><input  data-mini="true" type="checkbox" data-on-text="Yes" data-off-text="No"  data-role="flipswitch" name="FinalConf" id="FinalConf"></TD></TR> 
+						<TR><TD><label for="Comments">Comments:</label></TD></tr>
+						<TR><TD colspan="3"><input data-mini="true"  type="text" name="Comments" id="Comments"></TD></TR>
+					</Table>
+				
+				
+					
+								
+					<div width="95%">
+  
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+
+
+
+
+	
+
+
+
+
+	
+		
+
+
+
+ 
+</div> 
+</body>
+<script>
+
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+
+var GASJob=false
+
+$('#ButtonGas').hide();
+    jQuery.extend(jQuery.mobile,
+    {
+      ajaxEnabled: false
+    });
+var CurrentOrderNo="";
+var CurrentOpNo="";
+var FinalConfirmed=false;
+var PostCode=""
+function tabsClicked(tab){
+
+if(tab=='TimeConfs'){
+	if(FinalConfirmed){
+		$('#CreateTConf').hide();
+		}else{
+		$('#CreateTConf').show();
+		}
+}else{
+$('#CreateTConf').hide();
+}
+
+
+}
+//var db = openDatabase('MyJobsDB', '1.0', 'MyJobsDB', 2000000);	
+var JobNo = getURLParameters("JobNo");
+var Status = getURLParameters("Status");
+var NotifNo = getURLParameters("NotifNo");
+var LatLongType=getURLParameters("LatLongType");
+var LatLong=getURLParameters("LatLong");
+var res = JobNo.split("-")
+var OrderNo = res[0];
+
+var EmployeeID=localStorage.getItem("EmployeeID")
+var CurrentEmployee="";
+function gotoOrders()
+{
+loc="JobsOrders.htm"
+window.location.href=loc;
+} 
+
+function gotoNotification()
+{
+loc="JobsNotificationDetails.htm?JobNo="+JobNo+"&Status="+Status+"&NotifNo="+NotifNo+"&Callback=Order"
+window.location.href=loc;
+} 
+function gotoTasks()
+{
+loc="JobsOrdersDetailsTasks.htm?JobNo="+JobNo+"&Status="+Status+"&NotifNo="+NotifNo //CurrentNotifType
+window.location.href=loc;
+} 
+function gotoGAS()
+{
+loc="JobsOrdersDetailsGas.htm?JobNo="+JobNo+"&Status="+Status+"&NotifNo="+NotifNo //CurrentNotifType
+window.location.href=loc;
+} 
+
+$('#CreateTConf').hide();  
+  
+ function showOnMap(){
+window.location.href='JobsShowMap.htm?&CallBack=Order&JobNo='+JobNo+'&Status='+Status+'&NotifNo='+NotifNo+'&PostCode='+PostCode
+
+} 
+function AcceptedPressed(){
+
+	updateOperationStatus(CurrentOrderNo, CurrentOpNo, "JACC", "Job Accepted")
+	$('#CurrentStatus').html("Job Accepted")
+	$('#ButtonAccepted').addClass('ui-disabled');
+	$('#ButtonOnRoute').removeClass('ui-disabled');
+	$('#ButtonOnSite').removeClass('ui-disabled');
+	$('#ButtonSuspended').removeClass('ui-disabled');
+	$('#ButtonFinished').removeClass('ui-disabled');
+	$('#ButtonCancel').hide();
+	$('#ButtonAccepted').show();
+	$('#ButtonOnRoute').show();
+	$('#ButtonSuspended').show();
+	$('#ButtonFinished').show();
+	$('#ButtonOnSite').show();
+	
+	$('#ButtonCancelRow').hide();
+	$('#ButtonAcceptedRow').show();
+	$('#ButtonOnRouteRow').show();
+	$('#ButtonSuspendedRow').show();
+	$('#ButtonFinishedRow').show();
+	$('#ButtonOnSiteRow').show();
+	if (GASJob){
+		$('#ButtonGas').show();
+		}
+
+}
+function OnRoutePressed(){
+	sendSMS('011447540293818','Engineer on Route')
+updateOperationStatus(CurrentOrderNo, CurrentOpNo, "JONR", "On Route")
+$('#CurrentStatus').html("On-Route")
+	$('#ButtonAccepted').addClass('ui-disabled');
+	$('#ButtonOnRoute').addClass('ui-disabled');
+	$('#ButtonOnSite').removeClass('ui-disabled');
+	$('#ButtonSuspended').removeClass('ui-disabled');
+	$('#ButtonFinished').removeClass('ui-disabled');
+	$('#ButtonCancel').hide();
+	$('#ButtonAccepted').show();
+	$('#ButtonOnRoute').show();
+	$('#ButtonSuspended').show();
+	$('#ButtonFinished').show();
+	$('#ButtonOnSite').show();
+		
+	$('#ButtonCancelRow').hide();
+	$('#ButtonAcceptedRow').show();
+	$('#ButtonOnRouteRow').show();
+	$('#ButtonSuspendedRow').show();
+	$('#ButtonFinishedRow').show();
+	$('#ButtonOnSiteRow').show();
+	if (GASJob){
+		$('#ButtonGas').show();
+		}
+}
+function RejectPressed(){
+updateOperationStatus(CurrentOrderNo, CurrentOpNo, "JREJ" ,"Job Rejected")
+	// Need to update Rejected Status"
+	window.location.href='JobsOrders.htm'
+}
+function OnSitePressed(){
+updateOperationStatus(CurrentOrderNo, CurrentOpNo, "JSTR", "Job Started")
+$('#CurrentStatus').html("Job Started")
+	$('#ButtonAccepted').addClass('ui-disabled');
+	$('#ButtonOnSite').addClass('ui-disabled');
+	$('#ButtonOnRoute').removeClass('ui-disabled');
+	$('#ButtonSuspended').removeClass('ui-disabled');
+	$('#ButtonFinished').removeClass('ui-disabled');
+	$('#ButtonCancel').hide();
+	$('#ButtonAccepted').show();
+	$('#ButtonOnRoute').show();
+	$('#ButtonSuspended').show();
+	$('#ButtonFinished').show();
+	$('#ButtonOnSite').show();	
+	
+		
+	$('#ButtonCancelRow').hide();
+	$('#ButtonAcceptedRow').show();
+	$('#ButtonOnRouteRow').show();
+	$('#ButtonSuspendedRow').show();
+	$('#ButtonFinishedRow').show();
+	$('#ButtonOnSiteRow').show();
+	if (GASJob){
+		$('#ButtonGas').show();
+		}
+
+}
+function SuspendedPressed(){
+
+updateOperationStatus(CurrentOrderNo, CurrentOpNo, "JSUS", "Job Suspended")
+$('#CurrentStatus').html("Job Suspended")
+	$('#ButtonOnRoute').removeClass('ui-disabled');
+	$('#ButtonOnSite').removeClass('ui-disabled');
+	$('#ButtonSuspended').addClass('ui-disabled');
+	$('#ButtonFinished').removeClass('ui-disabled');		
+	$('#ButtonCancel').hide();
+	$('#ButtonAccepted').show();
+	$('#ButtonOnRoute').show();
+	$('#ButtonSuspended').show();
+	$('#ButtonFinished').show();
+	$('#ButtonOnSite').show();
+	
+		
+	$('#ButtonCancelRow').hide();
+	$('#ButtonAcceptedRow').show();
+	$('#ButtonOnRouteRow').show();
+	$('#ButtonSuspendedRow').show();
+	$('#ButtonFinishedRow').show();
+	$('#ButtonOnSiteRow').show();
+	if (GASJob){
+		$('#ButtonGas').show();
+		}
+}
+function FinishedPressed(){
+
+updateOperationStatus(CurrentOrderNo, CurrentOpNo, "JFIN", "Job Finished")
+$('#CurrentStatus').html("Job Finished")
+	$('#ButtonOnRoute').addClass('ui-disabled');
+	$('#ButtonOnSite').addClass('ui-disabled');
+	$('#ButtonSuspended').addClass('ui-disabled');
+	$('#ButtonFinished').addClass('ui-disabled');
+	$('#ButtonCancel').hide();
+	$('#ButtonAccepted').show();
+	$('#ButtonOnRoute').show();
+	$('#ButtonSuspended').show();
+	$('#ButtonFinished').show();
+	$('#ButtonOnSite').show();
+	
+		
+	$('#ButtonCancelRow').hide();
+	$('#ButtonAcceptedRow').show();
+	$('#ButtonOnRouteRow').show();
+	$('#ButtonSuspendedRow').show();
+	$('#ButtonFinishedRow').show();
+	$('#ButtonOnSiteRow').show();
+	if (GASJob){
+		$('#ButtonGas').show();
+		}
+}
+$(document).ready(function() {
+
+	
+GetOrderDetails(); 
+BuildObjectList()
+BuildMaterialList()
+BuildPartnerList()
+BuildTimeConfList("")
+BuildEmployeeList()
+
+})
+
+function BuildObjectList(){
+var Stripe="";
+var opMap="";
+var opGas="";
+var opAppt=""
+var HTMLToOutput='';
+
+var EmployeeID=localStorage.getItem("EmployeeID")
+
+
+SQLStatement="SELECT * From MyAssets where orderno = '"+CurrentOrderNo+"'";
+HTMLToOutput+= '<THEAD><TR>'
+HTMLToOutput+= '							<TH align="left" width="10%">Type</TH>'
+HTMLToOutput+= '							<TH align="left" width="80%">No</TH>'
+HTMLToOutput+= '							</TR>'
+HTMLToOutput+= '						<tbody >'
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					if (isEven(n)){
+						Stripe='stripe';
+						}
+					HTMLToOutput+="	<tr class='"+Stripe+"'>";
+					HTMLToOutput+= '			<td>'+item.type+'</td>';
+					HTMLToOutput+= '			<td>'+item.id+'</td></TR>';
+					HTMLToOutput+="	<tr class='"+Stripe+"'>";
+					HTMLToOutput+= '			<td>&nbsp;</TD><TD>'+item.name+'&nbsp;</td>';
+					HTMLToOutput+= '	</tr>';	
+					}
+				HTMLToOutput+= '</tbody >'	
+				$( "#ObjectsList").html(HTMLToOutput);
+			$	( "#ObjectsList").trigger('create');
+
+
+		
+	 },
+	 function(error, statement){
+		alert(error.message +statement)
+	 }        
+	);
+
+
+
+}
+function BuildMaterialList(){
+var Stripe="";
+var opMap="";
+var opGas="";
+var opAppt=""
+var HTMLToOutput='';
+
+var EmployeeID=localStorage.getItem("EmployeeID")
+
+
+SQLStatement="SELECT  * From MyMaterials where orderno = '"+CurrentOrderNo+"'";
+HTMLToOutput+= '<THEAD>						<TR>'
+HTMLToOutput+= '							<TH align="left" width="60%">No</TH>'
+HTMLToOutput+= '							<TH align="left" width="20%">Qty</TH>'
+HTMLToOutput+= '							<TH align="left" width="20%">Used</TH>'
+HTMLToOutput+= '							</TR>'
+HTMLToOutput+= '						<tbody>'
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					if (isEven(n)){
+						Stripe='stripe';
+						}
+					HTMLToOutput+="	<tr class='"+Stripe+"'>";
+					HTMLToOutput+= '			<td>'+item.material+'</td>';
+					HTMLToOutput+= '			<td colspan="2">'+item.qty+'</td></tr>';
+					HTMLToOutput+="	<tr class='"+Stripe+"'>";
+					HTMLToOutput+= '			<td colspan="3">&nbsp;'+item.description+'</td>';
+					HTMLToOutput+= '	</tr>';	
+					}
+				HTMLToOutput+= '</tbody >'	
+				$( "#MaterialsList").html(HTMLToOutput);
+			//$	( "#MaterialsList").trigger('create');
+
+
+		
+	 },
+	 function(error, statement){
+		alert(error.message +statement)
+	 }        
+	);
+
+
+
+}
+function BuildPartnerList(){
+var Stripe="";
+var opMap="";
+var opGas="";
+var opAppt=""
+var HTMLToOutput='';
+
+var EmployeeID=localStorage.getItem("EmployeeID")
+
+
+SQLStatement="SELECT  * From MyPartners where orderno = '"+CurrentOrderNo+"'";
+HTMLToOutput+="				<THEAD>		<TR>"
+HTMLToOutput+="							<TH hidden align=\"left\">Id</TH>"
+HTMLToOutput+="							<TH align=\"left\" width=\"15%\">Type</TH>"
+HTMLToOutput+="							<TH align=\"left\" width=\"85%\">Name</TH>"
+
+HTMLToOutput+="							</TR>"
+HTMLToOutput+="						<tbody >"
+
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					Stripe="";
+					if (isEven(n)){
+						Stripe='stripe';
+						}
+					HTMLToOutput+="	<tr class='"+Stripe+"'>";
+					HTMLToOutput+= '			<td hidden >'+item.id+'</td>';
+					HTMLToOutput+= '			<td width="15%">'+item.type+'</td>';
+					HTMLToOutput+= '			<td width="85%">'+item.name+'</td></TR>';
+					HTMLToOutput+="	<tr class='"+Stripe+"'>";
+					HTMLToOutput+= '			<td hidden >'+item.id+'</td>';
+					HTMLToOutput+= '			<td>&nbsp;</td>';
+					HTMLToOutput+= '			<td >'+item.telno+item.address+'</td></TR>';
+
+					}
+				HTMLToOutput+= '</tbody >'	
+				$( "#PartnersList").html(HTMLToOutput);
+			//$	( "#PartnersList").trigger('create');
+
+
+		
+	 },
+	 function(error, statement){
+		alert(error.message +statement)
+	 }        
+	);
+
+
+
+}
+function BuildTimeConfList(type){
+var Stripe="";
+var Delete="";
+var HTMLToOutput='';
+
+var EmployeeID=localStorage.getItem("EmployeeID")
+FinalConfirmed=false
+
+SQLStatement="SELECT  * From MyTimeConfs where orderno = '"+CurrentOrderNo+"' and opno ='"+CurrentOpNo+"'";
+HTMLToOutput+="				<THEAD>		<TR>"
+HTMLToOutput+="							<TH hidden align=\"left\" >Id</TH>"
+HTMLToOutput+="							<TH align=\"left\" width=\"25%\">Start</TH>"
+HTMLToOutput+="							<TH align=\"left\" width=\"25%\">End</TH>"
+HTMLToOutput+="							<TH align=\"left\" width=\"15%\">Time</TH>"
+HTMLToOutput+="							<TH align=\"left\" width=\"15%\">Type</TH>"
+HTMLToOutput+="							<TH align=\"left\" width=\"10%\">Fin</TH>"
+HTMLToOutput+="							<TH align=\"left\" width=\"10%\">Del</TH>"
+HTMLToOutput+="							</TR>"
+HTMLToOutput+="						<tbody >"
+
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					Stripe="";
+					if (isEven(n)){
+						Stripe='stripe';
+						}
+					Delete="&nbsp;"
+					if(item.final=="Yes"){
+						FinalConfirmed=true
+						
+						}
+					if(item.confno=="NEW"){
+					
+						Delete="<a href='#' onClick='DeleteTConf("+item.id+")' ><img src='images\\delete.gif' width='20px' height = '20px' ></A>"
+					
+					}
+					HTMLToOutput+="	<tr class='"+Stripe+"'>";
+					HTMLToOutput+= '			<td hidden>'+item.empid+'</td>';
+					HTMLToOutput+= '			<td valign="top">'+convertDate(item.date+' '+item.time)+'</td>';
+					HTMLToOutput+= '			<td valign="top">'+convertDate(item.enddate+' '+item.endtime)+'</td>';
+					HTMLToOutput+= '			<td valign="top" >'+item.duration+'</td>';
+					HTMLToOutput+= '			<td valign="top">'+item.type+'</td>';
+					HTMLToOutput+= '			<td valign="top">'+item.final+'</td>';
+					HTMLToOutput+= '			<td valign="top">'+Delete+'</td>';
+					HTMLToOutput+="	<tr class='"+Stripe+"'>";
+					HTMLToOutput+= '			<td hidden>'+item.empid+'</td>';
+					HTMLToOutput+= '			<td valign="top"colspan="6">&nbsp;&nbsp;'+item.description+'</td>';
+					HTMLToOutput+= '	</tr>';	
+					HTMLToOutput+="	<tr class='"+Stripe+"'><TD colspan='7'>&nbsp</TD></TR>"				
+					}
+					if(type == "TConfTab"){
+						if(FinalConfirmed){
+							$('#CreateTConf').hide();
+							}else{
+							$('#CreateTConf').show();
+							}
+					}
+				HTMLToOutput+= '</tbody >'	
+				$( "#TimeConfsList").html(HTMLToOutput);
+			//$	( "#TimeConfsList").trigger('create');
+
+
+		
+	 },
+	 function(error, statement){
+		alert(error.message +statement)
+	 }        
+	);
+
+
+
+}
+
+function BuildEmployeeList(){
+var Stripe="";
+var opMap="";
+var HTMLToOutput='';
+
+var EmployeeID=localStorage.getItem("EmployeeID")
+
+
+SQLStatement="SELECT  * From MyRefUsers ";
+
+
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+
+					HTMLToOutput+= '			<option value="'+item.employeeno+'">'+item.userid+'</option>'
+					if (item.employeeno == EmployeeID){
+						CurrentEmployee = item.employeeno+' - '+item.firstname+' '+item.lastname
+						}
+					}
+	
+				$( "#PersonelID").html(HTMLToOutput);
+			//$	( "#PersonelID").trigger('change');
+
+
+		
+	 },
+	 function(error, statement){
+		alert(error.message +statement)
+	 }        
+	);
+
+
+
+}
+
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  closeOnBgClick: false,
+  showCloseBtn:false,
+  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  callbacks: {
+    open: function() {
+	
+	$('#PersonelID').val(EmployeeID);
+	$('#ConfType').val("Work");
+	$('#StartDate').val("")
+	$('#StartTime').val("")
+	$('#EndDate').val("")
+	$('#EndTime').val("")
+	$('#ActWork').val("")
+	$('#Comments').val("")
+
+	$('#FinalConf')[0].checked=false
+	$("#ConfType").trigger('change')
+	$("#FinalConf").trigger('change')
+	$("#PersonelID").trigger('change');
+//$("[data-role='footer']").hide();
+    },
+    close: function() {
+		
+
+
+
+
+    }
+	}
+});
+function DeleteTConf(id)
+{
+	html5sql.process("DELETE from MyTimeConfs where id = '"+id+"'",
+	 function(transaction, results, rowsArray){
+	 
+			 BuildTimeConfList("TConfTab")
+			 
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+
+}
+function PopupClose(mode)
+{
+
+
+	PopupCloseType=mode;
+	if(mode=="SAVE"){
+
+		StartDate=$('#StartDate').val().substring(0,4)+$('#StartDate').val().substring(5,7)+$('#StartDate').val().substring(8,10);
+		StartTime=$('#StartTime').val().substring(0,2)+$('#StartTime').val().substring(3,5)
+		EndDate=$('#EndDate').val().substring(0,4)+$('#EndDate').val().substring(5,7)+$('#EndDate').val().substring(8,10);
+		EndTime=$('#EndTime').val().substring(0,2)+$('#EndTime').val().substring(3,5)
+		
+		if($('#FinalConf')[0].checked==true){
+			FinalConf="Yes"
+			}
+			else
+			{
+			FinalConf="No"
+			}
+			
+		
+
+		html5sql.process("INSERT INTO  MyTimeConfs (orderno , opno,type, confno , description , date , time , enddate, endtime, duration, empid, final , datestamp, user, state) VALUES ("+
+							 "'"+CurrentOrderNo+"','"+CurrentOpNo+"','"+$('#ConfType').val()+"','NEW','"+$('#Comments').val()+"','"+StartDate+"','"+StartTime+"','"+EndDate+"','"+EndTime+"','"+$('#ActWork').val()+"','"+$('#PersonelID').val()+"','"+FinalConf+"','"+getDate()+" "+getTime()+"','"+localStorage.getItem("MobileUser")+"','');",
+			 function(){
+				 BuildTimeConfList("TConfTab")
+			 },
+			 function(error, statement){
+				opMessage("Error: " + error.message + " when createTConf processing " + statement);
+			 }        
+			)
+		}
+
+
+	$.magnificPopup.close();
+}
+function GetOrderDetails(){
+
+var Stripe="";
+var opMap="";
+var opAppt=""
+var HTMLToOutput='';
+var n=1;
+
+res = JobNo.split("-")
+CurrentOrderNo=res[0];
+CurrentOpNo=res[1];
+TaskNo="000"+CurrentOpNo/10;
+
+
+	SQLStatement="SELECT MyOperations.orderno,MyOrders.notifno, MyOperations.opno,MyOperations.startdate, MyOperations.type as optype,MyOperations.duration as opduration,MyOperations.enddate, MyOrders.address, MyOrders.workaddress, MyOrders.type, MyOperations.status, MyOrders.priority, MyOrders.house,MyOrders.houseno,MyOrders.street,MyOrders.district,MyOrders.city,MyOrders.postcode,"
+	SQLStatement+=" MyOperations.apptstart, MyOperations.apptend, MyOrders.shorttext as orderdesc , MyOperations.shorttext as operationdesc , MyOrders.contact , MyOrders.property, MyOrders.propertygis, MyOrders.funcloc, MyOrders.funclocgis,  MyOrders.equipment, MyOrders.equipmentgis "
+	SQLStatement+=" From MyOperations "
+	SQLStatement+=" join MyOrders on MyOperations.orderno=MyOrders.orderno "
+	SQLStatement+=" where MyOperations.orderno = '"+CurrentOrderNo+"' and MyOperations.opno = '"+CurrentOpNo+"'"
+
+	SQLStatement1="SELECT * From MyOperationInfo "
+	SQLStatement1+=" where MyOperationInfo.orderno = '"+CurrentOrderNo+"' and MyOperationInfo.opno = '"+CurrentOpNo+"' "
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+				
+
+
+			item = rowsArray[0];
+				
+			if(item.type=="PM02"){
+				//alert("its GAS")
+				GASJob=true
+			}
+			$( "#OrderNo").html(item.orderno);
+			$( "#OpNo").html(item.opno);
+			$( "#OrderDesc").html(item.orderdesc);
+			$( "#OperationDesc").html(item.operationdesc);
+			$( "#NotifNo").html(item.notifno);					
+			$( "#OrderAddress").html(item.address);
+			$( "#OrderType").html(item.type);
+			$( "#OrderWorkAddress").html(item.workaddress);
+			$( "#OperationPriority").html(item.priority);
+			$( "#OperationStartdate").html(convertDate(item.startdate));
+			$( "#OperationEnddate").html(convertDate(item.enddate));
+		    //$( "#OperationApptStartdate").html(item.apptstart);
+			//$( "#OperationApptEnddate").html(item.apptend);
+			$( "#OperationType").html(item.optype);
+			$( "#OperationDuration").html(item.opduration);
+			$( "#OrderProperty").html(item.property);
+			$( "#EditProperty").val(item.property);
+
+			$( "#OrderPropertyGIS").html(item.propertygis);
+			$( "#OrderFuncLoc").html(item.funcloc);
+			$( "#EditFuncLoc").val(item.funcloc);
+			$( "#OrderFuncLocGIS").html(item.funclocgis);
+			$( "#OrderEquipment").html(item.equipment);
+			$( "#EditEquipment").val(item.equipment);
+			$( "#OrderEquipmentGIS").html(item.equipmentgis);
+			
+			
+			$( "#HouseName").val(item.house);
+			$( "#HouseNo").val(item.houseno);
+			$( "#Street").val(item.street);
+			$( "#District").val(item.district);
+			$( "#City").val(item.city);
+			$( "#Postcode").val(item.postcode);
+			PostCode=item.postcode;
+			$( "#EditPropertyGIS").val(item.propertygis);
+			$( "#EditFuncLocGIS").val(item.funclocgis);
+			$( "#EditEquipmentGIS").val(item.equipmentgis);
+
+			
+			$( "#OrderDetails").trigger('create');		
+		
+			html5sql.process(SQLStatement1,
+			 function(transaction, results, rowsArray){
+					if(rowsArray.length>0){
+						item = rowsArray[0];
+						
+						if(item.type=="APPT"){
+							$( "#OperationApptStartdate").html(item.value1.substring(0,4)+"-"+item.value1.substring(4,2)+"-"+item.value1.substring(6,8));
+							$( "#OperationApptEnddate").html(item.value2.substring(0,2)+":"+item.value2.substring(2,4));
+						}
+					}
+				if(Status=="Dispatched"){
+					$('#CurrentStatus').html("NEW");
+					$('#ButtonAccepted').removeClass('ui-disabled');
+					$('#ButtonCancel').removeClass('ui-disabled');
+					$('#ButtonAccepted').show();
+					$('#ButtonCancel').show();
+						
+					$('#ButtonCancelRow').show();
+					$('#ButtonAcceptedRow').show();
+
+
+
+
+				}
+				if(Status=="Accepted"){
+				$('#CurrentStatus').html("Job Accepted");
+					$('#ButtonAccepted').addClass('ui-disabled');
+					$('#ButtonOnRoute').removeClass('ui-disabled');
+					$('#ButtonOnSite').removeClass('ui-disabled');
+					$('#ButtonSuspended').removeClass('ui-disabled');
+					$('#ButtonFinished').removeClass('ui-disabled');
+					$('#ButtonGas').removeClass('ui-disabled');
+					$('#ButtonAccepted').show();
+					$('#ButtonOnRoute').show();
+					$('#ButtonOnSite').show();
+					$('#ButtonSuspended').show();
+					$('#ButtonFinished').show()
+					
+					$('#ButtonAcceptedRow').show();
+					$('#ButtonOnRouteRow').show();
+					$('#ButtonOnSiteRow').show();
+					$('#ButtonSuspendedRow').show();
+					$('#ButtonFinishedRow').show()					
+					if (GASJob){
+						$('#ButtonGas').show();
+						}
+					
+
+
+				} 
+				if(Status=="OnRoute"){
+				$('#CurrentStatus').html("On-Route");
+					$('#ButtonAccepted').addClass('ui-disabled');
+					$('#ButtonOnRoute').addClass('ui-disabled');
+					$('#ButtonOnSite').removeClass('ui-disabled');
+					$('#ButtonSuspended').removeClass('ui-disabled');
+					$('#ButtonFinished').removeClass('ui-disabled');
+					$('#ButtonGas').removeClass('ui-disabled');
+					$('#ButtonAccepted').show();
+					$('#ButtonOnRoute').show();
+					$('#ButtonOnSite').show();
+					$('#ButtonSuspended').show();
+					$('#ButtonFinished').show()
+					$('#ButtonAcceptedRow').show();
+					$('#ButtonOnRouteRow').show();
+					$('#ButtonOnSiteRow').show();
+					$('#ButtonSuspendedRow').show();
+					$('#ButtonFinishedRow').show()	
+					
+					if (GASJob){
+						$('#ButtonGas').show();
+						}
+					
+
+
+				} 
+				if(Status=="OnSite"){
+					$('#CurrentStatus').html("Job Started");
+					$('#ButtonAccepted').addClass('ui-disabled');
+					$('#ButtonOnRoute').removeClass('ui-disabled');
+					$('#ButtonOnSite').addClass('ui-disabled');
+					$('#ButtonSuspended').removeClass('ui-disabled');
+					$('#ButtonFinished').removeClass('ui-disabled');
+					$('#ButtonGas').removeClass('ui-disabled');
+					$('#ButtonAccepted').show();
+					$('#ButtonOnRoute').show();
+					$('#ButtonOnSite').show();
+					$('#ButtonSuspended').show();
+					$('#ButtonFinished').show()
+					$('#ButtonAcceptedRow').show();
+					$('#ButtonOnRouteRow').show();
+					$('#ButtonOnSiteRow').show();
+					$('#ButtonSuspendedRow').show();
+					$('#ButtonFinishedRow').show()	
+					
+					if (GASJob){
+						$('#ButtonGas').show();
+						}
+					
+
+				} 
+				if(Status=="Suspended"){
+					$('#CurrentStatus').html("Job Suspended");
+					$('#ButtonAccepted').addClass('ui-disabled');
+					$('#ButtonOnRoute').removeClass('ui-disabled');
+					$('#ButtonOnSite').removeClass('ui-disabled');
+					$('#ButtonSuspended').addClass('ui-disabled');
+					$('#ButtonFinished').removeClass('ui-disabled');
+					$('#ButtonGas').removeClass('ui-disabled');
+
+					$('#ButtonAccepted').show();
+					$('#ButtonOnRoute').show();
+					$('#ButtonOnSite').show();
+					$('#ButtonSuspended').show();
+					$('#ButtonFinished').show()
+					$('#ButtonAcceptedRow').show();
+					$('#ButtonOnRouteRow').show();
+					$('#ButtonOnSiteRow').show();
+					$('#ButtonSuspendedRow').show();
+					$('#ButtonFinishedRow').show()	
+					if (GASJob){
+						$('#ButtonGas').show();
+						}
+
+
+
+				} 
+				if(Status=="Finished"){
+					$('#CurrentStatus').html("Job Finished");
+					$('#ButtonAccepted').addClass('ui-disabled');
+					$('#ButtonOnRoute').addClass('ui-disabled');
+					$('#ButtonOnSite').addClass('ui-disabled');
+					$('#ButtonSuspended').addClass('ui-disabled');
+					$('#ButtonFinished').addClass('ui-disabled');
+					$('#ButtonGas').removeClass('ui-disabled');
+					
+					$('#ButtonAccepted').show();
+					$('#ButtonOnRoute').show();
+					$('#ButtonOnSite').show();
+					$('#ButtonSuspended').show();
+					$('#ButtonFinished').show()
+					$('#ButtonAcceptedRow').show();
+					$('#ButtonOnRouteRow').show();
+					$('#ButtonOnSiteRow').show();
+					$('#ButtonSuspendedRow').show();
+					$('#ButtonFinishedRow').show()	
+					
+					if (GASJob){
+						
+						$('#ButtonGas').show();
+						}
+					
+
+
+				}
+			 },
+			 function(error, statement){
+				
+			 }        
+			);
+
+		
+
+
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+
+	
+
+
+	
+
+
+	
+}
+function saveEquipment(){
+	updateOrderEquipment(OrderNo,$( "#EditProperty").val(),$( "#EditFuncLoc").val(),$( "#EditEquipment").val());
+			$( "#EditProperty").val($( "#EditProperty").val());
+			$( "#EditFuncLoc").val($( "#EditFuncLoc").val());
+			$( "#EditEquipment").val($( "#EditEquipment").val());
+			$( "#OrderProperty").html($( "#EditProperty").val());
+			$( "#OrderFuncLoc").html($( "#EditFuncLoc").val());
+			$( "#OrderEquipment").html($( "#EditEquipment").val());
+			$( "#OrderDetails").trigger('create');
+}
+function saveAddress(){
+var workaddress=$( "#HouseName").val()+", "+$( "#HouseNo").val()+", "+$( "#Street").val()+", "+$( "#District").val()+", "+$( "#City").val()+", "+$( "#Postcode").val()
+	updateOrderAddress(OrderNo,$( "#HouseName").val(),$( "#HouseNo").val(),$( "#Street").val(),$( "#District").val(),$( "#City").val(),$( "#Postcode").val(),workaddress);
+			$( "#HouseName").val($( "#HouseName").val());
+			$( "#HouseNo").val($( "#HouseNo").val());
+			$( "#Street").val($( "#Street").val());
+			$( "#District").val($( "#District").val());
+			$( "#City").val($( "#City").val());
+			$( "#Postcode").val($( "#Postcode").val());
+			$( "#OrderWorkAddress").html(workaddress);
+			$( "#OrderDetails").trigger('create');
+}
+function showMap(type)
+{
+
+window.location.href='JobsLocateOnMap.htm?CallBack=Order&JobNo='+JobNo+'&Status='+Status+'&NotifNo='+NotifNo+'&Type='+type+'&LatLong='+$( type).html()
+}
+
+function setMaterial(matno){
+var Description="Description "+matno
+var Quantity="3"
+var Used="4"
+			$( "#Material").val(matno);
+			$( "#Description").val(Description);
+			$( "#Quantity").val(Quantity);
+			$( "#Used").val(Used);
+			$( "#popupMaterial").trigger('create');
+}
+var w = null; // initialize variable
+function startBGSync()
+{
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+   // First check whether Web Workers are supported
+   if (typeof(Worker)!=="undefined"){
+      // Check whether Web Worker has been created. If not, create a new Web Worker based on the Javascript file simple-timer.js
+      if (w==null){
+         w = new Worker("bgsync.js");
+      }
+      // Update timer div with output from Web Worker
+      w.onmessage = function (event) {      
+		 syncReference()
+		 syncTransactional()
+		 syncUpload()
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+
+		 };
+   } else {
+      // Web workers are not supported by your browser
+      document.getElementById("lastsync").innerHTML = "Sorry, your browser does not support Web Workers ...";
+   }
+}
+startBGSync()
+</script>
+
+
+
+ 
+
+
+</html>
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>MyJobs - Map - Route
+  </title> 
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+ <script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.7"></script>
+ <script src="js/MyJobsUtils.js"></script> 
+<script src="js/maplace-0.1.3.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+  	<link href="css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+
+
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 95%;
+
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+
+
+  </style>
+
+  
+</head>
+<body>
+<script>
+var CallBack=getURLParameters("CallBack");
+var NotifNo=getURLParameters("NotifNo");
+var PostCode=getURLParameters("PostCode");
+var Type=getURLParameters("Type");
+var JobNo=getURLParameters("JobNo");
+var Status=getURLParameters("Status");
+var SLat=getURLParameters("SLat");
+var SLon=getURLParameters("SLon");
+var ELat=getURLParameters("ELat");
+var ELon=getURLParameters("ELon");
+var Locs = [
+    {
+        lat: 45.4654,
+        lon: 9.1866,
+        title: 'Start',
+        html: '<h3>Start</h3>'
+    },
+    {
+		lat: 45.4654,
+        lon: 9.1866,
+		title: 'Finish',
+        html: '<h3>Finish</h3>'
+    }
+];
+</script>
+<div align="center" data-role="page" id="JobsShowRoute"> 
+	<div   data-role="header" data-position="fixed">
+		<table width = "100%">
+			<TR height="40px">
+				<TD width="10%" Valign="middle" align="left"><a style="font-size: 100%" href="javascript:gotoCaller()"  >
+				<i class="fa fa-arrow-left fa-2x pull-left fa-border"></i></a></td>
+				<TD width="80%" valign="Top" align= "center"><h4 style="font-size: 100%"><B>MyJobs - Route</B></H1></TD>
+				<TD width="10%" Valign="Middle" align="right">
+				<a style="font-size: 100%" href='javascript:gotoMap()'   >
+				<i class="fa  pull-right fa-border"><img  src="images\\gis.gif" style="width:35px;height:35px" ></i></a>			
+				</TD>
+			</TR>
+		</table>	
+	
+	
+	
+
+	</div> 
+	<div  data-role="content">	
+		<TABLE>
+			<TR><TD>Current Start Location:&nbsp;</tD><TD><input id="StartLocation" type="text" ></TD><TD><input onclick="changeStartAddress()" id="SearchButton" type="button"  value="Change"></TD></TR>
+		</TABLE>
+		<div  align="center"> 
+
+				<div id="gmap-route"></div>
+				<div id="route"></div>
+				<div id="controls"></div>
+		
+			
+		</div>
+	</div>
+
+</div> 
+<script>
+
+function gotoCaller(){
+	if(CallBack=="Notification"){
+		loc="JobsNotificationDetails.htm?NotifNo="+NotifNo
+		}
+	if(CallBack=="Order"){
+		loc="JobsOrdersDetails.htm?JobNo="+JobNo+"&Status="+Status+"&NotifNo="+NotifNo
+		}
+	window.location.href=loc;
+}
+function gotoMap(){
+	if(CallBack=="Notification"){
+		loc="JobsShowMap.htm?NotifNo="+NotifNo+"&PostCode="+PostCode+'&CallBack='+CallBack
+		}
+	if(CallBack=="Order"){
+		loc="JobsShowMap.htm?JobNo="+JobNo+"&Status="+Status+"&NotifNo="+NotifNo+"&PostCode="+PostCode+'&CallBack='+CallBack
+		}
+	window.location.href=loc;
+}
+function changeStartAddress() {
+   
+    var geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode( { 'address': $('#StartLocation').val()+" , UK"}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+			window.location.href='JobsShowRoute.htm?&CallBack='+CallBack+'&JobNo='+JobNo+'&Status='+Status+'&NotifNo='+NotifNo+
+								'&PostCode='+PostCode+'&SLat='+results[0].geometry.location.lat()+'&SLon='+results[0].geometry.location.lng()+'&ELat='+ELat+'&ELon='+ELon
+      } 
+    });
+
+
+  }
+
+$(document).ready(function() {
+Locs[0]['lat']=SLat
+Locs[0]['lon']=SLon
+Locs[1]['lat']=ELat
+Locs[1]['lon']=ELon
+new Maplace({
+    locations: Locs,
+    map_div: '#gmap-route',
+    generate_controls: false,
+    show_markers: false,
+    type: 'directions',
+    draggable: true,
+    directions_panel: '#route',
+    afterRoute: function(distance) {
+        $('#km').text(': '+(distance/1000)+'km');
+		}
+	}).Load();
+})
+</Script>
+</body>
+
+
+</html>
+

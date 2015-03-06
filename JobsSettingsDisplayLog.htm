@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Jobs - Settings - Display Log
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />  
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+</script>
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 95%;
+    height:600px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+.ui-btn-width {
+    width: 200px !important;
+}
+  .stripe{
+	background-color: #E8E8E8 ; 
+	color: black;
+}
+  </style>
+
+  
+</head>
+<SCRIPT>
+
+var currentPage=1;
+var elementsPerPage=20;
+var totalRecords=0;
+
+var totalPages=1;
+
+function nextPage(){
+	if (currentPage<totalPages){
+		currentPage+=1;
+		buildTrace();
+		}
+		
+}
+function prevPage(){
+	if (currentPage>1){
+		currentPage-=1;
+				buildTrace();
+		}
+
+}
+function lastPage(){
+	if (currentPage<totalPages){
+		currentPage=totalPages;
+		buildTrace();
+		}
+
+}
+function firstPage(){
+	
+		currentPage=1;
+		buildTrace();
+
+
+}
+function getTotalTraceRecords()
+{
+	totalRecords=0;
+	html5sql.process(
+		['SELECT * FROM LogFile '],
+		function(transaction, results, rowsArray){
+
+			totalRecords = rowsArray.length;
+			totalPages=Math.floor(totalRecords/elementsPerPage);
+			if (totalRecords%elementsPerPage>0){
+				totalPages+=1;
+			}
+		},
+		function(error, statement){
+		 opMessage("Error: " + error.message + " when rowsArray.length processing " + statement);          
+		}
+	);
+
+
+
+
+
+}
+function buildTrace(){
+//select Count(*) from Logfile;
+
+
+document.getElementById("pageDets").innerHTML=currentPage+" of "+totalPages;
+	var Stripe="";
+	var Olist="";
+	var HTMLToOutput=""
+	var startRec=(currentPage-1)*elementsPerPage;
+
+	html5sql.process('SELECT * FROM LogFile LIMIT '+startRec+', '+elementsPerPage+";",
+	 function(transaction, results, rowsArray){
+
+		for (var n = 0; n < rowsArray.length; n++) {
+			item = rowsArray[n];
+			Stripe="";
+			
+			if (isEven(n)){
+				Stripe='stripe';
+				}				
+			HTMLToOutput+='<tr class="'+Stripe+'"><tD width ="30%">'+formatDateTime(item.datestamp)+'</tD>'+
+			'<td width ="5%"><B>'+item['type']+'</B></a></td>'+
+			'<td style="text-wrap:normal;word-wrap:break-word">'+item.message+'</td></TR>';
+		}
+		$( "#TraceList").html(HTMLToOutput);
+		$( "#TraceList").trigger('create');
+	 },
+	 function(error, statement){
+		//ert("error");
+	 }        
+	);
+
+}
+function DeleteTheLog()
+{
+html5sql.process("DELETE FROM LogFile",
+						 function(){
+							 location.reload();
+						 },
+						 function(error, statement){
+							 opMessage("Error: " + error.message + " when processing " + statement);
+						 }        
+				);
+
+}
+	
+</SCRIPT>
+<body>
+<div align="center" data-role="page" id="JobsSettingsDisplayLog"> 
+  <div data-role="panel" id="options" data-position="right" data-display="overlay"> 
+    <h3>Settings</h3>
+	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsConfiguration.htm'">
+			<i class="fa pull-left fa-cog fa-lg"></i>Configuration        </a>
+	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsLastSyncDetails.htm'">
+			<i class="fa pull-left fa-bolt fa-lg"></i>Last Sync Details</a>
+ 	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsForceSync.htm'">
+			<i class="fa pull-left fa-exchange fa-lg"></i>Force Sync       </a>
+ 	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsViewDatabase.htm'">
+			<i class="fa pull-left fa-database fa-lg"></i>View Database    </a>
+ 	<a  data-role="button" data-mini="true" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow" href="#popupDBReset">
+			<i class="fa pull-left fa-plus fa-lg"></i>Reset Database  </a>
+  </div> 
+	<div  id="header" data-role="header" data-position="fixed">
+		<table width = "100%">
+			<TR >
+				<TD width = "20%"  align="left"><a style="font-size: 100%" href="javascript:window.location.href='JobsHome.htm'"  >
+				<i class="fa fa-home fa-2x fa-border"></i></a></td>
+				
+				<TD width = "60%"  align= "center"><B>Force Sync</H3></TD>
+				
+				<TD width = "20%" ><a href="#options" ><i class="fa fa-bars fa-2x pull-right fa-border"></i></a></TD>
+			</TR>
+		</table>
+	</div> 
+	<div  data-role="content">	
+
+	
+			<div id="right1" align="center" class="block highlight">
+				<div class="ui-grid-d">
+
+					<div class="ui-block-a"><a style="font-size:small" id="first" onClick="firstPage();"  data-role="button" href="#"   target="_parent">
+						<i class="fa fa-step-backward"></i></a></div>
+					<div style="font-size:small" class="ui-block-b"><a style="font-size:small" id="previous" onClick="prevPage();"  data-role="button" href="#"   target="_parent">
+					<i class="fa fa-backward "></i></a></div>
+					<div style="font-size:small" class="ui-block-c" align="center"><H4 id="pageDets"></H4></div>
+					<div class="ui-block-d"><a style="font-size:small" id="next" onClick="nextPage();"  data-role="button" href="#"     target="_parent">
+					<i class="fa fa-forward "></i></a></div>
+					<div class="ui-block-e"><a style="font-size:small" id="last" onClick="lastPage();"   data-role="button" href="#"  target="_parent">
+					<i class="fa fa-step-forward "></i></a></div>
+				</div><!-- /grid-a -->			
+				<div style="width:95%; height:500px; overflow:auto;" >
+					
+						<table width = "95%" id="SystemLog" frame="box" border=".5">
+							 <thead width = "95%" "background-color: lightgrey;">
+								<tr style="font-size:small" width = "95%">
+								  <th align = "left" width = "20%" data-priority="1">DateStamp</th>
+								  <th align = "left" width = "15%" data-priority="persist">Type</th>
+								  <th align = "left" width = "65%" data-priority="2">Message</th>
+								</tr>
+							</thead>
+							<tbody  style="font-size:small" width = "95%" id ="TraceList">	
+							</tbody>
+						</table>
+				</div>				
+			</div>
+<div data-role="popup" id="popupDelete"  data-dismissible="false" style="max-width:400px;">
+	<div data-role="header" data-theme="a">
+	<h1>Delete Log?</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<h4 class="ui-title">Are you sure you want to delete the Log File?</h4>
+		<p style="color:red">This action cannot be undone.</p>
+		<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a ui-icon-delete  ui-btn-icon-left" data-rel="back">Cancel</a>
+		<a href="javascript:DeleteTheLog()" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a  ui-icon-check  ui-btn-icon-left" data-rel="back" data-transition="flow">Delete</a>
+	</div>
+
+</div>
+
+
+
+		    <div data-role="popup" id="popupDBReset">
+		      <div data-role="header">
+		       Reset Database
+		      </div>
+		
+		      <div data-role="main" class="ui-content">
+		        <h2 align = "center">Are you sure?</h2>
+		
+		 	  </div>
+		
+		      <div data-role="footer">
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline  ui-icon-delete ui-btn-icon-left" data-rel="back">Cancel</a>
+		      <a href="#" onclick="resetTables()" class="ui-btn ui-corner-all ui-shadow ui-btn-inline  ui-icon-check ui-btn-icon-left" data-rel="back">Proceed</a>
+		     
+		      </div>
+		    </div>
+
+
+</div> 
+<script>
+getTotalTraceRecords();
+buildTrace();
+getTraceState();
+</script>
+</body>
+
+
+</html>
+

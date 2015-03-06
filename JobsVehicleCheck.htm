@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>MyWork - Vehicle Check
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />  
+
+<script>
+var VehicleReg=""
+var VehicleDescription=""
+var VehicleEQNo=""
+var VehicleMPoint=""
+//alert(getSAPDate()+"===="+getSAPTime());
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+SetLocalStorage()
+
+GetVehicleDetails(localStorage.getItem("VehicleReg"));
+function GetVehicleDetails(reg){
+
+var HTMLToOutput='';
+var HTMLToOutput1='';
+var SQLStatement="";
+
+$("#NewVehicleDescription").val("")
+SQLStatement="SELECT *  "
+SQLStatement+="from MyVehicles where reg = '"+reg+"'"
+HTMLToOutput=""
+
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			if(rowsArray.length>0) {
+				VehicleReg=rowsArray[0].reg;
+				VehicleEQNo=rowsArray[0].id;
+				VehicleDescription=rowsArray[0].description;
+				VehicleMPoint=rowsArray[0].mpoint;
+				$("#Description").html(VehicleDescription)
+				$("#VehicleReg").html(VehicleReg)
+				
+
+			}
+
+
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+}
+</script>
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 95%;
+    
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+  .ui-btn-width {
+    width: 200px !important;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 80%;
+  margin: 20px auto;
+}
+textarea{
+    height: 150px !important;
+    max-height: 150px !important;
+    overflow:auto !important;  
+}
+  </style>
+
+  
+</head>
+<body>
+
+
+
+
+<div align="center" data-role="page" id="JobsVehicleCheck"> 
+
+	<div width="100%"  id="header" data-role="header" data-position="fixed">
+		<table width = "99%">
+			<TR height="50px">
+				<TD width = "25%"  align="left"><a style="font-size: 100%" onclick="window.location.href='JobsLogin.htm'"  >
+				<i class="fa fa-times fa-2x pull-left fa-border"></i></a></td>
+				
+				<TD  width = "50%" align= "center"><h1 style="font-size: 150%"><B>Vehicle Check</B></H1></TD>
+		
+				<TD  width = "25%" align="right">
+				
+				<a style="font-size: 100%" onclick="SaveVehicleCheck()"   >
+				<i class="fa fa-save fa-2x pull-right fa-border"></i></a></TD>
+			</TR>
+		</table>
+	</div> 
+	<div  data-role="content">	
+		<div style='display:none'>
+			<div  id="popupDefect" class="white-popup mfp-hide" >
+			<table width = "100%"><TR><TD align = "left"><a onClick="PopupClose('CANCEL')"  ><i class="fa fa-times fa-2x pull-left fa-border"></i></a></td><TD align="center"><B>Defect Details</B></TD><TD align="right"><a onClick="PopupClose('SAVEDEFECT')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a></TD></TR></Table>
+				
+				<div  role="main"  class="ui-content" >
+
+				<TABLE width = "95%">
+				<TR><TD colspan="2"><p id="DefectTitle"></p></TD></TR>
+				<TR><TD width = "20%"><p >Short Text</p>&nbsp;</TD><TD width = "80%"><input name="ShortText" id ="ShortText"></input></TD></TR>
+				<TR><TD width = "20%"><p >Long Text</p>&nbsp;</TD><TD width = "80%"><textarea  name="LongText" id ="LongText"></textarea></TD></TR>
+				</TABLE>
+
+								
+
+				
+				</div>
+			</div>
+		</div>
+		<div  align="center"> 
+			<div id="right1" align="center" >
+			
+				<Table width="98%">
+					<TR><TD width="40%" ><label ><small><B>Vehicle:</B></small></label></td>
+						<TD><p name="VehicleReg" id="VehicleReg" ></p></td>
+						<TD >
+<a id="changeVehicle" href="#popupChangeVehicle" class="open-popup-link"><i class="fa fa-pencil fa-2x pull-right fa-border"></i></A>						
+					</td>
+						</TR>
+					
+					<TR>
+						<TD colspan = "3"><small><p name="Description" id="Description"  ></p></td></TR>
+							
+					<TR><TD colspan="2"><label ><small>Mileage:</small></label></td>
+						<TD><input onchange="$('#ErrorMess').html('')" type="number" name="Mileage" id="Mileage" value=""  /></td></TR>
+						
+					<TR><TD colspan = "2" width = "70%"><label id ="Tax-Label" data-mini="true"><small>Tax/MOT/Service displayed in Date:</small></label></td>
+						<TD><select name="Tax" id="Tax" data-role="slider"  data-mini="true">
+								<option  value="No">No</option>
+								<option selected value="Yes">Yes</option>
+							</select> </td></TR>
+							
+				<TR><TD colspan = "2" width = "70%"><label id ="Horn-Label"><small>Is the Horn Working:</small></label></td>
+						<TD><select name="Horn" id="Horn" data-role="slider" data-mini="true">
+								<option value="No">No</option>
+								<option selected value="Yes">Yes</option>							</select> </td></TR>
+								
+				<TR><TD colspan = "3"><label><B><small>Check the depth, cuts/bulges/damage, visual inflation daily, check pressures weekly</small></B></label></td></TR>
+
+				<TR><TD colspan = "2" width = "70%"><label id ="Tyres-Label"><small>Do the tyres meet company requirements:</small></label></td>
+						<TD><select name="Tyres" id="Tyres" data-role="slider" data-mini="true">
+								<option value="No">No</option>
+								<option selected value="Yes">Yes</option>							</select> </td></TR>
+								
+				<TR><TD colspan = "3"><label><B><small>Check the wheel nuts and wheel nut indicator alignment if fitted</small></B></label></td></TR>
+				
+				<TR><TD colspan = "2" width = "70%"><label id ="Nuts-Label"><small>Wheels secure and nut indicators aligned:</small></label></td>
+						<TD><select name="Nuts" id="Nuts" data-role="slider" data-mini="true">
+								<option value="No">No</option>
+								<option selected value="Yes">Yes</option>							</select> </td></TR>
+								
+				<TR><TD colspan = "3"><label><B><small>Check headlights, sidelights, brake and reversing lights, indicators and hazard warning</small></B></label></td></TR>
+
+				
+				<TR><TD colspan = "2" width = "70%"><label id="Lights-Label"><small>Are all lights clean and working:</small></label></td>
+						<TD><select name="Lights" id="Lights" data-role="slider" data-mini="true">
+								<option value="No">No</option>
+								<option selected  value="Yes">Yes</option>							</select> </td></TR>
+								
+				<TR><TD  colspan = "2" width = "70%"><label id="Wipers-Label"><small>Are the windscreen wipers/washers working:</small></label></td>
+						<TD><select name="Wipers" id="Wipers" data-role="slider" data-mini="true">
+								<option value="No">No</option>
+								<option selected value="Yes">Yes</option>							</select> </td></TR>
+				</table>
+
+
+			</div>
+		</div>
+	<div style='display:none'>
+			<div data-role="popup" id="popupError"  data-dismissible="false" style="max-width:400px;">
+				<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+				<div  role="main" class="ui-content">
+					<h4 align="center" style="color:red" class="ui-title" id="errorMessage"></h4>
+					
+
+				</div>
+			
+			</div>
+			
+			<div  id="popupChangeVehicle" class="white-popup mfp-hide" >
+				<table width = "100%"><TR><TD align = "left"><a onClick="PopupClose('CANCEL')"  ><i class="fa fa-times fa-2x pull-left fa-border"></i></a></td><TD align="center"><B>Change Vehicle</B></TD><TD align="right"><a onClick="PopupClose('SAVE')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a></TD></TR></Table>
+				<div role="main" align="center"  class="ui-content">
+					
+					<Table width = "90%">
+					<TR><TD colspan = "3"><B>Current Vehicle</B></TD></TR>
+					<TR><TD colspan = "3"><small><p  name="WasVehicleReg" id="WasVehicleReg" ></p></small></TD></TR>
+					<TR><TD colspan = "3"><small><p  width = "200px" name="WasVehicleDescription" id="WasVehicleDescription" ></p></small></TD></TR>
+					<TR><TD colspan = "3"><B>New Vehicle Reg</B></TD></TR>
+				
+				
+					<TR><TD colspan="2" width="85%"><input type="text" data-mini = "true" name="NewVehicleReg" id="NewVehicleReg"  /></TD>						
+						<TD width="15%"><a id="changeVehicle" onclick="changeVehicle()" ><i class="fa fa-search fa-2x pull-right fa-border"></i></A></TD>
+						</TR>
+					<TR>
+						<TD colspan="3"><label for="Vehicles">Vehicles:</label></TD></TR><TR><td colspan="3">
+						
+						<SELECT onchange="selectNewVehicle()" data-mini = "true" id="Vehicles"></select></TD></TR>							
+					<TR><TD colspan = "3"><small><p  width = "200px" name="NewVehicleDescription" id="NewVehicleDescription" ></p></small></TD></TR>
+
+
+					</Table>
+
+				</div><!--End Content-->
+						 
+
+			</div>
+
+		</div>
+	</div>
+ 
+</div> 
+<SCRIPT>
+var popupType;
+var TaxShortText;
+var TaxLongText;
+var HornShortText;
+var HornLongText
+var TyresShortText;
+var TyresLongText;
+var NutsShortText;
+var NutsLongText;
+var LightsShortText;
+var LightsLongText
+var WipersShortText;
+var WipersLongText;
+
+function setFields(id){
+	$("#DefectTitle").html($("#"+this.id+"-Label").html())
+	popupType=id;
+	switch(id) {
+		case 'Tax':
+			$("#ShortText").val(TaxShortText)
+			$("#LongText").val(TaxLongText)
+			break;
+		case 'Horn':
+			$("#ShortText").val(HornShortText)
+			$("#LongText").val(HornLongText)
+			break;
+		case 'Tyres':
+			$("#ShortText").val(TyresShortText)
+			$("#LongText").val(TyresLongText)
+			break;
+		case 'Nuts':
+			$("#ShortText").val(NutsShortText)
+			$("#LongText").val(NutsLongText)
+			break;
+		case 'Lights':
+			$("#ShortText").val(LightsShortText)
+			$("#LongText").val(LightsLongText)
+			break;
+		case 'Wipers':
+			$("#ShortText").val(WipersShortText)
+			$("#LongText").val(WipersLongText)
+			break;
+		default:
+			$("#ShortText").val('')
+			$("#LongText").val('')
+		}
+}
+function getFields(){
+	$("#DefectTitle").html($("#"+this.id+"-Label").html())
+	switch(popupType) {
+		case 'Tax':
+			TaxShortText=$("#ShortText").val()
+			TaxLongText=$("#LongText").val()
+			break;
+		case 'Horn':
+			HornShortText=$("#ShortText").val()
+			HornLongText=$("#LongText").val()
+			break;
+		case 'Tyres':
+			TyresShortText=$("#ShortText").val()
+			TyresLongText=$("#LongText").val()
+			break;
+		case 'Nuts':
+			NutsShortText=$("#ShortText").val()
+			NutsLongText=$("#LongText").val()
+			break;
+		case 'Lights':
+			LightsShortText=$("#ShortText").val()
+			LightsLongText=$("#LongText").val()
+			break;
+		case 'Wipers':
+			WipersShortText=$("#ShortText").val()
+			WipersLongText=$("#LongText").val()
+			break;
+		default:
+
+		}
+}
+$(document).ready(function() {
+
+
+
+
+
+
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  closeOnBgClick: false,
+  showCloseBtn:false,
+  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  callbacks: {
+    open: function() {
+		$("#WasVehicleReg").html($("#VehicleReg").html())
+		$("#WasVehicleDescription").html($("#Description").html())
+		$("#NewVehicleReg").val("");
+		$("#NewVehicleDescription").val("");
+		},
+    close: function() {
+
+
+
+		}
+	}
+})
+})
+$('select').on('change', function() {
+	if (this.value=="No"){
+		setFields(this.id)
+		$("#DefectTitle").html($("#"+this.id+"-Label").html())
+
+		    $.magnificPopup.open({
+        items: {
+            src: '#popupDefect' 
+        },
+        type: 'inline'
+    });
+		}else{
+		$('#Mileage').val( "");
+		}
+});
+function selectNewVehicle()
+{
+	res=$("#Vehicles").val().split("|");
+	$("#NewVehicleDescription").html(res[1])
+}
+function PopupClose(mode)
+{
+
+	if(mode=="SAVE")  {	
+		res=$("#Vehicles").val().split("|");
+		
+		if ($("#Vehicles").val().length>0){
+			$("#VehicleReg").html(res[0])
+			$("#Description").html(res[1])
+			$.magnificPopup.close();
+			}
+		}
+	if(mode=="SAVEDEFECT")  {	
+			getFields()
+			$.magnificPopup.close();
+
+		}
+	if(mode=="CANCEL"){	
+
+		$.magnificPopup.close();
+		}
+
+
+}
+function changeVehicle(){
+
+var HTMLToOutput='';
+var HTMLToOutput1='';
+var SQLStatement="";
+
+$("#NewVehicleDescription").val("")
+SQLStatement="SELECT *  "
+SQLStatement+="from MyVehicles where reg like '"+$("#NewVehicleReg").val()+"%'"
+HTMLToOutput=""
+
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			if(rowsArray.length>0) {
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+				if (n==0){
+					FirstVal = +item.reg+"|"+item.description;
+					}
+					HTMLToOutput+= "<option value='"+item.reg+"|"+item.description+"'>"+item.reg+"</option>"
+				}
+				//alert(HTMLToOutput)
+				$( "#Vehicles").html(HTMLToOutput);
+
+			 $("#Vehicles option[value='"+FirstVal+"']").attr('selected', 'selected');
+			$( "#Vehicles").trigger('change');
+				
+
+			}
+
+
+	 },
+	 function(error, statement){
+		alert("dfghjk");
+	 }        
+	);
+}
+
+function SaveVehicleCheck(){
+var raiseNotification=false;
+var NotificationText=""
+var startdate=getSAPDate()
+var starttime=getSAPTime()
+var ReportedBy=localStorage.getItem("MobileUser");
+	if($("#Tax").val()=="No"){
+		raiseNotification = true
+		NotificationText+="Tax/MOT/Service Displayed in date = NO\n"
+		NotificationText+="--------------------------------------\n"
+		NotificationText+="ShortText:\n"+TaxShortText+"\n"
+		NotificationText+="LongText:\n"+TaxLongText+"\n\n"
+		}
+	if($("#Horn").val()=="No"){
+		raiseNotification = true
+		NotificationText+="Is Horn Working = NO\n"
+		NotificationText+="--------------------\n"
+		NotificationText+="ShortText:\n"+HornShortText+"\n"
+		NotificationText+="LongText:\n"+HornLongText+"\n\n"
+		}
+	if($("#Tyres").val()=="No"){
+		raiseNotification = true
+		NotificationText+="Do the tyres meet company requirements = NO\n"
+		NotificationText+="-------------------------------------------\n"
+		NotificationText+="ShortText:\n"+TyresShortText+"\n"
+		NotificationText+="LongText:\n"+TyresLongText+"\n\n"
+		}
+	if($("#Nuts").val()=="No"){
+		raiseNotification = true
+		NotificationText+="Wheels secure and nut indicators aligned = NO\n"
+		NotificationText+="---------------------------------------------\n"
+		NotificationText+="ShortText:\n"+NutsShortText+"\n"
+		NotificationText+="LongText:\n"+NutsLongText+"\n\n"
+		}
+	if($("#Lights").val()=="No"){
+		raiseNotification = true
+		NotificationText+="Are all lights clean and working = NO\n"
+		NotificationText+="-------------------------------------\n"
+		NotificationText+="ShortText:\n"+LightsShortText+"\n"
+		NotificationText+="LongText:\n"+LightsLongText+"\n\n"
+		}
+	if($("#Wipers").val()=="No"){
+		raiseNotification = true
+		NotificationText+="Are the windscreen wipers/washers working = NO\n"
+		NotificationText+="----------------------------------------------\n"
+		NotificationText+="ShortText:\n"+WipersShortText+"\n"
+		NotificationText+="LongText:\n"+WipersLongText+"\n\n"
+		}
+	if(raiseNotification){
+	
+			if ($("#Mileage").val().length < 1){
+				
+				$("#errorMessage").html("<font color='red'>Mileage Not Entered</font>")
+				$("#popupError").popup('open');
+				}else{
+					html5sql.process("INSERT INTO MyNewJobs (state , defect, type, date, time, shorttext, longtext, equipment, mpoint, mpval, reportedby) VALUES ("+
+							 "'VEHICLEDEFECT','YES', 'ZD','"+startdate+"','"+starttime+"','VEHICLE DEFECT for "+VehicleReg+"','"+NotificationText+"','"+VehicleEQNo+"','"+VehicleMPoint+"','"+$("#Mileage").val()+"','"+ReportedBy+"');",
+					 function(){
+							
+							window.location.href='JobsHome.htm'		
+
+					 },
+					 function(error, statement){
+						
+						opMessage("Error: " + error.message + " when createNotification processing " + statement);
+						window.location.href='JobsHome.htm'
+					 }        
+					)
+				}
+	}else{
+	
+		if ($("#Mileage").val().length < 1){
+			
+			$("#errorMessage").html("<font color='red'>Mileage Not Entered</font>")
+			$("#popupError").popup('open');
+			  
+			}else{
+					html5sql.process("INSERT INTO  MyNewJobs (state , defect, type, date, time, shorttext, longtext, equipment, mpoint, mpval, reportedby) VALUES ("+
+							 "'VEHICLEDEFECT','NO', 'ZD','"+startdate+"','"+starttime+"','','','','"+VehicleMPoint+"','"+$("#Mileage").val()+"','"+ReportedBy+"');",
+					 function(){
+							
+							window.location.href='JobsHome.htm'				
+
+					 },
+					 function(error, statement){
+						
+						opMessage("Error: " + error.message + " when createNotification processing " + statement);
+						window.location.href='JobsHome.htm'
+					 }        
+					)			  
+			}
+	}
+}
+
+</SCRIPT>
+</body>
+
+
+</html>
+

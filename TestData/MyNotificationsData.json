@@ -1,0 +1,247 @@
+{"notification":
+[
+    {
+            "notifno": "22001",
+            "type": "ZG",
+            "priority": "High",
+            "startdate": "20061010 17:15",
+            "contact": "Mr Kumar Annadi ",
+			"shorttext": "remove graffiti Sheffield St.",
+			"longtext": "see photo crude but clear tag ",
+            "funcloc": "B01-H000-03",
+            "equipment": "",
+			"pgroup": "g1",
+			"pgrouptext": "g1text",
+			"cattype": "M",
+			"pcode": "c1",
+			"pcodetext": "c1text",
+            "orderno": "100001",
+			"reportedon": "01/01/2014 09:00",
+			"reportedby": "MOBILED",
+			"plant": "PL001",
+			"funclocgis": "51.8228005, -1.312286",
+            "equipmentgis": "51.8228005, -1.312286",
+
+            "item":
+                [
+                {"id": "0001", "d_cat_typ": "C" , "d_codegrp": "EN3A" ,"d_code": "17" , "dl_cat_typ": "S" , "dl_codegrp": "EN3A" ,"dl_code": "1" ,"description": "nasty" , "stxt_grpcd": "Neighbourhood Servs - Work Type" ,"txt_probcd": "Graffiti - Obscene", "txt_grpcd": "Structure Type", "txt_objptcd": "Wall"  }				
+				],
+            "cause":
+                [
+				{ "id": "0001", "cause_key": "0001" , "causetext": "garanga" , "cause_cat_typ": "Q" ,"cause_codegrp": "EN3X" ,"cause_code": "2" ,  "cause_txt_causegrp": "Neighbourhood Servs - Graffiti" , "cause_txt_causecd": "Graffiti - Tagged - add detail in text"   }
+                ],
+            "activity":
+                [
+				{ "id": "0001", "task_id": "0001" , "acttext": "removed11" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0002", "task_id": "0001" , "acttext": "Done12" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"},
+				{ "id": "0003", "task_id": "0002" , "acttext": "removed21" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0004", "task_id": "0002" , "acttext": "Done22" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"},
+				{ "id": "0005", "task_id": "0003" , "acttext": "removed31" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0006", "task_id": "0003" , "acttext": "Done33" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"}
+
+				
+                ],
+            "task":
+                [
+				{ "id": "0001", "task_text": "Clear Rubble1" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"lt", "status":"",  "complete":""},
+				{ "id": "0002", "task_text": "Clear Rubble2" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"lt", "status":"",  "complete":""},
+				{ "id": "0003", "task_text": "Clear Rubble3" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"lt", "status":"",  "complete":""}
+
+				],
+			"effect":
+                [
+				{ "id": "0001", "task": "0001" , "effect_cat_typ": "2" ,"effect_codegrp": "EN4" ,  "effect_code": "5" ,  "txt_effectgrp": "Build.Works" , "txt_effectcd": "Brick/block" ,   "value":""}
+				],
+
+            "partner":
+                [
+				{ "id": "O 50000333", "partner_role": "AB" ,"role_description": "Department resp." ,"name": "Administration Department"},
+				{ "id": "KU0000500023", "partner_role": "AG" ,"role_description": "Sold-to party" ,"name": "02customer"},
+				{ "id": "C 000088881234", "partner_role": "ST" ,"role_description": "Position resp." ,"name": ""},
+				{ "id": "LI0001000003", "partner_role": "LF" ,"role_description": "Vendor" ,"name": "Helical Bar"},
+				{ "id": "USPORTALADMIN", "partner_role": "VU" ,"role_description": "User responsible" ,"name": "Portal Admin"},
+				{ "id": "PE88881234", "partner_role": "VW" ,"role_description": "Person respons." ,"name": "Mr Kumar Annadi"}
+				]
+	}
+	,
+    {
+            "notifno": "22002",
+            "type": "ZG",
+            "priority": "High",
+            "startdate": "2013/02/13 17:15",
+            "contact": "Mr Paul Smith ",
+			"shorttext": "Boiler problems.",
+			"longtext": "The Boiler is leaking",
+            "funcloc": "B01-H000-03",
+            "equipment": "EQ0001",
+			"pgroup": "g1",
+			"pgrouptext": "g1text",
+			"cattype": "M",
+			"pcode": "c1",
+			"pcodetext": "c1text",
+            "orderno": "10002",
+			"reportedon": "02/01/2014 09:00",
+			"reportedby": "MOBILED",
+			"plant": "PL002",
+			"funclocgis": "52.5202507, -1.635053",
+            "equipmentgis": "52.5202507, -1.635053",
+			
+            "item":
+                [
+                {"id": "0001", "d_cat_typ": "C" , "d_codegrp": "EN3A" ,"d_code": "17" , "dl_cat_typ": "S" , "dl_codegrp": "EN3A" ,"dl_code": "1" ,"description": "nasty" , "stxt_grpcd": "Neighbourhood Servs - Work Type" ,"txt_probcd": "Graffiti - Obscene", "txt_grpcd": "Structure Type", "txt_objptcd": "Wall"  }				
+				],
+            "cause":
+                [
+				{ "id": "0001", "cause_key": "0001" , "causetext": "garanga" , "cause_cat_typ": "Q" ,"cause_codegrp": "EN3X" ,"cause_code": "2" ,  "cause_txt_causegrp": "Neighbourhood Servs - Graffiti" , "cause_txt_causecd": "Graffiti - Tagged - add detail in text"   }
+                ],
+            "activity":
+                [
+				{ "id": "0001", "task_id": "0001" , "acttext": "removed11" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0002", "task_id": "0001" , "acttext": "Done12" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"},
+				{ "id": "0003", "task_id": "0002" , "acttext": "removed21" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0004", "task_id": "0002" , "acttext": "Done22" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"},
+				{ "id": "0005", "task_id": "0003" , "acttext": "removed31" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0006", "task_id": "0003" , "acttext": "Done33" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"}
+                ],
+            "task":
+                [
+				{ "id": "0001", "task_text": "Clear Rubble1" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""},
+				{ "id": "0002", "task_text": "Clear Rubble2" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""},
+				{ "id": "0003", "task_text": "Clear Rubbl3e" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""}
+
+				],
+			"effect":
+                [
+				{ "id": "0001", "task": "0001" , "effect_cat_typ": "2" ,"effect_codegrp": "EN4" ,  "effect_code": "5" ,  "txt_effectgrp": "Build.Works" , "txt_effectcd": "Brick/block" ,   "value":""}
+				],
+            "partner":
+                [
+				{ "id": "O 50000333", "partner_role": "AB" ,"role_description": "Department resp." ,"name": "Administration Department"},
+				{ "id": "KU0000500023", "partner_role": "AG" ,"role_description": "Sold-to party" ,"name": "02customer"},
+				{ "id": "C 000088881234", "partner_role": "ST" ,"role_description": "Position resp." ,"name": ""},
+				{ "id": "LI0001000003", "partner_role": "LF" ,"role_description": "Vendor" ,"name": "Helical Bar"},
+				{ "id": "USPORTALADMIN", "partner_role": "VU" ,"role_description": "User responsible" ,"name": "Portal Admin"},
+				{ "id": "PE88881234", "partner_role": "VW" ,"role_description": "Person respons." ,"name": "Mr Kumar Annadi"}
+				]
+	},  
+    {
+            "notifno": "22003",
+            "type": "ZA",
+            "priority": "Medium",
+            "startdate": "2014/01/01 17:15",
+            "contact": "Mr George Smiley ",
+			"shorttext": "Downpike leaking",
+			"longtext": "Downpipe has been ripped from the wall",
+            "funcloc": "FLK0001",
+            "equipment": "EQ1212121",
+			"cattype": "M",
+            "pgroup": "g1",
+			"pgrouptext": "g1text",
+			"pcode": "c1",
+			"pcodetext": "c1text",
+            "orderno":"10003",
+			"reportedon": "03/01/2014 09:00",
+			"reportedby": "MOBILED",
+			"plant": "PL003",
+			"funclocgis": "53.479324, -2.248485",
+            "equipmentgis": "53.479324, -2.248485",
+
+            "item":
+                [
+                {"id": "0001", "d_cat_typ": "C" , "d_codegrp": "EN3A" ,"d_code": "17" , "dl_cat_typ": "S" , "dl_codegrp": "EN3A" ,"dl_code": "1" ,"description": "nasty" , "stxt_grpcd": "Neighbourhood Servs - Work Type" ,"txt_probcd": "Graffiti - Obscene", "txt_grpcd": "Structure Type", "txt_objptcd": "Wall"  }				
+				],
+            "cause":
+                [
+				{ "id": "0001", "cause_key": "0001" , "causetext": "garanga" , "cause_cat_typ": "Q" ,"cause_codegrp": "EN3X" ,"cause_code": "2" ,  "cause_txt_causegrp": "Neighbourhood Servs - Graffiti" , "cause_txt_causecd": "Graffiti - Tagged - add detail in text"   }
+                ],
+            "activity":
+                [
+				{ "id": "0001", "task_id": "0001" , "acttext": "removed11" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0002", "task_id": "0001" , "acttext": "Done12" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"},
+				{ "id": "0003", "task_id": "0002" , "acttext": "removed21" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0004", "task_id": "0002" , "acttext": "Done22" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"},
+				{ "id": "0005", "task_id": "0003" , "acttext": "removed31" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0006", "task_id": "0003" , "acttext": "Done32" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"},
+				{ "id": "0007", "task_id": "0004" , "acttext": "removed41" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0008", "task_id": "0004" , "acttext": "Done42" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"},
+				{ "id": "0009", "task_id": "0005" , "acttext": "removed51" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0010", "task_id": "0005" , "acttext": "Done53" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"}
+                ],
+            "task":
+                [
+				{ "id": "0001", "task_text": "Clear Rubble1" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""},
+				{ "id": "0002", "task_text": "Clear Rubble2" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""},
+				{ "id": "0003", "task_text": "Clear Rubble1" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""},
+				{ "id": "0004", "task_text": "Clear Rubble2" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""},
+				{ "id": "0005", "task_text": "Clear Rubbl3e" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""}
+
+				],
+			"effect":
+                [
+				{ "id": "0001", "task": "0001" , "effect_cat_typ": "2" ,"effect_codegrp": "EN4" ,  "effect_code": "5" ,  "txt_effectgrp": "Build.Works" , "txt_effectcd": "Brick/block" ,   "value":""}
+				],
+            "partner":
+                [
+				{ "id": "O 50000333", "partner_role": "AB" ,"role_description": "Department resp." ,"name": "Administration Department"},
+				{ "id": "KU0000500023", "partner_role": "AG" ,"role_description": "Sold-to party" ,"name": "02customer"},
+				{ "id": "C 000088881234", "partner_role": "ST" ,"role_description": "Position resp." ,"name": ""},
+				{ "id": "LI0001000003", "partner_role": "LF" ,"role_description": "Vendor" ,"name": "Helical Bar"},
+				{ "id": "USPORTALADMIN", "partner_role": "VU" ,"role_description": "User responsible" ,"name": "Portal Admin"},
+				{ "id": "PE88881234", "partner_role": "VW" ,"role_description": "Person respons." ,"name": "Mr Kumar Annadi"}
+				]
+	},
+    {
+            "notifno": "22004",
+            "type": "ZB",
+            "priority": "Low",
+            "startdate": "2014/07/03 17:15",
+            "contact": "Mr Charley Farley",
+			"shorttext": "Sink is Blocked",
+			"longtext": "Too many takeaways wasked down sink",
+            "funcloc": "FL33",
+            "equipment": "EQ22",
+			"cattype": "M",
+            "pgroup": "g1",
+			"pgrouptext": "g1text",
+			"pcode": "c1",
+			"pcodetext": "c1text",
+            "orderno": "",
+			"reportedon": "04/01/2014 09:00",
+			"reportedby": "MOBILED",
+			"plant": "PL004",
+			"funclocgis": "40.3356483, -75.926874",
+            "equipmentgis": "40.3356483, -75.926874",
+
+            "item":
+                [
+                {"id": "0001", "d_cat_typ": "C" , "d_codegrp": "EN3A" ,"d_code": "17" , "dl_cat_typ": "S" , "dl_codegrp": "EN3A" ,"dl_code": "1" ,"description": "nasty" , "stxt_grpcd": "Neighbourhood Servs - Work Type" ,"txt_probcd": "Graffiti - Obscene", "txt_grpcd": "Structure Type", "txt_objptcd": "Wall"  }				
+				],
+            "cause":
+                [
+				{ "id": "0001", "cause_key": "0001" , "causetext": "garanga" , "cause_cat_typ": "Q" ,"cause_codegrp": "EN3X" ,"cause_code": "2" ,  "cause_txt_causegrp": "Neighbourhood Servs - Graffiti" , "cause_txt_causecd": "Graffiti - Tagged - add detail in text"   }
+                ],
+            "activity":
+                [
+				{ "id": "0001", "task_id": "0001" , "acttext": "removed" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "3" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Grit Blast" ,  "start_date": "20061010" ,"start_time": "170100" ,  "end_date": "20061010" ,  "end_time": "170100"},
+				{ "id": "0002", "task_id": "0001" , "acttext": "Done" ,"act_cat_typ": "A" ,"act_codegrp": "EN3A" ,  "act_code": "1" ,  "txt_actgrp": "Neighbourhood Servs" , "txt_actcd": "Remove" ,  "start_date": "20061010" ,"start_time": "170200" ,  "end_date": "20061010" ,  "end_time": "170200"}
+                ],
+            "task":
+                [
+				{ "id": "0001", "task_text": "Clear Rubble" , "task_cat_typ": "2" ,"task_codegrp": "EN4" ,  "task_code": "5" ,  "txt_taskgrp": "Build.Works" , "txt_taskcd": "Brick/block" ,  "plnd_start_date": "20070226" ,"plnd_start_time": "155600" ,"plnd_end_date": "20070226" ,"plnd_end_time": "155600", "sla_end_date": "20070226" ,"sla_end_time": "155600", "longtext":"", "status":"", "complete":""}
+				],
+			"effect":
+                [
+				{ "id": "0001", "task": "0001" , "effect_cat_typ": "2" ,"effect_codegrp": "EN4" ,  "effect_code": "5" ,  "txt_effectgrp": "Build.Works" , "txt_effectcd": "Brick/block" ,   "value":""}
+				],
+            "partner":
+                [
+				{ "id": "O 50000333", "partner_role": "AB" ,"role_description": "Department resp." ,"name": "Administration Department"},
+				{ "id": "KU0000500023", "partner_role": "AG" ,"role_description": "Sold-to party" ,"name": "02customer"},
+				{ "id": "C 000088881234", "partner_role": "ST" ,"role_description": "Position resp." ,"name": ""},
+				{ "id": "LI0001000003", "partner_role": "LF" ,"role_description": "Vendor" ,"name": "Helical Bar"},
+				{ "id": "USPORTALADMIN", "partner_role": "VU" ,"role_description": "User responsible" ,"name": "Portal Admin"},
+				{ "id": "PE88881234", "partner_role": "VW" ,"role_description": "Person respons." ,"name": "Mr Kumar Annadi"}
+				]
+	}
+]
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Jobs - Notification Details
+  </title>
+  
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+</script>
+ 
+
+ <style type='text/css'>
+  .stripe{
+	background-color: lightgrey; 
+	color: black;
+}
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+   .wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 250px;
+  overflow-y: auto;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+  .block {
+    border: 1px solid grey;
+    width: 180px;
+    height:150px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+
+border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }  
+                .box {
+    border: 1px solid #a1a1a1;
+    padding: 10px 10px; 
+    background: #dddddd;
+    
+    border-radius: 5px;
+}  
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 80%;
+  margin: 20px auto;
+}
+.ui-btn-width {
+    width: 200px !important;
+}  
+  </style>
+ 
+</head>
+<body>
+<div align="center"  data-role="page" id="JobsNotificationDetailsTask"> 
+	<div   data-role="header" data-position="fixed">
+		
+		
+		<table width = "100%">
+			<TR height="50px">
+				<TD width = "20%"  align="left"><a style="font-size: 100%" href="javascript:goBack()"  >
+				<i class="fa fa-arrow-left fa-2x pull-left fa-border"></i></a></td>
+			
+				<TD width = "60%"  align= "center"><h1 style="font-size: 100%"><B>Notifications- Details</B></H1>
+				<a href="#lastSyncDets" data-rel="popup"style="color: green; text-decoration:none;"> <Small><P id="lastsync"></p></A></small></TD>
+				
+				<TD width = "10%"  align="right"><a style="font-size: 100%" href='javascript:takePhoto()' >
+				<i class="fa fa-camera fa-2x pull-right fa-border"></i></a></td>
+				<TD width = "10%"  align="right"><a style="font-size: 100%" href='javascript:GoToTasks()' >
+				<i class="fa fa-tasks fa-lg pull-right fa-border"></i></a></td>
+			</TR>
+		</table>	
+	</div> 
+
+		
+
+
+	
+
+
+		<div  data-role="content">	
+			<div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true">
+				<div data-role="collapsible" data-collapsed="false">			
+					<h3>Notification Details: <B id="NotifNo">3100000123</B></h3>
+					<table width = "100%">
+						<TR><TD align = "left" width "30%">Order No:</td><td width = "70%"> <B id="OrderNo"></B></td></TR>
+						<TR><TD align = "left" width "30%">Type:</td><td width = "70%"> <B id="Type"></B></td></TR>
+						<TR><TD align = "left" width "30%">Plant:</td><td width = "70%"> <B id="Plant"></B></td></TR>
+						<TR><TD align = "left" width "30%">Priority:</td><td width = "70%"> <B id="Priority"></B></td></TR>
+						<TR><TD align = "left" width "30%">Description:</td><td width = "70%"> <B id="Description"></B></td></TR>
+						<TR><TD align = "left" width "30%">Functional Location:</td><td width = "70%"> <B id="FuncLoc">456</B></td></TR>
+						<TR><TD align = "left" width "30%">Equipment:</td><td width = "70%"> <B id="Equipment"></B></td></TR>				
+						<TR><TD align = "left" width "30%">Reported on:&nbsp;</td><td width = "70%"> <B id="ReportedOn"></B></td></TR>
+						<TR><TD align = "left" width "30%">Reported By:&nbsp;</td><td width = "70%"> <B id="ReportedBy"></B></td></TR>						
+					</table>
+				</div>
+				<div data-role="collapsible" >
+					<h3>Details</h3>
+					
+					
+					<div ><P id="LongText">
+					
+					</p></div>
+				</div>						
+
+			</div>
+
+	<div style='display:none'>	
+			<div data-role="popup" id="lastSyncDets">
+			  <p id='referenceSyncDetails' ></p>
+			  <p id='transactionalSyncDetails' ></p>
+			  <p id='uploadSyncDetails' ></p>
+			</div>
+	</div>
+
+
+
+	
+
+</div>
+
+
+
+
+
+
+<Script>
+
+function showMap(type)
+{
+
+window.location.href='JobsLocateOnMap.htm?CallBack=Notification&NotifNo='+SelectedNotifNo+'&Type='+type+'&LatLong='+$( type).html()
+}
+function GoToTasks()
+{
+
+loc="JobsNotificationDetailsTasks.htm?NotifNo="+SelectedNotifNo+"&Type="+"ZM&JobNo="+SelectedJobNo+'&Status='+SelectedStatus+'&Callback='+SelectedCallback   //CurrentNotifType
+window.location.href=loc;
+}
+
+
+
+ var CurrentNotifNo="";
+  var NotifNoID="";
+	 var SelectedJobNo=getURLParameters("JobNo");
+	 var SelectedStatus=getURLParameters("Status");
+	 var SelectedCallback=getURLParameters("Callback");	
+	 var SelectedNotifNo=getURLParameters("NotifNo");
+	 if(SelectedCallback!='Order'){
+		 res=SelectedNotifNo.split("|");
+		 CurrentNotifNo=res[0];
+		 NotifNoID=res[1];		 
+	 }else{
+		 CurrentNotifNo=SelectedNotifNo;
+		 
+	 }
+
+
+
+//alert(SelectedNotifNo);
+  var LatLongType=getURLParameters("LatLongType");
+  var LatLong=getURLParameters("LatLong");
+  var CurrentNotifType="";
+
+	if(LatLongType=="#EquipmentGIS"){
+		LatLongType="equipmentgis"
+		updateNotifLatLong(SelectedNotifNo,LatLongType,LatLong);
+		}
+	if(LatLongType=="#FuncLocGIS"){
+		LatLongType="funclocgis"
+		updateNotifLatLong(SelectedNotifNo,LatLongType,LatLong);
+		}
+
+ 
+GetNotificationDetails();
+function goBack()
+{
+
+	 if(SelectedCallback=='Order'){
+		 window.location.href='JobsOrdersDetails.htm?JobNo='+SelectedJobNo+'&Status='+SelectedStatus+'&NotifNo='+SelectedNotifNo
+	 
+	 }else{
+		 window.location.href='JobsNotifications.htm'
+		 
+	 }
+	
+}
+function GetNotificationDetails(){
+var Stripe="";
+var opMap="";
+var opAppt=""
+var HTMLToOutput='';
+var n=1;
+
+
+SQLStatement="SELECT MyNotifications.notifno, MyNotifications.reportedon, MyNotifications.reportedby, MyNotifications.type, MyNotifications.shorttext, MyNotifications.longtext, MyNotifications.funcloc, MyNotifications.equipment, MyNotifications.orderno, "
+SQLStatement+=" MyNotifications.plant, MyNotifications.priority, MyNotifications.funclocgis, MyNotifications.equipmentgis  "
+SQLStatement+=" From MyNotifications "
+if(SelectedCallback!='Order'){
+	SQLStatement+=" where MyNotifications.id = '"+NotifNoID+"'"
+	}else{	
+	SQLStatement+=" where MyNotifications.notifno = '"+CurrentNotifNo+"'"	
+	}
+
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			item = rowsArray[0];
+
+
+			$( "#NotifNo").html(item.type+" - "+item.notifno);
+			CurrentNotifType=item.type;
+			$( "#ReportedOn").html(item.reportedon);
+			$( "#ReportedBy").html(item.reportedby);
+								
+			$( "#Type").html(item.type);
+			$( "#Description").html(item.shorttext);
+			$( "#OrderNo").html(item.orderno);
+			$( "#Plant").html(item.plant);
+			$( "#Priority").html(item.priority);
+			
+		    $( "#FuncLoc").html(item.funcloc);
+			$( "#FuncLocGIS").html(item.funclocgis);
+			$( "#Equipment").html(item.equipment);
+			$( "#EquipmentGIS").html(item.equipmentgis);
+			$( "#LongText").html(item.longtext);
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+
+  </script>
+  
+
+
+<script type='text/javascript'>
+
+var w = null; // initialize variable
+function startBGSync()
+{
+
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+   // First check whether Web Workers are supported
+   if (typeof(Worker)!=="undefined"){
+      // Check whether Web Worker has been created. If not, create a new Web Worker based on the Javascript file simple-timer.js
+      if (w==null){
+         w = new Worker("bgsync.js");
+      }
+      // Update timer div with output from Web Worker
+      w.onmessage = function (event) {      
+		 syncReference()
+		 syncTransactional()
+		 syncUpload()
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+
+		 };
+   } else {
+      // Web workers are not supported by your browser
+      document.getElementById("lastsync").innerHTML = "Sorry, your browser does not support Web Workers ...";
+   }
+}
+
+startBGSync();
+function takePhoto(){
+	//syncThePhoto(CurrentNotifNo,"xx")
+	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+	    destinationType: Camera.DestinationType.DATA_URL});
+}
+
+function onSuccess(imageData) {
+    
+    var b64data = "data:image/jpeg;base64," + imageData;
+
+    syncThePhoto(CurrentNotifNo,b64data)
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+function syncThePhoto(notifno,imagedata){
+	var SAPServerSuffix=""
+	var SAPServerSuffix1=""
+	var SAPClient="700"
+	var SAPUser=""	
+	var SAPPassword=""
+	var ImageType="gif"
+	var DocName="FromMobile "+getDate()+" "+getTime();
+	var DocDesc="Created "+getDate()+" "+getTime();
+	opMessage("Synchronizing Captured Photo");
+
+		html5sql.process(
+			["SELECT * from MyUserDets"],
+			function(transaction, results, rowsArray){
+				if( rowsArray.length > 0) {
+
+					
+					SAPUser=rowsArray[0].user;		
+					SAPPassword=rowsArray[0].password;
+					
+					html5sql.process("SELECT * from MyWorkConfig where paramname = 'SERVERNAME'",
+						function(transaction, results, rowsArray){
+							if( rowsArray.length > 0) {
+										
+										SAPServerPrefix=$.trim(rowsArray[0].paramvalue);
+										//$.ajax({
+									    //    type: "POST",/*method type*/
+									    //    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+									    //    url: SAPServerPrefix+"MyJobsUploadFile.htm?SAP-Client="+SAPClient+"&SAP-User="+SAPUser+"&SAP-Password="+SAPPassword+"&name=name&description=desc&notifno="+notifno+"&ImageData="+imagedata+"&type="+ImageType,
+									    //    dataType: "jsonP",
+									    //    success: function(data) {
+									    //           alert("Success"+data);
+									    //        
+									    //    },
+									    //    error: function(jqXHR, textStatus, errorThrown) {
+									    //        alert("Error"+textStatus+":"+errorThrown);
+									    //    }
+									    //});   	
+									    $.ajax({
+									    	type: "POST",
+									    	url: SAPServerPrefix+"MyJobsUploadFile.htm?SAP-Client="+SAPClient+"&SAP-User="+SAPUser+"&SAP-Password="+SAPPassword+"&name="+DocName+"&description="+DocDesc+"&notifno="+notifno+"&type="+ImageType+"&ImageData="+imagedata,
+									    		dataType: "JsonP",
+									       success: function(data) {
+									               alert("Success"+data);
+									            
+									        },
+									        error: function(jqXHR, textStatus, errorThrown) {
+									            alert("Error"+textStatus+":"+errorThrown);
+									        }
+									    });   	
+
+							 }
+							 
+						},
+						function(error, statement){
+							opMessage("Error: " + error.message + " when syncTransactional processing " + statement); 
+						}
+					)
+				}
+			},
+			function(error, statement){
+			 opMessage("Error: " + error.message + " when syncTransactional processing " + statement);          
+			}
+		);
+}
+</script>
+
+
+</body>
+
+
+</html>
+

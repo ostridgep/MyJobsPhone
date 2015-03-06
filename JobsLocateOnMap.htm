@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Jobs - Locate On Map
+  </title>
+  <script type='text/javascript' src='cordova'></script>
+<script src="js/MyJobs.js"></script>  
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+	<!-- CSS and JS for our code -->
+
+	<script src="js/jquery-gmaps-latlon-picker.js"></script>
+</head>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script>
+if(localStorage.getItem("AppType")=="WEB"){
+	var db = openDatabase('MyJobsDB', '1.0', 'MyJobsDB', 2000000);	
+	
+	}else{
+	
+	var db=window.sqlitePlugin.openDatabase({name: "MyJobsDB"});
+	
+	}
+</script> 
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 95%;
+
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+  .gllpLatlonPicker	{ margin: 20px 0; }
+.gllpMap	{  width: 500px; height:500px; }
+
+  </style>
+
+  
+</head>
+<body>
+<div align="center" data-role="page" id="JobsSettingsForceSync"> 
+	<div   data-role="header" data-position="fixed"><h1 style="font-size: 150%">
+		<B>MyWork - Locate on Map</B></h1>
+		<a style="font-size: 120%" onclick="window.history.back()" data-icon="back" class="ui-btn-left">Cancel</a>
+		<a style="font-size: 120%" onclick="gotoCaller()" data-icon="check" class="ui-btn-right">Update</a>
+	</div> 
+	<div  data-role="content">	
+		<div  align="center"> 
+		
+
+			<fieldset class="gllpLatlonPicker">
+			<TABLE>
+			<TR><TD><input id="SearchText" type="text" class="gllpSearchField"></TD><TD><input id="SearchButton" type="button" class="gllpSearchButton" value="Search"></TD></TR>
+			</TABLE>
+				<div class="gllpMap">Google Maps</div>
+			<TABLE>
+			<TR><TD>Lat:</TD><TD><input id="xLat" type="text" disabled class="gllpLatitude" value="20"/></TD></TR>
+			<TR><TD>Lon:</TD><TD><input id="xLong" type="text" disabled class="gllpLongitude" value="20"/></TD></TR>
+						<input type="hidden" class="gllpZoom" value="3"/>
+			
+</table>
+				<br/>
+			</fieldset>
+			
+			
+		</div>
+	</div>
+
+</div> 
+<script>
+function gotoCaller(){
+if(CallBack=="Notification"){
+	loc="JobsNotificationDetails.htm?NotifNo="+NotifNo+"&LatLongType="+Type+"&LatLong="+document.getElementById("xLat").value+","+ document.getElementById("xLong").value
+}
+if(CallBack=="Order"){
+	loc="JobsOrdersDetails.htm?JobNo="+JobNo+"&Status="+Status+"&NotifNo="+NotifNo+"&LatLongType="+Type+"&LatLong="+document.getElementById("xLat").value+","+ document.getElementById("xLong").value
+}
+window.location.href=loc;
+}
+var CallBack=getURLParameters("CallBack");
+var NotifNo=getURLParameters("NotifNo");
+var LatLong=getURLParameters("LatLong");
+var Type=getURLParameters("Type");
+var JobNo=getURLParameters("JobNo");
+var Status=getURLParameters("Status");
+$(document).ready(function() {
+document.getElementById("SearchText").value = LatLong;
+$("#SearchButton").click();
+
+});
+</Script>
+</body>
+
+
+</html>
+

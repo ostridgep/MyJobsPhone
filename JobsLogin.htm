@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+  <title>Jobs - Login
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />
+<link href="css/font-awesome.min.css" rel="stylesheet">
+ <style type='text/css'>
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+  .stripe{
+	background-color: lightgrey; 
+	color: black;
+}
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+   .wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 300px;
+  overflow-y: auto;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+  .block {
+    border: 1px solid grey;
+    width: 200px;
+    height:220px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+
+border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }  
+                .box {
+    border: 1px solid #a1a1a1;
+    padding: 10px 10px; 
+    background: #dddddd;
+    
+    border-radius: 5px;
+}  
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+
+
+
+.info, .success, .warning, .error, .validation {
+border: 1px solid;
+margin: 10px 0px;
+padding:15px 10px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+}
+.info {
+color: #00529B;
+background-color: #BDE5F8;
+background-image: url('info.png');
+}
+.success {
+color: #4F8A10;
+background-color: #DFF2BF;
+background-image:url('success.png');
+}
+.warning {
+color: #9F6000;
+background-color: #FEEFB3;
+background-image: url('warning.png');
+}
+.error {
+color: #D8000C;
+background-color: #FFBABA;
+background-image: url('error.png');
+}
+.ui-btn-width {
+    width: 200px !important;
+}
+</style> 
+</head>
+<body>
+
+<div align="center" data-role="page" id="JobsLogin"> 
+  <div data-role="panel" id="options" data-position="right" data-display="overlay"> 
+    <h2>Options</h2>
+   
+	<a href='#popupNewUser' class="open-popup-link ui-btn ui-btn-width ui-btn-inline ui-icon-plus ui-corner-all ui-shadow ui-btn-icon-left">New User</a>
+	<a href='#popupChangePassword'  class="open-popup-link ui-btn ui-btn-width ui-btn-inline ui-icon-edit ui-corner-all ui-shadow ui-btn-icon-left" >Change Password</a>
+ 
+  </div>
+	<div  id="header" data-role="header" data-position="fixed">
+		<table width = "100%">
+			<TR >
+				<TD width = "15%" ></TD>
+				
+				<TD width = "70%"  align= "center"><h3><B>MyJobs - Login</b></H3></TD>
+				
+				<TD width = "15%" ><a href="#options" ><i class="fa fa-bars fa-2x pull-right fa-border"></i></a></TD>
+			</TR>
+		</table>	
+			
+	</div> 
+	<div  data-role="content">
+	<div hidden><a hidden id="showCreateDB" style="font-size: 100%" href='#popupCreateDB'  class="open-popup-link ui-btn ui-btn-width ui-btn-inline ui-icon-edit ui-corner-all ui-shadow ui-btn-icon-left" >popup Create DB</a></div>
+	<BR><BR>
+		<div align="center" >
+			<Table width="90%">
+				<TR><TD  width = "30%"><label >User:</label></td><TD colspan = "2" width = "70%"><input type="text" size = "5" name="Username" id="Username" value=""  /></td></TR>
+			
+				<TR><TD  width = "30%"><label>Password:</label></td><TD colspan = "2" width = "70%"><input type="password" name="password" id="password" value="" /></td></TR>
+				<TR><TD></TD><TD width = "40%"><a href="#" id="errorMessagePosition" onclick="checkLogin();"   class="ui-btn ui-icon-check ui-btn-icon-left ui-corner-all ui-shadow" data-mini="true">Login</a></td><TD></TD></TR>
+				<TR><TD colspan="3">&nbsp;</TR>
+				<TR><TD colspan="3"><font color="red"><P  align="center" id="LoginMessage"></p></font></TR>
+			</table>
+
+		</div>
+	</div>
+		<div style='display:none'>	
+			<div data-role="popup" id="popupError"  data-dismissible="false" style="max-width:400px;">
+				<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+				<div  role="main" class="ui-content">
+					<h4 align="center" style="color:red" class="ui-title" id="errorMessage"></h4>
+					
+
+				</div>
+			
+			</div>
+			<div id="popupCreateDB"  class="white-popup mfp-hide">
+				
+				<div data-role="header" data-theme="a"><h1><b>Database does not Exist</B></h1></div>
+				<div role="main"  class="ui-content" >
+					<BR>
+					<div hidden id ="loadmessage" width="95%">
+					<TABLE width="100%">
+						<TR><TD align="center"><img data-tooltip="fffff" src="images\ajax-loader1.gif"" ></TD></TR>
+							<TR><TD align="center">Please Wait</TD></TR> 
+					</Table>    
+					</div>
+				
+					
+								
+					<div id="buttons" width="95%">
+					<TABLE width="100%">
+						<TR>
+							<TD align="center"><a onClick="createTheDatabase();" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Create</a></TD></TR> 
+					</Table>    
+					</div>
+				</div>
+			</div>			
+			<div id="popupNewUser"  class="white-popup mfp-hide">
+				
+				<h3><b><center>Create User</center></B></h3>
+				<div role="main"  class="ui-content" >
+					<Table  width="95%">
+						<TR><TD width="25%" ><label for="NU-User">User:</label></TD>
+							<TD><input type="text" name="NU-User" id="NU-User"></TD></TR>
+						<TR><TD width="25%" ><label for="NU-Password">Password:</label></TD>
+							<TD><input type="password" name="NU-Password" id="NU-Password"></TD></TR>
+						<TR><TD width="25%" ><label for="NU-ConfPassword">Confirm Password:</label></TD>
+							<TD><input type="password" name="NU-ConfPassword" id="NU-ConfPassword"></TD></TR>
+											<TR><TD colspan="2">&nbsp;</TR>
+				<TR><TD colspan="2"><font color="red"><P  align="center" id="NewUserMessage"></p></font></TR>
+						
+					</Table>
+				
+				
+					
+								
+					<div width="95%">
+					<TABLE width="100%">
+						<TR><TD align="left"><a onClick="PopupClose('CANCEL')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Cancel</a></TD>
+							<TD align="right"><a onClick="PopupClose('NEWUSERSAVE')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Save</a></TD></TR> 
+					</Table>    
+					</div>
+				</div>
+			</div>
+			<div id="popupChangePassword"  class="white-popup mfp-hide">
+				
+				<h3><b><center>Change Password</center></B></h3>
+				<div role="main"  class="ui-content" >
+					<Table  width="95%">
+						<TR><TD width="25%" ><label for="CP-User">User:</label></TD>
+							<TD><input type="text" name="CP-User" id="CP-User"></TD></TR>
+						<TR><TD width="25%" ><label for="CP-OldPassword">Old Password:</label></TD>
+							<TD><input type="password" name="CP-OldPassword" id="CP-OldPassword"></TD></TR>
+						<TR><TD width="25%" ><label for="CP-NewPassword">New Password:</label></TD>
+							<TD><input type="password" name="CP-NewPassword" id="CP-NewPassword"></TD></TR>
+						<TR><TD width="25%" ><label for="CP-ConfPassword">Confirm Password:</label></TD>
+							<TD><input type="password" name="CP-ConfPassword" id="CP-ConfPassword"></TD></TR>
+																<TR><TD colspan="2">&nbsp;</TR>
+				<TR><TD colspan="2"><font color="red"><P  align="center" id="ChangePasswordMessage"></p></font></TR>	
+					</Table>
+				
+				
+					
+								
+					<div width="95%">
+					<TABLE width="100%">
+						<TR><TD align="left"><a onClick="PopupClose('CANCEL')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Cancel</a></TD>
+							<TD align="right"><a onClick="PopupClose('CHANGEPASSWORDSAVE')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Save</a></TD></TR> 
+					</Table>    
+					</div>
+				</div>
+			</div>
+			<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">	   
+				<div style="padding:10px 20px;">
+					<h3 >Invalid User or Password</h3>
+
+				</div>
+			</div>
+		</div>
+	
+	
+
+</div> 
+<script type='text/javascript'>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+var PopupCloseType="";
+$('html, body').css({
+    'overflow': 'hidden',
+    'height': '100%'
+});
+function PopupClose(mode)
+{
+	PopupCloseType=mode;
+	if(mode=="CHANGEPASSWORDSAVE"){
+		checkChangePW();
+		}
+	
+	if(mode=="NEWUSERSAVE"){
+		checkNewUser()
+			
+
+		}
+	if(mode=="CANCEL"){
+		$.magnificPopup.close();
+		}
+	
+}
+
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  closeOnBgClick: false,
+  showCloseBtn:false,
+  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  callbacks: {
+    open: function() {
+     
+
+//$("[data-role='footer']").hide();
+    },
+    close: function() {
+
+		if (PopupCloseType!="CANCEL"){
+	
+			//location.reload(false);
+			}
+
+
+
+    }
+	}
+})
+	html5sql.process(
+		["SELECT * FROM sqlite_master WHERE type='table';"],
+		function(transaction, results, rowsArray){
+			if( rowsArray.length <10) {
+				$("#showCreateDB").click()
+				}
+			
+
+		},
+		 function(error, statement){
+			 
+		 }   
+	);
+
+
+function checkLogin()
+{
+
+var user=$('#Username').val();
+var pw=$('#password').val();
+	html5sql.process("SELECT * from MyUserDets where user = '"+user+"' and password =  '"+pw+"'",
+	 function(transaction, results, rowsArray){
+			if( rowsArray.length > 0) {
+						
+						localStorage.setItem("MobileUser",user)
+						localStorage.setItem("VehicleReg",rowsArray[0].vehiclereg)
+						localStorage.setItem("EmployeeID",rowsArray[0].employeeid)
+						window.location.href='JobsVehicleCheck.htm'
+			}else{
+
+					$("#errorMessage").html("<font color='red'>Invalid User or Password</font>")
+					$("#popupError").popup('open',{positionTo: '#errorMessagePosition'});
+			}
+		
+	 },
+	 function(error, statement){
+			$("#errorMessage").html("<font color='red'>Invalid User or Password</font>")
+			$("#popupError").popup('open',{positionTo: '#errorMessagePosition'});
+	 }        
+	);			
+
+
+
+}
+function checkNewUser(){
+
+
+if($('#NU-User').val())
+
+	{
+		if($('#NU-Password').val()){
+			if ($('#NU-ConfPassword').val()==$('#NU-Password').val()){
+				
+						html5sql.process("SELECT * from MyUserDets where user = '"+$('#NU-User').val()+"' ",
+						 function(transaction, results, rowsArray){
+								if( rowsArray.length <1 ) {
+									html5sql.process("INSERT INTO MyUserDets (mobileuser , user, password ) VALUES ('"+$('#NU-User').val()+"','" +$('#NU-User').val()+"','" + $('#NU-Password').val()+"');",
+									 function(){
+										 //alert("Success dropping Tables");
+									 },
+									 function(error, statement){
+										opMessage("Error: " + error.message + " when drop processing " + statement);
+									 }        
+									);	
+									$.magnificPopup.close();
+								}else{
+									$( "#NewUserMessage").html("User aready exists");
+									$( "#NewUserMessage").trigger('create')
+								}
+							
+						 },
+						 function(error, statement){
+							opMessage("Error: " + error.message + " when drop processing " + statement);
+							wait = false
+						 }        
+						);						
+					
+;
+			
+				
+			}else{
+				$( "#NewUserMessage").html("Passwords do not match");
+				$( "#NewUserMessage").trigger('create');
+			}
+		}else{
+			$( "#NewUserMessage").html("Password cannot be blank");
+			$( "#NewUserMessage").trigger('create');
+		}
+	}else{
+		$( "#NewUserMessage").html("User cannot be blank");
+		$( "#NewUserMessage").trigger('create');
+	}
+}
+function checkChangePW(){
+//SQLStatement="SELECT * from MyUserDets where user = '"+$('#CP-User').val()+"'"
+
+if($('#CP-User').val())
+
+	{
+		if($('#CP-OldPassword').val()){
+			if($('#CP-NewPassword').val()){
+				if ($('#CP-ConfPassword').val()==$('#CP-NewPassword').val()){
+						html5sql.process("SELECT * from MyUserDets where user = '"+$('#CP-User').val()+"' ",
+						 function(transaction, results, rowsArray){
+								if( rowsArray.length <1 ) {
+									$( "#ChangePasswordMessage").html("User Does Not Exists");
+									$( "#ChangePasswordMessage").trigger('create')	
+								
+								}else{
+									html5sql.process("SELECT * from MyUserDets where user = '"+$('#CP-User').val()+"' and password = '"+$('#CP-OldPassword').val()+"'",
+									 function(transaction, results, rowsArray){
+											if( rowsArray.length <1 ) {
+												$( "#ChangePasswordMessage").html("Old Password is not corect");
+												$( "#ChangePasswordMessage").trigger('create')	
+											
+											}else{
+												html5sql.process("UPDATE MyUserDets set password =  '"+$('#CP-NewPassword').val()+"' where user = '"+$('#CP-User').val()+"'",
+												 function(){
+													
+												 },
+												 function(error, statement){
+													opMessage("Error: " + error.message + " when drop processing " + statement);
+												 }        
+												);
+											$.magnificPopup.close();												
+											}
+										
+									 },
+									 function(error, statement){
+									 opMessage("Error: " + error.message + " when drop processing " + statement);
+							
+									}        
+									);							
+								}
+
+							},
+						 function(error, statement){
+								 opMessage("Error: " + error.message + " when drop processing " + statement);
+						
+								}        
+						);	
+
+				}else{
+					$( "#ChangePasswordMessage").html("New Passwords do not match");
+					$( "#ChangePasswordMessage").trigger('create');
+				}
+			}else{
+				$( "#ChangePasswordMessage").html("New Password cannot be blank");
+				$( "#ChangePasswordMessage").trigger('create');
+			}
+		}else{
+			$( "#ChangePasswordMessage").html("Old Password cannot be blank");
+			$( "#ChangePasswordMessage").trigger('create');
+		}
+	}else{
+		$( "#ChangePasswordMessage").html("User cannot be blank");
+		$( "#ChangePasswordMessage").trigger('create');
+	}
+}
+  function createTheDatabase(){
+    $("#buttons").hide()
+	
+	$("#loadmessage").show()
+ 	createDB(1)
+	$.magnificPopup.close();
+  }
+</script>
+</body>
+
+
+</html>
+

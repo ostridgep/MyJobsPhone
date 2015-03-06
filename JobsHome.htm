@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>MyWork - Home
+  </title>
+
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />
+
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 150px;
+    height:105px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+.ui-btn {
+    width: 200px !important;
+}
+  </style>
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+</script>
+  
+</head>
+<body>
+<div align="center" data-role="page" id="JobsHome"> 
+	<div   data-role="header" data-position="fixed">
+		
+		<table width = "100%">
+			<TR height="40px">
+				<TD Valign="middle" align="left"><a style="font-size: 100%" href="javascript:window.location.href='JobsLogin.htm'"  >
+				<i class="fa fa-times fa-2x pull-left fa-border"></i></a></td>
+				<TD Valign="Middle" align="center"></TD>
+				<TD valign="Top" align= "center"><h1 style="font-size: 100%"><B>MyJobs</B></H1>
+				<a href="#lastSyncDets" data-rel="popup"style="color: green; text-decoration:none;"> <Small><P id="lastsync"></p></A></small></TD>
+				<TD Valign="Middle" align="center"></TD>
+				<TD Valign="middle" align="right"><a style="font-size: 100%" href="javascript:window.location.href='JobsSettingsConfiguration.htm'"   >
+				<i class="fa fa-cogs fa-2x pull-right fa-border"></i></a></TD>
+			</TR>
+		</table>		
+	
+	</div> 
+
+	<div  data-role="content">	
+		<table  id = "dataCount" align="center"> 
+			<TR><TD><div id="right1" align="center" class="block highlight" ><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Order.png"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="Jobs"></H1></TD></TR></TABLE></div></TD>
+			<TD><div id="right2" align="center" class="block highlight"><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Notification.gif"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="Notifications"></H1></TD></TR></TABLE></div></td></TR>
+			<TR><TD><div id="right3" align="center" class="block highlight"><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Timesheet.png"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="Timesheets"></H1></TD></TR></TABLE></div></td>
+			<TD><div id="right4" align="center" class="block highlight"><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Team.png"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="Team"></H1></TD></TR></TABLE></div></td></tr>
+			<TR><TD colspan="2"></TD></TR>
+			<TR><TD colspan="2" align = "center"><font color="red"><H3 id = "SystemMessage"></H3></font></TD></TR></TD></TR>
+		</table>
+	</div>
+ <div style='display:none'>	
+<div data-role="popup" id="lastSyncDets">
+  <p id='referenceSyncDetails' ></p>
+  <p id='transactionalSyncDetails' ></p>
+  <p id='uploadSyncDetails' ></p>
+</div>
+</div>
+</div> 
+<script>
+var today, todayNumber, mondayNumber, sundayNumber, monday, sunday;
+var EmployeeID=localStorage.getItem("EmployeeID")
+
+
+
+	html5sql.process("SELECT * FROM MyOperations left join myoperationssplit on myoperations.orderno = myoperationssplit.orderno and myoperations.opno = myoperationssplit.opno where myoperationssplit.assignedto ='"+EmployeeID+"'",
+	 function(transaction, results, rowsArray){
+
+			$( "#Jobs").html(rowsArray.length)
+			$( "#Jobs").trigger('create');
+			html5sql.process("SELECT * FROM MyNotifications",
+			 function(transaction, results, rowsArray){
+					$( "#Notifications").html(rowsArray.length)
+					
+					html5sql.process("SELECT * FROM MyMessages where state like '%0%'  and type <> 'MYJOBSSYSMSG';",
+					 function(transaction, results, rowsArray){
+							$( "#Team").html(rowsArray.length)
+							
+
+							
+							html5sql.process("SELECT * FROM MyMessages where type = 'MYJOBSSYSMSG' and msgfromid = 'SYSTEM';",
+							 function(transaction, results, rowsArray){
+									if (rowsArray.length>0){
+										//alert(rowsArray[0].msgsubject)
+								   		 $( "#SystemMessage").html(rowsArray[0].msgsubject+"<BR><BR>"+rowsArray[0].msgtext)		
+									}
+									html5sql.process("SELECT * FROM tsdata ",
+											 function(transaction, results, rowsArray){
+													$( "#Timesheets").html(rowsArray.length)
+													
+
+												
+											 },
+											 function(error, statement){
+
+											 }        
+											);									
+
+								
+							 },
+							 function(error, statement){
+
+							 }        
+							);
+						
+					 },
+					 function(error, statement){
+
+					 }        
+					);
+				
+			 },
+			 function(error, statement){
+
+			 }        
+			);
+
+	$( "#dataCount").trigger('create');	
+	 },
+	 function(error, statement){
+
+	 }        
+	);
+
+
+
+
+$("#right1").click(function () {
+
+$( this ).toggleClass( "highlight" );
+window.location.href='JobsOrders.htm'
+});
+$("#right2").click(function () {
+    //alert("hell2");
+$( this ).toggleClass( "highlight" );
+window.location.href="JobsNotifications.htm"
+
+});
+$("#right3").click(function () {
+
+    today = new Date();
+    todayNumber = today.getDay();
+    mondayNumber = 1 - todayNumber;
+    sundayNumber = 0 - todayNumber;
+    monday = new Date(today.getFullYear(), today.getMonth(), today.getDate()+mondayNumber);
+    sunday = new Date(today.getFullYear(), today.getMonth(), today.getDate()+sundayNumber );
+	StartOfWeek=zeroFill1(sunday.getDate().toString()) + zeroFill1((sunday.getMonth()+1).toString() ) + zeroFill1(sunday.getFullYear().toString());
+
+$( this ).toggleClass( "highlight" );
+window.location.href='JobsTimeSheets.htm?StartOfWeek='+StartOfWeek
+});
+$("#right4").click(function () {
+$( this ).toggleClass( "highlight" );
+window.location.href="JobsTeam.htm"
+
+});
+var w = null; // initialize variable
+function startBGSync()
+{
+
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+   // First check whether Web Workers are supported
+   if (typeof(Worker)!=="undefined"){
+      // Check whether Web Worker has been created. If not, create a new Web Worker based on the Javascript file simple-timer.js
+      if (w==null){
+         w = new Worker("bgsync.js");
+      }
+      // Update timer div with output from Web Worker
+      w.onmessage = function (event) {      
+		 syncReference()
+		 syncTransactional()
+		 syncUpload()
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+
+		 };
+   } else {
+      // Web workers are not supported by your browser
+      document.getElementById("lastsync").innerHTML = "Sorry, your browser does not support Web Workers ...";
+   }
+}
+
+startBGSync();
+</script>
+</body>
+
+
+</html>
+

@@ -1,0 +1,68 @@
+{"funcloc":
+				[
+					{
+						"id": "fl1",
+						"shorttext": "Functional Location 1",
+						"name": "fl1",
+						"street": "street1",
+						"city": "city1",
+						"postcode": "pcode1",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					},
+					{
+						"id": "fl2",
+						"shorttext": "Functional Location 2",
+						"name": "fl2",
+						"street": "street2",
+						"city": "city2",
+						"postcode": "pcode2",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					},
+					{
+						"id": "fl3",
+						"shorttext": "Functional Location 3",
+						"name": "fl3",
+						"street": "street3",
+						"city": "city3",
+						"postcode": "pcode3",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					},
+					{
+						"id": "fl4",
+						"shorttext": "Functional Location 4",
+						"name": "fl4",
+						"street": "street4",
+						"city": "city4",
+						"postcode": "pcode4",
+						
+						"classval":
+							[
+								{ "charact": "char1", "valuechar": "vc1" , "valueto": "" , "valueneutral": "" , "description":  "Descript1" },
+								{ "charact": "char2", "valuechar": "vc2" , "valueto": "" , "valueneutral": "" , "description":  "Descript2" },
+								{ "charact": "char3", "valuechar": "vc3" , "valueto": "" , "valueneutral": "" , "description":  "Descript3" }
+							]
+						
+					}
+				]
+}

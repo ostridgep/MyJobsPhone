@@ -1,0 +1,13 @@
+	
+		{
+			"message":
+				[
+					{"type": "SM", "date": "2013-01-01", "time": "09:00", "msgfrom": "System", "msgto": "ALL", "msgtext": "SAP will be going down on Wednesday evening", "state": "S"},
+					{"type": "IM", "date": "2013-01-01", "time": "09:00", "msgfrom": "Fred Smith", "msgto": "ostridgep", "msgtext": "Hi Paul;", "state": "S"},
+					{"type": "OM", "date": "2013-03-01", "time": "09:00", "msgfrom": "Paul Ostridge", "msgto": "C", "msgtext": "I need a new hammer", "state": "S"},
+					{"type": "IM", "date": "2013-02-01", "time": "09:00", "msgfrom": "George Martin", "msgto": "ostridgep", "msgtext": "Team Briefing cancelled", "state": "S"},
+					{"type": "IM", "date": "2013-02-02", "time": "09:00", "msgfrom": "Harru Hudson", "msgto": "ostridgep", "msgtext": "Meet you at the Red Lion", "state": "S"},
+					{"type": "IM", "date": "2013-02-03", "time": "09:00", "msgfrom": "Lee Evans", "msgto": "ostridgep", "msgtext": "Good News Worcester beat Wasps", "state": "S"}
+
+				]
+		}

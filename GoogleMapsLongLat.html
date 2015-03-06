@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<title>Google Maps Latitude and Longitude Picker jQuery plugin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/demo.css"/>
+
+	<!-- Dependencies: JQuery and GMaps API should be loaded first -->
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+	<!-- CSS and JS for our code -->
+	<link rel="stylesheet" type="text/css" href="css/jquery-gmaps-latlon-picker.css"/>
+	<script src="js/jquery-gmaps-latlon-picker.js"></script>
+	<script src="cordova.js"></script>
+<script>
+if(localStorage.getItem("AppType")=="WEB"){
+	var db = openDatabase('MyJobsDB', '1.0', 'MyJobsDB', 2000000);	
+	
+	}else{
+	
+	var db=window.sqlitePlugin.openDatabase({name: "MyJobsDB"});
+	
+	}
+</script>
+</head>
+<body>
+
+<form>
+
+<style type="text/css">
+
+	/* WIMAGGUC mods  */
+	BODY   { margin-top: 160px; padding-top: 0; }
+
+	#scroller { position: absolute; top: 0; left: 0; height: 60px; width: 961px; }
+
+	#header-wrapper { position: absolute; left: 0; top: 0; height: 60px; z-index: 1000; }
+		
+	#header {
+		position: relative; width: 961px; height: 120px; margin: 0; padding: 0;
+	}
+
+	#header H1 { position: absolute; top: 0; left: 0; z-index: 1000; margin: 0; padding: 0; }
+
+	#header H1 A { display: block;
+		position: absolute; top: 0; left: 0; width: 0; height: 0; padding: 60px 0 0 422px; overflow: hidden;
+		background-image: url('/projects/wmg12/images/wmg13-logo-small.jpg'); background-repeat: no-repeat;
+	}
+
+	#nav { display: block; position: absolute; top: 0; left: 0; padding: 0; margin: 0; width: 961px; height: 60px; background: none; }
+		#nav UL			{ list-style: none; padding: 0; margin: 0; }
+		#nav LI			{ display: block; float: left; padding: 0; margin: 0; border: none; font-size: 0; }
+		#nav A 			{ display: block; margin: 0; padding: 60px 0 0 122px; overflow: hidden; width: 0; height: 0; background-repeat: no-repeat; border: none; font-size: 0; }
+		#nav .text		{ background-image: url('/projects/wmg12/images/wmg12-nav-text.png'); display: block; margin: 0; padding: 60px 0 0 408px; overflow: hidden; width: 0; height: 0; background-repeat: no-repeat; font-size: 0; }
+		#nav .frederique{ background-image: url('/projects/wmg12/images/wmg12-nav-frederique.png'); padding-left: 185px; }
+		#nav .about		{ background-image: url('/projects/wmg12/images/wmg12-nav-about.png'); }
+		#nav .free		{ background-image: url('/projects/wmg12/images/wmg12-nav-free.png'); }
+		#nav .rss		{ background-image: url('/projects/wmg12/images/wmg12-nav-rss.png'); padding-left: 61px; }
+		#nav .twitter	{ background-image: url('/projects/wmg12/images/wmg12-nav-twitter.png'); padding-left: 61px; }
+
+		#nav .frederique:hover	{ background-image: url('/projects/wmg12/images/wmg12-nav-frederique-active.png'); }
+		#nav .about:hover		{ background-image: url('/projects/wmg12/images/wmg12-nav-about-active.png'); }
+		#nav .free:hover		{ background-image: url('/projects/wmg12/images/wmg12-nav-free-active.png'); }
+		#nav .rss:hover			{ background-image: url('/projects/wmg12/images/wmg12-nav-rss-active.png'); }
+		#nav .twitter:hover		{ background-image: url('/projects/wmg12/images/wmg12-nav-twitter-active.png'); }
+	/* ^^^ WIMAGGUC mods  */
+
+	#news-wrapper { position: absolute; left: 0; top: 60px; height: 1.2em; padding: 25px 0; width: 959px; background-color: #f5f7f9; font-size: 1.15em; z-index: 1000; }
+	
+		#news-wrapper .blog 		{ padding: 0 22px; float: left; }
+		#news-wrapper .blog A 		{ color: #205cc4; }
+		#news-wrapper .newsletter 	{ padding: 0 22px; float: right; }
+		#news-wrapper .newsletter A	{ color: #000; background-color: #ffe900; }
+
+		#news-wrapper A 		{ text-decoration: underline; }
+		#news-wrapper A:hover 	{ text-decoration: none; }
+
+</style>
+
+	<div id="header-wrapper">
+		<div id="header">
+			<h1><a href="http://localhost/wimagguc">Wimagguc</a></h1>
+			<div id="nav">
+				<ul>
+					<li><span class="text">To create is the only thing.</span></li>
+					<li><a class="frederique" href="http://www.frederique-comics.com/">Frederique: indie comics</a></li>
+					<li><a class="about" href="http://www.wimagguc.com/about">About Richard</a></li>
+					<li><a class="free" href="http://www.wimagguc.com/free">Free Resources</a></li>
+					<li><a class="rss" href="http://www.wimagguc.com/feed/">RSS</a></li>
+					<li><a class="twitter" href="http://twitter.com/wimagguc">Twitter</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="news-wrapper">
+		<div class="blog">In the blog: <a href="http://www.wimagguc.com/2013/02/node-js-http-server-with-gzip-support-for-heroku/">Node.js static http server with GZIP support (for Heroku) </span></div>
+		<div class="newsletter"><a href="#newsletter">Subscribe for code updates</a></div>
+	</div>
+
+	<script>
+
+		$('#news-wrapper .blog').hide(0);
+		$('#news-wrapper .newsletter').hide(0);
+
+		$(document).ready(function() {
+
+			$('#news-wrapper .newsletter').fadeIn(1000);
+
+			var downloadRunning = false;
+
+			function getNewBlogPost(lastId) {
+				if (downloadRunning) { return; }
+				++lastId;
+				if (lastId<0) { lastId = 0; }
+				if (lastId>5) { lastId = 5; }
+				downloadRunning = true;
+				$.ajax({
+					type: 'GET',
+					url: '/api/get_recent_posts',
+					success: function(data) {
+						$('#news-wrapper .blog A').attr('href', data.posts[lastId].url);
+						$('#news-wrapper .blog A').html(data.posts[lastId].title);
+						$('#news-wrapper .blog').fadeIn(1000);
+						downloadRunning = false;
+						setTimeout(function() { getNewBlogPost(lastId) }, 30000);
+					},
+					error: function(error) {
+						$('#news-wrapper .blog').fadeIn(500);
+						downloadRunning = false;
+						--lastId;
+						setTimeout(function() { getNewBlogPost(lastId) }, 60000);
+					},
+					dataType: 'json'
+				});
+			}
+			getNewBlogPost(-1);
+
+			function preloadImage(imageSrc) {
+				var image = new Image();
+				image.src = imageSrc;
+			};
+
+			preloadImage("/projects/wmg12/images/wmg12-nav-frederique-active.png");
+			preloadImage("/projects/wmg12/images/wmg12-nav-about-active.png");
+			preloadImage("/projects/wmg12/images/wmg12-nav-free-active.png");
+			preloadImage("/projects/wmg12/images/wmg12-nav-rss-active.png");
+			preloadImage("/projects/wmg12/images/wmg12-nav-twitter-active.png");
+
+			function moveScroller() {
+			    var move = function() {
+			        var st = $(window).scrollTop();
+			        var s1 = $("#header-wrapper");
+			        var s2 = $("#news-wrapper");
+			        if(st > 0) {
+			            s1.css({
+			                position: "fixed",
+			                top: "0px"
+			            });
+			            s2.css({
+			                position: "fixed",
+			                top: "60px",
+			                padding: "5px 0"
+			            });
+			        } else {
+			            if(st <= 0) {
+			                s1.css({
+			                    position: "absolute",
+			                    top: "0px"
+			                });
+			                s2.css({
+			                    position: "absolute",
+			                    top: "60px",
+			                	padding: "25px 0"
+			                });
+			            }
+			        }
+			    };
+			    $(window).scroll(move);
+			    move();
+			}
+
+			moveScroller();
+		});
+	</script>
+
+	<h1>Google Maps Latitude and Longitude Picker</h1>
+
+	<div class="description">
+		<b>A jQuery plugin that creates a location picker on your webpage using Google Maps.</b>
+		<br/><br>
+		Supports multiple maps. Works on touchscreen. Easy to customize markup and CSS.
+		<br/><br>
+		This is a demo page; the newest live demo will always be <a href="http://wimagguc.com/projects/jquery-latitude-longitude-picker-gmaps/">here</a>.
+		<br/>
+		For the code, install instructions and to see how amazingly free it is, <a href="https://github.com/wimagguc/jquery-latitude-longitude-picker-gmaps">go to Github</a>.
+		<br/>
+		Also, you might find other interesting things on my blog at <a href="http://wimagguc.com/">wimagguc.com</a>.<br/>
+	</div>
+
+	<H2>The simplest form</H2>
+
+	<div class="description">
+		<ul>
+			<li>After every position change you'll have the fresh lattitude, longitude and zoom values in the hidden fields.</li>
+			<li>The "location_changed" event will also be fired with the gllLatlonPicker Node JQuery object as attribute.</li> 
+		</ul>
+		<br/><br/>
+		Move the marker, or double click on the map.
+	</div>
+
+	<fieldset class="gllpLatlonPicker">
+		<div class="gllpMap">Google Maps</div>
+		<input type="hidden" class="gllpLatitude"/>
+		<input type="hidden" class="gllpLongitude"/>
+		<input type="hidden" class="gllpZoom"/>
+		<input type="hidden" class="gllpLocationName"/>
+	</fieldset>
+
+	<div class="code">
+<pre>
+&lt;fieldset class="gllpLatlonPicker"&gt;
+	&lt;div class="gllpMap"&gt;Google Maps&lt;/div&gt;
+	&lt;input type="hidden" class="gllpLatitude"/&gt;
+	&lt;input type="hidden" class="gllpLongitude"/&gt;
+	&lt;input type="hidden" class="gllpZoom"/&gt;
+&lt;/fieldset&gt;
+</pre>
+	</div>
+
+	<H2>Simple form with a Google Maps search field and default values</H2>
+
+	<div class="description">
+		<ul>
+			<li>If the search has results, the first element will appear on the map (with the default zoom value 11)</li>
+			<li>You can set default latitude, longitude and zoom values in the hidden fields</li>
+			<li>If you don't give an ID to the map, the script generates one; feel free to use custom ID's though</li>
+		</ul>
+		<br/><br/>
+		Move the marker, or double click on the map. Search for cities, countries or landmark names.
+	</div>
+
+	<fieldset class="gllpLatlonPicker" id="custom_id">
+		<input type="text" class="gllpSearchField">
+		<input type="button" class="gllpSearchButton" value="search">
+		<br/><br/>
+		<div class="gllpMap">Google Maps</div>
+		<input type="hidden" class="gllpLatitude" value="60"/>
+		<input type="hidden" class="gllpLongitude" value="30"/>
+		<input type="hidden" class="gllpZoom" value="12"/>
+	</fieldset>
+
+	<div class="code">
+<pre>
+&lt;fieldset class="gllpLatlonPicker" id="custom_id"&gt;
+	&lt;input type="text" class="gllpSearchField"&gt;
+	&lt;input type="button" class="gllpSearchButton" value="search"&gt;
+	&lt;div class="gllpMap"&gt;Google Maps&lt;/div&gt;
+	&lt;input type="hidden" class="gllpLatitude" value="60"/&gt;
+	&lt;input type="hidden" class="gllpLongitude" value="30"/&gt;
+	&lt;input type="hidden" class="gllpZoom" value="12"/&gt;
+&lt;/fieldset&gt;
+</pre>
+	</div>
+
+	<H2>Reverse lookup: retrieves the location name once it's picked</H2>
+
+	<div class="description">
+		<ul>
+			<li>After the position change you'll have the location name in the gllpLocationName field.</li>
+			<li>If there is no value, the field will be emptied.</li> 
+			<li>The "location_changed" event will also be fired with the gllLatlonPicker Node JQuery object as attribute.</li> 
+		</ul>
+		<br/><br/>
+		Move the marker, or double click on the map.
+	</div>
+
+	<fieldset class="gllpLatlonPicker">
+		<div class="gllpMap">Google Maps</div>
+		<br/>
+		<input type="hidden" class="gllpLatitude"/>
+		<input type="hidden" class="gllpLongitude"/>
+		<input type="hidden" class="gllpZoom"/>
+		<input type="text" class="gllpLocationName" size=42/>
+	</fieldset>
+
+	<div class="code">
+<pre>
+&lt;fieldset class="gllpLatlonPicker"&gt;
+	&lt;div class="gllpMap"&gt;Google Maps&lt;/div&gt;
+	&lt;br/&gt;
+	&lt;input type="hidden" class="gllpLatitude"/&gt;
+	&lt;input type="hidden" class="gllpLongitude"/&gt;
+	&lt;input type="hidden" class="gllpZoom"/&gt;
+	&lt;input type="text" class="gllpLocationName" size=42/&gt;
+&lt;/fieldset&gt;
+</pre>
+	</div>
+
+	<H2>Editable and selectable Latitude/Longitude values</H2>
+
+	<div class="description">
+		<ul>
+			<li>You can set your own latitude, longitude and zoom values. The map shows your data after pressing the update button.</li>
+			<li>You can still hide the Zoom field (or any other fields)</li>
+		</ul>
+		<br/><br/>
+		Move the marker, double click on the map, search, or set new values to interact.
+	</div>
+
+	<fieldset class="gllpLatlonPicker">
+		<input type="text" class="gllpSearchField">
+		<input type="button" class="gllpSearchButton" value="search">
+		<br/><br/>
+		<div class="gllpMap">Google Maps</div>
+		<br/>
+		lat/lon:
+			<input type="text" class="gllpLatitude" value="20"/>
+			/
+			<input type="text" class="gllpLongitude" value="20"/>
+		zoom: <input type="text" class="gllpZoom" value="3"/>
+		<input type="button" class="gllpUpdateButton" value="update map">
+		<br/>
+	</fieldset>
+
+	<div class="code">
+<pre>
+&lt;fieldset class="gllpLatlonPicker"&gt;
+	&lt;input type="text" class="gllpSearchField"&gt;
+	&lt;input type="button" class="gllpSearchButton" value="search"&gt;
+	&lt;br/&gt;&lt;br/&gt;
+	&lt;div class="gllpMap"&gt;Google Maps&lt;/div&gt;
+	&lt;br/&gt;
+	lat/lon:
+		&lt;input type="text" class="gllpLatitude" value="20"/&gt;
+		/
+		&lt;input type="text" class="gllpLongitude" value="20"/&gt;
+	zoom: &lt;input type="text" class="gllpZoom" value="3"/&gt;
+	&lt;input type="button" class="gllpUpdateButton" value="update map"&gt;
+&lt;/fieldset&gt;
+</pre>
+	</div>
+
+	<H2>Created By Richard Dancsi</H2>
+
+	<div class="description">
+		Blog, updates: <a href="http://www.wimagguc.com/">http://www.wimagguc.com/</a>
+		<br/>
+		Twitter, everyday reads: <a href="http://twitter.com/wimagguc">wimagguc</a>
+		<br/>
+		Google+, hanging out: <a href="https://plus.google.com/u/0/115939246085616544919" title="Author" rel="author">Richard Dancsi</a>
+		<br/><br/>
+		This plugin has been used at <a href="http://divespy.com/">http://divespy.com/</a> 
+		<br/><br/>
+		Divespy is built by Zenfield <a href="http://zenfield.com/">http://zenfield.com/</a>
+	</div>
+
+</form>
+
+	<a name="newsletter"></a>
+	<H2><span style="background-color: #ffe900;">Subscribe for code updates</span></H2>
+
+	<div class="description">
+		
+		<!-- Begin MailChimp Signup Form -->
+		<div id="mc_embed_signup">
+		<form action="http://wimagguc.us4.list-manage.com/subscribe/post?u=83343dbd708d35d76618f66c5&amp;id=da7cc7f1dc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		<div class="mc-field-group">
+			A rather infrequent newsletter about code updates, new free resources and every few months, a recap of the latest blog posts. Powered by MailChimp.
+		</div>
+		<div class="mc-field-group">
+			<br/>
+			<label for="mce-EMAIL">Your E-mail:</label>
+			<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+		</div>
+			<br/>
+			<div id="mce-responses" class="clear">
+				<div class="response" id="mce-error-response" style="display:none"></div>
+				<div class="response" id="mce-success-response" style="display:none"></div>
+			</div>	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+		</form>
+		</div>
+		<!--End mc_embed_signup-->
+	</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1935308-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	
+</body>
+</html>

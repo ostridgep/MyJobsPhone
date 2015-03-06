@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Jobs - Settings - Display Log
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />  
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+var ColumnDisplayed=[]
+var TotalColumns;
+</script>
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 95%;
+    height:600px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+.ui-btn-width {
+    width: 200px !important;
+}
+  .stripe{
+	background-color: #E8E8E8 ; 
+	color: black;
+}
+.ui-button .ui-icon.nav_first {
+    background-image: url(icons/control_start.png);
+    width: 10;
+    height: 10; 
+}
+
+.ui-button.ui-state-hover .ui-icon.you-own-cusom-class {
+    background-image: url(icons/control_start.png);
+    width:10;
+    height: 10; 
+}
+  </style>
+
+  
+</head>
+<SCRIPT>
+
+var currentPage=1;
+var elementsPerPage=10;
+var totalRecords=0;
+
+var totalPages=1;
+var SelectedTable="";
+
+function nextPage(){
+	if (currentPage<totalPages){
+		currentPage+=1;
+		buildDetails(SelectedTable);
+		}
+		
+}
+function prevPage(){
+
+	if (currentPage>1){
+		currentPage-=1;
+						buildDetails(SelectedTable);
+		}
+
+}
+function lastPage(){
+	if (currentPage<totalPages){
+		currentPage=totalPages;
+				buildDetails(SelectedTable);
+		}
+
+}
+function firstPage(){
+	
+		currentPage=1;
+				buildDetails(SelectedTable);
+
+}
+
+
+
+function getTotalRecords(TBName)
+{
+	totalRecords=0;
+	html5sql.process(
+		['SELECT * FROM '+TBName],
+		function(transaction, results, rowsArray){
+
+			totalRecords = rowsArray.length;
+			totalPages=Math.floor(totalRecords/elementsPerPage);
+			if (totalRecords%elementsPerPage>0){
+				totalPages+=1;
+			}
+		
+		},
+		function(error, statement){
+		 opMessage("Error: " + error.message + " when rowsArray.length processing " + statement);          
+		}
+	);
+
+
+
+
+
+}
+
+function BuildDBTableNames(){
+var HTMLToOutput="";
+var selected=""
+	html5sql.process("SELECT * FROM sqlite_master WHERE type='table';",
+	 function(transaction, results, rowsArray){
+
+		for (var n = 0; n < rowsArray.length; n++) {
+			item = rowsArray[n];
+				if (item.name.indexOf("__") ===-1){
+						HTMLToOutput+= "<option value='"+item.name+"' >"+item.name+"</option>"
+				}
+			}
+			
+			$( "#DBTables").html(HTMLToOutput);
+			$( "#DBTables").trigger('create');
+			$( "#DBTables").val("MyOrders")
+			$( "#DBTables").trigger('change');
+	 },
+	 function(error, statement){
+		//ert("error");
+	 }        
+	);
+}
+
+	
+function BuildHeaders(TName){
+var CoumnSelectHTMLOutput="<form>";
+var HTMLOutput="<TR>";
+var Col=-1;
+selectedTable=TName;
+getTotalRecords(TName)
+TotalColumns=0;
+	html5sql.process('SELECT name, sql FROM sqlite_master WHERE type="table" AND name = "'+TName+'";',
+	 function(transaction, results, rowsArray){
+
+			item = rowsArray[0];
+
+			var columnParts = item.sql.replace(/^[^\(]+\(([^\)]+)\)/g, '$1').split(','); ///// RegEx
+			var columnName = "";
+			var cols="";
+			for(i in columnParts) {
+			
+				if (typeof columnParts[i] === 'string') columnName=columnParts[i].split(' ')[1]
+				if (columnName==""){columnName=columnParts[i]}
+				HTMLOutput+="<TH id='"+columnName+"' align='left'>"+columnName+"</TH> "
+				Col=Col+1;
+				
+				ColumnDisplayed[TotalColumns]='Show'
+				TotalColumns=TotalColumns+1;
+				if(Col==0){
+				CoumnSelectHTMLOutput+="<TR height = '10px' valign = 'middle'>"
+				}			
+				CoumnSelectHTMLOutput+='<TD style="font-size:50%" valign = "middle" align = "LEFT" width = "33%">'
+							
+				CoumnSelectHTMLOutput+="<button style='font-size:140%' id='"+i+"' onclick=\"setColumn('"+i+"')\">Hide "+columnName+"</button></TD>"
+				if(Col==2){
+					CoumnSelectHTMLOutput+="</TR>"
+					Col=-1;
+				}
+			
+		
+			}
+		if(Col=0){
+			CoumnSelectHTMLOutput+="<TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>"
+		}
+				if(Col=1){
+			CoumnSelectHTMLOutput+="<TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>"
+		}
+				if(Col=2){
+			CoumnSelectHTMLOutput+="<TD>&nbsp;</TD></TR>"
+		}
+		CoumnSelectHTMLOutput+="</FORM>"
+		HTMLOutput+="</TR>"
+		$( "#tblColumnSelect").html(CoumnSelectHTMLOutput);
+		$( "#tblColumnSelect").trigger('create');
+		$( "#DBHeader").html(HTMLOutput);
+		$( "#DBHeader").trigger('create');
+		totalRecords=0;
+		html5sql.process(
+			['SELECT * FROM '+TName],
+			function(transaction, results, rowsArray){
+
+				totalRecords = rowsArray.length;
+				totalPages=Math.floor(totalRecords/elementsPerPage);
+				if (totalRecords%elementsPerPage>0){
+					totalPages+=1;
+				}
+			//alert("tp"+totalPages)
+			firstPage()
+			},
+			function(error, statement){
+			 opMessage("Error: " + error.message + " when rowsArray.length processing " + statement);          
+			}
+		);
+	 },
+	 function(error, statement){
+		//ert("error");
+	 }        
+	);
+
+}
+function setAllColumns(val)
+{
+var bText=""
+var newbText
+	for(n = 0;  n < TotalColumns-1; n++){
+		ColumnDisplayed[n]=val
+		//alert(n)
+		bText=$('#'+n).html()
+		if(val=="Hide"){
+			newbText=bText.replace("Hide", "Show")
+			}else{
+			newbText=bText.replace("Show","Hide")
+			}
+		$('#'+n).html(newbText)
+	
+		
+		$('#'+n).trigger("change")
+	}
+}
+function setColumn(n){
+
+	var bText=$('#'+n).html();
+	if(bText.substring(0,4)=="Hide"){
+		
+		$('#'+n).html(bText.replace("Hide", "Show"))
+		ColumnDisplayed[n]='Hide'
+	}
+	if(bText.substring(0,4)=="Show"){
+		
+		$('#'+n).html(bText.replace("Show", "Hide"))
+		ColumnDisplayed[n]='Show'		
+	}
+	$('#'+n).trigger("change")
+
+}	
+
+	
+function SetTableSelected(TBName)
+{
+//alert(TBName)
+
+//$("#DBTables").val(TBName)
+//$('#DBTables option[value="'+TBName+'"]').attr('selected','selected');
+
+	$( "#DBTablesDiv").trigger('create');
+
+
+}
+function ShowHideColumns(){
+var n = 0;
+var tbl = document.getElementById("DBTable");
+
+		
+			         
+            if (tbl != null) {
+                if (n < 0 || n >= tbl.rows.length - 1) {
+                    
+                    return;
+                }
+			
+                for (var i = 0; i < tbl.rows.length; i++) {
+                    for (var j = 0; j < tbl.rows[i].cells.length; j++) {
+                        tbl.rows[i].cells[j].style.display = "";
+                        if(ColumnDisplayed[j]=="Hide")
+                            tbl.rows[i].cells[j].style.display = "none";
+                    }
+                }
+            }
+		
+	
+
+	
+}
+function buildDetails(TName){
+
+var HTMLOutput=""
+//alert("Page "+currentPage+" of "+totalPages)
+$( "#pageDets").html(currentPage+" of "+totalPages);
+$( "#pageDets").trigger('create');
+var Olist="";
+var Stripe="";
+var colcnt=0;
+var colhidden="";
+var startRec=(currentPage-1)*elementsPerPage;
+	
+
+if (ColumnDisplayed[0]=="Hide"){alert("hilecol 0")}
+	html5sql.process('SELECT * FROM ' + TName + ' LIMIT ' + startRec + ', ' + elementsPerPage + ';',
+	  function(transaction, results, rowsArray){
+		
+		for (var n = 0; n < rowsArray.length; n++) {
+			item = rowsArray[n];	
+
+			Stripe="";
+			
+			if (isEven(n)){
+				Stripe='stripe';
+				}
+			HTMLOutput+= '	<tr class="'+Stripe+'">';	
+			
+			for (var prop in item) {
+				if(item.hasOwnProperty(prop)){
+				colcnt=colcnt+1
+				//alert(ColumnDisplayed[colcnt])
+
+				HTMLOutput+="<TD align='left' >"+item[prop]+"</TD>"
+				
+				}
+		        }
+				
+			
+			HTMLOutput+="</TR>"
+		
+		}
+		
+		$( "#DBBody").html(HTMLOutput);
+		ShowHideColumns()
+		$( "#DBBody").trigger('create');
+	 },
+	 function(error, statement){
+		alert("error");
+	 }        
+	);
+}
+</SCRIPT>
+<body>
+<div align="center" data-role="page" id="JobsSettingsViewDatabase"> 
+
+  <div data-role="panel" id="options" data-position="right" data-display="overlay"> 
+    <h3>Settings</h3>
+	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsConfiguration.htm'">
+			<i class="fa pull-left fa-cog fa-lg"></i>Configuration        </a>
+	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsLastSyncDetails.htm'">
+			<i class="fa pull-left fa-bolt fa-lg"></i>Last Sync Details</a>
+	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsDisplayLog.htm'">
+			<i class="fa pull-left fa-eye fa-lg">    </i>Display Log      </a>
+ 	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsForceSync.htm'">
+			<i class="fa pull-left fa-exchange fa-lg"></i>Force Sync       </a>
+ 	<a  data-role="button" data-mini="true" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow" href="#popupDBReset">
+			<i class="fa pull-left fa-plus fa-lg"></i>Reset Database  </a>
+  </div> 
+	<div  id="header" data-role="header" data-position="fixed">
+		<table width = "100%">
+			<TR >
+				<TD width = "20%"  align="left"><a style="font-size: 100%" href="javascript:window.location.href='JobsHome.htm'"  >
+				<i class="fa fa-home fa-2x fa-border"></i></a></td>
+				
+				<TD width = "60%"  align= "center"><B>Force Sync</H3></TD>
+				
+				<TD width = "20%" ><a href="#options" ><i class="fa fa-bars fa-2x pull-right fa-border"></i></a></TD>
+			</TR>
+		</table>
+	</div> 
+	<div  data-role="content">	
+
+	
+			<div id="right1" align="center" class="block highlight">
+				<div >
+				<Table width = "100%"><TR>
+					   <TD style="font-size:small" align = "left" width ="20%">Table:</TD>
+					   <TD align = "center" width ="50%"><select style="font-size:small" name="DBTables" id="DBTables" ></SELECT></TD>
+					   <TD width = "10%"></TD>
+					   <TD align = "right" width ="20%">
+					   <a href="#popupColumnSelect" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline   ui-btn-a" data-transition="pop">
+					 
+						<i class="fa fa-th-list fa-lg"></i></a></TD> 
+					   </TR>
+				</TABLE>
+				</div>
+				<div class="ui-grid-d">
+
+					<div class="ui-block-a"><a style="font-size:small" id="first" onClick="firstPage();"  data-role="button" href="#"   target="_parent">
+						<i class="fa fa-step-backward fa-lg"></i></a></div>
+					<div class="ui-block-b"><a style="font-size:small" id="previous" onClick="prevPage();"  data-role="button" href="#"   target="_parent">
+					<i class="fa fa-backward fa-lg"></i></a></div>
+					<div class="ui-block-c" align="center"><H4 id="pageDets"></H4></div>
+					<div class="ui-block-d"><a style="font-size:small" id="next" onClick="nextPage();"  data-role="button" href="#"     target="_parent">
+					<i class="fa fa-forward fa-lg"></i></a></div>
+					<div class="ui-block-e"><a style="font-size:small" id="last" onClick="lastPage();"   data-role="button" href="#"  target="_parent">
+					<i class="fa fa-step-forward fa-lg"></i></a></div>
+				</div><!-- /grid-a -->			
+				<div style="width:95%; overflow:auto;" >
+					
+						<table width = "95%" id="DBTable" frame="box" border=".5"  >
+							 <thead style="font-size:small" style = "background-color: lightgrey;" id="DBHeader" width = "95%">
+
+							</thead>
+							<tbody style="font-size:small" id="DBBody" width = "95%" >	
+							</tbody>
+						</table>
+				</div>				
+			</div>
+
+	</div>
+		<div style='display:none'>	
+			<div data-role="popup" id="popupColumnSelect" data-theme="a" class="ui-corner-all">
+				
+				<div><table width = "0%" id="tblColumnSelect"></table></div>	
+				<table>
+				<TR>
+				<TD align="left"><a style="font-size:small" id="#btnShowAll" onClick="setAllColumns('Show')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline   ui-btn-a">					 
+						<i class="fa fa-eye fa-lg"></i>&nbsp;Show All</a></TD>
+				<TD align = "center"><a style="font-size:small" href="#btnSelectColumn" onClick="ShowHideColumns();" class="ui-btn ui-corner-all ui-shadow ui-btn-inline   ui-btn-a" >					 
+						<i class="fa fa-check fa-lg"></i>&nbsp;Close</a></TD>
+				<TD align = "right"><a style="font-size:small" id="#btnHideAll" onClick="setAllColumns('Hide')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline   ui-btn-a" >					 
+						<i class="fa fa-eye-slash fa-lg"></i>&nbsp;Hide All</a></TD>
+				</TR></table>
+			</div>
+
+		    <div data-role="popup" id="popupDBReset">
+		      <div data-role="header">
+		       Reset Database
+		      </div>
+		
+		      <div data-role="main" class="ui-content">
+		        <h2 align = "center">Are you sure?</h2>
+		
+		 	  </div>
+		
+		      <div data-role="footer">
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline  ui-icon-delete ui-btn-icon-left" data-rel="back">Cancel</a>
+		      <a href="#" onclick="resetTables()" class="ui-btn ui-corner-all ui-shadow ui-btn-inline  ui-icon-check ui-btn-icon-left" data-rel="back">Proceed</a>
+		     
+		      </div>
+		</div>
+</div> 
+<script>
+$(document).on("pageinit", function () {
+    $("#btnSelectColumn").on("click", function () {
+        $("#popupColumnSelect").popup("close");
+		ShowHideColumns();
+		
+    });
+});
+$( document ).ready(function() {
+	BuildDBTableNames();
+	SelectedTable="MyOrders"
+
+	BuildHeaders(SelectedTable)
+
+SetTableSelected(SelectedTable);
+
+});
+
+	$('select[name="DBTables"]').change(function(e) {
+		var s = $(e.target);
+		SelectedTable= s.val();
+
+		BuildHeaders(SelectedTable)
+		
+
+
+   		});
+function PopupClose(mode)
+{
+	PopupCloseType=mode;
+
+	alert(mode)
+	if(mode=="SAVE"){
+		alert("SAVE")
+
+		}
+	if(mode=="CANCEL"){
+		$.magnificPopup.close();
+		}
+	
+}
+
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  closeOnBgClick: false,
+  showCloseBtn:false,
+  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  callbacks: {
+    open: function() {
+     
+
+//$("[data-role='footer']").hide();
+    },
+    close: function() {
+
+		if (PopupCloseType!="CANCEL"){
+	
+			//location.reload(false);
+			}
+
+
+
+    }
+	}
+})
+</script>
+</body>
+
+
+</html>
+

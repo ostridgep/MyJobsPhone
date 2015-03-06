@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Surveys Preview
+  </title>
+ 
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+
+</script>
+
+
+
+
+
+  <style type='text/css'>
+  body {
+    font-size: 0.8em;
+}
+
+/*
+ * The buttonset container needs a width so we can stack them vertically.
+ *
+ */
+#radio {
+    width: 30%;
+}
+
+/*
+ * Make each label stack on top of one another.
+ *
+ */
+.ui-buttonset-vertical label {
+    display: block;
+}
+
+/*
+ * Handle colliding borders. Here, we're making the bottom border
+ * of every label transparent, except for labels with the
+ * ui-state-active or ui-state-hover class, or if it's the last label.
+ *
+ */
+.ui-buttonset-vertical label:not(:last-of-type):not(.ui-state-hover):not(.ui-state-active) {
+    border-bottom: transparent;
+}
+
+/*
+ * For lables in the active state, we need to make the top border of the next
+ * label transparent.
+ *
+ */
+.ui-buttonset-vertical label.ui-state-active + input + label {
+    border-top: transparent;
+}
+
+/*
+ * Oddly enough, the above style approach doesn't work for the
+ * hover state. So we define this class that's used by our JavaScript
+ * hack.
+ *
+ */
+.ui-buttonset-vertical label.ui-transparent-border-top {
+    border-top: transparent;
+}
+  </style>
+
+ 
+</head>
+<body>
+<div align="center"  data-role="page" id="Surveys"> 
+
+	<div   data-role="header" data-position="fixed">
+		<h1 style="font-size: 150%"><B>MyWork - Perform Survey</B></h1>
+		<a style="font-size: 120%" onclick="window.history.back()" data-icon="back" class="ui-btn-left">Cancel</a>
+		<a style="font-size: 120%" onclick="gotoCaller()" data-icon="check" class="ui-btn-right">Update</a>
+	
+	
+	</div>  
+
+
+	<div  data-role="content" >	
+	
+
+
+
+		<div  >
+			<div id="PreviewQuestion">
+			</div>
+  
+
+		</div>
+
+
+
+		
+		
+		
+	</div>	
+
+
+	
+
+</div>
+
+					<div id="PreviewQuestion">
+					</div>
+  
+
+<Script>
+function gotoCaller(){
+
+
+if(CallBack=="Order"){
+
+	loc="JobsOrdersDetails.htm?JobNo="+JobNo+"&Status="+Status+"&NotifNo="+NotifNo
+}
+window.location.href=loc;
+}
+var SurveyID = getURLParameters("SurveyID");
+var CallBack=getURLParameters("CallBack");
+var NotifNo=getURLParameters("NotifNo");
+var LatLong=getURLParameters("LatLong");
+var Type=getURLParameters("Type");
+var JobNo=getURLParameters("JobNo");
+var Status=getURLParameters("Status");
+var DeleteClicked=false;
+var PopupCloseType="";
+
+buildPreview()
+function gotoSurveyDetail(){
+//location.href="SurveysDetail.htm?id="+SurveyID;
+window.top.location.reload();
+}
+function buildPreview(){
+
+var Stripe="";
+var HTMLToOutput=""//Preview Survey Questions for "+$('#Name').val();
+//$( "#PreviewHeader").html(HTMLToOutput);
+//$( "#PreviewHeader").trigger('create');
+var SQLStatement="";
+SQLStatement="SELECT * From SurveysDetail where surveyid = '"+SurveyID+"' "
+var YESSelected=""
+var NOSelected=""
+var YESClick=""
+var NOClick=""
+var options="";
+
+
+
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+
+
+
+
+			//alert(rowsArray.length)
+
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+
+						Stripe='stripe';
+					if (item['defaultval']=="Yes"){
+						YESSelected="checked"
+						YESClick='hideQuestions('+n+')'
+						NOSelected=""
+						NOClick='showQuestions('+n+')'
+					}
+					if (item['defaultval']=="No"){
+						YESSelected=""
+						YESClick='showQuestions('+n+')'
+						NOSelected="checked"
+						NOClick='hideQuestions('+n+')'
+					}
+					
+					if (item['groupcode']=="-2"){
+						HTMLToOutput+= '<div align="left" width="100%" class="'+Stripe+'">';
+						HTMLToOutput+= item['description']+'</div>'
+						HTMLToOutput+= '<div align ="left"><fieldset data-role="controlgroup" data-type="horizontal">'
+						HTMLToOutput+= '<input type="radio" name="Group'+n+'" id="GroupY'+n+'"  value="on" '+YESSelected+' onclick="'+YESClick+'"><label for="GroupY'+n+'" >Yes</label>'
+						HTMLToOutput+= '<input type="radio" name="Group'+n+'" id="GroupN'+n+'" value="off" '+NOSelected+' onclick="'+NOClick+'"><label for="GroupN'+n+'">No</label>'
+						HTMLToOutput+= '</fieldset></div>'
+						HTMLToOutput+= '<div  align ="left" hidden id="qrow'+n+'" ></div>'			
+						}
+					if(item['groupcode']=="-1"){
+						
+						HTMLToOutput+= '<div  align ="left"  id="qrow'+n+'" ></div>'			
+						}
+
+
+
+					}
+
+					
+			//alert("xxxxx"+HTMLToOutput)
+			$( "#PreviewQuestion").html(HTMLToOutput);
+
+
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					if (item['groupcode']=="-2"){
+						buildGroupQuestion(item['id'],n)
+
+					}
+					if (item['groupcode']=="-1"){
+						
+						buildSingleQuestion(item['id'],n)
+
+					}
+				}
+
+			$( "#PreviewQuestion").trigger('create');
+
+
+
+	 },
+	 function(error, statement){
+		//alert("Select Error"+SQLStatement);
+	 }        
+	);
+
+
+}	
+function hideQuestions(n){
+$("#qrow"+n).hide();
+$( "#PreviewQuestion").trigger('create');
+}
+function showQuestions(n){
+$("#qrow"+n).show();
+$( "#PreviewQuestion").trigger('create');
+}
+
+function buildGroupQuestion(qno,divid){
+
+var Stripe="";
+var HTMLToOutput=""
+var SQLStatement="";
+SQLStatement="SELECT * From SurveysDetail where groupcode = '"+qno+"'"
+
+var options="";
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+		
+
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					HTMLToOutput+="<DIV><STRONG>"+item['name']+"</strong></div>"
+					HTMLToOutput+="<DIV id='arow"+item['id']+"'></div>"
+
+					}
+
+			
+			
+			$( "#qrow"+divid).html(HTMLToOutput);
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+
+				buildQuestionTypes('arow'+item['id'],item['id'])
+
+				}
+			$( "#qrow"+divid).trigger("create");
+
+		 },
+	 function(error, statement){
+		//alert("Select Error"+SQLStatement);
+	 }        
+	);
+}
+function buildSingleQuestion(qno,divid){
+
+var Stripe="";
+var HTMLToOutput=""
+var SQLStatement="";
+SQLStatement="SELECT * From SurveysDetail where id = '"+qno+"'"
+
+var options="";
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+				
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					HTMLToOutput+="<DIV><STRONG>"+item['name']+"</strong></div>"
+					HTMLToOutput+="<DIV id='arow"+item['id']+"'></div>"
+
+					}
+
+		
+			
+			$( "#qrow"+divid).html(HTMLToOutput);
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+
+				buildQuestionTypes('arow'+item['id'],item['id'])
+
+				}
+			$( "#qrow"+divid).trigger("create");
+			},
+	 function(error, statement){
+		//alert("Select Error"+SQLStatement);
+	 }        
+	);
+}
+function buildQuestionTypes(divid,id){
+
+var Stripe="";
+var HTMLToOutput=""
+var SQLStatement="";
+SQLStatement="SELECT * From SurveysDetail where id = '"+id+"'"
+
+var options="";
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+				if(item['type']=="1"){
+					buildQuestionAnswers(id,item['type'],item['id'])
+					}
+				if(item['type']=="2"){
+					buildQuestionAnswers(id,item['type'],item['id'])
+					}
+				if(item['type']=="3"){
+					$( "#"+divid).html('<BR><input id="Code" name="Code" type="text"  value=""/>');
+					}	
+				if(item['type']=="4"){
+					$( "#"+divid).html('<BR><input id="Code" name="Code" type="number"  value=""/>');
+					}	
+				if(item['type']=="5"){
+					$( "#"+divid).html('<BR><textarea></textarea>');
+					}					
+				if(item['type']=="6"){
+					//alert("Type 6");
+					buildQuestionAnswers(id,item['type'],item['id'])
+					}
+				
+				}
+			
+			$( "#"+divid).trigger("create");
+			},
+	 function(error, statement){
+		//alert("Select Error"+SQLStatement);
+	 }        
+	);
+}
+
+
+
+
+
+
+
+
+
+
+function buildQuestionAnswers(divid,type,id){
+
+var Stripe="";
+var HTMLToOutput=""
+var SQLStatement="";
+SQLStatement="SELECT * From SurveysDetailAnswers where detailid = '"+id+"'"
+
+var options="";
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			//alert(result.rows.length)
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					
+				
+					if(type=="1"){
+
+						options+= '<input type="checkbox" id= "CB'+id+"-"+n+'" name= "CB'+id+"-"+n+'"><label for= "CB'+id+"-"+n+'">'+ item['description']+'</label>'
+
+					}
+					if(type=="2"){
+
+						options+= '	<label for "radio'+id+"-"+n+'"><input type="radio" id="radio'+id+"-"+n+'" name="radio'+id+'">';			
+						options+= item['description']+'</label>';
+
+					}
+					if(type=="6"){
+
+						options+= '	<Option value="'+item['answercode']+'">';			
+						options+= item['description']+'</option>';
+
+					}
+
+				}
+				if(type=="1"){
+
+					HTMLToOutput= '  <form> <fieldset data-role="controlgroup">'+options+'</fieldset></form>'
+					//alert(HTMLToOutput);
+				}
+				if(type=="2"){
+
+					HTMLToOutput= '  <form> <fieldset data-role="controlgroup">'+options+'</fieldset></form>'
+					//alert(HTMLToOutput);
+				}
+
+				if(type=="6"){
+					HTMLToOutput= '<select >'+options+'</select>';
+					//alert(HTMLToOutput)
+				}
+			$( "#arow"+divid).html(HTMLToOutput);
+
+			$( "#arow"+divid).trigger("create");
+			},
+	 function(error, statement){
+		//alert("Select Error"+SQLStatement);
+	 }        
+	);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function zeroFill( number, width )
+{
+  width -= number.toString().length;
+  if ( width > 0 )
+  {
+    return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+  }
+  return number + ""; // always return a string
+}
+function isEven(value) {
+return (value%2 == 0);
+}
+
+
+
+
+
+
+
+
+  
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
+

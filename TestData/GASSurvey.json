@@ -1,0 +1,3126 @@
+{ 
+    "QUESTION": [
+      {
+        "KEY": "00001",
+        "LABEL": "Landlord's Appliance",
+        "TYPE": "LB",
+        "DEFAULT": "00001",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00002",
+        "LABEL": "Inspected",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00003",
+        "LABEL": "Make",
+        "TYPE": "LDB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "ADAMS",
+            "VALUE": "ADAMS"
+          },
+          {
+            "KEY": "AGC",
+            "VALUE": "AGC"
+          },
+          {
+            "KEY": "ALPHA",
+            "VALUE": "ALPHA"
+          },
+          {
+            "KEY": "ANDERSON",
+            "VALUE": "ANDERSON"
+          },
+          {
+            "KEY": "APEX",
+            "VALUE": "APEX"
+          },
+          {
+            "KEY": "ARISTON",
+            "VALUE": "ARISTON"
+          },
+          {
+            "KEY": "ASCOT",
+            "VALUE": "ASCOT"
+          },
+          {
+            "KEY": "BARNARD",
+            "VALUE": "BARNARD"
+          },
+          {
+            "KEY": "BAXI",
+            "VALUE": "BAXI"
+          },
+          {
+            "KEY": "BE MODERN",
+            "VALUE": "BE MODERN"
+          },
+          {
+            "KEY": "BEESTON",
+            "VALUE": "BEESTON"
+          },
+          {
+            "KEY": "BENRAD",
+            "VALUE": "BENRAD"
+          },
+          {
+            "KEY": "BERRY",
+            "VALUE": "BERRY"
+          },
+          {
+            "KEY": "BIASI",
+            "VALUE": "BIASI"
+          },
+          {
+            "KEY": "BLACK",
+            "VALUE": "BLACK"
+          },
+          {
+            "KEY": "BLENHEIM",
+            "VALUE": "BLENHEIM"
+          },
+          {
+            "KEY": "BOSCH",
+            "VALUE": "BOSCH"
+          },
+          {
+            "KEY": "BRANNAN",
+            "VALUE": "BRANNAN"
+          },
+          {
+            "KEY": "BRILLIANT",
+            "VALUE": "BRILLIANT"
+          },
+          {
+            "KEY": "BRITTANY",
+            "VALUE": "BRITTANY"
+          },
+          {
+            "KEY": "BROAG REMEHA",
+            "VALUE": "BROAG REMEHA"
+          },
+          {
+            "KEY": "CANNON",
+            "VALUE": "CANNON"
+          },
+          {
+            "KEY": "CARADON",
+            "VALUE": "CARADON"
+          },
+          {
+            "KEY": "CFM",
+            "VALUE": "CFM"
+          },
+          {
+            "KEY": "CHAFFOTEAUX",
+            "VALUE": "CHAFFOTEAUX"
+          },
+          {
+            "KEY": "CHALLENGER",
+            "VALUE": "CHALLENGER"
+          },
+          {
+            "KEY": "CIRCULATOR",
+            "VALUE": "CIRCULATOR"
+          },
+          {
+            "KEY": "CONCORD",
+            "VALUE": "CONCORD"
+          },
+          {
+            "KEY": "CORINA",
+            "VALUE": "CORINA"
+          },
+          {
+            "KEY": "COSIFIRE",
+            "VALUE": "COSIFIRE"
+          },
+          {
+            "KEY": "COWAN PARKINSON",
+            "VALUE": "COWAN PARKINSON"
+          },
+          {
+            "KEY": "COZYMISER",
+            "VALUE": "COZYMISER"
+          },
+          {
+            "KEY": "CRANE",
+            "VALUE": "CRANE"
+          },
+          {
+            "KEY": "CREDA",
+            "VALUE": "CREDA"
+          },
+          {
+            "KEY": "CROSSLEE",
+            "VALUE": "CROSSLEE"
+          },
+          {
+            "KEY": "DEBONAIR",
+            "VALUE": "DEBONAIR"
+          },
+          {
+            "KEY": "DIMPLEX",
+            "VALUE": "DIMPLEX"
+          },
+          {
+            "KEY": "DRUGASAR",
+            "VALUE": "DRUGASAR"
+          },
+          {
+            "KEY": "DUNSLEY",
+            "VALUE": "DUNSLEY"
+          },
+          {
+            "KEY": "EASTHAM",
+            "VALUE": "EASTHAM"
+          },
+          {
+            "KEY": "ECLIPSE",
+            "VALUE": "ECLIPSE"
+          },
+          {
+            "KEY": "ECONOMIC",
+            "VALUE": "ECONOMIC"
+          },
+          {
+            "KEY": "ELECTROLUX",
+            "VALUE": "ELECTROLUX"
+          },
+          {
+            "KEY": "EUROTECH",
+            "VALUE": "EUROTECH"
+          },
+          {
+            "KEY": "EXCLUSIVE",
+            "VALUE": "EXCLUSIVE"
+          },
+          {
+            "KEY": "F.E.R.",
+            "VALUE": "F.E.R."
+          },
+          {
+            "KEY": "FERROLI",
+            "VALUE": "FERROLI"
+          },
+          {
+            "KEY": "FERRONA",
+            "VALUE": "FERRONA"
+          },
+          {
+            "KEY": "FIRE GLOW",
+            "VALUE": "FIRE GLOW"
+          },
+          {
+            "KEY": "FIRECRAFT",
+            "VALUE": "FIRECRAFT"
+          },
+          {
+            "KEY": "FIRECROWN",
+            "VALUE": "FIRECROWN"
+          },
+          {
+            "KEY": "FIREGLO",
+            "VALUE": "FIREGLO"
+          },
+          {
+            "KEY": "FIREGLOW",
+            "VALUE": "FIREGLOW"
+          },
+          {
+            "KEY": "FIRESUITE",
+            "VALUE": "FIRESUITE"
+          },
+          {
+            "KEY": "FIROCCO",
+            "VALUE": "FIROCCO"
+          },
+          {
+            "KEY": "FLAVEL",
+            "VALUE": "FLAVEL"
+          },
+          {
+            "KEY": "FOCAL POINT",
+            "VALUE": "FOCAL POINT"
+          },
+          {
+            "KEY": "GAS FLAME INSET",
+            "VALUE": "GAS FLAME INSET"
+          },
+          {
+            "KEY": "GENESIS",
+            "VALUE": "GENESIS"
+          },
+          {
+            "KEY": "GF",
+            "VALUE": "GF"
+          },
+          {
+            "KEY": "GLOBAL",
+            "VALUE": "GLOBAL"
+          },
+          {
+            "KEY": "GLOW WORM",
+            "VALUE": "GLOW WORM"
+          },
+          {
+            "KEY": "GRATE GLOW",
+            "VALUE": "GRATE GLOW"
+          },
+          {
+            "KEY": "HALLMARK",
+            "VALUE": "HALLMARK"
+          },
+          {
+            "KEY": "HALSTEAD",
+            "VALUE": "HALSTEAD"
+          },
+          {
+            "KEY": "HEAT LIVE",
+            "VALUE": "HEAT LIVE"
+          },
+          {
+            "KEY": "HEATINAIRE",
+            "VALUE": "HEATINAIRE"
+          },
+          {
+            "KEY": "HEATWAVE",
+            "VALUE": "HEATWAVE"
+          },
+          {
+            "KEY": "HERMAN",
+            "VALUE": "HERMAN"
+          },
+          {
+            "KEY": "HIJAN",
+            "VALUE": "HIJAN"
+          },
+          {
+            "KEY": "HISPEC",
+            "VALUE": "HISPEC"
+          },
+          {
+            "KEY": "HOMEGLOW",
+            "VALUE": "HOMEGLOW"
+          },
+          {
+            "KEY": "HOUSEWARMER",
+            "VALUE": "HOUSEWARMER"
+          },
+          {
+            "KEY": "HOVER",
+            "VALUE": "HOVER"
+          },
+          {
+            "KEY": "I.M.I.",
+            "VALUE": "I.M.I."
+          },
+          {
+            "KEY": "IDEAL",
+            "VALUE": "IDEAL"
+          },
+          {
+            "KEY": "IMPRESSION",
+            "VALUE": "IMPRESSION"
+          },
+          {
+            "KEY": "INDEPENDENT GAS FIRE (UNSPEC)",
+            "VALUE": "INDEPENDENT GAS FIRE (UNSPEC)"
+          },
+          {
+            "KEY": "INDISET",
+            "VALUE": "INDISET"
+          },
+          {
+            "KEY": "INSET",
+            "VALUE": "INSET"
+          },
+          {
+            "KEY": "JAGUAR",
+            "VALUE": "JAGUAR"
+          },
+          {
+            "KEY": "JANIS",
+            "VALUE": "JANIS"
+          },
+          {
+            "KEY": "JANUS",
+            "VALUE": "JANUS"
+          },
+          {
+            "KEY": "JOHNSON",
+            "VALUE": "JOHNSON"
+          },
+          {
+            "KEY": "JOHNSON & STARLEY",
+            "VALUE": "JOHNSON & STARLEY"
+          },
+          {
+            "KEY": "KINDER",
+            "VALUE": "KINDER"
+          },
+          {
+            "KEY": "KINGSDALE",
+            "VALUE": "KINGSDALE"
+          },
+          {
+            "KEY": "KOHLANGAS",
+            "VALUE": "KOHLANGAS"
+          },
+          {
+            "KEY": "KOHLANGAZ",
+            "VALUE": "KOHLANGAZ"
+          },
+          {
+            "KEY": "LEISURE",
+            "VALUE": "LEISURE"
+          },
+          {
+            "KEY": "MAGICOAL",
+            "VALUE": "MAGICOAL"
+          },
+          {
+            "KEY": "MAGIGLO",
+            "VALUE": "MAGIGLO"
+          },
+          {
+            "KEY": "MAIN",
+            "VALUE": "MAIN"
+          },
+          {
+            "KEY": "MANOR",
+            "VALUE": "MANOR"
+          },
+          {
+            "KEY": "MAXOL",
+            "VALUE": "MAXOL"
+          },
+          {
+            "KEY": "MODENA",
+            "VALUE": "MODENA"
+          },
+          {
+            "KEY": "MYSON",
+            "VALUE": "MYSON"
+          },
+          {
+            "KEY": "NEW WORLD",
+            "VALUE": "NEW WORLD"
+          },
+          {
+            "KEY": "NEWFLAME",
+            "VALUE": "NEWFLAME"
+          },
+          {
+            "KEY": "NEWHOME",
+            "VALUE": "NEWHOME"
+          },
+          {
+            "KEY": "NON",
+            "VALUE": "NON"
+          },
+          {
+            "KEY": "NOT ON LIST",
+            "VALUE": "NOT ON LIST"
+          },
+          {
+            "KEY": "OASIS",
+            "VALUE": "OASIS"
+          },
+          {
+            "KEY": "OCEAN",
+            "VALUE": "OCEAN"
+          },
+          {
+            "KEY": "OPTIMA",
+            "VALUE": "OPTIMA"
+          },
+          {
+            "KEY": "P & C",
+            "VALUE": "P & C"
+          },
+          {
+            "KEY": "PARAGON",
+            "VALUE": "PARAGON"
+          },
+          {
+            "KEY": "PARKINSON",
+            "VALUE": "PARKINSON"
+          },
+          {
+            "KEY": "PARKRAY",
+            "VALUE": "PARKRAY"
+          },
+          {
+            "KEY": "PELDON",
+            "VALUE": "PELDON"
+          },
+          {
+            "KEY": "POLMA",
+            "VALUE": "POLMA"
+          },
+          {
+            "KEY": "POTTERTON",
+            "VALUE": "POTTERTON"
+          },
+          {
+            "KEY": "PROTHERM",
+            "VALUE": "PROTHERM"
+          },
+          {
+            "KEY": "RADIANT",
+            "VALUE": "RADIANT"
+          },
+          {
+            "KEY": "RADIATION",
+            "VALUE": "RADIATION"
+          },
+          {
+            "KEY": "RAVENHEAT",
+            "VALUE": "RAVENHEAT"
+          },
+          {
+            "KEY": "RINNAI",
+            "VALUE": "RINNAI"
+          },
+          {
+            "KEY": "RIVIERA",
+            "VALUE": "RIVIERA"
+          },
+          {
+            "KEY": "ROBINSON WILLEY",
+            "VALUE": "ROBINSON WILLEY"
+          },
+          {
+            "KEY": "ROYAL",
+            "VALUE": "ROYAL"
+          },
+          {
+            "KEY": "SWARM",
+            "VALUE": "SWARM"
+          },
+          {
+            "KEY": "SANTANA",
+            "VALUE": "SANTANA"
+          },
+          {
+            "KEY": "SAUNIER DUVAL",
+            "VALUE": "SAUNIER DUVAL"
+          },
+          {
+            "KEY": "SEAFIRE",
+            "VALUE": "SEAFIRE"
+          },
+          {
+            "KEY": "SIME",
+            "VALUE": "SIME"
+          },
+          {
+            "KEY": "SIROCCO",
+            "VALUE": "SIROCCO"
+          },
+          {
+            "KEY": "STANNA",
+            "VALUE": "STANNA"
+          },
+          {
+            "KEY": "STELRAD",
+            "VALUE": "STELRAD"
+          },
+          {
+            "KEY": "STREAMLINE",
+            "VALUE": "STREAMLINE"
+          },
+          {
+            "KEY": "SUNCREST",
+            "VALUE": "SUNCREST"
+          },
+          {
+            "KEY": "SUPREME",
+            "VALUE": "SUPREME"
+          },
+          {
+            "KEY": "TEMCANA",
+            "VALUE": "TEMCANA"
+          },
+          {
+            "KEY": "THORN",
+            "VALUE": "THORN"
+          },
+          {
+            "KEY": "TRIANCO",
+            "VALUE": "TRIANCO"
+          },
+          {
+            "KEY": "TRIDENT",
+            "VALUE": "TRIDENT"
+          },
+          {
+            "KEY": "UNSPECIFIED",
+            "VALUE": "UNSPECIFIED"
+          },
+          {
+            "KEY": "VAILLANT",
+            "VALUE": "VAILLANT"
+          },
+          {
+            "KEY": "VALENCIA",
+            "VALUE": "VALENCIA"
+          },
+          {
+            "KEY": "VALIANT",
+            "VALUE": "VALIANT"
+          },
+          {
+            "KEY": "VALOR",
+            "VALUE": "VALOR"
+          },
+          {
+            "KEY": "VERINE",
+            "VALUE": "VERINE"
+          },
+          {
+            "KEY": "VERONA",
+            "VALUE": "VERONA"
+          },
+          {
+            "KEY": "VOGUE",
+            "VALUE": "VOGUE"
+          },
+          {
+            "KEY": "VOKERA",
+            "VALUE": "VOKERA"
+          },
+          {
+            "KEY": "VULCAN",
+            "VALUE": "VULCAN"
+          },
+          {
+            "KEY": "WICKES",
+            "VALUE": "WICKES"
+          },
+          {
+            "KEY": "WIKES",
+            "VALUE": "WIKES"
+          },
+          {
+            "KEY": "WINDSOR",
+            "VALUE": "WINDSOR"
+          },
+          {
+            "KEY": "WINTERNIGHTS",
+            "VALUE": "WINTERNIGHTS"
+          },
+          {
+            "KEY": "WIZARD",
+            "VALUE": "WIZARD"
+          },
+          {
+            "KEY": "WONDERFIRE",
+            "VALUE": "WONDERFIRE"
+          },
+          {
+            "KEY": "WOODSTOCK",
+            "VALUE": "WOODSTOCK"
+          },
+          {
+            "KEY": "WORCESTER",
+            "VALUE": "WORCESTER"
+          },
+          {
+            "KEY": "WRS",
+            "VALUE": "WRS"
+          }
+        ]
+      },
+      {
+        "KEY": "00004",
+        "LABEL": "Model",
+        "TYPE": "LDB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "000031",
+            "VALUE": "UNSPECIFIED-UNSPECIFIED"
+          },
+          {
+            "KEY": "000032",
+            "VALUE": "ARISTON-MICRO GENIUS"
+          },
+          {
+            "KEY": "000033",
+            "VALUE": "BARNARD-CASTLE STREAMLINE 2"
+          },
+          {
+            "KEY": "000001",
+            "VALUE": "BAXI-105 HE"
+          },
+          {
+            "KEY": "000002",
+            "VALUE": "BAXI-105E COMBI"
+          },
+          {
+            "KEY": "000004",
+            "VALUE": "BAXI-C5W"
+          },
+          {
+            "KEY": "000005",
+            "VALUE": "BAXI-CR-RES456-W"
+          },
+          {
+            "KEY": "000006",
+            "VALUE": "CREDA-CAPRI"
+          },
+          {
+            "KEY": "000007",
+            "VALUE": "GLOW WORM-12HXI"
+          },
+          {
+            "KEY": "000008",
+            "VALUE": "GLOW WORM-CAPRICORN"
+          },
+          {
+            "KEY": "000009",
+            "VALUE": "GLOW WORM-CO-ORDINATE G"
+          },
+          {
+            "KEY": "000010",
+            "VALUE": "GLOW WORM-MIAMI"
+          },
+          {
+            "KEY": "000011",
+            "VALUE": "IDEAL-MEXICO"
+          },
+          {
+            "KEY": "000012",
+            "VALUE": "POTTERTON-PROMAX"
+          },
+          {
+            "KEY": "000013",
+            "VALUE": "POTTERTON-PROMAX 15H"
+          },
+          {
+            "KEY": "000016",
+            "VALUE": "VALOR-BLACK BEAUTY"
+          },
+          {
+            "KEY": "000028",
+            "VALUE": "CANNON-SALISBURY"
+          },
+          {
+            "KEY": "000023",
+            "VALUE": "MAIN-ARIES"
+          },
+          {
+            "KEY": "000027",
+            "VALUE": "MAIN-HONEY MINX"
+          },
+          {
+            "KEY": "000022",
+            "VALUE": "NEW WORLD-APEX"
+          },
+          {
+            "KEY": "000018",
+            "VALUE": "NEW WORLD-NEW WORLD"
+          },
+          {
+            "KEY": "000020",
+            "VALUE": "NEW WORLD-SOLA GRILL"
+          },
+          {
+            "KEY": "000025",
+            "VALUE": "NEW WORLD-TIDI"
+          },
+          {
+            "KEY": "000021",
+            "VALUE": "PARKINSON-COWAN"
+          },
+          {
+            "KEY": "000030",
+            "VALUE": "PARKINSON-COWAN LYRIC MK II"
+          },
+          {
+            "KEY": "000019",
+            "VALUE": "PARKINSON-COWEN LYRIC 50"
+          },
+          {
+            "KEY": "000029",
+            "VALUE": "VALOR-FIFTY"
+          },
+          {
+            "KEY": "000026",
+            "VALUE": "VALOR-VANITY"
+          },
+          {
+            "KEY": "000034",
+            "VALUE": "BAXI-100 HE PLUS"
+          },
+          {
+            "KEY": "000068",
+            "VALUE": "BAXI-130HE"
+          },
+          {
+            "KEY": "000088",
+            "VALUE": "BAXI-401"
+          },
+          {
+            "KEY": "000069",
+            "VALUE": "BAXI-552"
+          },
+          {
+            "KEY": "000093",
+            "VALUE": "BAXI-574E"
+          },
+          {
+            "KEY": "000066",
+            "VALUE": "BAXI-80 HE PLUS"
+          },
+          {
+            "KEY": "000089",
+            "VALUE": "BAXI-80E"
+          },
+          {
+            "KEY": "000036",
+            "VALUE": "BAXI-B"
+          },
+          {
+            "KEY": "000056",
+            "VALUE": "BAXI-BAROQUE"
+          },
+          {
+            "KEY": "000053",
+            "VALUE": "BAXI-BERMUDA B"
+          },
+          {
+            "KEY": "000080",
+            "VALUE": "BAXI-BERMUDA C2"
+          },
+          {
+            "KEY": "000042",
+            "VALUE": "BAXI-BERMUDA C3"
+          },
+          {
+            "KEY": "000061",
+            "VALUE": "BAXI-BERMUDA C3W"
+          },
+          {
+            "KEY": "000046",
+            "VALUE": "BAXI-BERMUDA C4"
+          },
+          {
+            "KEY": "000085",
+            "VALUE": "BAXI-BERMUDA C4W"
+          },
+          {
+            "KEY": "000043",
+            "VALUE": "BAXI-BERMUDA C5"
+          },
+          {
+            "KEY": "000035",
+            "VALUE": "BAXI-BERMUDA C5W"
+          },
+          {
+            "KEY": "000065",
+            "VALUE": "BAXI-BERMUDA GF"
+          },
+          {
+            "KEY": "000054",
+            "VALUE": "BAXI-BERMUDA GF SUPER 3"
+          },
+          {
+            "KEY": "000048",
+            "VALUE": "BAXI-BERMUDA GF2"
+          },
+          {
+            "KEY": "000055",
+            "VALUE": "BAXI-BERMUDA GF2 SUPER"
+          },
+          {
+            "KEY": "000040",
+            "VALUE": "BAXI-BERMUDA GF3"
+          },
+          {
+            "KEY": "000044",
+            "VALUE": "BAXI-BERMUDA GF3 SUPER"
+          },
+          {
+            "KEY": "000045",
+            "VALUE": "BAXI-BERMUDA GFS"
+          },
+          {
+            "KEY": "000094",
+            "VALUE": "BAXI-BERMUDA INSET"
+          },
+          {
+            "KEY": "000074",
+            "VALUE": "BAXI-BERMUDA INSET 2"
+          },
+          {
+            "KEY": "000063",
+            "VALUE": "BAXI-BERMUDA INSET 3"
+          },
+          {
+            "KEY": "000070",
+            "VALUE": "BAXI-BERMUDA LFE"
+          },
+          {
+            "KEY": "000078",
+            "VALUE": "BAXI-BERMUDA LFE SUPER"
+          },
+          {
+            "KEY": "000060",
+            "VALUE": "BAXI-BERMUDA LFE3"
+          },
+          {
+            "KEY": "000049",
+            "VALUE": "BAXI-BERMUDA LFE3 SUPER"
+          },
+          {
+            "KEY": "000076",
+            "VALUE": "BAXI-BERMUDA LFE4 SUPER"
+          },
+          {
+            "KEY": "000067",
+            "VALUE": "BAXI-BERMUDA LFE5"
+          },
+          {
+            "KEY": "000083",
+            "VALUE": "BAXI-BERMUDA LFE5 SUPER"
+          },
+          {
+            "KEY": "000064",
+            "VALUE": "BAXI-BERMUDA PW3"
+          },
+          {
+            "KEY": "000047",
+            "VALUE": "BAXI-BERMUDA PW4"
+          },
+          {
+            "KEY": "000072",
+            "VALUE": "BAXI-BERMUDA PW4 DELUXE"
+          },
+          {
+            "KEY": "000052",
+            "VALUE": "BAXI-BERMUDA PW5"
+          },
+          {
+            "KEY": "000073",
+            "VALUE": "BAXI-BERMUDA PW5 DELUXE"
+          },
+          {
+            "KEY": "000079",
+            "VALUE": "BAXI-BERMUDA RG"
+          },
+          {
+            "KEY": "000091",
+            "VALUE": "BAXI-BERMUDA S2"
+          },
+          {
+            "KEY": "000084",
+            "VALUE": "BAXI-BERMUDA S3"
+          },
+          {
+            "KEY": "000087",
+            "VALUE": "BAXI-BERMUDA SL3"
+          },
+          {
+            "KEY": "000081",
+            "VALUE": "BAXI-BERMUDA SUPERFLAME"
+          },
+          {
+            "KEY": "000082",
+            "VALUE": "BAXI-BERMUDA VP2"
+          },
+          {
+            "KEY": "000071",
+            "VALUE": "BAXI-BERMUDA VP3"
+          },
+          {
+            "KEY": "000086",
+            "VALUE": "BAXI-BERMUDA W2"
+          },
+          {
+            "KEY": "000062",
+            "VALUE": "BAXI-BERMUDA W3"
+          },
+          {
+            "KEY": "000038",
+            "VALUE": "BAXI-BRAVA 2"
+          },
+          {
+            "KEY": "000050",
+            "VALUE": "BAXI-BRAZILIA"
+          },
+          {
+            "KEY": "000092",
+            "VALUE": "BAXI-EBONY"
+          },
+          {
+            "KEY": "000077",
+            "VALUE": "BAXI-GAS FLAME"
+          },
+          {
+            "KEY": "000059",
+            "VALUE": "BAXI-SOLO"
+          },
+          {
+            "KEY": "000058",
+            "VALUE": "BAXI-SOLO 2"
+          },
+          {
+            "KEY": "000057",
+            "VALUE": "BAXI-SOLO 3 PF"
+          },
+          {
+            "KEY": "000051",
+            "VALUE": "BAXI-SOLO 4"
+          },
+          {
+            "KEY": "000075",
+            "VALUE": "BAXI-WENTWORTH"
+          },
+          {
+            "KEY": "000090",
+            "VALUE": "BAXI-WENTWORTH CLASSIC"
+          },
+          {
+            "KEY": "000095",
+            "VALUE": "BERRY-MAGICOAL FIRE"
+          },
+          {
+            "KEY": "000096",
+            "VALUE": "BLACK-BEAUTY SLIMLINE"
+          },
+          {
+            "KEY": "000097",
+            "VALUE": "BRANNAN-RIVIERA INSET GAS FI"
+          },
+          {
+            "KEY": "000101",
+            "VALUE": "CANNON-CALIS LFE"
+          },
+          {
+            "KEY": "000099",
+            "VALUE": "CANNON-CANNON"
+          },
+          {
+            "KEY": "000102",
+            "VALUE": "CANNON-CARESS"
+          },
+          {
+            "KEY": "000104",
+            "VALUE": "CANNON-COALRIDGE"
+          },
+          {
+            "KEY": "000103",
+            "VALUE": "CANNON-K16"
+          },
+          {
+            "KEY": "000098",
+            "VALUE": "CANNON-MISERMATIC"
+          },
+          {
+            "KEY": "000100",
+            "VALUE": "CANNON-SONNATA"
+          },
+          {
+            "KEY": "000105",
+            "VALUE": "CHAFFOTEAUX-BRITTANY COMBI"
+          },
+          {
+            "KEY": "000106",
+            "VALUE": "CHALLENGER-DFE"
+          },
+          {
+            "KEY": "000107",
+            "VALUE": "CORINA-HOUSEWARMER"
+          },
+          {
+            "KEY": "000108",
+            "VALUE": "COZYMISER-HOT TOASTER LFE FIRE"
+          },
+          {
+            "KEY": "000109",
+            "VALUE": "DIMPLEX-CRANLEIGH"
+          },
+          {
+            "KEY": "000110",
+            "VALUE": "DRUGASAR-WALL HEATER"
+          },
+          {
+            "KEY": "000111",
+            "VALUE": "DUNSLEY-GLO-FLAME"
+          },
+          {
+            "KEY": "000112",
+            "VALUE": "ECONOMIC-SEAFIRE"
+          },
+          {
+            "KEY": "000114",
+            "VALUE": "FERROLI-F24"
+          },
+          {
+            "KEY": "000116",
+            "VALUE": "FERROLI-F30"
+          },
+          {
+            "KEY": "000117",
+            "VALUE": "FERROLI-MODENA"
+          },
+          {
+            "KEY": "000115",
+            "VALUE": "FERROLI-MODENA 80 E"
+          },
+          {
+            "KEY": "000118",
+            "VALUE": "FIRE GLOW-REALITY"
+          },
+          {
+            "KEY": "000119",
+            "VALUE": "FIRECROWN-SUPER 5"
+          },
+          {
+            "KEY": "000120",
+            "VALUE": "FIREGLO-SLIMLINE"
+          },
+          {
+            "KEY": "000123",
+            "VALUE": "FLAVEL-DEBONAIR"
+          },
+          {
+            "KEY": "000121",
+            "VALUE": "FLAVEL-REGENT"
+          },
+          {
+            "KEY": "000122",
+            "VALUE": "FLAVEL-WELCOME"
+          },
+          {
+            "KEY": "000127",
+            "VALUE": "FOCAL POINT-ESPANYA BASKET FIRE"
+          },
+          {
+            "KEY": "000126",
+            "VALUE": "FOCAL POINT-FIREGLOW"
+          },
+          {
+            "KEY": "000124",
+            "VALUE": "FOCAL POINT-INSET"
+          },
+          {
+            "KEY": "000125",
+            "VALUE": "FOCAL POINT-VOGUE"
+          },
+          {
+            "KEY": "000129",
+            "VALUE": "GENESIS-INSET LFE"
+          },
+          {
+            "KEY": "000128",
+            "VALUE": "GENESIS-MONARCH L.F.E."
+          },
+          {
+            "KEY": "000130",
+            "VALUE": "GLOBAL-CORDA L.F.E."
+          },
+          {
+            "KEY": "000174",
+            "VALUE": "GLOW WORM-12 HXI"
+          },
+          {
+            "KEY": "000173",
+            "VALUE": "GLOW WORM-15 HXI"
+          },
+          {
+            "KEY": "000153",
+            "VALUE": "GLOW WORM-18 CXI"
+          },
+          {
+            "KEY": "000134",
+            "VALUE": "GLOW WORM-18 HXI"
+          },
+          {
+            "KEY": "000152",
+            "VALUE": "GLOW WORM-18 SXI"
+          },
+          {
+            "KEY": "000132",
+            "VALUE": "GLOW WORM-24 CXI"
+          },
+          {
+            "KEY": "000177",
+            "VALUE": "GLOW WORM-24 HXI"
+          },
+          {
+            "KEY": "000133",
+            "VALUE": "GLOW WORM-30 CXI"
+          },
+          {
+            "KEY": "000131",
+            "VALUE": "GLOW WORM-30 HXI"
+          },
+          {
+            "KEY": "000185",
+            "VALUE": "GLOW WORM-40BF"
+          },
+          {
+            "KEY": "000178",
+            "VALUE": "GLOW WORM-45"
+          },
+          {
+            "KEY": "000168",
+            "VALUE": "GLOW WORM-ALLEGRO"
+          },
+          {
+            "KEY": "000169",
+            "VALUE": "GLOW WORM-ALLEGRO SUPER"
+          },
+          {
+            "KEY": "000186",
+            "VALUE": "GLOW WORM-AMBIENCE"
+          },
+          {
+            "KEY": "000158",
+            "VALUE": "GLOW WORM-ARISTOCRAT"
+          },
+          {
+            "KEY": "000155",
+            "VALUE": "GLOW WORM-BLACK ASH"
+          },
+          {
+            "KEY": "000191",
+            "VALUE": "GLOW WORM-BLACK BEAUTY"
+          },
+          {
+            "KEY": "000182",
+            "VALUE": "GLOW WORM-BROWN EMBER"
+          },
+          {
+            "KEY": "000162",
+            "VALUE": "GLOW WORM-CAMALOT"
+          },
+          {
+            "KEY": "000160",
+            "VALUE": "GLOW WORM-CHARTWELL"
+          },
+          {
+            "KEY": "000172",
+            "VALUE": "GLOW WORM-CHATSWORTH"
+          },
+          {
+            "KEY": "000156",
+            "VALUE": "GLOW WORM-COMPACT COMBI"
+          },
+          {
+            "KEY": "000137",
+            "VALUE": "GLOW WORM-COORDINATE G"
+          },
+          {
+            "KEY": "000147",
+            "VALUE": "GLOW WORM-COORDINATE GL"
+          },
+          {
+            "KEY": "000175",
+            "VALUE": "GLOW WORM-COUNTESS"
+          },
+          {
+            "KEY": "000145",
+            "VALUE": "GLOW WORM-ECONOMY"
+          },
+          {
+            "KEY": "000189",
+            "VALUE": "GLOW WORM-EMBERGLO"
+          },
+          {
+            "KEY": "000184",
+            "VALUE": "GLOW WORM-EXPRESS"
+          },
+          {
+            "KEY": "000190",
+            "VALUE": "GLOW WORM-FSAVER ECONOMY"
+          },
+          {
+            "KEY": "000176",
+            "VALUE": "GLOW WORM-FIRE"
+          },
+          {
+            "KEY": "000165",
+            "VALUE": "GLOW WORM-FIRE BLAZE"
+          },
+          {
+            "KEY": "000151",
+            "VALUE": "GLOW WORM-FUELSAVER"
+          },
+          {
+            "KEY": "000163",
+            "VALUE": "GLOW WORM-GALAXIE"
+          },
+          {
+            "KEY": "000166",
+            "VALUE": "GLOW WORM-GLS"
+          },
+          {
+            "KEY": "000139",
+            "VALUE": "GLOW WORM-HIDEAWAY"
+          },
+          {
+            "KEY": "000144",
+            "VALUE": "GLOW WORM-HOMEGLOW"
+          },
+          {
+            "KEY": "000179",
+            "VALUE": "GLOW WORM-INDEPENDENT FIRE"
+          },
+          {
+            "KEY": "000170",
+            "VALUE": "GLOW WORM-INSET"
+          },
+          {
+            "KEY": "000187",
+            "VALUE": "GLOW WORM-KFB 40"
+          },
+          {
+            "KEY": "000146",
+            "VALUE": "GLOW WORM-LFC"
+          },
+          {
+            "KEY": "000171",
+            "VALUE": "GLOW WORM-LFE"
+          },
+          {
+            "KEY": "000180",
+            "VALUE": "GLOW WORM-LFL"
+          },
+          {
+            "KEY": "000148",
+            "VALUE": "GLOW WORM-MAJORCA"
+          },
+          {
+            "KEY": "000154",
+            "VALUE": "GLOW WORM-MELODY"
+          },
+          {
+            "KEY": "000157",
+            "VALUE": "GLOW WORM-METRO"
+          },
+          {
+            "KEY": "000164",
+            "VALUE": "GLOW WORM-MONARCH"
+          },
+          {
+            "KEY": "000159",
+            "VALUE": "GLOW WORM-OPULENCE"
+          },
+          {
+            "KEY": "000136",
+            "VALUE": "GLOW WORM-OPUS"
+          },
+          {
+            "KEY": "000167",
+            "VALUE": "GLOW WORM-PLS"
+          },
+          {
+            "KEY": "000161",
+            "VALUE": "GLOW WORM-REVIVAL"
+          },
+          {
+            "KEY": "000183",
+            "VALUE": "GLOW WORM-ROYALE"
+          },
+          {
+            "KEY": "000142",
+            "VALUE": "GLOW WORM-SAHARA"
+          },
+          {
+            "KEY": "000188",
+            "VALUE": "GLOW WORM-SAXONY 2"
+          },
+          {
+            "KEY": "000150",
+            "VALUE": "GLOW WORM-SPACESAVER"
+          },
+          {
+            "KEY": "000140",
+            "VALUE": "GLOW WORM-SWIFTFLOW"
+          },
+          {
+            "KEY": "000138",
+            "VALUE": "GLOW WORM-ULTIMATE 40 BF"
+          },
+          {
+            "KEY": "000143",
+            "VALUE": "GLOW WORM-ULTIMATE 50 BF"
+          },
+          {
+            "KEY": "000181",
+            "VALUE": "GLOW WORM-ULTIMATE FF"
+          },
+          {
+            "KEY": "000149",
+            "VALUE": "GLOW WORM-UNSPECIFIED"
+          },
+          {
+            "KEY": "000192",
+            "VALUE": "GRATE GLOW-FORRESTER"
+          },
+          {
+            "KEY": "000193",
+            "VALUE": "HALSTEAD-ACE"
+          },
+          {
+            "KEY": "000194",
+            "VALUE": "HEAT LIVE-COMPACT"
+          },
+          {
+            "KEY": "000195",
+            "VALUE": "HIJAN-6"
+          },
+          {
+            "KEY": "000197",
+            "VALUE": "HOUSEWARMER-ECONOMY 2"
+          },
+          {
+            "KEY": "000196",
+            "VALUE": "HOUSEWARMER-HOUSEWARMER"
+          },
+          {
+            "KEY": "000198",
+            "VALUE": "HOVER-HIGHLIGHT"
+          },
+          {
+            "KEY": "000199",
+            "VALUE": "I.M.I.-POWERMAX"
+          },
+          {
+            "KEY": "000205",
+            "VALUE": "IDEAL-CAVALCADE"
+          },
+          {
+            "KEY": "000203",
+            "VALUE": "IDEAL-CLASSIC"
+          },
+          {
+            "KEY": "000200",
+            "VALUE": "IDEAL-CONCORD"
+          },
+          {
+            "KEY": "000209",
+            "VALUE": "IDEAL-ELAN"
+          },
+          {
+            "KEY": "000202",
+            "VALUE": "IDEAL-ISAR M30100"
+          },
+          {
+            "KEY": "000207",
+            "VALUE": "IDEAL-TURBO"
+          },
+          {
+            "KEY": "000206",
+            "VALUE": "IDEAL-TURBO 2"
+          },
+          {
+            "KEY": "000201",
+            "VALUE": "IDEAL-UNSPECIFIED"
+          },
+          {
+            "KEY": "000208",
+            "VALUE": "IDEAL-W2000"
+          },
+          {
+            "KEY": "000210",
+            "VALUE": "IDEAL-WLX"
+          },
+          {
+            "KEY": "000211",
+            "VALUE": "INSET-INSET"
+          },
+          {
+            "KEY": "000212",
+            "VALUE": "JAGUAR-JAGUAR"
+          },
+          {
+            "KEY": "000213",
+            "VALUE": "JANUS-2 CIRCULATOR"
+          },
+          {
+            "KEY": "000214",
+            "VALUE": "JANUS-3"
+          },
+          {
+            "KEY": "000215",
+            "VALUE": "JOHNSON-WARM AIR UNIT"
+          },
+          {
+            "KEY": "000216",
+            "VALUE": "JOHNSON & STARLEY-WARM AIR UNIT"
+          },
+          {
+            "KEY": "000217",
+            "VALUE": "KINDER-OASIS LFE"
+          },
+          {
+            "KEY": "000218",
+            "VALUE": "KINGSDALE-ECLIPSE LFE"
+          },
+          {
+            "KEY": "000219",
+            "VALUE": "KOHLANGAZ-KAMINA II"
+          },
+          {
+            "KEY": "000220",
+            "VALUE": "LEISURE-210"
+          },
+          {
+            "KEY": "000222",
+            "VALUE": "MAGIGLO-ELITE"
+          },
+          {
+            "KEY": "000221",
+            "VALUE": "MAGIGLO-MAGIGLO"
+          },
+          {
+            "KEY": "000224",
+            "VALUE": "MAIN-BRAVA"
+          },
+          {
+            "KEY": "000223",
+            "VALUE": "MAIN-BRAVA 2"
+          },
+          {
+            "KEY": "000232",
+            "VALUE": "MAIN-HARMONY"
+          },
+          {
+            "KEY": "000231",
+            "VALUE": "MAIN-HOUSEWARMER"
+          },
+          {
+            "KEY": "000230",
+            "VALUE": "MAIN-MAIN"
+          },
+          {
+            "KEY": "000227",
+            "VALUE": "MAIN-MEDALLION"
+          },
+          {
+            "KEY": "000225",
+            "VALUE": "MAIN-SHERATON"
+          },
+          {
+            "KEY": "000229",
+            "VALUE": "MAIN-WATER HEATER"
+          },
+          {
+            "KEY": "000226",
+            "VALUE": "MAIN-WINDSOR"
+          },
+          {
+            "KEY": "000228",
+            "VALUE": "MAIN-WINDSOR ELITE"
+          },
+          {
+            "KEY": "000234",
+            "VALUE": "MAXOL-MKII"
+          },
+          {
+            "KEY": "000233",
+            "VALUE": "MAXOL-MONTANA"
+          },
+          {
+            "KEY": "000236",
+            "VALUE": "MYSON-APOLLO"
+          },
+          {
+            "KEY": "000241",
+            "VALUE": "MYSON-APOLLO FANFARE"
+          },
+          {
+            "KEY": "000245",
+            "VALUE": "MYSON-G.A.40"
+          },
+          {
+            "KEY": "000235",
+            "VALUE": "MYSON-HOUSEWARMER"
+          },
+          {
+            "KEY": "000240",
+            "VALUE": "MYSON-HOUSEWARMER ELEGANT"
+          },
+          {
+            "KEY": "000238",
+            "VALUE": "MYSON-HOUSEWARMER EMBERGLO"
+          },
+          {
+            "KEY": "000239",
+            "VALUE": "MYSON-HOUSEWARMER EPIC"
+          },
+          {
+            "KEY": "000242",
+            "VALUE": "MYSON-HOUSEWARMER MAINFLAM"
+          },
+          {
+            "KEY": "000237",
+            "VALUE": "MYSON-HOUSEWARMER SPECT."
+          },
+          {
+            "KEY": "000244",
+            "VALUE": "MYSON-HOUSEWARMER WINDSOR"
+          },
+          {
+            "KEY": "000243",
+            "VALUE": "MYSON-SPECTACULAR"
+          },
+          {
+            "KEY": "000247",
+            "VALUE": "NEW WORLD-HIGHSPEED"
+          },
+          {
+            "KEY": "000248",
+            "VALUE": "NEW WORLD-HIGHSPEED G"
+          },
+          {
+            "KEY": "000246",
+            "VALUE": "NEW WORLD-JACOBEAN"
+          },
+          {
+            "KEY": "000251",
+            "VALUE": "NEWFLAME-DEBONAIR"
+          },
+          {
+            "KEY": "000249",
+            "VALUE": "NEWFLAME-FIRENZA"
+          },
+          {
+            "KEY": "000252",
+            "VALUE": "NEWFLAME-NEWFLAME"
+          },
+          {
+            "KEY": "000250",
+            "VALUE": "NEWFLAME-REGENT"
+          },
+          {
+            "KEY": "000253",
+            "VALUE": "NEWHOME-NEVADA"
+          },
+          {
+            "KEY": "000254",
+            "VALUE": "OASIS-INSET"
+          },
+          {
+            "KEY": "000255",
+            "VALUE": "PARKINSON-COWAN FIREFLAME"
+          },
+          {
+            "KEY": "000259",
+            "VALUE": "PARKINSON-COWAN NEW PENTHOUSE"
+          },
+          {
+            "KEY": "000258",
+            "VALUE": "PARKINSON-COWAN PRIMA"
+          },
+          {
+            "KEY": "000257",
+            "VALUE": "PARKINSON-COWAN PRIMA II"
+          },
+          {
+            "KEY": "000256",
+            "VALUE": "PARKINSON-COWAN WINDSOR"
+          },
+          {
+            "KEY": "000261",
+            "VALUE": "POTTERTON-BRAVA"
+          },
+          {
+            "KEY": "000267",
+            "VALUE": "POTTERTON-BRAVA 4"
+          },
+          {
+            "KEY": "000273",
+            "VALUE": "POTTERTON-FIRESIDE"
+          },
+          {
+            "KEY": "000263",
+            "VALUE": "POTTERTON-FIRESIDE BLACK BEAUT"
+          },
+          {
+            "KEY": "000274",
+            "VALUE": "POTTERTON-FUEGO SUPER"
+          },
+          {
+            "KEY": "000262",
+            "VALUE": "POTTERTON-HOUSEWARMER"
+          },
+          {
+            "KEY": "000275",
+            "VALUE": "POTTERTON-HOUSEWARMER ALLURE"
+          },
+          {
+            "KEY": "000276",
+            "VALUE": "POTTERTON-HOUSEWARMER DECOR 4"
+          },
+          {
+            "KEY": "000264",
+            "VALUE": "POTTERTON-HOUSEWARMER LEGEND"
+          },
+          {
+            "KEY": "000268",
+            "VALUE": "POTTERTON-HOUSEWARMER MFLAME0"
+          },
+          {
+            "KEY": "000269",
+            "VALUE": "POTTERTON-HOUSEWARMER MFLAME1"
+          },
+          {
+            "KEY": "000272",
+            "VALUE": "POTTERTON-JETTA"
+          },
+          {
+            "KEY": "000270",
+            "VALUE": "POTTERTON-KINGFISHER"
+          },
+          {
+            "KEY": "000271",
+            "VALUE": "POTTERTON-PRIMA 2"
+          },
+          {
+            "KEY": "000260",
+            "VALUE": "POTTERTON-PROMAX 15HE"
+          },
+          {
+            "KEY": "000265",
+            "VALUE": "POTTERTON-PROMAX 24HE"
+          },
+          {
+            "KEY": "000266",
+            "VALUE": "POTTERTON-PUMA"
+          },
+          {
+            "KEY": "000277",
+            "VALUE": "PROTHERM-80E COMBI"
+          },
+          {
+            "KEY": "000278",
+            "VALUE": "RADIANT-RSF 20"
+          },
+          {
+            "KEY": "000280",
+            "VALUE": "RADIATION-HIGHSPEED G"
+          },
+          {
+            "KEY": "000279",
+            "VALUE": "RADIATION-RADIATION"
+          },
+          {
+            "KEY": "000282",
+            "VALUE": "RAVENHEAT-80 LS"
+          },
+          {
+            "KEY": "000281",
+            "VALUE": "RAVENHEAT-RSF 82T"
+          },
+          {
+            "KEY": "000295",
+            "VALUE": "ROBINSON WILLEY-2000"
+          },
+          {
+            "KEY": "000296",
+            "VALUE": "ROBINSON WILLEY-BANTAM"
+          },
+          {
+            "KEY": "000299",
+            "VALUE": "ROBINSON WILLEY-BERRY FLAME"
+          },
+          {
+            "KEY": "000288",
+            "VALUE": "ROBINSON WILLEY-FIRE CHARM BF"
+          },
+          {
+            "KEY": "000287",
+            "VALUE": "ROBINSON WILLEY-FIRECHARM"
+          },
+          {
+            "KEY": "000290",
+            "VALUE": "ROBINSON WILLEY-FIRECHARM LF"
+          },
+          {
+            "KEY": "000292",
+            "VALUE": "ROBINSON WILLEY-FIRECROWN"
+          },
+          {
+            "KEY": "000293",
+            "VALUE": "ROBINSON WILLEY-FIRECROWN SUPER"
+          },
+          {
+            "KEY": "000291",
+            "VALUE": "ROBINSON WILLEY-FIREDREAM 22"
+          },
+          {
+            "KEY": "000285",
+            "VALUE": "ROBINSON WILLEY-FIREGEM"
+          },
+          {
+            "KEY": "000297",
+            "VALUE": "ROBINSON WILLEY-FIREGEM DELUXE"
+          },
+          {
+            "KEY": "000284",
+            "VALUE": "ROBINSON WILLEY-FIREGEM VISA"
+          },
+          {
+            "KEY": "000283",
+            "VALUE": "ROBINSON WILLEY-FIREGEM VISA 2"
+          },
+          {
+            "KEY": "000294",
+            "VALUE": "ROBINSON WILLEY-ROMANY"
+          },
+          {
+            "KEY": "000289",
+            "VALUE": "ROBINSON WILLEY-SAHARA"
+          },
+          {
+            "KEY": "000298",
+            "VALUE": "ROBINSON WILLEY-TOPAZ DL"
+          },
+          {
+            "KEY": "000286",
+            "VALUE": "ROBINSON WILLEY-UNSPECIFIED"
+          },
+          {
+            "KEY": "000300",
+            "VALUE": "ROYAL-COSY FIRE"
+          },
+          {
+            "KEY": "000301",
+            "VALUE": "SIROCCO-SIROCCO"
+          },
+          {
+            "KEY": "000302",
+            "VALUE": "STELRAD-IDEAL"
+          },
+          {
+            "KEY": "000303",
+            "VALUE": "STELRAD-MEXICO"
+          },
+          {
+            "KEY": "000305",
+            "VALUE": "SUPREME-CONVECTOR GF"
+          },
+          {
+            "KEY": "000304",
+            "VALUE": "SUPREME-MULTI-FLUE"
+          },
+          {
+            "KEY": "000306",
+            "VALUE": "THORN-HOUSEWARMER"
+          },
+          {
+            "KEY": "000312",
+            "VALUE": "THORN-HOUSEWARMER DELUXE"
+          },
+          {
+            "KEY": "000309",
+            "VALUE": "THORN-HOUSEWARMER ELEGANT"
+          },
+          {
+            "KEY": "000308",
+            "VALUE": "THORN-HOUSEWARMER EPIC"
+          },
+          {
+            "KEY": "000310",
+            "VALUE": "THORN-HOUSEWARMER SPEC."
+          },
+          {
+            "KEY": "000307",
+            "VALUE": "THORN-HOUSEWARMER SUPER"
+          },
+          {
+            "KEY": "000311",
+            "VALUE": "THORN-WINDSOR"
+          },
+          {
+            "KEY": "000314",
+            "VALUE": "TRIANCO-HOMEFLAME"
+          },
+          {
+            "KEY": "000313",
+            "VALUE": "TRIANCO-HOMEFLAME SUPER"
+          },
+          {
+            "KEY": "000364",
+            "VALUE": "WORCESTER-HEATSLAVE"
+          },
+          {
+            "KEY": "000317",
+            "VALUE": "UNSPECIFIED-FIRE"
+          },
+          {
+            "KEY": "000316",
+            "VALUE": "UNSPECIFIED-NEW WORLD"
+          },
+          {
+            "KEY": "000318",
+            "VALUE": "UNSPECIFIED-WONDER FIRE"
+          },
+          {
+            "KEY": "000319",
+            "VALUE": "VAILLANT-COMBI"
+          },
+          {
+            "KEY": "000321",
+            "VALUE": "VAILLANT-TURBO MAX"
+          },
+          {
+            "KEY": "000320",
+            "VALUE": "VAILLANT-VAILLANT"
+          },
+          {
+            "KEY": "000322",
+            "VALUE": "VALENCIA-LFE"
+          },
+          {
+            "KEY": "000323",
+            "VALUE": "VALIANT-TURBO MAX"
+          },
+          {
+            "KEY": "000332",
+            "VALUE": "VALOR-ADORN"
+          },
+          {
+            "KEY": "000342",
+            "VALUE": "VALOR-BELEOR"
+          },
+          {
+            "KEY": "000334",
+            "VALUE": "VALOR-BF UNIFLAME"
+          },
+          {
+            "KEY": "000344",
+            "VALUE": "VALOR-COPPERGLOW"
+          },
+          {
+            "KEY": "000365",
+            "VALUE": "WORCESTER-UNSPECIFIED"
+          },
+          {
+            "KEY": "000345",
+            "VALUE": "VALOR-DREAM"
+          },
+          {
+            "KEY": "000340",
+            "VALUE": "VALOR-ELIZABETHAN"
+          },
+          {
+            "KEY": "000338",
+            "VALUE": "VALOR-ELIZABETHAN 2"
+          },
+          {
+            "KEY": "000330",
+            "VALUE": "VALOR-FIRELITE"
+          },
+          {
+            "KEY": "000337",
+            "VALUE": "VALOR-FLAMENCO"
+          },
+          {
+            "KEY": "000335",
+            "VALUE": "VALOR-HEARTBEAT"
+          },
+          {
+            "KEY": "000341",
+            "VALUE": "VALOR-HEARTHMASTER"
+          },
+          {
+            "KEY": "000326",
+            "VALUE": "VALOR-HOMEFLAME"
+          },
+          {
+            "KEY": "000328",
+            "VALUE": "VALOR-HOMEFLAME SUPER"
+          },
+          {
+            "KEY": "000346",
+            "VALUE": "VALOR-LEGEND"
+          },
+          {
+            "KEY": "000336",
+            "VALUE": "VALOR-MAJESTIC"
+          },
+          {
+            "KEY": "000329",
+            "VALUE": "VALOR-NEVADA"
+          },
+          {
+            "KEY": "000347",
+            "VALUE": "VALOR-NEVADA SUPER"
+          },
+          {
+            "KEY": "000327",
+            "VALUE": "VALOR-NEVADA SUPER 2"
+          },
+          {
+            "KEY": "000331",
+            "VALUE": "VALOR-SUNFIRE"
+          },
+          {
+            "KEY": "000343",
+            "VALUE": "VALOR-TROPIC"
+          },
+          {
+            "KEY": "000339",
+            "VALUE": "VALOR-UNIGAS"
+          },
+          {
+            "KEY": "000325",
+            "VALUE": "VALOR-UNSPECIFIED"
+          },
+          {
+            "KEY": "000333",
+            "VALUE": "VALOR-WONDERFIRE"
+          },
+          {
+            "KEY": "000348",
+            "VALUE": "VOGUE-VOGUE GAS FIRE"
+          },
+          {
+            "KEY": "000351",
+            "VALUE": "VOKERA-EXCELL"
+          },
+          {
+            "KEY": "000349",
+            "VALUE": "VOKERA-LINEA"
+          },
+          {
+            "KEY": "000350",
+            "VALUE": "VOKERA-VOKERA"
+          },
+          {
+            "KEY": "000353",
+            "VALUE": "WICKES-LIVING FLAME"
+          },
+          {
+            "KEY": "000352",
+            "VALUE": "WICKES-MULTI FLUE PLUS"
+          },
+          {
+            "KEY": "000354",
+            "VALUE": "WIKES-SLIMLINE"
+          },
+          {
+            "KEY": "000355",
+            "VALUE": "WINDSOR-COPPER GLOW"
+          },
+          {
+            "KEY": "000356",
+            "VALUE": "WINDSOR-ELITE"
+          },
+          {
+            "KEY": "000357",
+            "VALUE": "WINTERNIGHTS-MK2"
+          },
+          {
+            "KEY": "000358",
+            "VALUE": "WORCESTER-240 COMBI"
+          },
+          {
+            "KEY": "000359",
+            "VALUE": "WORCESTER-GREENSTAR HE"
+          },
+          {
+            "KEY": "000361",
+            "VALUE": "WORCESTER-GREENSTAR R29HE"
+          },
+          {
+            "KEY": "000360",
+            "VALUE": "WORCESTER-R30 HE"
+          },
+          {
+            "KEY": "000362",
+            "VALUE": "WORCESTER-241 COMBI"
+          },
+          {
+            "KEY": "000363",
+            "VALUE": "WORCESTER-HEATSLAVE 2"
+          },
+          {
+            "KEY": "000366",
+            "VALUE": "WORCESTER-28 SI MRK 2"
+          },
+          {
+            "KEY": "000367",
+            "VALUE": "WORCESTER-24 CDI"
+          },
+          {
+            "KEY": "000368",
+            "VALUE": "WORCESTER-BOSCHE"
+          },
+          {
+            "KEY": "000369",
+            "VALUE": "WORCESTER-GREENSTAR 28"
+          },
+          {
+            "KEY": "000370",
+            "VALUE": "WORCESTER-HIGHFLOW"
+          },
+          {
+            "KEY": "000371",
+            "VALUE": "WORCESTER-JUNIOR 24I"
+          },
+          {
+            "KEY": "000372",
+            "VALUE": "WORCESTER-R40HE"
+          },
+          {
+            "KEY": "000373",
+            "VALUE": "NOT ON LIST-NOT ON LIST"
+          },
+          {
+            "KEY": "000113",
+            "VALUE": "EXCLUSIVE-16IN GAS FIRE"
+          },
+          {
+            "KEY": "000374",
+            "VALUE": "AGC-NOT ON LIST"
+          },
+          {
+            "KEY": "000375",
+            "VALUE": "ANDERSON-NOT ON LIST"
+          },
+          {
+            "KEY": "000376",
+            "VALUE": "APEX-NOT ON LIST"
+          },
+          {
+            "KEY": "000377",
+            "VALUE": "ARISTON-NOT ON LIST"
+          },
+          {
+            "KEY": "000378",
+            "VALUE": "ASCOT-NOT ON LIST"
+          },
+          {
+            "KEY": "000379",
+            "VALUE": "BARNARD-NOT ON LIST"
+          },
+          {
+            "KEY": "000380",
+            "VALUE": "BAXI-NOT ON LIST"
+          },
+          {
+            "KEY": "000381",
+            "VALUE": "BE MODERN-NOT ON LIST"
+          },
+          {
+            "KEY": "000382",
+            "VALUE": "BEESTON-NOT ON LIST"
+          },
+          {
+            "KEY": "000383",
+            "VALUE": "BENRAD-NOT ON LIST"
+          },
+          {
+            "KEY": "000384",
+            "VALUE": "BERRY-NOT ON LIST"
+          },
+          {
+            "KEY": "000385",
+            "VALUE": "BIASI-NOT ON LIST"
+          },
+          {
+            "KEY": "000386",
+            "VALUE": "BLACK-NOT ON LIST"
+          },
+          {
+            "KEY": "000387",
+            "VALUE": "BLENHEIM-NOT ON LIST"
+          },
+          {
+            "KEY": "000388",
+            "VALUE": "BOSCH-NOT ON LIST"
+          },
+          {
+            "KEY": "000389",
+            "VALUE": "BRANNAN-NOT ON LIST"
+          },
+          {
+            "KEY": "000390",
+            "VALUE": "BRILLIANT-NOT ON LIST"
+          },
+          {
+            "KEY": "000391",
+            "VALUE": "BRITTANY-NOT ON LIST"
+          },
+          {
+            "KEY": "000392",
+            "VALUE": "CANNON-NOT ON LIST"
+          },
+          {
+            "KEY": "000393",
+            "VALUE": "CARADON-NOT ON LIST"
+          },
+          {
+            "KEY": "000394",
+            "VALUE": "CHAFFOTEAUX-NOT ON LIST"
+          },
+          {
+            "KEY": "000395",
+            "VALUE": "CHALLENGER-NOT ON LIST"
+          },
+          {
+            "KEY": "000396",
+            "VALUE": "CIRCULATOR-NOT ON LIST"
+          },
+          {
+            "KEY": "000397",
+            "VALUE": "CONCORD-NOT ON LIST"
+          },
+          {
+            "KEY": "000398",
+            "VALUE": "CORINA-NOT ON LIST"
+          },
+          {
+            "KEY": "000399",
+            "VALUE": "COSIFIRE-NOT ON LIST"
+          },
+          {
+            "KEY": "000400",
+            "VALUE": "COZYMISER-NOT ON LIST"
+          },
+          {
+            "KEY": "000401",
+            "VALUE": "CRANE-NOT ON LIST"
+          },
+          {
+            "KEY": "000402",
+            "VALUE": "CREDA-NOT ON LIST"
+          },
+          {
+            "KEY": "000403",
+            "VALUE": "CROSSLEE-NOT ON LIST"
+          },
+          {
+            "KEY": "000404",
+            "VALUE": "DEBONAIR-NOT ON LIST"
+          },
+          {
+            "KEY": "000405",
+            "VALUE": "DIMPLEX-NOT ON LIST"
+          },
+          {
+            "KEY": "000406",
+            "VALUE": "DRUGASAR-NOT ON LIST"
+          },
+          {
+            "KEY": "000407",
+            "VALUE": "DUNSLEY-NOT ON LIST"
+          },
+          {
+            "KEY": "000408",
+            "VALUE": "EASTHAM-NOT ON LIST"
+          },
+          {
+            "KEY": "000409",
+            "VALUE": "ECLIPSE-NOT ON LIST"
+          },
+          {
+            "KEY": "000410",
+            "VALUE": "ECONOMIC-NOT ON LIST"
+          },
+          {
+            "KEY": "000411",
+            "VALUE": "ELECTROLUX-NOT ON LIST"
+          },
+          {
+            "KEY": "000412",
+            "VALUE": "EUROTECH-NOT ON LIST"
+          },
+          {
+            "KEY": "000413",
+            "VALUE": "EXCLUSIVE-NOT ON LIST"
+          },
+          {
+            "KEY": "000414",
+            "VALUE": "F.E.R.-NOT ON LIST"
+          },
+          {
+            "KEY": "000415",
+            "VALUE": "FERROLI-NOT ON LIST"
+          },
+          {
+            "KEY": "000416",
+            "VALUE": "FERRONA-NOT ON LIST"
+          },
+          {
+            "KEY": "000417",
+            "VALUE": "FIRE GLOW-NOT ON LIST"
+          },
+          {
+            "KEY": "000418",
+            "VALUE": "FIRECROWN-NOT ON LIST"
+          },
+          {
+            "KEY": "000419",
+            "VALUE": "FIREGLO-NOT ON LIST"
+          },
+          {
+            "KEY": "000420",
+            "VALUE": "FIRESUITE-NOT ON LIST"
+          },
+          {
+            "KEY": "000421",
+            "VALUE": "FIROCCO-NOT ON LIST"
+          },
+          {
+            "KEY": "000422",
+            "VALUE": "FLAVEL-NOT ON LIST"
+          },
+          {
+            "KEY": "000423",
+            "VALUE": "FOCAL POINT-NOT ON LIST"
+          },
+          {
+            "KEY": "000424",
+            "VALUE": "GAS FLAME INSET-NOT ON LIST"
+          },
+          {
+            "KEY": "000425",
+            "VALUE": "GENESIS-NOT ON LIST"
+          },
+          {
+            "KEY": "000426",
+            "VALUE": "GF-NOT ON LIST"
+          },
+          {
+            "KEY": "000427",
+            "VALUE": "GLOBAL-NOT ON LIST"
+          },
+          {
+            "KEY": "000428",
+            "VALUE": "GLOW WORM-NOT ON LIST"
+          },
+          {
+            "KEY": "000429",
+            "VALUE": "GRATE GLOW-NOT ON LIST"
+          },
+          {
+            "KEY": "000430",
+            "VALUE": "HALLMARK-NOT ON LIST"
+          },
+          {
+            "KEY": "000431",
+            "VALUE": "HALSTEAD-NOT ON LIST"
+          },
+          {
+            "KEY": "000432",
+            "VALUE": "HEAT LIVE-NOT ON LIST"
+          },
+          {
+            "KEY": "000433",
+            "VALUE": "HEATINAIRE-NOT ON LIST"
+          },
+          {
+            "KEY": "000434",
+            "VALUE": "HEATWAVE-NOT ON LIST"
+          },
+          {
+            "KEY": "000435",
+            "VALUE": "HERMAN-NOT ON LIST"
+          },
+          {
+            "KEY": "000436",
+            "VALUE": "HIJAN-NOT ON LIST"
+          },
+          {
+            "KEY": "000437",
+            "VALUE": "HISPEC-NOT ON LIST"
+          },
+          {
+            "KEY": "000438",
+            "VALUE": "HOMEGLOW-NOT ON LIST"
+          },
+          {
+            "KEY": "000439",
+            "VALUE": "HOUSEWARMER-NOT ON LIST"
+          },
+          {
+            "KEY": "000440",
+            "VALUE": "HOVER-NOT ON LIST"
+          },
+          {
+            "KEY": "000441",
+            "VALUE": "I.M.I.-NOT ON LIST"
+          },
+          {
+            "KEY": "000442",
+            "VALUE": "IDEAL-NOT ON LIST"
+          },
+          {
+            "KEY": "000443",
+            "VALUE": "IMPRESSION-NOT ON LIST"
+          },
+          {
+            "KEY": "000444",
+            "VALUE": "INDEPENDENT GAS FIRE (UNSPEC)-NOT ON LIST"
+          },
+          {
+            "KEY": "000445",
+            "VALUE": "INDISET-NOT ON LIST"
+          },
+          {
+            "KEY": "000446",
+            "VALUE": "INSET-NOT ON LIST"
+          },
+          {
+            "KEY": "000447",
+            "VALUE": "JAGUAR-NOT ON LIST"
+          },
+          {
+            "KEY": "000448",
+            "VALUE": "JANIS-NOT ON LIST"
+          },
+          {
+            "KEY": "000449",
+            "VALUE": "JANUS-NOT ON LIST"
+          },
+          {
+            "KEY": "000450",
+            "VALUE": "JOHNSON-NOT ON LIST"
+          },
+          {
+            "KEY": "000451",
+            "VALUE": "JOHNSON & STARLEY-NOT ON LIST"
+          },
+          {
+            "KEY": "000452",
+            "VALUE": "KINDER-NOT ON LIST"
+          },
+          {
+            "KEY": "000453",
+            "VALUE": "KINGSDALE-NOT ON LIST"
+          },
+          {
+            "KEY": "000454",
+            "VALUE": "KOHLANGAS-NOT ON LIST"
+          },
+          {
+            "KEY": "000455",
+            "VALUE": "KOHLANGAZ-NOT ON LIST"
+          },
+          {
+            "KEY": "000456",
+            "VALUE": "LEISURE-NOT ON LIST"
+          },
+          {
+            "KEY": "000457",
+            "VALUE": "MAGICOAL-NOT ON LIST"
+          },
+          {
+            "KEY": "000458",
+            "VALUE": "MAGIGLO-NOT ON LIST"
+          },
+          {
+            "KEY": "000459",
+            "VALUE": "MAIN-NOT ON LIST"
+          },
+          {
+            "KEY": "000460",
+            "VALUE": "MANOR-NOT ON LIST"
+          },
+          {
+            "KEY": "000461",
+            "VALUE": "MAXOL-NOT ON LIST"
+          },
+          {
+            "KEY": "000462",
+            "VALUE": "MODENA-NOT ON LIST"
+          },
+          {
+            "KEY": "000463",
+            "VALUE": "MYSON-NOT ON LIST"
+          },
+          {
+            "KEY": "000464",
+            "VALUE": "NEW WORLD-NOT ON LIST"
+          },
+          {
+            "KEY": "000465",
+            "VALUE": "NEWFLAME-NOT ON LIST"
+          },
+          {
+            "KEY": "000466",
+            "VALUE": "NEWHOME-NOT ON LIST"
+          },
+          {
+            "KEY": "000467",
+            "VALUE": "NON-NOT ON LIST"
+          },
+          {
+            "KEY": "000469",
+            "VALUE": "OASIS-NOT ON LIST"
+          },
+          {
+            "KEY": "000470",
+            "VALUE": "OCEAN-NOT ON LIST"
+          },
+          {
+            "KEY": "000471",
+            "VALUE": "OPTIMA-NOT ON LIST"
+          },
+          {
+            "KEY": "000472",
+            "VALUE": "P & C-NOT ON LIST"
+          },
+          {
+            "KEY": "000473",
+            "VALUE": "PARAGON-NOT ON LIST"
+          },
+          {
+            "KEY": "000474",
+            "VALUE": "PARKINSON-NOT ON LIST"
+          },
+          {
+            "KEY": "000475",
+            "VALUE": "PARKRAY-NOT ON LIST"
+          },
+          {
+            "KEY": "000476",
+            "VALUE": "PELDON-NOT ON LIST"
+          },
+          {
+            "KEY": "000477",
+            "VALUE": "POLMA-NOT ON LIST"
+          },
+          {
+            "KEY": "000478",
+            "VALUE": "POTTERTON-NOT ON LIST"
+          },
+          {
+            "KEY": "000479",
+            "VALUE": "PROTHERM-NOT ON LIST"
+          },
+          {
+            "KEY": "000480",
+            "VALUE": "RADIANT-NOT ON LIST"
+          },
+          {
+            "KEY": "000481",
+            "VALUE": "RADIATION-NOT ON LIST"
+          },
+          {
+            "KEY": "000482",
+            "VALUE": "RAVENHEAT-NOT ON LIST"
+          },
+          {
+            "KEY": "000483",
+            "VALUE": "RINNAI-NOT ON LIST"
+          },
+          {
+            "KEY": "000484",
+            "VALUE": "RIVIERA-NOT ON LIST"
+          },
+          {
+            "KEY": "000485",
+            "VALUE": "ROBINSON WILLEY-NOT ON LIST"
+          },
+          {
+            "KEY": "000486",
+            "VALUE": "ROYAL-NOT ON LIST"
+          },
+          {
+            "KEY": "000487",
+            "VALUE": "SWARM-NOT ON LIST"
+          },
+          {
+            "KEY": "000488",
+            "VALUE": "SANTANA-NOT ON LIST"
+          },
+          {
+            "KEY": "000489",
+            "VALUE": "SAUNIER DUVAL-NOT ON LIST"
+          },
+          {
+            "KEY": "000490",
+            "VALUE": "SEAFIRE-NOT ON LIST"
+          },
+          {
+            "KEY": "000491",
+            "VALUE": "SIME-NOT ON LIST"
+          },
+          {
+            "KEY": "000492",
+            "VALUE": "SIROCCO-NOT ON LIST"
+          },
+          {
+            "KEY": "000493",
+            "VALUE": "STANNA-NOT ON LIST"
+          },
+          {
+            "KEY": "000494",
+            "VALUE": "STELRAD-NOT ON LIST"
+          },
+          {
+            "KEY": "000495",
+            "VALUE": "STREAMLINE-NOT ON LIST"
+          },
+          {
+            "KEY": "000496",
+            "VALUE": "SUNCREST-NOT ON LIST"
+          },
+          {
+            "KEY": "000497",
+            "VALUE": "SUPREME-NOT ON LIST"
+          },
+          {
+            "KEY": "000498",
+            "VALUE": "TEMCANA-NOT ON LIST"
+          },
+          {
+            "KEY": "000499",
+            "VALUE": "THORN-NOT ON LIST"
+          },
+          {
+            "KEY": "000500",
+            "VALUE": "TRIANCO-NOT ON LIST"
+          },
+          {
+            "KEY": "000501",
+            "VALUE": "TRIDENT-NOT ON LIST"
+          },
+          {
+            "KEY": "000502",
+            "VALUE": "UNSPECIFIED-NOT ON LIST"
+          },
+          {
+            "KEY": "000503",
+            "VALUE": "VAILLANT-NOT ON LIST"
+          },
+          {
+            "KEY": "000504",
+            "VALUE": "VALENCIA-NOT ON LIST"
+          },
+          {
+            "KEY": "000505",
+            "VALUE": "VALIANT-NOT ON LIST"
+          },
+          {
+            "KEY": "000506",
+            "VALUE": "VALOR-NOT ON LIST"
+          },
+          {
+            "KEY": "000507",
+            "VALUE": "VERINE-NOT ON LIST"
+          },
+          {
+            "KEY": "000508",
+            "VALUE": "VERONA-NOT ON LIST"
+          },
+          {
+            "KEY": "000509",
+            "VALUE": "VOGUE-NOT ON LIST"
+          },
+          {
+            "KEY": "000510",
+            "VALUE": "VOKERA-NOT ON LIST"
+          },
+          {
+            "KEY": "000511",
+            "VALUE": "VULCAN-NOT ON LIST"
+          },
+          {
+            "KEY": "000512",
+            "VALUE": "WICKES-NOT ON LIST"
+          },
+          {
+            "KEY": "000513",
+            "VALUE": "WIKES-NOT ON LIST"
+          },
+          {
+            "KEY": "000514",
+            "VALUE": "WINDSOR-NOT ON LIST"
+          },
+          {
+            "KEY": "000515",
+            "VALUE": "WINTERNIGHTS-NOT ON LIST"
+          },
+          {
+            "KEY": "000516",
+            "VALUE": "WIZARD-NOT ON LIST"
+          },
+          {
+            "KEY": "000517",
+            "VALUE": "WONDERFIRE-NOT ON LIST"
+          },
+          {
+            "KEY": "000518",
+            "VALUE": "WOODSTOCK-NOT ON LIST"
+          },
+          {
+            "KEY": "000519",
+            "VALUE": "WORCESTER-NOT ON LIST"
+          },
+          {
+            "KEY": "000520",
+            "VALUE": "WRS-NOT ON LIST"
+          },
+          {
+            "KEY": "000521",
+            "VALUE": "BAXI-45-57"
+          },
+          {
+            "KEY": "000530",
+            "VALUE": "CORINA-45-57"
+          },
+          {
+            "KEY": "000522",
+            "VALUE": "GLOW WORM-45-57"
+          },
+          {
+            "KEY": "000527",
+            "VALUE": "IDEAL-45-57"
+          },
+          {
+            "KEY": "000529",
+            "VALUE": "MAIN-45-57"
+          },
+          {
+            "KEY": "000524",
+            "VALUE": "MYSON-45-57"
+          },
+          {
+            "KEY": "000526",
+            "VALUE": "NEWFLAME-45-57"
+          },
+          {
+            "KEY": "000525",
+            "VALUE": "POTTERTON-45-57"
+          },
+          {
+            "KEY": "000531",
+            "VALUE": "ROBINSON WILLEY-45-57"
+          },
+          {
+            "KEY": "000523",
+            "VALUE": "THORN-45-57"
+          },
+          {
+            "KEY": "000528",
+            "VALUE": "TRIANCO-45-57"
+          },
+          {
+            "KEY": "000715",
+            "VALUE": "VALOR-EDWARDIAN"
+          },
+          {
+            "KEY": "000716",
+            "VALUE": "VALOR-PORTLAND"
+          },
+          {
+            "KEY": "000717",
+            "VALUE": "BAXI-MEGAFLO"
+          },
+          {
+            "KEY": "000719",
+            "VALUE": "FERROLI-MAXIMA 35C"
+          },
+          {
+            "KEY": "000720",
+            "VALUE": "FERROLI-MAXIMA 35S"
+          },
+          {
+            "KEY": "000721",
+            "VALUE": "FERROLI-OPTIMAX 25C"
+          },
+          {
+            "KEY": "000722",
+            "VALUE": "FERROLI-OPTIMAX 25S"
+          },
+          {
+            "KEY": "000723",
+            "VALUE": "GLOW WORM-ULTRACOM 30 CXI"
+          },
+          {
+            "KEY": "000724",
+            "VALUE": "GLOW WORM-ULTRACOM CXI"
+          },
+          {
+            "KEY": "000726",
+            "VALUE": "GLOW WORM-ULTRACOM HXI"
+          },
+          {
+            "KEY": "000725",
+            "VALUE": "GLOW WORM-ULTRACOM SXI"
+          },
+          {
+            "KEY": "000728",
+            "VALUE": "ALPHA-CDX28"
+          },
+          {
+            "KEY": "000727",
+            "VALUE": "BAXI-133HE"
+          },
+          {
+            "KEY": "000729",
+            "VALUE": "VALOR-ANTHEM"
+          },
+          {
+            "KEY": "000730",
+            "VALUE": "BAXI-748"
+          },
+          {
+            "KEY": "000731",
+            "VALUE": "FLAVEL-WINDSOR"
+          },
+          {
+            "KEY": "000734",
+            "VALUE": "ALPHA-CDC"
+          },
+          {
+            "KEY": "000733",
+            "VALUE": "ALPHA-CDR"
+          },
+          {
+            "KEY": "000714",
+            "VALUE": "ROBINSON WILLEY-INSET"
+          },
+          {
+            "KEY": "000718",
+            "VALUE": "CANNON-LIVEFIRE"
+          },
+          {
+            "KEY": "000732",
+            "VALUE": "ALPHA-CDS"
+          },
+          {
+            "KEY": "000735",
+            "VALUE": "BROAG REMEHA-AVANTA"
+          },
+          {
+            "KEY": "000736",
+            "VALUE": "BROAG REMEHA-AVANTA PLUS"
+          },
+          {
+            "KEY": "000737",
+            "VALUE": "CFM-ARCH"
+          },
+          {
+            "KEY": "000738",
+            "VALUE": "IDEAL-ICOS 15HE"
+          },
+          {
+            "KEY": "000740",
+            "VALUE": "VAILLANT-615 ECOPLUS SYSTEM"
+          },
+          {
+            "KEY": "000739",
+            "VALUE": "VAILLANT-ECOTEC"
+          },
+          {
+            "KEY": "000710",
+            "VALUE": "BAXI-BERMUDA VP"
+          },
+          {
+            "KEY": "000711",
+            "VALUE": "ADAMS-INSET"
+          },
+          {
+            "KEY": "000712",
+            "VALUE": "ALPHA-HE CB2533"
+          },
+          {
+            "KEY": "000713",
+            "VALUE": "FIRECRAFT-INSET"
+          },
+          {
+            "KEY": "000532",
+            "VALUE": "BAXI-DUOTEC 24HE COMBI"
+          },
+          {
+            "KEY": "000533",
+            "VALUE": "BAXI-SOLO 15 HE"
+          },
+          {
+            "KEY": "000536",
+            "VALUE": "BAXI-GAS FIRE FRONT"
+          }
+        ]
+      },
+      {
+        "KEY": "00005",
+        "LABEL": "Location",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "ATTI",
+            "VALUE": "Attic"
+          },
+          {
+            "KEY": "BATH",
+            "VALUE": "Bathroom"
+          },
+          {
+            "KEY": "BEDR",
+            "VALUE": "Bedroom"
+          },
+          {
+            "KEY": "COMA",
+            "VALUE": "Communal Area"
+          },
+          {
+            "KEY": "DINR",
+            "VALUE": "Dining Room"
+          },
+          {
+            "KEY": "HALL",
+            "VALUE": "Hallway"
+          },
+          {
+            "KEY": "KITC",
+            "VALUE": "Kitchen"
+          },
+          {
+            "KEY": "LOUN",
+            "VALUE": "Lounge"
+          },
+          {
+            "KEY": "STOR",
+            "VALUE": "Store Room"
+          }
+        ]
+      },
+      {
+        "KEY": "00006",
+        "LABEL": "Appliance Type",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "BBU",
+            "VALUE": "Back Boiler"
+          },
+          {
+            "KEY": "COBO",
+            "VALUE": "Combination Boiler"
+          },
+          {
+            "KEY": "CONB",
+            "VALUE": "Condensing Boiler"
+          },
+          {
+            "KEY": "COOK",
+            "VALUE": "Cooker"
+          },
+          {
+            "KEY": "FIRE",
+            "VALUE": "Gas Fire and BBU"
+          },
+          {
+            "KEY": "IGF",
+            "VALUE": "Independant Gas Fire"
+          },
+          {
+            "KEY": "MPWH",
+            "VALUE": "Multi Point Water Heater"
+          },
+          {
+            "KEY": "SPHE",
+            "VALUE": "Space Heater"
+          },
+          {
+            "KEY": "WAHE",
+            "VALUE": "Wall Heater"
+          },
+          {
+            "KEY": "WAU",
+            "VALUE": "Warm Air Unit"
+          },
+          {
+            "KEY": "WBU",
+            "VALUE": "Wall Mounted Boiler"
+          }
+        ]
+      },
+      {
+        "KEY": "00007",
+        "LABEL": "Flue Type",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "FL",
+            "VALUE": "Flueless"
+          },
+          {
+            "KEY": "OF",
+            "VALUE": "Open flue"
+          },
+          {
+            "KEY": "RS",
+            "VALUE": "Room sealed"
+          }
+        ]
+      },
+      {
+        "KEY": "00008",
+        "LABEL": "Operating Pressure (mbars)",
+        "TYPE": "NUM"
+      },
+      {
+        "KEY": "00009",
+        "LABEL": "Combustion Analyser Reading (if Applicable)",
+        "TYPE": "TXT"
+      },
+      {
+        "KEY": "00010",
+        "LABEL": "Safety Device(s) Correct Operation",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00011",
+        "LABEL": "Ventilation Provision Satisfactory",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00012",
+        "LABEL": "Visual Condition of Flue and Termination Satisfactory",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "FAIL",
+            "VALUE": "Failed"
+          },
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00013",
+        "LABEL": "Flue Flow Test",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "FAIL",
+            "VALUE": "Fail"
+          },
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "PASS",
+            "VALUE": "Pass"
+          }
+        ]
+      },
+      {
+        "KEY": "00014",
+        "LABEL": "Flue Spillage Test",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "FAIL",
+            "VALUE": "Fail"
+          },
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "PASS",
+            "VALUE": "Pass"
+          }
+        ]
+      },
+      {
+        "KEY": "00015",
+        "LABEL": "Appliance Safe to Use",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      }
+    ]
+  }

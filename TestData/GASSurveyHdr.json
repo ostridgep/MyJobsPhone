@@ -1,0 +1,89 @@
+{
+    "QUESTION": [
+      {
+        "KEY": "00000",
+        "LABEL": "If a gas tightness test was carried out, was a test satisfactory",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00001",
+        "LABEL": "Does the pipework / meter installation comply with current requirements",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00002",
+        "LABEL": "Has a Warning / Advice notice been raised and warning labels attached",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00003",
+        "LABEL": "Cooker Service Required.",
+        "TYPE": "LB",
+        "DEFAULT": "00000",
+        "ANSWER": [
+          {
+            "KEY": "NA",
+            "VALUE": "Not applicable"
+          },
+          {
+            "KEY": "NO",
+            "VALUE": "NO"
+          },
+          {
+            "KEY": "YES",
+            "VALUE": "YES"
+          }
+        ]
+      },
+      {
+        "KEY": "00004",
+        "LABEL": "What is the Date of the Service ?",
+        "TYPE": "DT"
+      }
+    ]
+}

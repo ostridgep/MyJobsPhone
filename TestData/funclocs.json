@@ -1,0 +1,6021 @@
+
+
+{"funcloc":[
+
+{
+            "id":"LGF",
+            "type": "FL",
+             "shorttext":"GREENDALE PWR STN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01",
+            "type": "FL",
+             "shorttext":"NON U",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-A",
+            "type": "FL",
+             "shorttext":"GRID & DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-AC",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-00",
+            "type": "FL",
+             "shorttext":"ENCL GEN TFR 400 KV ISOLS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-00-GW021",
+            "type": "FL",
+             "shorttext":"CAB PWR SUP 400KV BNKCPD",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-11",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-11-CE003",
+            "type": "FL",
+             "shorttext":"ELEC QTY DIRECT LINE CURRENT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-11-CE004",
+            "type": "FL",
+             "shorttext":"ELEC QTY DIRECT ACTIVE PWR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-11-CE005",
+            "type": "FL",
+             "shorttext":"ELEC QTY DIRECT REACTIVE PWR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-11-CE006",
+            "type": "FL",
+             "shorttext":"ELEC QTY DIRECT LINE V",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-12",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-12-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X120",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-12-GS011",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X124",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-12-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X128",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-13",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-13-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X130",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-13-GS011",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X134",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-13-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X136",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-21",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-21-CE003",
+            "type": "FL",
+             "shorttext":"ELEC QTY DIRECT LINE CURRENT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-21-CE004",
+            "type": "FL",
+             "shorttext":"ELEC QTY DIRECT ACTIVE PWR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-21-CE005",
+            "type": "FL",
+             "shorttext":"ELEC QTY DIRECT REACTIVE PWR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-21-CE006",
+            "type": "FL",
+             "shorttext":"ELEC QTY DIRECT LINE V",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-22",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-22-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X220",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-22-GS011",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X224",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-22-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X228",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-26",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-26-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X260",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-26-GS011",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X266",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-26-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X269",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-32",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-32-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X320",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-32-GS011",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X324",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-32-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X328",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-43",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-43-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X430",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-43-GS011",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X434",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACA-43-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X436",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG-10",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG-10-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X405",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG-10-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X404",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG-10-GS013",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X406",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG-20",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG-20-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X205",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG-20-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X204",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACG-20-GS013",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X206",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK-10",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK-10-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X305",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK-10-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X304",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK-10-GS013",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X306",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK-20",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK-20-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X105",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK-20-GS012",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X104",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACK-20-GS013",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X106",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACN",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACN-10",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACN-10-GS001",
+            "type": "FL",
+             "shorttext":"SG 400KV CB X190",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACN-10-GS016",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X194",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACN-10-GS017",
+            "type": "FL",
+             "shorttext":"SG 400KV ISOL X196",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACP",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACP-10",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACP-20",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACX",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACX-10",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-ACX-20",
+            "type": "FL",
+             "shorttext":"400KV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-AX",
+            "type": "FL",
+             "shorttext":"400KV CENTRAL EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-AXA",
+            "type": "FL",
+             "shorttext":"400KV CENTRAL EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-AXA-00",
+            "type": "FL",
+             "shorttext":"400KV CENTRAL EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-B",
+            "type": "FL",
+             "shorttext":"PWR TRANSMISSION & AUX PWR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BA",
+            "type": "FL",
+             "shorttext":"PWR TRANSMISSION",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BAA",
+            "type": "FL",
+             "shorttext":"GEN LEADS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BAC",
+            "type": "FL",
+             "shorttext":"GEN CB",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BAC-11",
+            "type": "FL",
+             "shorttext":"GEN CB",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BAC-12",
+            "type": "FL",
+             "shorttext":"GEN CB",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BAC-21",
+            "type": "FL",
+             "shorttext":"GEN CB",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BAC-22",
+            "type": "FL",
+             "shorttext":"GEN CB",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BAT",
+            "type": "FL",
+             "shorttext":"GEN TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BAW",
+            "type": "FL",
+             "shorttext":"EARTHING & LTNG PROT SYSTS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BH",
+            "type": "FL",
+             "shorttext":"LV DB & TFR (GEN PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA",
+            "type": "FL",
+             "shorttext":"LV DB (GEN PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-00",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-01",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-02",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-03",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-04",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-05",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-06",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-07",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-08",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-09",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-10",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-11",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-13",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHA-14",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB",
+            "type": "FL",
+             "shorttext":"LV DBS (GEN PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-00",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-01",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-02",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-03",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-04",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-05",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-06",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-07",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-08",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-09",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-10",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-11",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-12",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-13",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-14",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHB-15",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHC",
+            "type": "FL",
+             "shorttext":"LV DBS (GEN PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHC-00",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHC-01",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHC-02",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHC-03",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHC-05",
+            "type": "FL",
+             "shorttext":"LV DB (GENERAL PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHT",
+            "type": "FL",
+             "shorttext":"6.6KV/415V AUX PWR TFR (GEN PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHT-01",
+            "type": "FL",
+             "shorttext":"6.6KV/415V AUX PWR TFR NO 1 (GEN PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHT-02",
+            "type": "FL",
+             "shorttext":"6.6KV/415V AUX PWR TFR NO 2 (GEN PURPSE)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BHT-03",
+            "type": "FL",
+             "shorttext":"TFR AUX 6.6KV/415V CLG WTR MU",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BJ",
+            "type": "FL",
+             "shorttext":"LV SUBDBS & TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BJD",
+            "type": "FL",
+             "shorttext":"LV SUBDBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BJD-00",
+            "type": "FL",
+             "shorttext":"LV SUB DB",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BJD-01",
+            "type": "FL",
+             "shorttext":"LV SUB DB",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BJD-02",
+            "type": "FL",
+             "shorttext":"LV SUB DB",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BR",
+            "type": "FL",
+             "shorttext":"LV DBS (CONVTR) (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRA",
+            "type": "FL",
+             "shorttext":"LV DBS (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRA-00",
+            "type": "FL",
+             "shorttext":"LV DB (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRA-01",
+            "type": "FL",
+             "shorttext":"LV DB (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRA-02",
+            "type": "FL",
+             "shorttext":"LV DB (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRB",
+            "type": "FL",
+             "shorttext":"LV DBS (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRB-00",
+            "type": "FL",
+             "shorttext":"LV DB (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRB-01",
+            "type": "FL",
+             "shorttext":"LV DB (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRB-02",
+            "type": "FL",
+             "shorttext":"LV DB (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRU",
+            "type": "FL",
+             "shorttext":"CONVTR (STATIC) INV (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRU-01",
+            "type": "FL",
+             "shorttext":"STATIC INVERTER NO 1",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRU-02",
+            "type": "FL",
+             "shorttext":"STATIC INVERTER2",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BRU-03",
+            "type": "FL",
+             "shorttext":"STATIC INVERTER3",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BT",
+            "type": "FL",
+             "shorttext":"BATT SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTG",
+            "type": "FL",
+             "shorttext":"BATT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTG-10",
+            "type": "FL",
+             "shorttext":"BATT 220V CELL TYPE 2309 CELL NO 108",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTG-20",
+            "type": "FL",
+             "shorttext":"BATT 220V CELL TYPE 2309 CELL NO 109",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTH",
+            "type": "FL",
+             "shorttext":"BATT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTH-11",
+            "type": "FL",
+             "shorttext":"BATT 24V CELL TYPE 427 CELL NO 13",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTH-21",
+            "type": "FL",
+             "shorttext":"BATT 24V CELL TYPE 427 CELL NO 13",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTQ",
+            "type": "FL",
+             "shorttext":"BATT CHGR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTQ-01",
+            "type": "FL",
+             "shorttext":"LV DB (EMERG SYST)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTS",
+            "type": "FL",
+             "shorttext":"BATT CHGR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTS-10",
+            "type": "FL",
+             "shorttext":"BATT CHGR OUTPUT SG 220V DC INPUT 415V",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTS-20",
+            "type": "FL",
+             "shorttext":"BATT CHGR OUTPUT SG 220V DC INPUT 415V",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTT",
+            "type": "FL",
+             "shorttext":"BATT CHGR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTT-11",
+            "type": "FL",
+             "shorttext":"BATT CHGR OUTPUT 24V DC INPUT 415V",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTT-21",
+            "type": "FL",
+             "shorttext":"BATT CHGR OUTPUT 24V DC INPUT 415V",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTY",
+            "type": "FL",
+             "shorttext":"BATT SYST CMN EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BTY-01",
+            "type": "FL",
+             "shorttext":"BATT SYST CMN EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BU",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUD",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUD-00",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUD-01",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUD-02",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUE",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUE-00",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUE-01",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUE-02",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUR",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUR-00",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUR-01",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUR-02",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUS",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUS-00",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUS-01",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-BUS-02",
+            "type": "FL",
+             "shorttext":"DC DBS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-C",
+            "type": "FL",
+             "shorttext":"C&I EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CE",
+            "type": "FL",
+             "shorttext":"C&I EQUIP ANNUNCIATION",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CEJ",
+            "type": "FL",
+             "shorttext":"C&I EQUIP ANNCTR FILT RCDNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CEJ-01",
+            "type": "FL",
+             "shorttext":"FIRE ALRM MARSHALLING PNL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CJ",
+            "type": "FL",
+             "shorttext":"U COORD LVL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CJC",
+            "type": "FL",
+             "shorttext":"U COORD LVL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CJC-00",
+            "type": "FL",
+             "shorttext":"U CO-ORDINATION LVL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CJC-01",
+            "type": "FL",
+             "shorttext":"U CO-ORDINATION LVL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CJC-02",
+            "type": "FL",
+             "shorttext":"U CO-ORDINATION LVL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CJC-03",
+            "type": "FL",
+             "shorttext":"U CO-ORDINATION LVL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CJC-04",
+            "type": "FL",
+             "shorttext":"U CO-ORDINATION LVL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CK",
+            "type": "FL",
+             "shorttext":"C&I EQUIP PRCS CMPTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CKA",
+            "type": "FL",
+             "shorttext":"ON LINE SUPV & DIGN CMPTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CKF",
+            "type": "FL",
+             "shorttext":"ON LINE SUPV & DIGN CMPTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CKF-01",
+            "type": "FL",
+             "shorttext":"CMPTR MADAM S CSS MADAM S SICOMP M56 UMA",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CKF-15",
+            "type": "FL",
+             "shorttext":"ON LINE SUPVISORY & DIAGNOSTIC COMPUTER",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CS",
+            "type": "FL",
+             "shorttext":"EMER DIESEL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CSA",
+            "type": "FL",
+             "shorttext":"EMER DIESEL C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CSA-11",
+            "type": "FL",
+             "shorttext":"EDG C&I",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CW",
+            "type": "FL",
+             "shorttext":"CTRL RMS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CWP",
+            "type": "FL",
+             "shorttext":"MAIN CTRL PNLS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CWP-01",
+            "type": "FL",
+             "shorttext":"MAIN CTRL CONSOLES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CWU",
+            "type": "FL",
+             "shorttext":"MAIN CTRL PNLS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CWU-01",
+            "type": "FL",
+             "shorttext":"MAIN CTRL CONSOLES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CX",
+            "type": "FL",
+             "shorttext":"LOCAL CTRL STNS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CXK",
+            "type": "FL",
+             "shorttext":"WTP LOCAL CTRL STN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CXK-01",
+            "type": "FL",
+             "shorttext":"WTR TREATMENT PLNT MAIN CTRL PNL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CY",
+            "type": "FL",
+             "shorttext":"COMMS EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYA",
+            "type": "FL",
+             "shorttext":"TELEPHONE SYST (PABX)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYA-01",
+            "type": "FL",
+             "shorttext":"TELEPHONE SYST (PABX)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYE",
+            "type": "FL",
+             "shorttext":"FIRE & GAS ALRM SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYE-01",
+            "type": "FL",
+             "shorttext":"CTRL RM FIRE ALRM PNL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYE-03",
+            "type": "FL",
+             "shorttext":"CTRL RM FIRE ALRM MIMIC PNL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYE-20",
+            "type": "FL",
+             "shorttext":"FIRE & GAS ALRM SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYE-21",
+            "type": "FL",
+             "shorttext":"PNL LINEAR HEAT FIRE DETECTION GT11",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYE-25",
+            "type": "FL",
+             "shorttext":"ST10 (10UMA) LINEAR HEAT SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYE-26",
+            "type": "FL",
+             "shorttext":"ST20 (20UMA) LINEAR HEAT SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYE-71",
+            "type": "FL",
+             "shorttext":"CTRL RM GAS DETECTION PNL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYN",
+            "type": "FL",
+             "shorttext":"STAFF PAGING SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYN-11",
+            "type": "FL",
+             "shorttext":"STAFF PAGING SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYZ",
+            "type": "FL",
+             "shorttext":"COMMS EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYZ-00",
+            "type": "FL",
+             "shorttext":"COMMS EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-CYZ-01",
+            "type": "FL",
+             "shorttext":"COMMS EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-E",
+            "type": "FL",
+             "shorttext":"FG SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-EK",
+            "type": "FL",
+             "shorttext":"FG SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-EKG",
+            "type": "FL",
+             "shorttext":"FG SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-EKG-00",
+            "type": "FL",
+             "shorttext":"FG SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-EKG-01",
+            "type": "FL",
+             "shorttext":"FG SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-EKG-20",
+            "type": "FL",
+             "shorttext":"FG SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-EKG-90",
+            "type": "FL",
+             "shorttext":"FG SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-EKR",
+            "type": "FL",
+             "shorttext":"FG SUP N2 PURGE SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-G",
+            "type": "FL",
+             "shorttext":"WTR SUP & DISPOSAL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GA",
+            "type": "FL",
+             "shorttext":"RW SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAC",
+            "type": "FL",
+             "shorttext":"RW PIPING & CHANNL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAC-10",
+            "type": "FL",
+             "shorttext":"RW PIPING & CHANNEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAC-11",
+            "type": "FL",
+             "shorttext":"RW PIPING & CHANNEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAC-12",
+            "type": "FL",
+             "shorttext":"RW PIPING & CHANNEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAC-21",
+            "type": "FL",
+             "shorttext":"RW PIPING & CHANNEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAC-22",
+            "type": "FL",
+             "shorttext":"RW PIPING & CHANNEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAC-61",
+            "type": "FL",
+             "shorttext":"RW PIPING & CHANNEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAC-62",
+            "type": "FL",
+             "shorttext":"RW PIPING & CHANNEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAD",
+            "type": "FL",
+             "shorttext":"RW STORAGE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAD-01",
+            "type": "FL",
+             "shorttext":"RW STORAGE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GAD-02",
+            "type": "FL",
+             "shorttext":"RW STORAGE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GB",
+            "type": "FL",
+             "shorttext":"WTP RW TREATMENT SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBB",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBB-11",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBB-12",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBB-21",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBB-22",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBJ",
+            "type": "FL",
+             "shorttext":"RW TREATMENT RW HTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBJ-10",
+            "type": "FL",
+             "shorttext":"RW TREATMENT RW HTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBJ-15",
+            "type": "FL",
+             "shorttext":"RW TREATMENT RW HTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBK",
+            "type": "FL",
+             "shorttext":"RW TREATMENT PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBK-11",
+            "type": "FL",
+             "shorttext":"RW TREATMENT PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBK-12",
+            "type": "FL",
+             "shorttext":"RW TREATMENT PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBK-20",
+            "type": "FL",
+             "shorttext":"RW TREATMENT PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBK-21",
+            "type": "FL",
+             "shorttext":"RW TREATMENT PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBK-22",
+            "type": "FL",
+             "shorttext":"RW TREATMENT PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-01",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-02",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-10",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-11",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-12",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-21",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-22",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-51",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-52",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-60",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-61",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-62",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-63",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBP-64",
+            "type": "FL",
+             "shorttext":"RW TREATMENT REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBR",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLUSHING WTR & RESID RMV",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBR-11",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLUSH WTR & RESIDUE REMOVAL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBR-12",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLUSH WTR & RESIDUE REMOVAL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBR-21",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLUSH WTR & RESIDUE REMOVAL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBR-22",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLUSH WTR & RESIDUE REMOVAL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBT",
+            "type": "FL",
+             "shorttext":"RW TREATMENT WTR HTR HTG WTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBT-10",
+            "type": "FL",
+             "shorttext":"RW TREATMENT FLUSH WTR & RESIDUE REMOVAL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBX",
+            "type": "FL",
+             "shorttext":"RW TREATMENT CTRL AIR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBX-11",
+            "type": "FL",
+             "shorttext":"RW TREATMENT CTRL AIR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBX-12",
+            "type": "FL",
+             "shorttext":"RW TREATMENT CTRL AIR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBX-21",
+            "type": "FL",
+             "shorttext":"RW TREATMENT CTRL AIR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GBX-22",
+            "type": "FL",
+             "shorttext":"RW TREATMENT CTRL AIR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GC",
+            "type": "FL",
+             "shorttext":"WTP TREATMENT SYST OF PRCS WTR (DEMIN)",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCC",
+            "type": "FL",
+             "shorttext":"DEMIN WTR AERATION",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCC-21",
+            "type": "FL",
+             "shorttext":"DEMIN WTR AERATION",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCC-22",
+            "type": "FL",
+             "shorttext":"DEMIN WTR AERATION",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCF",
+            "type": "FL",
+             "shorttext":"DEMIN WTR ION EXCHG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCF-11",
+            "type": "FL",
+             "shorttext":"DEMIN WTR ION EXCHG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCF-12",
+            "type": "FL",
+             "shorttext":"DEMIN WTR ION EXCHG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCF-31",
+            "type": "FL",
+             "shorttext":"DEMIN WTR ION EXCHG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCF-32",
+            "type": "FL",
+             "shorttext":"DEMIN WTR ION EXCHG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCF-41",
+            "type": "FL",
+             "shorttext":"DEMIN WTR ION EXCHG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCF-42",
+            "type": "FL",
+             "shorttext":"DEMIN WTR ION EXCHG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCJ",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN WTR HTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCJ-30",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN WTR HTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-11",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-12",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-20",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-21",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-22",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-30",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-31",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-32",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-41",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-42",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-61",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCK-62",
+            "type": "FL",
+             "shorttext":"DEMIN WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUPP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-01",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-02",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-05",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-10",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-11",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-12",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-20",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-30",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-31",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCN-32",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CHEM SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-01",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-02",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-10",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-11",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-12",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-30",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-31",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-32",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-41",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-42",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-60",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-61",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-62",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCP-70",
+            "type": "FL",
+             "shorttext":"DEMIN WTR MB REGEN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESID RMV SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-10",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-11",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-12",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-20",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-31",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-32",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-41",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-42",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-60",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-70",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-71",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-72",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCR-80",
+            "type": "FL",
+             "shorttext":"DEMIN WTR RESIDUE REMOVAL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCT",
+            "type": "FL",
+             "shorttext":"DEMIN WTR HTG WTR DISTRBN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCT-30",
+            "type": "FL",
+             "shorttext":"DEMIN WTR HTG WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCT-70",
+            "type": "FL",
+             "shorttext":"DEMIN WTR HTG WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCT-80",
+            "type": "FL",
+             "shorttext":"DEMIN WTR HTG WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-01",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-11",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-12",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-31",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-32",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-41",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-42",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-50",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-60",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-70",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCX-80",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCY",
+            "type": "FL",
+             "shorttext":"DEMIN WTR CTRL & PROT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCY-00",
+            "type": "FL",
+             "shorttext":"PNL WTP CTRL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCY-01",
+            "type": "FL",
+             "shorttext":"PNL, WTP CTRL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCY-02",
+            "type": "FL",
+             "shorttext":"PNL, WTP CTRL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GCZ",
+            "type": "FL",
+             "shorttext":"WTP AIR SYST STAT REQT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GH",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-00",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-01",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-10",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-11",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-12",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-13",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-15",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-16",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-20",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-31",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GHC-33",
+            "type": "FL",
+             "shorttext":"DEMIN WTR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GK",
+            "type": "FL",
+             "shorttext":"DRINKING WTR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKA",
+            "type": "FL",
+             "shorttext":"DRINKING WTR RCVG POINT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKA-30",
+            "type": "FL",
+             "shorttext":"DRINKING WTR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKA-70",
+            "type": "FL",
+             "shorttext":"DRINKING WTR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKA-80",
+            "type": "FL",
+             "shorttext":"DRINKING WTR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKB",
+            "type": "FL",
+             "shorttext":"DRINKING WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKB-10",
+            "type": "FL",
+             "shorttext":"DRINKING WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKB-11",
+            "type": "FL",
+             "shorttext":"DRINKING WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKB-12",
+            "type": "FL",
+             "shorttext":"DRINKING WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKB-13",
+            "type": "FL",
+             "shorttext":"DRINKING WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKB-20",
+            "type": "FL",
+             "shorttext":"DRINKING WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKB-40",
+            "type": "FL",
+             "shorttext":"DRINKING WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GKB-50",
+            "type": "FL",
+             "shorttext":"DRINKING WTR DIST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GM",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMH",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST OIL SEPARATORS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMH-01",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST OIL SEPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMH-02",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST OIL SEPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GML",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST HRB BD",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GML-10",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST HRB BD",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GML-11",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST HRB BD",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GML-12",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST HRB BD",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMM",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST ST HALL SUMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMM-00",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST ST HALL SUMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMM-10",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST ST HALL SUMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMM-21",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST ST HALL SUMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMM-22",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST ST HALL SUMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMM-31",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST ST HALL SUMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMM-40",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST ST HALL SUMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMQ",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST CW MU VLV PIT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMQ-01",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST CLG WTR MU VLV PIT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMR",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST CW PMPH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMR-30",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST CLG WTR PMP HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMS",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST GT OIL CLR BUND SEPRTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMS-11",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST GT LUB OIL CLR BUND SEP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMS-12",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST GT LUB OIL CLR BUND SEP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMS-21",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST GT LUB OIL CLR BUND SEP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMS-22",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST GT LUB OIL CLR BUND SEP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMT",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST CW SILT PMP RM",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GMT-01",
+            "type": "FL",
+             "shorttext":"PLNT DRN SYST CLG WTR SILT PMP HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQ",
+            "type": "FL",
+             "shorttext":"SEWAGE PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQM",
+            "type": "FL",
+             "shorttext":"SEWAGE SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQM-01",
+            "type": "FL",
+             "shorttext":"SEWAGE SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQM-02",
+            "type": "FL",
+             "shorttext":"SEWAGE SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQM-03",
+            "type": "FL",
+             "shorttext":"SEWAGE SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQU",
+            "type": "FL",
+             "shorttext":"SEWAGE PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQU-01",
+            "type": "FL",
+             "shorttext":"SEWAGE PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQU-02",
+            "type": "FL",
+             "shorttext":"SEWAGE PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GQU-03",
+            "type": "FL",
+             "shorttext":"SEWAGE PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GU",
+            "type": "FL",
+             "shorttext":"RAIN WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GUA",
+            "type": "FL",
+             "shorttext":"RAIN WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GUA-00",
+            "type": "FL",
+             "shorttext":"RAIN WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GUA-10",
+            "type": "FL",
+             "shorttext":"RAIN WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GUA-11",
+            "type": "FL",
+             "shorttext":"RAIN WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GUA-12",
+            "type": "FL",
+             "shorttext":"RAIN WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-GUA-13",
+            "type": "FL",
+             "shorttext":"RAIN WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-H",
+            "type": "FL",
+             "shorttext":"HRB CONVENTIONAL HEAT GENERATION",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-HA",
+            "type": "FL",
+             "shorttext":"HRB PRESS SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-HAG",
+            "type": "FL",
+             "shorttext":"HRB CIRC SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-HN",
+            "type": "FL",
+             "shorttext":"FLUE GAS EXH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-HNA",
+            "type": "FL",
+             "shorttext":"FLUE GAS EXH DUCTG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-L",
+            "type": "FL",
+             "shorttext":"STM & WTR CYCLES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LB",
+            "type": "FL",
+             "shorttext":"STM SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LBG",
+            "type": "FL",
+             "shorttext":"AUX STM PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LBG-10",
+            "type": "FL",
+             "shorttext":"AUX STM PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LBG-20",
+            "type": "FL",
+             "shorttext":"AUX STM PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LBG-25",
+            "type": "FL",
+             "shorttext":"AUX STM PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LBG-30",
+            "type": "FL",
+             "shorttext":"AUX STM PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LC",
+            "type": "FL",
+             "shorttext":"COND SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LCA",
+            "type": "FL",
+             "shorttext":"MAIN COND PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LCN",
+            "type": "FL",
+             "shorttext":"AUX STM COND",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-LCN-10",
+            "type": "FL",
+             "shorttext":"AUX STM COND",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-M",
+            "type": "FL",
+             "shorttext":"GT & ST PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MB",
+            "type": "FL",
+             "shorttext":"GT PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MBA",
+            "type": "FL",
+             "shorttext":"GT CMP & PWR TURB CASINGS & RTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MBA-00",
+            "type": "FL",
+             "shorttext":"GT CMP & PWR TURB CASINGS & RTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MBA-10",
+            "type": "FL",
+             "shorttext":"GT COMP & PWR TURB CASINGS, & RTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MBL",
+            "type": "FL",
+             "shorttext":"GT AIR INTAKE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MBR",
+            "type": "FL",
+             "shorttext":"GT EXH GAS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MBR-10",
+            "type": "FL",
+             "shorttext":"GT EXH GAS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MK",
+            "type": "FL",
+             "shorttext":"GEN PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MKA",
+            "type": "FL",
+             "shorttext":"GEN STAT & RTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MKA-11",
+            "type": "FL",
+             "shorttext":"GEN STAT & RTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MKA-12",
+            "type": "FL",
+             "shorttext":"GEN STAT & RTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MKA-21",
+            "type": "FL",
+             "shorttext":"GEN STAT & RTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MKA-22",
+            "type": "FL",
+             "shorttext":"GEN STAT & RTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MKG",
+            "type": "FL",
+             "shorttext":"GEN GAS CLG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MKG-02",
+            "type": "FL",
+             "shorttext":"GEN GAS CLG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-MKW",
+            "type": "FL",
+             "shorttext":"GEN SEAL OIL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-P",
+            "type": "FL",
+             "shorttext":"CLG WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PA",
+            "type": "FL",
+             "shorttext":"CW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAB",
+            "type": "FL",
+             "shorttext":"MAIN CW PIPES & CULVERTS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAD",
+            "type": "FL",
+             "shorttext":"CW CTWR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR",
+            "type": "FL",
+             "shorttext":"CW MUWS PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-00",
+            "type": "FL",
+             "shorttext":"CW MUWS PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-02",
+            "type": "FL",
+             "shorttext":"PIPE MU WTR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-03",
+            "type": "FL",
+             "shorttext":"PIPE MU WTR SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-10",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-11",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-12",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-13",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-15",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-20",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-21",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-40",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-41",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-42",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-43",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAR-60",
+            "type": "FL",
+             "shorttext":"CLG WTR MU & PURGE WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAS",
+            "type": "FL",
+             "shorttext":"CW MUWPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAS-10",
+            "type": "FL",
+             "shorttext":"CLG WTR MU WTR PMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAS-11",
+            "type": "FL",
+             "shorttext":"CLG WTR MU WTR PMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAS-12",
+            "type": "FL",
+             "shorttext":"CLG WTR MU WTR PMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PAS-13",
+            "type": "FL",
+             "shorttext":"CLG WTR MU WTR PMPS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PB",
+            "type": "FL",
+             "shorttext":"MAIN CW TREATMENT SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PBB",
+            "type": "FL",
+             "shorttext":"CW MU FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PBB-10",
+            "type": "FL",
+             "shorttext":"CLG WTR MU FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PBB-11",
+            "type": "FL",
+             "shorttext":"CLG WTR MU FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PBB-12",
+            "type": "FL",
+             "shorttext":"CLG WTR MU FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PBB-13",
+            "type": "FL",
+             "shorttext":"CLG WTR MU FLTNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PC",
+            "type": "FL",
+             "shorttext":"AUX CW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PCB",
+            "type": "FL",
+             "shorttext":"AUX CW PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PCB-10",
+            "type": "FL",
+             "shorttext":"AUX CLG WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PCB-15",
+            "type": "FL",
+             "shorttext":"AUX CLG WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PCB-21",
+            "type": "FL",
+             "shorttext":"AUX CLG WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PCB-22",
+            "type": "FL",
+             "shorttext":"AUX CLG WTR PIPING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PU",
+            "type": "FL",
+             "shorttext":"CW CMN EQUIP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PUN",
+            "type": "FL",
+             "shorttext":"CW CMN EQUIP DOSING/SAMPLING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PUN-01",
+            "type": "FL",
+             "shorttext":"CLG WTR CMN EQUIP DOSING/SAMPLING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PUN-02",
+            "type": "FL",
+             "shorttext":"CLG WTR CMN EQUIP DOSING/SAMPLING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PUN-10",
+            "type": "FL",
+             "shorttext":"CLG WTR CMN EQUIP DOSING/SAMPLING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PUN-15",
+            "type": "FL",
+             "shorttext":"CLG WTR CMN EQUIP DOSING/SAMPLING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PUR",
+            "type": "FL",
+             "shorttext":"CW CMN EQUIP CATHODIC PROT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-PUR-10",
+            "type": "FL",
+             "shorttext":"CLG WTR CMN EQUIP CATHODIC PROT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-Q",
+            "type": "FL",
+             "shorttext":"AUX SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QC",
+            "type": "FL",
+             "shorttext":"CENTRAL CHEMS SUP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QCA",
+            "type": "FL",
+             "shorttext":"NH3/N2H4 DOSING SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QCA-10",
+            "type": "FL",
+             "shorttext":"NH3/N2H4 DOSING SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QCA-11",
+            "type": "FL",
+             "shorttext":"NH3/N2H4 DOSING SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QCA-21",
+            "type": "FL",
+             "shorttext":"NH3/N2H4 DOSING SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QCA-22",
+            "type": "FL",
+             "shorttext":"NH3/N2H4 DOSING SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QH",
+            "type": "FL",
+             "shorttext":"AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHA",
+            "type": "FL",
+             "shorttext":"AUX BLR PRESS SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHA-00",
+            "type": "FL",
+             "shorttext":"AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHA-01",
+            "type": "FL",
+             "shorttext":"AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHA-12",
+            "type": "FL",
+             "shorttext":"AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHA-13",
+            "type": "FL",
+             "shorttext":"AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHA-22",
+            "type": "FL",
+             "shorttext":"AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHA-27",
+            "type": "FL",
+             "shorttext":"AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHA-30",
+            "type": "FL",
+             "shorttext":"AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHE",
+            "type": "FL",
+             "shorttext":"AUX BLR BD SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHE-27",
+            "type": "FL",
+             "shorttext":"AUX BLR BD SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHE-28",
+            "type": "FL",
+             "shorttext":"AUX BLR BD SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHG",
+            "type": "FL",
+             "shorttext":"AUX BLR WTR CIRC SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHG-11",
+            "type": "FL",
+             "shorttext":"AUX BLR WTR CIRC SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-11",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-12",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-13",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-14",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-15",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-16",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-21",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-22",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-23",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-24",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHH-25",
+            "type": "FL",
+             "shorttext":"AUX BLR MAIN FIRNG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHJ",
+            "type": "FL",
+             "shorttext":"AUX BLR IGN FIRNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHJ-22",
+            "type": "FL",
+             "shorttext":"AUX BLR IGN FIRNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHJ-23",
+            "type": "FL",
+             "shorttext":"AUX BLR IGN FIRNG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHL",
+            "type": "FL",
+             "shorttext":"AUX BLR COMB AIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHL-10",
+            "type": "FL",
+             "shorttext":"AUX BLR COMB AIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHS",
+            "type": "FL",
+             "shorttext":"AUX BLR FG TREATMENT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QHS-27",
+            "type": "FL",
+             "shorttext":"AUX BLR FG TREATMENT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QI",
+            "type": "FL",
+             "shorttext":"MISC ITEMS STAT REQUIREMENTS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QIZ",
+            "type": "FL",
+             "shorttext":"MISC ITEMS STAT REQUIREMENTS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QL",
+            "type": "FL",
+             "shorttext":"AUX BFW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA",
+            "type": "FL",
+             "shorttext":"AUX BFW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-10",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-11",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-12",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-13",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-21",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-23",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-24",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-25",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-26",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-27",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-30",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-31",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QLA-41",
+            "type": "FL",
+             "shorttext":"AUX BLR FW SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QU",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QUC",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST OXY/SOD ANALY",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QUD",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QUD-10",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST AUX BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QUG",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST DEMIN WTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QUG-02",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST DEMIN WTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QUG-10",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST DEMIN WTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QUW",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST CW PURGE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-QUW-01",
+            "type": "FL",
+             "shorttext":"SAMPLING SYST CLG WTR PURGE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-S",
+            "type": "FL",
+             "shorttext":"ANCILLARY SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SA",
+            "type": "FL",
+             "shorttext":"HVAC SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC",
+            "type": "FL",
+             "shorttext":"HVAC SYST CTRL & ADMIN BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-10",
+            "type": "FL",
+             "shorttext":"HVAC U SUP AIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-11",
+            "type": "FL",
+             "shorttext":"HVAC SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-12",
+            "type": "FL",
+             "shorttext":"HVAC SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-13",
+            "type": "FL",
+             "shorttext":"HVAC SYST CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-14",
+            "type": "FL",
+             "shorttext":"HVAC SYST CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-15",
+            "type": "FL",
+             "shorttext":"HVAC SYST CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-16",
+            "type": "FL",
+             "shorttext":"HVAC U EXH AIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-17",
+            "type": "FL",
+             "shorttext":"HVAC SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-18",
+            "type": "FL",
+             "shorttext":"HVAC SYST CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-20",
+            "type": "FL",
+             "shorttext":"HVAC SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-25",
+            "type": "FL",
+             "shorttext":"HVAC SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-51",
+            "type": "FL",
+             "shorttext":"HVAC SYST. ADMIN BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-52",
+            "type": "FL",
+             "shorttext":"HVAC SYST. ADMIN BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAC-53",
+            "type": "FL",
+             "shorttext":"HVAC SYST. ADMIN BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAG",
+            "type": "FL",
+             "shorttext":"HVAC SYST WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAG-10",
+            "type": "FL",
+             "shorttext":"HVAC U SUP AIR WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAG-11",
+            "type": "FL",
+             "shorttext":"HVAC U SUP AIR WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAG-12",
+            "type": "FL",
+             "shorttext":"HVAC U SUP AIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAG-13",
+            "type": "FL",
+             "shorttext":"HVAC SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAG-14",
+            "type": "FL",
+             "shorttext":"HVAC U EXH AIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAG-15",
+            "type": "FL",
+             "shorttext":"HVAC SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAH",
+            "type": "FL",
+             "shorttext":"VENT SYST BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAH-01",
+            "type": "FL",
+             "shorttext":"VENT SYST BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAH-10",
+            "type": "FL",
+             "shorttext":"PNL BLR HSE VENT/SMOKE CTRL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAH-20",
+            "type": "FL",
+             "shorttext":"VENT SYST BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAM",
+            "type": "FL",
+             "shorttext":"VENT SYST GT & ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAM-10",
+            "type": "FL",
+             "shorttext":"PNL GT HSE VENT FANS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAM-20",
+            "type": "FL",
+             "shorttext":"PNL ST HALL VENT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAQ",
+            "type": "FL",
+             "shorttext":"VENT SYST MKUP WTR PMPH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAQ-10",
+            "type": "FL",
+             "shorttext":"VENT SYST MU WTR PMP HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SAZ",
+            "type": "FL",
+             "shorttext":"HVAC SYST SIS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SB",
+            "type": "FL",
+             "shorttext":"CENTRAL HTG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBA",
+            "type": "FL",
+             "shorttext":"CTL HTG SYST HTG STN PMP & HT EXCHS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBA-01",
+            "type": "FL",
+             "shorttext":"SPACE HTG STN, PMPS & HT EXCHS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBA-02",
+            "type": "FL",
+             "shorttext":"SPACE HTG STN, PMPS & HT EXCHS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBA-03",
+            "type": "FL",
+             "shorttext":"SPACE HTG STN, PMPS & HT EXCHS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBA-10",
+            "type": "FL",
+             "shorttext":"HEAT EXCHNGR NO1 CENTRAL HTG SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBA-20",
+            "type": "FL",
+             "shorttext":"HEAT EXCHNGR CENTRAL HTG SYST NO 2",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBA-30",
+            "type": "FL",
+             "shorttext":"SPACE HTG STN, PMPS & HT EXCHS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBC",
+            "type": "FL",
+             "shorttext":"CTL HTG SYST CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBC-01",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBC-02",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBC-03",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBC-04",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBC-05",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG",
+            "type": "FL",
+             "shorttext":"CTL HTG SYST WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-01",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-02",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-03",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-04",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-05",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-06",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-10",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-11",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBG-12",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH",
+            "type": "FL",
+             "shorttext":"CTL HTG SYST BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-10",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-11",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-12",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-13",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-14",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-15",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-16",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-17",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-18",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-19",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-20",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-21",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-22",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-23",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-24",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-25",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-26",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-27",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-28",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-29",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBH-30",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM",
+            "type": "FL",
+             "shorttext":"CTL HTG SYST GT & ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-10",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT & ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-11",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-12",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-13",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-14",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-15",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-16",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-17",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-18",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-19",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-20",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-21",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-22",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-23",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-24",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-25",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-30",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-31",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-32",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-33",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-34",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-35",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-36",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-37",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-38",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-39",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-40",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-41",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-42",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-43",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-44",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. GT HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-50",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-51",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-52",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-53",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-54",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBM-55",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBQ",
+            "type": "FL",
+             "shorttext":"HTG SYST CW PMPH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBQ-20",
+            "type": "FL",
+             "shorttext":"SPACE HTG SYST. CLG WTR PMP HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBY",
+            "type": "FL",
+             "shorttext":"CTRL HTG SYST ADMIN BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBY-10",
+            "type": "FL",
+             "shorttext":"CTRL HTG SYST ADMIN BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBY-20",
+            "type": "FL",
+             "shorttext":"CTRL HTG SYST ADMIN BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SBZ",
+            "type": "FL",
+             "shorttext":"CTL HTG SYST SIS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SC",
+            "type": "FL",
+             "shorttext":"COMP AIR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCA",
+            "type": "FL",
+             "shorttext":"COMP AIR GENATION SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCA-00",
+            "type": "FL",
+             "shorttext":"COMP AIR GENATION SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCA-10",
+            "type": "FL",
+             "shorttext":"COMP AIR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCA-11",
+            "type": "FL",
+             "shorttext":"COMP AIR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCA-12",
+            "type": "FL",
+             "shorttext":"COMP AIR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCA-20",
+            "type": "FL",
+             "shorttext":"COMP AIR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCA-30",
+            "type": "FL",
+             "shorttext":"COMP AIR WTP LAB PORT SYS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCB",
+            "type": "FL",
+             "shorttext":"COMP AIR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCB-16",
+            "type": "FL",
+             "shorttext":"COMP AIR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCB-17",
+            "type": "FL",
+             "shorttext":"COMP AIR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCB-18",
+            "type": "FL",
+             "shorttext":"COMP AIR DIST SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SCZ",
+            "type": "FL",
+             "shorttext":"COMP AIR SYST STAT INSP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SG",
+            "type": "FL",
+             "shorttext":"FIRE PROT SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGA",
+            "type": "FL",
+             "shorttext":"FIRE WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGA-00",
+            "type": "FL",
+             "shorttext":"FIRE WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGA-01",
+            "type": "FL",
+             "shorttext":"FIRE WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGA-02",
+            "type": "FL",
+             "shorttext":"FIRE WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGA-03",
+            "type": "FL",
+             "shorttext":"FIRE WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGA-04",
+            "type": "FL",
+             "shorttext":"FIRE WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGA-11",
+            "type": "FL",
+             "shorttext":"FIRE WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGA-15",
+            "type": "FL",
+             "shorttext":"FIRE WTR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC",
+            "type": "FL",
+             "shorttext":"FIRE PROT SPRAY DEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-00",
+            "type": "FL",
+             "shorttext":"FIRE PROT SPRAY DEL SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-11",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT11 LUB OIL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-12",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT12 LUB OIL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-13",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT11 GEN TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-14",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT12 GEN TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-15",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT11 AUX TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-16",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT12 AUX TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-17",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST ST10 LUB OIL TNK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-18",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST ST10 LUB OIL PWK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-21",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT21 LUB OIL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-22",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT22 LUB OIL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-23",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT21 GEN TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-24",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT22 GEN TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-25",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT21 AUX TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-26",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST GT22 AUX TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-27",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST ST20 LUB OIL TNK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-28",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST ST20 LUB OIL PWK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-30",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST ST10 GEN TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-40",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST ST20 GEN TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-50",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST EDG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-70",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST ST10 SEAL OIL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-80",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST ST20 SEAL OIL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGC-99",
+            "type": "FL",
+             "shorttext":"FIRE DEL SYST H2 COMPOUND",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGE",
+            "type": "FL",
+             "shorttext":"FIRE PROT SPRNKLR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGE-10",
+            "type": "FL",
+             "shorttext":"FIRE PROT SPRNKLR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGE-20",
+            "type": "FL",
+             "shorttext":"FIRE PROT SPRNKLR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGE-30",
+            "type": "FL",
+             "shorttext":"FIRE PROT SPRNKLR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SGE-40",
+            "type": "FL",
+             "shorttext":"FIRE PROT SPRNKLR SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SM",
+            "type": "FL",
+             "shorttext":"CRANES & HOISTS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMA",
+            "type": "FL",
+             "shorttext":"CRANES & HOISTS W/S & STORES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMA-04",
+            "type": "FL",
+             "shorttext":"CRANES & HOISTS. W/S & STORES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMB",
+            "type": "FL",
+             "shorttext":"CRANES & HOISTS CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMB-01",
+            "type": "FL",
+             "shorttext":"HOIST CTRL BLDG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMG",
+            "type": "FL",
+             "shorttext":"CRANES & HOISTS WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMG-01",
+            "type": "FL",
+             "shorttext":"HOIST WTP BLDG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM",
+            "type": "FL",
+             "shorttext":"CRANES & HOISTS GT & ST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-01",
+            "type": "FL",
+             "shorttext":"CRANE ST BLD 80(150)/16/5 TONNE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-03",
+            "type": "FL",
+             "shorttext":"CRANE GT BLDG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-04",
+            "type": "FL",
+             "shorttext":"CRANE GT INT SHAFT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-05",
+            "type": "FL",
+             "shorttext":"CRANE ST SLEWING WALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-06",
+            "type": "FL",
+             "shorttext":"CRANE ST SLEWING WALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-07",
+            "type": "FL",
+             "shorttext":"HOIST MONORAIL 1T SPAN 8.8M 11.62M HIGH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-08",
+            "type": "FL",
+             "shorttext":"HOIST MONORAIL 1T SPAN 8.8M 11.62M HIGH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-09",
+            "type": "FL",
+             "shorttext":"HOIST MONORAIL 1T SPAN 8.8M 11.62M HIGH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-10",
+            "type": "FL",
+             "shorttext":"HOIST MONORAIL 1T SPAN 8.8M 11.62M HIGH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMM-11",
+            "type": "FL",
+             "shorttext":"CRANE ST SLEWING WALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMS",
+            "type": "FL",
+             "shorttext":"CRANES & HOISTS W/S",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMS-01",
+            "type": "FL",
+             "shorttext":"CRANE MAIN W/S 5 TONNE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMV",
+            "type": "FL",
+             "shorttext":"CRANES & HOISTS FORK LIFT TRUCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SMV-02",
+            "type": "FL",
+             "shorttext":"VEHICLE FORK LIFT FORK LIFT TRUCK UMS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SN",
+            "type": "FL",
+             "shorttext":"LIFTS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SNB",
+            "type": "FL",
+             "shorttext":"LIFT CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SNB-01",
+            "type": "FL",
+             "shorttext":"LIFT CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SNS",
+            "type": "FL",
+             "shorttext":"LIFT STORES/ADMIN BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-SNS-01",
+            "type": "FL",
+             "shorttext":"LIFT STORES BLDG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-U",
+            "type": "FL",
+             "shorttext":"STRUCTURES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UB",
+            "type": "FL",
+             "shorttext":"STRUCTURES PWR XMSN & AUX PWR SPLY",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBA",
+            "type": "FL",
+             "shorttext":"STRUCTURES CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBA-00",
+            "type": "FL",
+             "shorttext":"BLDG CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBA-01",
+            "type": "FL",
+             "shorttext":"BLDG, CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBA-02",
+            "type": "FL",
+             "shorttext":"BLDG, CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBA-03",
+            "type": "FL",
+             "shorttext":"BLDG, CTRL BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBD",
+            "type": "FL",
+             "shorttext":"STRUCTURES STN TFR 01BHT01/02",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBD-01",
+            "type": "FL",
+             "shorttext":"ENCL STN BRD 6.6/415 TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBD-02",
+            "type": "FL",
+             "shorttext":"ENCL STN BRD 6.6/415 TFR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBH",
+            "type": "FL",
+             "shorttext":"STRUCTURES OIL COLLECTING PITS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBH-01",
+            "type": "FL",
+             "shorttext":"PIT OIL COLLECTING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBH-02",
+            "type": "FL",
+             "shorttext":"PIT OIL COLLECTING",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBN",
+            "type": "FL",
+             "shorttext":"STRUCTURES DG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBN-00",
+            "type": "FL",
+             "shorttext":"BLDG EMER DG CONTAINER",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBS",
+            "type": "FL",
+             "shorttext":"STRUCTURES CABLE DRAW PITS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBS-01",
+            "type": "FL",
+             "shorttext":"DUCT CABLE DRAWPITS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBS-02",
+            "type": "FL",
+             "shorttext":"DUCT CABLE DRAWPITS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBS-03",
+            "type": "FL",
+             "shorttext":"DUCT CABLE DRAWPITS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBZ",
+            "type": "FL",
+             "shorttext":"STRUCTURES CABLE DUCTS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBZ-01",
+            "type": "FL",
+             "shorttext":"DUCT CABLE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBZ-02",
+            "type": "FL",
+             "shorttext":"DUCT CABLE DUCT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UBZ-03",
+            "type": "FL",
+             "shorttext":"DUCT,CABLE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UG",
+            "type": "FL",
+             "shorttext":"STRUCTURES WTR SPLY & DISPOSAL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGD",
+            "type": "FL",
+             "shorttext":"STRUCTURES WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGD-00",
+            "type": "FL",
+             "shorttext":"BLDG WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGD-01",
+            "type": "FL",
+             "shorttext":"BLDG WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGD-02",
+            "type": "FL",
+             "shorttext":"BLDG WTP",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGH",
+            "type": "FL",
+             "shorttext":"STRUCTURES RAIN WTR PIT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGH-01",
+            "type": "FL",
+             "shorttext":"BASIN RETENTION RAIN WTR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGH-02",
+            "type": "FL",
+             "shorttext":"CHAMB PMP/VLVS RAINWTR PIT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGV",
+            "type": "FL",
+             "shorttext":"STRUCTURES SEWAGE PLNT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGV-00",
+            "type": "FL",
+             "shorttext":"PLNT SEWAGE TREATMENT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGX",
+            "type": "FL",
+             "shorttext":"STRUCTURES CW MU SETTLING BASIN",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGX-00",
+            "type": "FL",
+             "shorttext":"BASIN SETTLING CW MU",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGX-01",
+            "type": "FL",
+             "shorttext":"BASIN,SETTLING CLG WTR MU",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGZ",
+            "type": "FL",
+             "shorttext":"STRUCTURES CABLE & PIPE DUCTS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGZ-01",
+            "type": "FL",
+             "shorttext":"DUCT CABLE & PIPE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGZ-02",
+            "type": "FL",
+             "shorttext":"DUCT CABLE & PIPE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UGZ-03",
+            "type": "FL",
+             "shorttext":"DUCT CABLE & PIPE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UH",
+            "type": "FL",
+             "shorttext":"STRUCTURES BLR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UHA",
+            "type": "FL",
+             "shorttext":"STRUCTURES BLR HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UHW",
+            "type": "FL",
+             "shorttext":"STRUCTURES BD PIT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UHW-01",
+            "type": "FL",
+             "shorttext":"STRUCTURE BD PIT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UM",
+            "type": "FL",
+             "shorttext":"STRUCTURES. GT & ST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UMA",
+            "type": "FL",
+             "shorttext":"STRUCTURES ST HALL",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQ",
+            "type": "FL",
+             "shorttext":"STRUCTURES CW MU & PURGE SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQB",
+            "type": "FL",
+             "shorttext":"STRUCTURES MUWPH",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQB-01",
+            "type": "FL",
+             "shorttext":"BLDG CW MU PMPHSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQM",
+            "type": "FL",
+             "shorttext":"STRUCTURES CW PURGE DISCH WEIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQM-01",
+            "type": "FL",
+             "shorttext":"STRUCTURE CW PURGE DISCH WEIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQX",
+            "type": "FL",
+             "shorttext":"STRUCTURES CW PURGE DISCH XFR WEIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQX-01",
+            "type": "FL",
+             "shorttext":"STRUCTURE, CLG WTR PURGE DISCH WEIR",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQZ",
+            "type": "FL",
+             "shorttext":"STRUCTURES FLOWMETER VLV & MH PITS",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQZ-01",
+            "type": "FL",
+             "shorttext":"BLDG CW MU & PURGE VLV PIT",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQZ-02",
+            "type": "FL",
+             "shorttext":"BLDG CW MU & PURGE PIPELINE MANHOLE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQZ-03",
+            "type": "FL",
+             "shorttext":"BLDG CW MU & PURGE PIPELINE MANHOLE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQZ-04",
+            "type": "FL",
+             "shorttext":"BLDG CW MU & PURGE PIPELINE FLOWMETER",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UQZ-05",
+            "type": "FL",
+             "shorttext":"BLDG CW MU & PURGE PIPELINE MANHOLE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-US",
+            "type": "FL",
+             "shorttext":"STRUCTURES ANCILLARY SYST",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UST",
+            "type": "FL",
+             "shorttext":"STRUCTURES W/SS & STORES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UST-01",
+            "type": "FL",
+             "shorttext":"BLDG W/S & MAIN STORES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UST-02",
+            "type": "FL",
+             "shorttext":"BLDG CONTRACTORS CMPND HEAVY SUB STORES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UST-03",
+            "type": "FL",
+             "shorttext":"BLDG CONTRACTORS CMPND EQUIP SUB STORES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UY",
+            "type": "FL",
+             "shorttext":"STRUCTURES GENAL SERV",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYA",
+            "type": "FL",
+             "shorttext":"STRUCTURES OFFICE & STAFF AMENITIES",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYA-01",
+            "type": "FL",
+             "shorttext":"BLDG OFFICE BLOCK MAIN ADMIN BLDG",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYA-02",
+            "type": "FL",
+             "shorttext":"BLDG EDUCAT BLOCK & INDUCTION RM",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYA-03",
+            "type": "FL",
+             "shorttext":"BLDG CONTRACTORS OFFICE/AMENITIES BLOCK",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYE",
+            "type": "FL",
+             "shorttext":"STRUCTURES GATE HSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYE-00",
+            "type": "FL",
+             "shorttext":"BLDG GATEHSE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYQ",
+            "type": "FL",
+             "shorttext":"STRUCTURES GARAGE",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYQ-00",
+            "type": "FL",
+             "shorttext":"BLDG STN GARAGE & PARKING BAY",
+             "swerk":"GMBC"
+},
+
+{
+            "id":"LGF-01-UYQ-01",
+            "type": "FL",
+             "shorttext":"BLDG, STN GARAGE & PARKING BAY",
+             "swerk":"GMBC"
+}
+
+
+]
+}
+

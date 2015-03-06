@@ -1,0 +1,201 @@
+{"order":[
+    {
+            "orderno":"10001",
+            "type": "ZM01",
+            "priority": "High",
+            "startdate": "20061010 08:00",
+			"enddate": "20061010 10:00",
+            "contact": "Mr Adrian Adamson ",
+			"telno": "",
+			"shorttext": "Water Heater Maintenance",
+			"longtext": "Water Heater Maintenance see photo now attached as an object within services Water heating sys flushing Shed ",
+			"address": "2 Trinity Park, Birmingham, B37 7ES",
+			"workaddress": "Work,2 Trinity Park, Birmingham, B37 7ES",
+			"house": "Work",
+			"houseno": "2",
+			"street": "Trinity Park",
+			"district": "NEC",
+			"city": "Birmingham",
+			"postcode": "B37 7ES",
+			"gis": "B37 7ES",
+			"property": "Property1",
+			"funcloc": "B01-H000-03",
+            "equipment": "",
+			"propertygis": "111,111",
+            "funclocgis": "222,222",
+            "equipmentgis": "333,333",
+            "notifno": "22001",
+            "operation":
+                [
+				  {"opno": "0010", "type": "BUIL01" , "priority": "Medium" , "shorttext": "Water heater sys temp checks" ,"startdate": "20061010 08:00", "enddate": "20061010 08:30","duration": "2.0 ",     "status": "Dispatched, Accepted, OnRoute, OnSite", "apptstart": "01/01/2014 09:30","apptend": "01/01/2014 10:30"  },
+				  {"opno": "0020", "type": "BUIL01" , "priority": "Low" , "shorttext": "Water heating sys flushing" ,"startdate": "20120214 10:00", "enddate": "20061010 10:30", "duration": "1.0 ",         "status": "Dispatched",                            "apptstart": "" ,"apptend": ""},
+				  {"opno": "0030", "type": "BUIL01" , "priority": "High" , "shorttext": "Water heating sys pressure checks" ,"startdate": "20120322 12:00", "enddate": "20061010 12:30", "duration": "2.0 ", "status": "Dispatched, Rejected",                  "apptstart": "", "apptend": "" }
+                ],
+            "operationsplit":
+                  [
+				  {"opno": "0010", "assignedto": "00059555" , "duration": "1"  },
+				  {"opno": "0020", "assignedto": "00059555" , "duration": "1"  },
+				  {"opno": "0030", "assignedto": "00059555" , "duration": "1"  }
+                  ],
+            "tconf":
+                [
+				{ "activity": "0010", "confno": "0000005105" ,"type": "WORK" , "date": "20061010"  , "time": "080000"  ,"enddate": "20061010"  , "endtime": "080000" ,"duration": "2.00 "  ,"description": "xxxx1" ,"empid":"123","final":"" },
+				{ "activity": "0030", "confno": "0000005105" ,"type": "WORK" , "date": "20100122"  , "time": "123310"  ,"enddate": "20061010"  , "endtime": "080000" ,"duration": "1.00 "  ,"description": "xxxx2"  ,"empid":"123","final":"" },
+				{ "activity": "0020", "confno": "0000005105" ,"type": "WORK" , "date": "20120517"  , "time": "112534"  ,"enddate": "20061010"  , "endtime": "080000" ,"duration": "0.00 "  ,"description": "Jjhgfdd" ,"empid":"123","final":""  }
+				],
+            "partner":
+                [
+				{ "id": "PE40000060", "type": "VW" , "name": "Mr Adrian Adamson"  ,  "address": "", "postcode":"",  "telno": ""  },
+		        { "id": "USALLISONMA", "type": "ZC" , "name": "Matt ALLISON"  ,  "address": "", "postcode":"",  "telno": ""  },
+				{ "id": "LI0000900062", "type": "ZO" , "name": "Miss Susan Binns"  ,  "address": "", "postcode":"",  "telno": ""  }
+				],
+			"userstatus": 
+				[ 
+				{ "type": "OV" , "orderno": "10001" , "opno": "0010", "inact": "", "status": "E0002","statuscode": "OPDP", "statusdesc": "Dispatched" }, 
+				{ "type": "OV" , "orderno": "10001" , "opno": "0010", "inact": "", "status": "E0002","statuscode": "OPAC", "statusdesc": "Accepted" }, 
+				{ "type": "OV" , "orderno": "10001" , "opno": "0010", "inact": "", "status": "E0003","statuscode": "OPOR", "statusdesc": "On-Route" }, 
+				{ "type": "OV" , "orderno": "10001" , "opno": "0010", "inact": "", "status": "E0003","statuscode": "OPOS", "statusdesc": "On-Site" }, 
+				{ "type": "OV" , "orderno": "10001" , "opno": "0020", "inact": "", "status": "E0002","statuscode": "OPDP", "statusdesc": "Dispatched" }, 
+				{ "type": "OV" , "orderno": "10001" , "opno": "0030", "inact": "", "status": "E0002","statuscode": "OPDP", "statusdesc": "Dispatched" }
+				],
+			"operationinfo": 
+				[ 
+				{ "orderno": "10000" , "opno": "0010", "type": "APPT", "value1": "Start: 01/01/2014 End:21/01/2014", "value2": "" }
+				],  
+			"component": 
+				[ 
+				],  
+             "asset":
+                [
+				{ "id": "1 ",  "notifno": "000001000670","funcloc": "B01-H000-03" , "funclocdesc": "High Street Carriageways - Single Lane", "equipment": "", "equidescr": ""   },
+				{ "id": "2 ",  "notifno": "","funcloc": "A01-A013-02" , "funclocdesc": "Boiler Room", "equipment": "000000000010000005", "equidescr": "Water Pump"   }
+				]
+	},
+    {
+            "orderno":"10002",
+            "type": "ZM01",
+            "priority": "High",
+            "startdate": "20061011 08:00",
+			"enddate": "20061011 10:00",
+            "contact": "Mr John Smith ",
+			"telno": "",
+			"shorttext": "Boiler Maintenance",
+			"longtext": "Annual service of Boiler",
+			"address": "2 accacia Avenue, Manchester ,M60 7RA",
+			"workaddress": "Work ,2 accacia Avenue, Manchester ,M60 7RA",
+			"house": "Work",
+			"houseno": "2",
+			"street": "Accacia Ave",
+			"district": "district 1",
+			"city": "Manchester",
+			"postcode": "M60 7RA",
+			"gis": "M60 7RA",
+			"property": "Property2",
+			"funcloc": "B01-H000-03",
+            "equipment": "11111",
+		    "propertygis": "111,111",
+            "funclocgis": "222,222",
+            "equipmentgis": "333,333",
+            "notifno": "22002",
+            "operation":
+                  [
+				  {"opno": "0030", "type": "BUIL01" , "priority": "0030" , "shorttext": "Make Sure all Jets are Cleaned" ,"startdate": "20120322 12:00", "enddate": "20061010 12:30", "duration": "2.0 ", "status": "Dispatched, Accepted", "apptstart": "01/01/2014 09:30" , "apptend": "01/01/2014 11:30" }
+                  ],
+            "operationsplit":
+                  [
+				  {"opno": "0030", "assignedto": "00059555" , "duration": "1"  }
+                  ],
+            "tconf":
+                  [
+				  { "activity": "0030", "confno": "0000005101" ,"type": "WORK" , "date": "20061010"  , "time": "08:00"  ,"enddate": "20061010"  , "endtime": "080000" ,"duration": "2.00 "  ,"description": "tconf1" ,"empid":"123","final":""  },
+		          { "activity": "0030", "confno": "0000005102" , "type": "WORK" ,"date": "20100122"  , "time": "12:33"  ,"enddate": "20061010"  , "endtime": "080000" ,"duration": "2.00 "  ,"description": "tconf2" ,"empid":"123","final":""  },		
+		          { "activity": "0030", "confno": "0000005103" , "type": "WORK" ,"date": "20120517"  , "time": "11:25"  ,"enddate": "20061010"  , "endtime": "080000" ,"duration": "2.00 "  ,"description": "tconf3" ,"empid":"123","final":""  }
+				  ],
+            "partner":
+                  [
+				  { "id": "PE40000060", "type": "VW" , "name": "Mr Adrian Adamson"  ,"address": "", "postcode":"",  "telno": ""  },
+				  { "id": "USALLISONMA", "type": "ZC" , "name": "Matt ALLISON"  ,  "address": "", "postcode":"",  "telno": ""  },
+		          { "id": "LI0000900062", "type": "ZO" , "name": "Miss Susan Binns"  , "address": "", "postcode":"",  "telno": ""  }
+				  ],
+			"userstatus": 
+				  [ 
+				  { "type": "OV" , "orderno": "10002" , "opno": "0030", "inact": "", "status": "E0003","statuscode": "OPDP", "statusdesc": "Dispatched" } 
+                  ],
+            "operationinfo": 
+				  [ 
+				  { "orderno": "10002" , "opno": "0030", "type": "GAS", "value1": "", "value2": "" }
+                  ],
+			"component": 
+				[ 
+				], 				  
+            "asset":
+                  [
+				  { "id": "1 ",  "notifno": "000001000670","funcloc": "B01-H000-03" , "funclocdesc": "High Street Carriageways - Single Lane", "equipment": "", "equidescr": ""   },
+				  { "id": "2 ",  "notifno": "","funcloc": "A01-A013-02" , "funclocdesc": "Boiler Room", "equipment": "000000000010000005",  "equidescr": "Water Pump"   }
+				  ]
+	},
+	{
+            "orderno":"10003",
+            "type": "ZM01",
+            "priority": "High",
+            "startdate": "20061011 08:00",
+			"enddate": "20061011 10:00",
+            "contact": "Mr Charles Brown",
+			"telno": "",
+			"shorttext": "Site Inspection",
+			"longtext": "Annual service of Boiler",
+			"address": "14 Johnson St, Oxford ,OX51SD",
+			"workaddress": "Work ,14 Johnson St, begbroke, Oxford, OX51SD",
+			"house": "Work",
+			"houseno": "14",
+			"street": "Johnson St",
+			"district": "Begbroke",
+			"city": "Oxford",
+			"postcode": "OX51SD",
+			"gis": "OX51SD",
+			"property": "Property1",
+			"funcloc": "B01-H000-03",
+            "equipment": "",
+			"propertygis": "111,111",
+            "funclocgis": "222,222",
+            "equipmentgis": "333,333",
+            "notifno": "22003",
+            "operation":
+                  [
+				  {"opno": "0050", "type": "BUIL01" , "priority": "LOW" , "shorttext": "Make sure Site is Ready" ,"startdate": "20120322 12:00", "enddate": "20061010 12:30", "duration": "2.0 ","status": "Dispatched, Accepted, OnRoute", "apptstart": "01/01/2014 09:30", "apptend": "01/01/2014 12:30"  }
+                  ],
+            "operationsplit":
+                  [
+				  {"opno": "0050", "assignedto": "00059555" , "duration": "1"  }
+                  ],
+            "tconf":
+                  [		
+				  { "activity": "0050", "confno": "0000005103" , "type": "WORK" ,"date": "20120517"  , "time": "11:25"  ,"enddate": "20061010"  , "endtime": "080000" ,"duration": "2.00 "  ,"description": "could not find" ,"empid":"123","final":"" }
+				  ],
+            "partner":
+                  [
+				  { "id": "PE40000060", "type": "VW" , "name": "Mr Adrian Adamson"  ,"address": "", "postcode":"",  "telno": ""  },
+				  { "id": "USALLISONMA", "type": "ZC" , "name": "Matt ALLISON"  ,  "address": "", "postcode":"",  "telno": ""  },
+				  { "id": "LI0000900062", "type": "ZO" , "name": "Miss Susan Binns"  ,  "address": "", "postcode":"",  "telno": ""  }
+				  ],
+			"userstatus": 
+				  [ 
+				  { "type": "OV" , "orderno": "10003" , "opno": "0050", "inact": "", "status": "E0003","statuscode":  "OPDP", "statusdesc": "Dispatched" } 
+				  ],
+			"operationinfo": 
+				  [ 
+				  { "orderno": "10003" , "opno": "0050", "type": "GAS", "value1": "", "value2": "" } 
+				  ],
+			"component": 
+				[ 
+				], 
+            "asset":
+                  [
+				  { "id": "1 ",  "notifno": "000001000670","funcloc": "B01-H000-03" , "funclocdesc": "High Street Carriageways - Single Lane", "equipment": "", "equidescr": ""   },
+				  { "id": "2 ",  "notifno": "","funcloc": "A01-A013-02" , "funclocdesc": "Boiler Room", "equipment": "000000000010000005", "equidescr": "Water Pump"   }
+				  ]
+	}
+   
+]
+}
+

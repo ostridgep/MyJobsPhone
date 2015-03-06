@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>MyWork - Settings
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />  
+
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);
+syncReference()
+syncTransactional()
+syncUpload()	
+</script>
+    <style type='text/css'>
+ .MyWorkTiles {
+    border: 1px solid grey;
+    width: 180px;
+    height:150px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+
+border-radius: 15px;
+    left:50px
+}
+  .MyWorkTilesHighlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+  .white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 80%;
+  margin: 20px auto;
+}
+.ui-btn-width {
+    width: 200px !important;
+}
+  </style>
+
+
+  
+</head>
+<body>
+<div align="center" data-role="page" id="JobsSettings"> 
+
+		<div  id="header" data-role="header" data-position="fixed">
+			<table width = "100%">
+			<TR height="50px">
+				<TD width = "20%" Valign="bottom" align="left"><a style="font-size: 100%" href="javascript:window.location.href='JobsHome.htm'"  class=" ui-btn ui-btn-width ui-btn-inline ui-icon-home ui-corner-all ui-shadow ui-btn-icon-left">
+				Home</a></td>
+				
+				<TD width = "60%" valign="Top" align= "center"><h1 style="font-size: 150%"><B>MyJobs - Settings</B></H1></TD>
+		
+				<TD width = "20%" Valign="bottom" align="right"></TD>
+			</TR>
+		</table>
+	</div> 
+	<div  data-role="content">	
+		<div  align="center"> 
+			<div id="Configuration" align="center" class="MyWorkTiles MyWorkTilesHighlight"><H2>Settings<BR><img src="images/settings/settings.gif"  height="75" width="75">&nbsp;</H2></div>
+			<div id="LastSync" align="center" class="MyWorkTiles MyWorkTilesHighlight"><H2>Last Sync<BR><img src="images/settings/syncdetails.gif"  height="75" width="75"></div>
+			<div id="ForceSync" align="center" class="MyWorkTiles MyWorkTilesHighlight"><H2>Synchronise<BR><img src="images/settings/sync.gif"  height="75" width="75"></H2></div>
+		</div>
+		<div  align="center"> 
+			<div id="DisplayLog" align="center" class="MyWorkTiles MyWorkTilesHighlight"><H2 >Display Log<BR><img src="images/settings/displaylog.gif"  height="75" width="75"></H2></div>
+			<a href="#popupCreateDB"  data-rel="popup" data-position-to="window" data-transition="pop" style="color:black; text-decoration:none;" >			
+			<div id="DBSetup" align="center" class="MyWorkTiles MyWorkTilesHighlight">
+						
+			<H2>DB Setup<BR><img src="images/settings/createdatabase.gif"   height="75" width="75"></H2>
+				
+			</div></a>
+
+			<div id="DBDisplay" align="center" class="MyWorkTiles MyWorkTilesHighlight"><H2>DB View<BR><img src="images/settings/viewdatabase.png"  height="75" width="75"></H2></div>
+		</div>
+		<div hidden id ="loadmessage" width="95%">
+			<TABLE width="100%">
+				<TR><TD align="center"><img data-tooltip="fffff" src="images\ajax-loader1.gif"" ></TD></TR>
+				<TR><TD align="center">Please Wait</TD></TR> 
+			</Table>    
+		</div>
+	
+
+<div data-role="popup" id="popupCreateDB"  data-dismissible="false" style="max-width:400px;">
+	<div data-role="header" data-theme="a">
+	<h1>Initialize Database?</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<h4 class="ui-title">This will Initialize the DB with Demo Data</h4>
+		<p style="color:red">This action cannot be undone.</p>
+		<div id="createButtons">
+			<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a ui-icon-delete  ui-btn-icon-left" data-rel="back">Cancel</a>
+			<a href="#" onclick="createTheDatabase();" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a  ui-icon-check  ui-btn-icon-left" data-rel="back" data-transition="flow">Initialize Database</a>
+		</div>
+	</div>
+
+</div>
+		
+	</div>
+	
+	
+
+</div> 
+ <script>
+  	if (localStorage.getItem("newSettings") != null) {
+		var params=JSON.parse(localStorage.getItem("newSettings"));
+		createTask(params[0],params[1],params[2],params[3],params[4],params[5])
+		localStorage.removeItem("newSettings")
+		opMessage("Saving Config");
+
+		SetConfigParam('SERVERNAME', params[0]);
+		SetConfigParam('SYNC_REFERENCE_FREQUENCY',	params[1]);
+		SetConfigParam('SYNC_TRANSACTIONAL_FREQUENCY',	params[2]);
+		SetConfigParam('SYNC_UPLOAD_FREQUENCY', params[3]);
+		SetConfigParam('TRACE', params[4]);
+		}
+
+  function createTheDatabase(){
+	$("#popupCreateDB").popup("close");
+	$("#loadmessage").show()
+ 	createDB(1)
+	
+  }
+
+
+
+$("#Configuration").click(function () {
+
+	$( this ).toggleClass( "MyWorkTilesHighlight" );
+	window.location.href="JobsSettingsConfiguration.htm"
+});
+$("#LastSync").click(function () {
+    
+	$( this ).toggleClass( "MyWorkTilesHighlight" );
+	window.location.href="JobsSettingsLastSyncDetails.htm"
+	});
+$("#ForceSync").click(function () {
+   
+	$( this ).toggleClass( "MyWorkTilesHighlight" );
+	window.location.href="JobsSettingsForceSync.htm"
+});
+$("#DisplayLog").click(function () {
+    //alert("hello");
+	$( this ).toggleClass( "MyWorkTilesHighlight" );
+	window.location.href="JobsSettingsDisplayLog.htm"
+});
+$("#DBSetup").click(function () {
+    //alert("hello");
+	$( this ).toggleClass( "MyWorkTilesHighlight" );
+	$('#bCreateDB').click()
+});
+$("#DBDisplay").click(function () {
+    //alert("hello");
+	$( this ).toggleClass( "MyWorkTilesHighlight" );
+window.location.href="JobsSettingsViewDatabase.htm"
+});
+
+
+</script>
+
+ 
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+{
+
+    "NPJOBSRECORD": [
+      {
+        "JOBNO": "U2010501",
+        "SUBTYPE": "0",
+        "DESC": "Holidays"
+      },
+      {
+        "JOBNO": "U2010501",
+        "SUBTYPE": "AL",
+        "DESC": "Annual Leave"
+      },
+      {
+        "JOBNO": "U2010502",
+        "SUBTYPE": "0",
+        "DESC": "Special Leave"
+      },
+      {
+        "JOBNO": "U2010502",
+        "SUBTYPE": "SLP",
+        "DESC": "Paid"
+      },
+      {
+        "JOBNO": "U2010502",
+        "SUBTYPE": "SLU",
+        "DESC": "Unpaid"
+      },
+      {
+        "JOBNO": "U2010503",
+        "SUBTYPE": "0",
+        "DESC": "Training"
+      },
+      {
+        "JOBNO": "U2010503",
+        "SUBTYPE": "TR",
+        "DESC": "Training"
+      },
+      {
+        "JOBNO": "U2010504",
+        "SUBTYPE": "0",
+        "DESC": "Lost Time Van Stock Checking Only"
+      },
+      {
+        "JOBNO": "U2010504",
+        "SUBTYPE": "LT",
+        "DESC": "Lost Time Van Stock Checking Only"
+      },
+      {
+        "JOBNO": "U2010516",
+        "SUBTYPE": "0",
+        "DESC": "24 hr Standby"
+      },
+      {
+        "JOBNO": "U2010516",
+        "SUBTYPE": "SBY",
+        "DESC": "24 hr Standby"
+      },
+      {
+        "JOBNO": "U2010526",
+        "SUBTYPE": "0",
+        "DESC": "Medical Referrals"
+      },
+      {
+        "JOBNO": "U2010526",
+        "SUBTYPE": "MED",
+        "DESC": "Medical Referrals"
+      },
+      {
+        "JOBNO": "U2010554",
+        "SUBTYPE": "0",
+        "DESC": "Lost Time await materials"
+      },
+      {
+        "JOBNO": "U2010554",
+        "SUBTYPE": "LT",
+        "DESC": "Lost Time await materials"
+      },
+      {
+        "JOBNO": "U2010555",
+        "SUBTYPE": "0",
+        "DESC": "Lost Time inclement weather"
+      },
+      {
+        "JOBNO": "U2010555",
+        "SUBTYPE": "LT",
+        "DESC": "Lost Time inclement weather"
+      },
+      {
+        "JOBNO": "U2010556",
+        "SUBTYPE": "0",
+        "DESC": "Lost Time no work"
+      },
+      {
+        "JOBNO": "U2010556",
+        "SUBTYPE": "LT",
+        "DESC": "Lost Time no work"
+      },
+      {
+        "JOBNO": "U2010557",
+        "SUBTYPE": "0",
+        "DESC": "Toolbox Talks"
+      },
+      {
+        "JOBNO": "U2010557",
+        "SUBTYPE": "TR",
+        "DESC": "Toolbox Talks"
+      },
+      {
+        "JOBNO": "U2010574",
+        "SUBTYPE": "0",
+        "DESC": "Lost Time Transport Related"
+      },
+      {
+        "JOBNO": "U2010574",
+        "SUBTYPE": "LT",
+        "DESC": "Lost Time Transport Related"
+      }
+    ]
+
+}

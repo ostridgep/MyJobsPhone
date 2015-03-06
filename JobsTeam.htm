@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Jobs - Team
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.7">
+</script>
+
+
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <script src="js/maplace-0.1.3.js"></script>
+  <link rel="stylesheet" href="css/jqm-inlinetabs.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+var GASJob=false
+$('#ButtonGas').hide();
+</script>
+
+<script src="js/jqm-inlinetabs.js"></script>	
+  <style type='text/css'>
+
+  .boxeddiv {border: 1px solid grey;
+     
+	
+	border-radius: 10px;}
+
+  .boxeddiv1 {border: 1px solid grey;
+      
+border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;}
+  
+  
+  
+  
+  
+ .block {
+    border: 1px solid grey;
+    width: 98%;
+    height:800px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+ .ui-btn-width {
+    width: 200px !important;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+  .stripe{
+	background-color: lightgrey; 
+	color: black;
+}
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+   .wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 250px;
+  overflow-y: auto;
+}
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 95%;
+  margin: 20px auto;
+}
+textarea{
+    height: 80px !important;
+    max-height: 80px !important;
+    overflow:auto !important;  
+}
+var popupMode=""
+  </style>
+  	
+	<script>
+	$(document).on('vclick', '#addtab', function() {
+		$('#tabbar').append('<li data-tab="1">links to content 1</li> ');
+		$('#tabcontainer').inlinetabs('refresh');
+	});
+	
+	$(document).on('vclick', '#acttab2', function() {
+		$('#tabcontainer').inlinetabs('show', '2');
+	});
+	
+	$(document).on('vclick', '#removetab', function() {
+		$('#tabbar').children().last().remove();
+		$('#tabcontainer').inlinetabs('refresh');
+	});
+	
+	$(document).on('tab-show', '#dynamictab', function() {
+		$(this).html('This content was dynamically injected.');
+	});
+
+
+
+
+
+
+
+
+
+</script>
+  
+</head>
+<body>
+
+
+<div align="center" data-role="page" id="JobsTeam"> 
+
+	<div   data-role="header" data-position="fixed">
+		
+
+		<table width = "100%">
+			<TR height="50px">
+				<TD width = "20%"  align="left"><a style="font-size: 100%" href="javascript:window.location.href='JobsHome.htm'"  >
+				<i class="fa fa-home fa-2x pull-left fa-border"></i></a></td>
+			
+				<TD width = "60%"  align= "center"><h1 style="font-size: 100%"><B>MyJobs - Team</B></H1>
+				<a href="#lastSyncDets" data-rel="popup"style="color: green; text-decoration:none;"> <Small><P id="lastsync"></p></A></small></TD>
+				
+				<TD width = "20%" align="right"><a href="#popupCreateMessage"  class="open-popup-link">
+				<i class="fa fa-envelope-o fa-2x pull-right fa-border"></i></a><a id="displayMessage" href="#popupDisplayMessage"  class="open-popup-link ui-btn-width ui-btn ui-btn-inline ui-icon-plus ui-corner-all ui-shadow ui-btn-icon-left hidden">
+				Create Message</a></TD>
+			</TR>
+		</table>		
+	</div> 	
+
+	<div   data-role="content">	
+
+		
+				
+
+				
+				
+			<div  class="boxeddiv" align="left" data-role="inlinetabs"  data-theme="a" data-scroll="true">
+			<ul>
+				<li data-tab="1"><img src="images/Team.png"  height="20" width="18"></li>
+				<li data-tab="2"><img src="images/MailReceived.png"  height="20" width="18"></li>
+				<li data-tab="3"><img src="images/MailSent.png"  height="20" width="18"></li>
+				<li data-tab="4"><img src="images/MailAlert.png"  height="20" width="18"></li>
+				<li data-tab="5"><img src="images/Contacts.png"  height="20" width="18"></li>
+			</ul>
+						
+				<div  data-tab="1" >
+					<div id="TeamMap" class='gmap' style="height: 400px;"></div>
+
+				</div>	
+
+				<div data-tab="2"  >
+						<table  id="ReceivedMessages" width = "100%" cellspacing="0"  style="border-spacing: 0;" class="tablesorter1">
+
+
+							</table>
+				</DIV>
+				<div data-tab="3"  >
+						<table  id="SentMessages" width = "100%" cellspacing="0"  style="border-spacing: 0;" class="tablesorter1">
+
+
+							</table>
+				</DIV>
+				<div data-tab="4"  >
+						<table  id="SystemMessages" width = "100%" cellspacing="0"  style="border-spacing: 0;" class="tablesorter1">
+
+
+						</table>
+				</DIV>
+				
+
+				<div data-tab="5"    >
+					
+					<table width="100%">
+						<TR style="font-size:10px" >
+							<TH align="left" width="35%">Name</TH>
+							<TH align="left" width="65%">Telno</TH>
+		
+							</TR>
+						<tbody id="Contacts">
+
+						</tbody>
+					</table>
+				</div>	
+				
+	
+				
+				</div>
+			
+		<div style='display:none'>
+			<div data-role="popup" id="lastSyncDets">
+			  <p id='referenceSyncDetails' ></p>
+			  <p id='transactionalSyncDetails' ></p>
+			  <p id='uploadSyncDetails' ></p>
+			</div>
+			
+			<div  id="popupCreateMessage" class="white-popup mfp-hide" >
+				<table width = "100%"><TR><TD align = "left"><a onClick="PopupClose('CANCEL')"  ><i class="fa fa-times fa-2x pull-left fa-border"></i></a></td><TD align="center"><B>Create Message</B></TD><TD align="right"><a onClick="PopupClose('SAVE')" ><i class="fa fa-paper-plane fa-2x pull-right fa-border"></i></a></TD></TR></Table>
+			
+				<div role="main"  class="ui-content">
+					<CENTER>
+					<Table width = "90%">
+						<TR><TD width = "20%"><label for="To">To:</label></TD>
+							<TD width = "80%"><select id="To"></select></TD></TR>
+						<TR><TD><label for="Subject">Subject:</label></TD>
+						
+							<TD><input name="Subject" id="Subject" size="30"></TD></TR>
+						<TR><TD><label for="Message">Message:</label></TD>
+							<TD><textarea name="Message" id="Message"></textarea></TD></TR>
+
+					</Table>
+
+				</div><!--End Content-->
+						 
+
+			</div>
+			<div  id="popupDisplayMessage" class="white-popup mfp-hide" >
+				<table width = "100%"><TR><TD width = "10%" align = "left"></td><TD width = "80%" align="center"><B><P id="popTitle">Display Message</p></B></TD><TD width = "10%" align="right"><a onClick="PopupClose('OK')"  ><i class="fa fa-times fa-2x pull-right fa-border"></i></a></TD></TR></Table>
+
+				<div role="main"  class="ui-content">
+					<CENTER>
+					<Table width = "90%">
+						<TR><TD width = "20%"><label data-mini="true"  for="messageFrom">From:</label></TD>
+							<TD><input data-mini="true" name="messageFrom" id="messageFrom"  readonly></TD></TR>
+						<TR><TD width = "20%"><label data-mini="true" for="messageDate">Date:</label></TD>
+							<TD><input data-mini="true" name="messageDate" id="messageDate"  readonly></TD></TR>
+						<TR><TD><label data-mini="true" for="messageSubject">Subject:</label></TD>					
+							<TD><input data-mini="true" name="messageSubject" id="messageSubject"  readonly></TD></TR>
+						<TR><TD><label data-mini="true" for="messageText">Message:</label></TD>
+							<TD><textarea data-mini="true" name="messageText" id="messageText"  readonly></textarea></TD></TR>
+
+					</Table>
+
+				</div><!--End Content-->
+						 
+
+			</div>
+		</div>
+
+
+
+	
+				
+		
+		
+		
+	</div>
+
+
+ 
+</div> 
+  <script>
+
+BuildMessages(); 
+BuildRecipients();
+$('.open-popup-link').magnificPopup({
+  type:'inline',
+  closeOnBgClick: false,
+  showCloseBtn:false,
+  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  callbacks: {
+    open: function() {
+		//BuildMeassageToDisplay();
+		//alert(popupMode)
+
+		},
+    close: function() {
+
+
+
+		}
+	}
+})
+
+function PopupClose(mode)
+{
+	if(mode=="OK"){	
+
+		$.magnificPopup.close();
+		BuildMessages()	
+		
+		}
+	if(mode=="SAVE"){	
+
+		CreateMessage()
+		BuildMessages()	
+		}
+
+	if(mode=="CANCEL"){	
+
+		$.magnificPopup.close();
+		}
+
+	
+
+}  
+function BuildRecipients(){
+
+
+var HTMLToOutput='';
+var HTMLToOutput1='';
+var SQLStatement="";
+
+
+SQLStatement="SELECT *  "
+SQLStatement+="from MyRefUsers "
+HTMLToOutput=""
+
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			for (var n = 0; n < rowsArray.length; n++) {
+				item = rowsArray[n];
+
+				HTMLToOutput+= "<option value='"+item.userid+"'>"+item.userid+"</option>"
+				HTMLToOutput1+= "<TR style='font-size:10px' ><TD>"+item.firstname+" "+item.lastname+"</td><TD>"+item.telno+"</td></TR>"
+			}
+
+			$( "#To").html(HTMLToOutput);
+			$( "#To").trigger('create');
+			
+			$( "#Contacts").html(HTMLToOutput1);
+			$( "#Contacts").trigger('create');
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+}
+function displayTheMessage(type,id){
+
+		if (type == "RECEIVED"){
+			$("#popTitle").html("Received Message")
+			}
+		if (type == "SENT"){
+			$("#popTitle").html("Sent Message")
+			}
+		if (type == "SYSTEM"){
+			$("#popTitle").html("System Message")
+			}
+			
+			
+			
+SQLStatement="SELECT *  "
+SQLStatement+="from MyMessages where id = '"+id+"'"
+//alert(SQLStatement)
+
+//alert(SQLStatement);
+	html5sql.process(SQLStatement,
+	 function(transaction, results, rowsArray){
+			//alert(rowsArray.length)
+			if (rowsArray.length>0) {
+				$("#messageFrom").val(rowsArray[0].msgfromname)
+				$("#messageDate").val(rowsArray[0].date.substring(0,4)+"/"+rowsArray[0].date.substring(4,6)+"/"+rowsArray[0].date.substring(6,8)+" "+rowsArray[0].time.substring(0,2)+":"+rowsArray[0].time.substring(2,4))
+				$("#messageSubject").val(rowsArray[0].msgsubject)
+				$("#messageText").val(unescape(rowsArray[0].msgtext))
+				displayMessage.click()
+				
+				sqlstatement="UPDATE MyMessages SET state = 'READ' WHERE id = '"+id+"'"
+				html5sql.process(sqlstatement,
+				 function(){
+					opMessage("Success: Updated Message " +id+ " to READ" );
+				 },
+				 function(error, statement){
+					opMessage("Error: " + error.message + " when SetConfigParam processing " + statement);
+				 }        
+				)
+				
+				
+			}
+
+			
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+
+
+}
+function BuildMessages(){
+
+var HTMLToOutput='';
+var newMessage=""
+var newMessageEnd=""
+var fontweight=""
+var msgDate=""
+
+
+	html5sql.process("select *  from MyMessages   where msgfromid <>'SENTMSG' and type <>'MYJOBSSYSMSG' order by date desc, time desc ",
+	 function(transaction, results, rowsArray){
+				HTMLToOutput+='<Thead><TR  style="font-size:10px" data-mini="true" ><TH  data-mini="true" align="left" width="20%">Date</TH><TH  data-mini="true" align="left" width="25%">From</TH><TH  data-mini="true" align="left" width="55%">Subject</TH></TR></THEAD><TBODY>'
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+					msgDate=item.date.substring(0,4)+"/"+item.date.substring(4,6)+"/"+item.date.substring(6,8)+" "+item.time.substring(0,2)+":"+item.time.substring(2,4)
+					if (item.state.indexOf("0")>-1){
+
+						fontweight="stripe"
+					}else{
+
+						fontweight=""
+					}
+					//alert("sent = "+item.state+item.msgsubject+newMessage)
+					HTMLToOutput+='	<tr style="font-size:10px" data-mini="true" class="'+fontweight+'">'+
+								
+								'<TD><a  onClick="displayTheMessage(\'RECEIVED\',\''+item.id+'\')"   >'+
+								msgDate+"</A></TD>"+
+								'<TD><a onClick="displayTheMessage(\'RECEIVED\',\''+item.id+'\')"   >'+
+								item.msgfromname+"</A></TD>"+
+								'<TD><a onClick="displayTheMessage(\'RECEIVED\',\''+item.id+'\')"   >'+
+								item.msgsubject+"</A></TD></TR>"
+				
+				}	
+			
+				$( "#ReceivedMessages").html(HTMLToOutput+"</TBODY>");
+				$( "#ReceivedMessages").trigger('create');
+				HTMLToOutput="";
+				html5sql.process("select *  from MyMessages where msgfromid = 'SENTMSG' order by date desc, time desc ",
+					function(transaction, results, rowsArray){
+						HTMLToOutput+='<Thead><TR style="font-size:10px" ><TH align="left" width="20%">Date</TH><TH align="left" width="25%">To</TH><TH align="left" width="55%">Subject</TH></TR></THEAD><TBODY>'
+					
+						for (var n = 0; n < rowsArray.length; n++) {
+							item = rowsArray[n];
+							msgDate=item.date.substring(0,4)+"/"+item.date.substring(4,6)+"/"+item.date.substring(6,8)+" "+item.time.substring(0,2)+":"+item.time.substring(2,4)
+
+					HTMLToOutput+='	<tr style="font-size:10px"  >'+
+								
+								'<TD><a  onClick="displayTheMessage(\'SENT\',\''+item.id+'\')"   >'+
+								msgDate+"</A></TD>"+
+								'<TD><a onClick="displayTheMessage(\'SENT\',\''+item.id+'\')"   >'+
+								item.msgtoname+"</A></TD>"+
+								'<TD><a onClick="displayTheMessage(\'SENT\',\''+item.id+'\')"   >'+
+								item.msgsubject+"</A></TD></TR>"
+					
+						}	
+			
+						$( "#SentMessages").html(HTMLToOutput+"</TBODY>");
+						$( "#SentMessages").trigger('create');
+						HTMLToOutput="";
+						html5sql.process("select *  from MyMessages where type ='MYJOBSSYSMSG' order by date desc, time desc ",
+							function(transaction, results, rowsArray){
+								HTMLToOutput+='<Thead><TR style="font-size:10px" ><TH align="left" width="20%">Date</TH><TH align="left" width="25%">From</TH><TH align="left" width="55%">Subject</TH></TR></THEAD><TBODY>'
+
+								for (var n = 0; n < rowsArray.length; n++) {
+									item = rowsArray[n];
+									msgDate=item.date.substring(0,4)+"/"+item.date.substring(4,6)+"/"+item.date.substring(6,8)+" "+item.time.substring(0,2)+":"+item.time.substring(2,4)
+
+									if (item.state.indexOf("0")>-1){
+
+										fontweight="stripe"
+										}else{
+
+										fontweight=""
+										}
+											
+								HTMLToOutput+='	<tr style="font-size:10px"  class="'+fontweight+'">'+
+											
+											'<TD><a  onClick="displayTheMessage(\'SYSTEM\',\''+item.id+'\')"   >'+
+											msgDate+"</A></TD>"+
+											'<TD><a onClick="displayTheMessage(\'SYSTEM\',\''+item.id+'\')"   >'+
+											"SYSTEM</A></TD>"+
+											'<TD><a onClick="displayTheMessage(\'SYSTEM\',\''+item.id+'\')"   >'+
+											item.msgsubject+"</A></TD></TR>"					
+								}	
+								$( "#SystemMessages").html(HTMLToOutput+"</TBODY>");
+								$( "#SystemMessages").trigger('create');
+								SetTableSort()
+							 },
+							 function(error, statement){
+								
+							 }   
+						 );
+						},
+					function(error, statement){
+		
+					}   
+				);
+			
+	 	 },
+	 function(error, statement){
+		
+	}   
+);
+
+
+	
+
+
+	
+}
+function CreateMessage()
+{
+
+		SQLStatement='INSERT INTO MyMessages (type, date, time, msgfromid, msgfromname, msgid, expirydate,  msgtoid, msgtoname, msgsubject, msgtext, state) VALUES ( '+ 
+							  '"MYJOBS",'+
+							  '"'+getMessageDate()+'",'+
+							  '"'+getMessageTime()+'",'+
+							  '"SENTMSG",'+
+							  '"SENTMSG",'+
+							  '"0",'+
+							  '"00000000",'+
+							  '"'+$("#To").find(":selected").val()+'",'+
+							  '"'+$("#To").find(":selected").text()+'",'+ 
+							  '"'+$("#Subject").val()+'",'+ 
+							  '"'+$("#Message").val()+'",'+ 
+							  '"NEW");'
+
+		html5sql.process(SQLStatement,
+			 function(transaction, results, rowsArray){
+			
+				
+				$.magnificPopup.close();	
+			 },
+			 function(error, statement){		
+				
+				$.magnificPopup.close();
+			 }        
+			);
+		
+}
+function getMessageDate(){
+getDate();
+return getDate()
+}
+function getMessageTime(){
+getTime();
+return getTime()
+}
+// Need to Fetch From Users DMB
+var LocsA = [
+    {
+        lat: 52.5202507,
+        lon: -1.6350539999999683,
+        title: 'Charley Farley',
+        icon: 'images/van1.gif',
+		html: 'Charley Farley'
+    },
+    {
+        lat: 52.45962636383875,
+        lon: -1.7538436728515308,
+        title: 'Slarty Bartfast',
+        icon: 'images/van1.gif',
+		html: 'Slarty Bartfast'
+    },
+    {
+        lat: 52.184308275501834,
+        lon: -2.2125228720702808,
+        title: 'Jimmy Hendrix',
+        icon: 'images/van1.gif',
+		html: 'Jimmy Hendrix'
+    }
+];
+$(function() {
+new Maplace({
+    locations: LocsA,
+    map_div: '#TeamMap',
+    controls_title: 'Choose Team Member:'
+}).Load();
+})
+
+
+
+
+function SetTableSort()
+{
+$('table').tablesorter({
+
+    // *** APPEARANCE ***
+    // Add a theme - try 'blackice', 'blue', 'dark', 'default'
+    //  'dropbox', 'green', 'grey' or 'ice'
+    // to use 'bootstrap' or 'jui', you'll need to add the "uitheme"
+    // widget and also set it to the same name
+    // this option only adds a table class name "tablesorter-{theme}"
+    theme: 'jui',
+
+    // fix the column widths
+    widthFixed: false,
+
+    // Show an indeterminate timer icon in the header when the table
+    // is sorted or filtered
+    showProcessing: false,
+
+    // header layout template (HTML ok); {content} = innerHTML,
+    // {icon} = <i/> (class from cssIcon)
+    headerTemplate: '{content}{icon}',
+
+    // return the modified template string
+    onRenderTemplate: null, // function(index, template){ return template; },
+
+    // called after each header cell is rendered, use index to target the column
+    // customize header HTML
+    onRenderHeader: function (index) {
+        // the span wrapper is added by default
+        $(this).find('div.tablesorter-header-inner').addClass('roundedCorners');
+    },
+
+    // *** FUNCTIONALITY ***
+    // prevent text selection in header
+    cancelSelection: true,
+
+    // other options: "ddmmyyyy" & "yyyymmdd"
+    dateFormat: "mmddyyyy",
+
+    // The key used to select more than one column for multi-column
+    // sorting.
+    sortMultiSortKey: "shiftKey",
+
+    // key used to remove sorting on a column
+    sortResetKey: 'ctrlKey',
+
+    // false for German "1.234.567,89" or French "1 234 567,89"
+    usNumberFormat: true,
+
+    // If true, parsing of all table cell data will be delayed
+    // until the user initializes a sort
+    delayInit: false,
+
+    // if true, server-side sorting should be performed because
+    // client-side sorting will be disabled, but the ui and events
+    // will still be used.
+    serverSideSorting: false,
+
+    // *** SORT OPTIONS ***
+    // These are detected by default,
+    // but you can change or disable them
+    // these can also be set using data-attributes or class names
+    headers: {
+        // set "sorter : false" (no quotes) to disable the column
+        0: {
+            sorter: "text"
+        },
+        1: {
+            sorter: "text"
+        },
+        2: {
+            sorter: "text"
+        }
+    },
+
+    // ignore case while sorting
+    ignoreCase: true,
+
+    // forces the user to have this/these column(s) sorted first
+    sortForce: null,
+    // initial sort order of the columns, example sortList: [[0,0],[1,0]],
+    // [[columnIndex, sortDirection], ... ]
+    sortList: [
+        [0, 1]
+
+    ],
+    // default sort that is added to the end of the users sort
+    // selection.
+    sortAppend: null,
+
+    // starting sort direction "asc" or "desc"
+    sortInitialOrder: "asc",
+
+    // Replace equivalent character (accented characters) to allow
+    // for alphanumeric sorting
+    sortLocaleCompare: false,
+
+    // third click on the header will reset column to default - unsorted
+    sortReset: false,
+
+    // restart sort to "sortInitialOrder" when clicking on previously
+    // unsorted columns
+    sortRestart: false,
+
+    // sort empty cell to bottom, top, none, zero
+    emptyTo: "bottom",
+
+    // sort strings in numerical column as max, min, top, bottom, zero
+    stringTo: "max",
+
+    // extract text from the table - this is how is
+    // it done by default
+    textExtraction: {
+        0: function (node) {
+            return $(node).text();
+        },
+        1: function (node) {
+            return $(node).text();
+        }
+    },
+
+    // use custom text sorter
+    // function(a,b){ return a.sort(b); } // basic sort
+    textSorter: null,
+
+    // *** WIDGETS ***
+
+    // apply widgets on tablesorter initialization
+    initWidgets: true,
+
+    // include zebra and any other widgets, options:
+    // 'columns', 'filter', 'stickyHeaders' & 'resizable'
+    // 'uitheme' is another widget, but requires loading
+    // a different skin and a jQuery UI theme.
+    widgets: ['uitheme',  'columns'],
+
+    widgetOptions: {
+      // extra class name added to the sticky header row
+      stickyHeaders : '',
+      // number or jquery selector targeting the position:fixed element
+      stickyHeaders_offset : 50,
+      // added to table ID, if it exists
+      stickyHeaders_cloneId : '-sticky',
+      // trigger "resize" event on headers
+      stickyHeaders_addResizeEvent : true,
+      // if false and a caption exist, it won't be included in the sticky header
+      stickyHeaders_includeCaption : true,
+      // The zIndex of the stickyHeaders, allows the user to adjust this to their needs
+      stickyHeaders_zIndex : 2,
+      // jQuery selector or object to attach sticky header to
+      stickyHeaders_attachTo : null,
+      // scroll table top into view after filtering
+      stickyHeaders_filteredToTop: true,
+        // zebra widget: adding zebra striping, using content and
+        // default styles - the ui css removes the background
+        // from default even and odd class names included for this
+        // demo to allow switching themes
+        // [ "even", "odd" ]
+        zebra: [
+            "ui-widget-content even",
+            "ui-state-default odd"],
+
+        // uitheme widget: * Updated! in tablesorter v2.4 **
+        // Instead of the array of icon class names, this option now
+        // contains the name of the theme. Currently jQuery UI ("jui")
+        // and Bootstrap ("bootstrap") themes are supported. To modify
+        // the class names used, extend from the themes variable
+        // look for the "$.extend($.tablesorter.themes.jui" code below
+        uitheme: 'jui',
+
+        // columns widget: change the default column class names
+        // primary is the 1st column sorted, secondary is the 2nd, etc
+        columns: [
+            "primary",
+            "secondary",
+            "tertiary"],
+
+        // columns widget: If true, the class names from the columns
+        // option will also be added to the table tfoot.
+        columns_tfoot: true,
+
+        // columns widget: If true, the class names from the columns
+        // option will also be added to the table thead.
+        columns_thead: true,
+
+        // filter widget: If there are child rows in the table (rows with
+        // class name from "cssChildRow" option) and this option is true
+        // and a match is found anywhere in the child row, then it will make
+        // that row visible; default is false
+        filter_childRows: false,
+
+        // filter widget: If true, a filter will be added to the top of
+        // each table column.
+        filter_columnFilters: true,
+
+        // filter widget: css class applied to the table row containing the
+        // filters & the inputs within that row
+        filter_cssFilter: "tablesorter-filter",
+
+        // filter widget: Customize the filter widget by adding a select
+        // dropdown with content, custom options or custom filter functions
+        // see http://goo.gl/HQQLW for more details
+        filter_functions: null,
+
+        // filter widget: Set this option to true to hide the filter row
+        // initially. The rows is revealed by hovering over the filter
+        // row or giving any filter input/select focus.
+        filter_hideFilters: false,
+
+        // filter widget: Set this option to false to keep the searches
+        // case sensitive
+        filter_ignoreCase: true,
+
+        // filter widget: jQuery selector string of an element used to
+        // reset the filters.
+        filter_reset: null,
+
+        // Delay in milliseconds before the filter widget starts searching;
+        // This option prevents searching for every character while typing
+        // and should make searching large tables faster.
+        filter_searchDelay: 300,
+
+        // Set this option to true if filtering is performed on the server-side.
+        filter_serversideFiltering: false,
+
+        // filter widget: Set this option to true to use the filter to find
+        // text from the start of the column. So typing in "a" will find
+        // "albert" but not "frank", both have a's; default is false
+        filter_startsWith: false,
+
+        // filter widget: If true, ALL filter searches will only use parsed
+        // data. To only use parsed data in specific columns, set this option
+        // to false and add class name "filter-parsed" to the header
+        filter_useParsedData: false,
+
+        // Resizable widget: If this option is set to false, resized column
+        // widths will not be saved. Previous saved values will be restored
+        // on page reload
+        resizable: true,
+
+        // saveSort widget: If this option is set to false, new sorts will
+        // not be saved. Any previous saved sort will be restored on page
+        // reload.
+        saveSort: true,
+
+        // stickyHeaders widget: css class name applied to the sticky header
+        stickyHeaders: "tablesorter-stickyHeader"
+
+    },
+
+    // *** CALLBACKS ***
+    // function called after tablesorter has completed initialization
+    initialized: function (table) {},
+
+    // *** CSS CLASS NAMES ***
+    tableClass: 'tablesorter',
+    cssAsc: "tablesorter-headerSortUp",
+    cssDesc: "tablesorter-headerSortDown",
+    cssHeader: "tablesorter-header",
+    cssHeaderRow: "tablesorter-headerRow",
+    cssIcon: "tablesorter-icon",
+    cssChildRow: "tablesorter-childRow",
+    cssInfoBlock: "tablesorter-infoOnly",
+    cssProcessing: "tablesorter-processing",
+
+    // *** SELECTORS ***
+    // jQuery selectors used to find the header cells.
+    selectorHeaders: '> thead th, > thead td',
+
+    // jQuery selector of content within selectorHeaders
+    // that is clickable to trigger a sort.
+    selectorSort: "th, td",
+
+    // rows with this class name will be removed automatically
+    // before updating the table cache - used by "update",
+    // "addRows" and "appendCache"
+    selectorRemove: "tr.remove-me",
+
+    // *** DEBUGING ***
+    // send messages to console
+    debug: false
+
+});
+}  
+
+
+// Extend the themes to change any of the default class names ** NEW ** 
+$.extend($.tablesorter.themes.jui, {
+    // change default jQuery uitheme icons - find the full list of icons 
+    // here: http://jqueryui.com/themeroller/ (hover over them for their name) 
+    table: 'ui-widget ui-widget-content ui-corner-all', // table classes 
+    header: 'ui-widget-header ui-corner-all ui-state-default', // header classes 
+	footerRow: '',
+	footerCells: '',
+    icons: 'ui-icon',    // icon class added to the <i> in the header 
+    sortNone: 'ui-icon-carat-2-n-s',
+    sortAsc: 'ui-icon-carat-1-n',
+    sortDesc: 'ui-icon-carat-1-s',
+    active: 'ui-state-active', // applied when column is sorted 
+    hover: 'ui-state-hover', // hover class 
+    filterRow: '',
+    even: 'ui-widget-content', // even row zebra striping 
+    odd: 'ui-state-default' // odd row zebra striping 
+});
+
+$.extend($.tablesorter.themes.bootstrap, {
+    // these classes are added to the table. To see other table classes available,
+    // look here: http://twitter.github.com/bootstrap/base-css.html#tables
+    table: 'table table-bordered table-striped',
+    header: 'bootstrap-header', // give the header a gradient background
+	footerRow  : '',
+	footerCells: '',
+    icons: '', // add "icon-white" to make them white; class added to the <i>
+    sortNone: 'bootstrap-icon-unsorted',
+    sortAsc: 'icon-chevron-up',
+    sortDesc: 'icon-chevron-down',
+    active: '', // applied when column is sorted
+    hover: '', // use custom css here - bootstrap class may not override it
+    filterRow: '', // filter row class
+    even: '', // odd row zebra striping
+    odd: '' // even row zebra striping
+});
+var w = null; // initialize variable
+function startBGSync()
+{
+
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+   // First check whether Web Workers are supported
+   if (typeof(Worker)!=="undefined"){
+      // Check whether Web Worker has been created. If not, create a new Web Worker based on the Javascript file simple-timer.js
+      if (w==null){
+         w = new Worker("bgsync.js");
+      }
+      // Update timer div with output from Web Worker
+      w.onmessage = function (event) {      
+		 syncReference()
+		 syncTransactional()
+		 syncUpload()
+		 syncDT=localStorage.getItem('LastSyncedDT')		 
+		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
+		 syncDT=localStorage.getItem('LastSyncReference')
+		 document.getElementById("referenceSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncReferenceDetails')+" "
+		 syncDT=localStorage.getItem('LastSyncTransactional')
+		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
+		 syncDT=localStorage.getItem('LastSyncUpload')
+		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
+
+
+		 };
+   } else {
+      // Web workers are not supported by your browser
+      document.getElementById("lastsync").innerHTML = "Sorry, your browser does not support Web Workers ...";
+   }
+}
+
+startBGSync();
+</script>
+</body>
+
+
+</html>
+

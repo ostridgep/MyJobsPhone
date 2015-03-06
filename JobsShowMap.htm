@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Jobs - Map - Location
+  </title>
+  <script type='text/javascript' src='cordova'></script>
+<script src="js/MyJobs.js"></script>  
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+	<!-- CSS and JS for our code -->
+
+	<script src="js/jquery-gmaps-latlon-picker.js"></script>
+</head>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 95%;
+
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+  .gllpLatlonPicker	{ margin: 20px 0; }
+.gllpMap	{  width: 400px; height:400px; }
+
+  </style>
+
+  
+</head>
+<body>
+<div align="center" data-role="page" id="JobsShowMap"> 
+	<div   data-role="header" data-position="fixed">
+		<table width = "100%">
+			<TR height="40px">
+				<TD width="10%" Valign="middle" align="left"><a style="font-size: 100%" href="javascript:gotoCaller()"  >
+				<i class="fa fa-arrow-left fa-2x pull-left fa-border"></i></a></td>
+				<TD width="80%" valign="Top" align= "center"><h4 style="font-size: 100%"><B>MyJobs - Map</B></H1></TD>
+				<TD width="10%" Valign="Middle" align="right">
+				<a style="font-size: 100%" href='javascript:showRoute()'   >
+				<i class="fa fa-map-marker fa-2x pull-right fa-border"></i></a>			
+				</TD>
+			</TR>
+		</table>			
+	</div> 
+	<div  data-role="content">	
+		<div  align="center"> 
+			<fieldset class="gllpLatlonPicker">
+				<div style='display:none'>	
+				
+					<TABLE>
+						<TR><TD><input hidden id="SearchText" type="text" class="gllpSearchField"></TD><TD><input id="SearchButton" type="button" class="gllpSearchButton" value="Search"></TD></TR>
+					
+					</TABLE>
+				</div>
+				<div class="gllpMap">Google Maps</div>
+				<div style='display:none'>	
+				<TABLE>
+					<TR><TD>Lat:</TD><TD><input id="xLat" type="text" disabled class="gllpLatitude" value="20"/></TD></TR>
+					<TR><TD>Lon:</TD><TD><input id="xLong" type="text" disabled class="gllpLongitude" value="20"/></TD></TR>
+							<input type="hidden" class="gllpZoom" value="3"/>
+				
+				</table>
+				</div>
+				<br/>
+			</fieldset>
+			
+			
+		</div>
+	</div>
+
+</div> 
+<script>
+function gotoCaller(){
+if(CallBack=="Notification"){
+	loc="JobsNotificationDetails.htm?NotifNo="+NotifNo
+}
+if(CallBack=="Order"){
+	loc="JobsOrdersDetails.htm?JobNo="+JobNo+"&Status="+Status+"&NotifNo="+NotifNo
+}
+window.location.href=loc;
+}
+var CallBack=getURLParameters("CallBack");
+var NotifNo=getURLParameters("NotifNo");
+var PostCode=getURLParameters("PostCode");
+var Type=getURLParameters("Type");
+var JobNo=getURLParameters("JobNo");
+var Status=getURLParameters("Status");
+$(document).ready(function() {
+document.getElementById("SearchText").value = PostCode+" , UK";
+$("#SearchButton").click();
+
+});
+function showRoute()
+{
+navigator.geolocation.getCurrentPosition(getDestinationDetails);
+}
+function getDestinationDetails(currentLatLon)
+{
+
+	Start_lat=currentLatLon.coords.latitude;
+	Start_lon=currentLatLon.coords.longitude;
+	End_lat = $('#xLat').val()
+	End_lon = $('#xLong').val()
+
+	window.location.href='JobsShowRoute.htm?&CallBack='+CallBack+'&JobNo='+JobNo+'&Status='+Status+'&NotifNo='+NotifNo+
+								'&PostCode='+PostCode+'&SLat='+Start_lat+'&SLon='+Start_lon+'&ELat='+End_lat+'&ELon='+End_lon
+    
+    
+}
+</Script>
+</body>
+
+
+</html>
+

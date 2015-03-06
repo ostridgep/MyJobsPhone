@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>MyWork - Settings - Last Sync Details
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />  
+<link href="css/font-awesome.min.css" rel="stylesheet">
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 95%
+
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+.ui-btn-width {
+    width: 200px !important;
+}
+  </style>
+
+  
+</head>
+<body>
+
+<div align="center" data-role="page" id="JobsSettingsLastSyncDetails"> 
+  <div data-role="panel" id="options" data-position="right" data-display="overlay"> 
+    <h3>Settings</h3>
+	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsConfiguration.htm'">
+			<i class="fa pull-left fa-cog fa-lg"></i>Configuration        </a>
+ 	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsForceSync.htm'">
+			<i class="fa pull-left fa-exchange fa-lg"></i>Force Sync       </a>
+	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsDisplayLog.htm'">
+			<i class="fa pull-left fa-eye fa-lg">    </i>Display Log      </a>
+ 	<a  data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow" href="javascript:window.location.href='JobsSettingsViewDatabase.htm'">
+			<i class="fa pull-left fa-database fa-lg"></i>View Database    </a>
+ 	<a  data-role="button" data-mini="true" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow" href="#popupDBReset">
+			<i class="fa pull-left fa-plus fa-lg"></i>Reset Database  </a>
+
+  </div>
+	<div  id="header" data-role="header" data-position="fixed">
+		<table width = "100%">
+			<TR >
+				<TD width = "20%"  align="left"><a style="font-size: 100%" href="javascript:window.location.href='JobsHome.htm'"  >
+				<i class="fa fa-home fa-2x fa-border"></i></a></td>
+				
+				<TD width = "60%"  align= "center"><B>Last Sync</H3></TD>
+				
+				<TD width = "20%" ><a href="#options" ><i class="fa fa-bars fa-2x pull-right fa-border"></i></a></TD>
+			</TR>
+		</table>
+	</div> 
+	<div  data-role="content">	
+		<div  align="center"> 
+			<div id="right1" align="center" class="block highlight">
+				<Table id = "LastSync" width="90%">
+					<TR><TD width = "30%"><label style="font-size:small" >Server:</label></td>
+						<TD><input type="text" style="font-weight: bold; font-size:small;" disabled = "true" name="LastSyncDetailsServerName" id="LastSyncDetailsServerName" value="server"  /></td></TR>
+					<TR><TD><label style="font-size:small">Reference:</label></td>
+						<TD><input type="text" style="font-weight: bold;font-size:small;" disabled = "true" name="LastSyncDetailsSyncReferenceFrequency" id="LastSyncDetailsSyncReferenceFrequency" value="1"  /></td></TR>
+					<TR><TD><label style="font-size:small" >Transactional:</label></td>
+						<TD><input type="text" style="font-weight: bold;font-size:small;" disabled = "true" name="LastSyncDetailsSyncTransactionalFrequency" id="LastSyncDetailsSyncTransactionalFrequency" value="2"  /></td></TR>
+					<TR><TD><label style="font-size:small" >Upload:</label></td>
+						<TD><input type="text" style="font-weight: bold;font-size:small;" disabled = "true" name="LastSyncDetailsSyncUploadFrequency" id="LastSyncDetailsSyncUploadFrequency" value="3"  /></td></TR>
+					<TR><TD><label style="font-size:small">Trace State:</label></td>
+						<TD><input type="text" style="font-weight: bold;font-size:small;" disabled = "true" name="LastSyncDetailsTraceState" id="LastSyncDetailsTraceState" /></td></TR>
+			
+					
+				</table>
+			</div>
+		</div>
+		
+		<div style='display:none'>
+
+
+		    <div data-role="popup" id="popupDBReset">
+		      <div data-role="header">
+		       Reset Database
+		      </div>
+		
+		      <div data-role="main" class="ui-content">
+		        <h2 align = "center">Are you sure?</h2>
+		
+		 	  </div>
+		
+		      <div data-role="footer">
+		      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline  ui-icon-delete ui-btn-icon-left" data-rel="back">Cancel</a>
+		      <a href="#" onclick="resetTables()" class="ui-btn ui-corner-all ui-shadow ui-btn-inline  ui-icon-check ui-btn-icon-left" data-rel="back">Proceed</a>
+		     
+		      </div>
+		    </div>
+
+		</div>			
+		
+		
+	</div>
+
+</div> 
+
+<script>
+
+	$('#LastSyncDetailsServerName').val(localStorage.getItem("ServerName"))
+	$('#LastSyncDetailsSyncReferenceFrequency').val(convertLastSyncTimes(localStorage.getItem("LastSyncReference")));
+	$('#LastSyncDetailsSyncTransactionalFrequency').val(convertLastSyncTimes(localStorage.getItem("LastSyncTransactional")));
+	$('#LastSyncDetailsSyncUploadFrequency').val(convertLastSyncTimes(localStorage.getItem("LastSyncUpload")));
+	$('#LastSyncDetailsTraceState').val(localStorage.getItem("Trace"));
+	$( "#LastSync").trigger('change');
+
+function convertLastSyncTimes(d){
+
+return(d.substring(0,4)+"-"+d.substring(4,6)+"-"+d.substring(6,8)+" "+d.substring(8,10)+":"+d.substring(10,12))
+}
+
+</script>
+</body>
+
+
+</html>
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Jobs - Settings - Database Setup
+  </title>
+  <script type='text/javascript' src='cordova'></script>
+<script src="js/MyJobs.js"></script>
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+  <script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />  
+
+<script>
+if(localStorage.getItem("AppType")=="WEB"){
+	var db = openDatabase('MyJobsDB', '1.0', 'MyJobsDB', 2000000);	
+	
+	}else{
+	
+	var db=window.sqlitePlugin.openDatabase({name: "MyJobsDB"});
+	
+	}
+</script>
+  <style type='text/css'>
+ .block {
+    border: 1px solid grey;
+    width: 95%;
+    height:600px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+	border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }
+.ui-btn-width {
+    width: 200px !important;
+}
+  </style>
+
+  
+</head>
+<body>
+<div align="center"  data-role="page" id="JobsSettingsDatabaseSetup"> 
+	<div   data-role="header" data-position="fixed"><h1 style="font-size: 150%">
+		<B>MyWork - Settings - Database Setup</B></h1>
+		<a style="font-size: 120%" onclick="window.location.href='JobsSettings.htm'" data-icon="gear" class="ui-btn-left">Settings</a>
+	</div> 
+	<div  id="header" data-role="header" data-position="fixed">
+			<table width = "100%">
+			<TR height="70px">
+				<TD width = "20%"  Valign="bottom" align="left"><a style="font-size: 100%" onclick="window.location.href='JobsSettings.htm'" class="ui-btn ui-btn-width ui-btn-inline ui-icon-home ui-corner-all ui-shadow ui-btn-icon-left">
+				Settings</a></td>
+				
+				<TD width = "60%" valign="Top" align= "center"><h1 style="font-size: 150%"><B>MyJobs - Settings - Database Setup</B></H1></TD>
+			
+				<TD width = "20%" Valign="bottom" align="right"></TD>
+			</TR>
+		</table>
+	</div> 
+	<div  data-role="content">	
+		<div id="right1" align="center" class="block highlight">
+			
+
+			<div style="width:95%; height:590; overflow:auto;" >
+				
+
+					<table width="95%" data-role="table" id="SystemLog" data-mode="reflow" class="ui-responsive table-stroke">
+
+						<tbody id ="DBCreateTrace">	
+						</tbody>
+					</table>
+			</div>				
+		</div>
+	</div>
+	<div  data-role="footer" data-position="fixed">
+
+		<a style="font-size: 120%" href = "#" class="ui-btn ui-corner-all ui-btn-inline" onclick = "window.location.href='JobsSettings.htm'" data-role="button" >Create Database</a>
+	
+	</div>
+</div> 
+  <script>
+
+function CreateDB(){
+//select Count(*) from Logfile;
+
+var results = document.getElementById('DBCreateTrace'); 
+
+
+	var Olist="";
+	results.innerHTML='';
+
+
+
+			
+		
+			for (var i = 0; i < 20; i++) {
+
+				
+				
+				results.innerHTML+='<tr><td>20140101 0900</td>'+
+				'<td>'+"Creating Table"+i+'</td></TR>';
+			}		
+
+}	
+</script>
+</body>
+
+
+</html>
+
