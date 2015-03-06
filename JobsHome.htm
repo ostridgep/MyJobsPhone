@@ -91,9 +91,10 @@ html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);
 <script>
 var today, todayNumber, mondayNumber, sundayNumber, monday, sunday;
 var EmployeeID=localStorage.getItem("EmployeeID")
+setHomeCounts();
 
-
-
+function setHomeCounts()
+{
 	html5sql.process("SELECT * FROM MyOperations left join myoperationssplit on myoperations.orderno = myoperationssplit.orderno and myoperations.opno = myoperationssplit.opno where myoperationssplit.assignedto ='"+EmployeeID+"'",
 	 function(transaction, results, rowsArray){
 
@@ -152,7 +153,7 @@ var EmployeeID=localStorage.getItem("EmployeeID")
 
 	 }        
 	);
-
+}
 
 
 
@@ -188,7 +189,7 @@ window.location.href="JobsTeam.htm"
 var w = null; // initialize variable
 function startBGSync()
 {
-
+//ff
 		 syncDT=localStorage.getItem('LastSyncedDT')		 
 		 document.getElementById("lastsync").innerHTML = "Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)
 		 syncDT=localStorage.getItem('LastSyncReference')
@@ -217,8 +218,8 @@ function startBGSync()
 		 document.getElementById("transactionalSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncTransactionalDetails')+"  "
 		 syncDT=localStorage.getItem('LastSyncUpload')
 		 document.getElementById("uploadSyncDetails").innerHTML ="Last Synced: "+syncDT.substring(0,4)+"-"+syncDT.substring(4,6)+"-"+syncDT.substring(6,8)+" "+syncDT.substring(8,10)+":"+syncDT.substring(10,12)+"<BR>"+localStorage.getItem('LastSyncUploadDetails')
-
-
+		 setHomeCounts();
+		 $( "#JobsHome").trigger('create');	
 		 };
    } else {
       // Web workers are not supported by your browser
