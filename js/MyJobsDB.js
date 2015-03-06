@@ -15,7 +15,7 @@ var syncReferenceDetsUpdated=false;
 function sendSMS(to, message)
 {
     $.post("https://sms.cginotify.com/api/SMS/Send",{ LicenseKey: "hmJks0HcfKplAP2i4vuVrXxThFbj4JYfHmRRB1Dw", PhoneNumbers: to, Message : message}, function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
+       // alert("Data: " + data + "\nStatus: " + status);
     });
 }
 function convertDate(dt){
