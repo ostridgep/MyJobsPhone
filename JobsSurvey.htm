@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+  <title>Jobs - Survey
+  </title>
+<script src="js/html5sql.js"></script>  
+<script src="js/MyJobsDB.js"></script>
+<script src="js/MyJobsUtils.js"></script>
+
+
+ <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+<script type='text/javascript' src='js/jquery.mobile-1.4.2.min.js'></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+
+<script src="js/jquery.mobile.datepicker.js"></script>
+<script src="js/jquery-ui/datepicker.js"></script>
+
+
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.js"></script>
+<script type='text/javascript' src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.jui.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/css/theme.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="tablesorter/docs/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/magnific-popup.css" />
+
+<link href="css/font-awesome.min.css" rel="stylesheet">
+ <style type='text/css'>
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+  .stripe{
+	background-color: lightgrey; 
+	color: black;
+}
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+   .wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 300px;
+  overflow-y: auto;
+}
+ .mfp-fade.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+  .block {
+    border: 1px solid grey;
+    width: 200px;
+    height:220px;
+    display: inline-block;
+    margin: 1em 1em 1em 1em;
+
+border-radius: 15px;
+    left:50px
+}
+  .highlight {
+
+     box-shadow: 5px 5px 5px #888888;
+
+  }  
+                .box {
+    border: 1px solid #a1a1a1;
+    padding: 10px 10px; 
+    background: #dddddd;
+    
+    border-radius: 5px;
+}  
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+
+
+
+.info, .success, .warning, .error, .validation {
+border: 1px solid;
+margin: 10px 0px;
+padding:15px 10px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+}
+.info {
+color: #00529B;
+background-color: #BDE5F8;
+background-image: url('info.png');
+}
+.success {
+color: #4F8A10;
+background-color: #DFF2BF;
+background-image:url('success.png');
+}
+.warning {
+color: #9F6000;
+background-color: #FEEFB3;
+background-image: url('warning.png');
+}
+.error {
+color: #D8000C;
+background-color: #FFBABA;
+background-image: url('error.png');
+}
+.ui-btn-width {
+    width: 200px !important;
+}
+</style> 
+</head>
+<body>
+
+<div align="center"  data-role="page" id="JobsSurvey"> 
+
+	<div  id="header" data-role="header" data-position="fixed">
+		<table width = "100%">
+			<TR >
+				<TD width = "15%" ><a href="javascript:window.history.back()" ><i class="fa fa-arrow-left fa-2x pull-left fa-border"></i></a></TD>
+				
+				<TD width = "70%"  align= "center"><h3><B>MyJobs - Surveys</b></H3></TD>
+				
+				<TD width = "15%" ></TD>
+			</TR>
+		</table>	
+			
+	</div> 
+	<div  data-role="content"  data-theme="a">
+
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup">
+					<legend>Survey:</legend>
+					<select id="SurveyName" onChange="BuildGroups()"></select>
+
+				</fieldset>
+			</div>				
+
+			<div data-role="collapsibleset" data-content-theme="a" data-iconpos="right" id="set">
+
+			</div>
+	</div>	
+
+</div> 
+<script type='text/javascript'>
+html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);	
+BuildSurveys()
+function BuildSurveys(){
+
+
+	var HTMLToOutput='';
+	var HTMLToOutput1='';
+	var SQLStatement="";
+	HTMLToOutput+= "<option selected value='0'>Select a Survey</option>"
+
+	SQLStatement="SELECT *  "
+	SQLStatement+="from Survey "
+
+
+	//alert(SQLStatement);
+		html5sql.process(SQLStatement,
+		 function(transaction, results, rowsArray){
+				for (var n = 0; n < rowsArray.length; n++) {
+					item = rowsArray[n];
+
+					HTMLToOutput+= "<option value='"+item.surveyid+"'>"+item.name+"</option>"
+				}
+
+				$( "#SurveyName").html(HTMLToOutput);
+
+				
+				$( "#SurveyName").val('0')
+				$( "#SurveyName").trigger('change');
+		 },
+		 function(error, statement){
+			
+		 }        
+		);
+
+}
+function BuildGroups(){
+	
+	var HTMLToOutput='';
+	var HTMLToOutput1='';
+	var SQLStatement="";
+	var SQLStatement1="";
+	var CurrentGroup="";
+	var currentSQ=""
+	SQLStatement="SELECT *  "
+	SQLStatement+="from SurveyGroup "
+	SQLStatement+="where surveyid ='"+$( "#SurveyName").val()+"'"
+	
+	
+		html5sql.process(SQLStatement,
+		 function(transaction, results, rowsArray){
+				for (var n = 0; n < rowsArray.length-1; n++) {
+					
+					item = rowsArray[n];
+
+					HTMLToOutput+= "<div data-role='collapsible' id='set"+item.groupid+"' data-collapsed='true'>"
+					HTMLToOutput+= "<h3>"+item.name+"</h3>"
+					//HTMLToOutput+= "<span align='left' id='span"+item.groupid+"'></span>"
+					HTMLToOutput+=			'<div class="ui-field-contain">'
+					HTMLToOutput+=			'<fieldset align = "left" data-role="controlgroup" id="span'+item.groupid+'"></fieldset></div>'
+
+					
+					HTMLToOutput+= "</div>"
+				}
+				
+				$( "#set").html(HTMLToOutput);
+				$( "#set").trigger('create');
+				
+				SQLStatement1="SELECT *  "
+					SQLStatement1+="from SurveyQuestion "
+					SQLStatement1+="where surveyid = '"+$( "#SurveyName").val()+"' order by groupid, questionid"	
+					
+					HTMLToOutput=""
+					html5sql.process(SQLStatement1,
+							 function(transaction, results, rowsArray){
+									currentGroup=""
+									for (var nq = 0; nq < rowsArray.length; nq++) {
+										itemq = rowsArray[nq];
+										if(nq==0){
+											currentGroup=itemq.groupid
+										}
+										
+
+										
+										if(currentGroup!=itemq.groupid){
+											$( "#span"+currentGroup).html(HTMLToOutput);
+											$( "#span"+currentGroup).trigger('create');
+											currentGroup=itemq.groupid
+											
+											HTMLToOutput = "<P>"+BuildQuestionField(itemq.questionid,itemq.questiontype,itemq.defaultvalue,itemq.title,itemq.dependsonid, itemq.dependsonval)+"</p>"
+										}else{
+											HTMLToOutput += "<P>"+BuildQuestionField(itemq.questionid,itemq.questiontype,itemq.defaultvalue,itemq.title,itemq.dependsonid, itemq.dependsonval)+"</p>"
+										}
+										
+
+									}
+
+							$( "#span"+currentGroup).html(HTMLToOutput);
+							$( "#span"+currentGroup).trigger('create');
+							 },
+							 function(error, statement){
+								alert(error)
+							 }        
+							);	
+				SQLStatement1="SELECT sq.questionid, q.questiontype, sq.subquestionid, sq.subquestiontype, sq.title "
+					SQLStatement1+=" from SurveySubQuestion as sq join SurveyQuestion as q on sq.questionid = q.questionid"
+					SQLStatement1+=" where sq.surveyid = '"+$( "#SurveyName").val()+"' order by sq.groupid, sq.questionid, sq.subquestionid"	
+					
+					HTMLToOutput=""
+					html5sql.process(SQLStatement1,
+							 function(transaction, results, rowsArray){
+									currentSQ=""
+									for (var nsq = 0; nsq < rowsArray.length; nsq++) {
+										itemsq = rowsArray[nsq];
+										if(nsq==0){
+											currentSQ=itemsq.questionid
+										}
+										
+
+										
+										if(currentSQ!=itemsq.questionid){
+											$( "#SUBQ"+currentSQ).html(HTMLToOutput);
+											$( "#SUBQ"+currentSQ).trigger('create');
+											currentSQ=itemsq.questionid
+											
+											HTMLToOutput = "<P>"+BuildSubQuestionField(itemsq.questiontype,itemsq.subquestionid,itemsq.subquestiontype,itemsq.title)+"</p>"
+										
+										}else{
+											HTMLToOutput += "<P>"+BuildSubQuestionField(itemsq.questiontype,itemsq.subquestionid,itemsq.subquestiontype,itemsq.title)+"</p>"
+										}
+										
+
+									}
+									$( "#SUBQ"+currentSQ).html(HTMLToOutput);
+									$( "#SUBQ"+currentSQ).trigger('create');
+									
+
+							 },
+							 function(error, statement){
+								alert("Error: " + error.message + " when SetConfigParam processing " + statement)
+							 }        
+							);	
+		 },
+		 function(error, statement){
+			
+		 }        
+		);
+
+}
+function BuildQuestionField(id,type, defaultvalue, title,  dependsonid, dependsonval){
+	var hidden=''
+	if(dependsonid>0){
+		hidden='style="display:none;"'
+	}
+	if(type=='S'){
+		otype="text"
+		retVal='<div '+hidden+' class=" ui-field-contain"  id = "Div'+id+'" ><label  for="'+id+'">'+title+':</label><input type ="'+otype+'" name="'+id+'" id="'+id+'" ></div>'
+
+	}else if (type=="Y"){
+		otype="text"
+		retVal='<div  '+hidden+' class="ui-field-contain" id = "Div'+id+'"><label  for="'+id+'">'+title+':</label>'
+		retVal+='<select name="'+id+'" id="'+id+'" data-role="slider" onChange="questionChanged(\''+id+'\')">'
+		if(defaultvalue=='N'){
+			retVal+='<option selected value="N">No</option>'
+			}else{
+			retVal+='<option value="N">No</option>'
+			}
+		if(defaultvalue=='Y'){
+			
+			retVal+='<option selected value="Y">Yes</option>'
+			}else{
+			retVal+='<option value="Y">Yes</option>'
+			}
+		retVal+='</select></div>'
+	}else if (type=="M"){
+		otype="text"
+			retVal='<div  '+hidden+' class="ui-field-contain"  id = "Div'+id+'" ><label  for="'+id+'">'+title+':</label>'
+		retVal+='<DIV name=SUBQ"'+id+'" id="SUBQ'+id+'">'
+		retVal+='<P>Some Multi Choice here</DIV></div>'
+
+	}else if (type=="!"){
+		otype="text"
+			retVal='<div '+hidden+' class="ui-field-contain"  id = "Div'+id+'" ><label  for="'+id+'">'+title+':</label>'
+		retVal+='<DIV name=SUBQ"'+id+'" id="SUBQ'+id+'">'
+		retVal+='</DIV></div>'
+
+	}else if (type==";"){
+		otype="text"
+			retVal='<div '+hidden+' class=" ui-field-contain"  id = "Div'+id+'" ><label  for="'+id+'">'+title+':</label>'
+		retVal+='<DIV name=SUBQ"'+id+'" id="SUBQ'+id+'">'
+		retVal+='</DIV></div>'
+
+	}else if (type=="Q"){
+		otype="text"
+			retVal='<div '+hidden+' class="ui-field-contain"  id = "Div'+id+'"><label  for="'+id+'">'+title+':</label>'
+			retVal+='<DIV name=SUBQ"'+id+'" id="SUBQ'+id+'">'
+			retVal+='</DIV></div>'
+
+		}else if (type=="MS"){
+		otype="text"
+			retVal='<div '+hidden+' class="ui-field-contain"  id = "Div'+id+'"><label  for="'+id+'">'+title+':</label><input type ="checkbox" name="'+id+'" id="'+id+'" ></div>'
+
+	}else{
+		otype="text"
+			retVal='<div '+hidden+' class="ui-field-contain"  id = "Div'+id+'"><label  for="'+id+'">'+title+':</label><input type ="'+otype+'" name="'+id+'" id="'+id+'" ></div>'
+		}
+		
+	
+	
+	return retVal;
+}
+function BuildSubQuestionField(qtype,id,type,title){
+	
+	if (qtype=="M"){
+		otype="text"
+		retVal='<div class="ui-field-contain"><label  for="'+id+'">&nbsp;&nbsp;'+title+':</label>'
+		retVal+='<select name="'+id+'" id="'+id+'" data-role="slider" >'
+		retVal+='<option selected value="N">No</option>'
+		retVal+='<option value="Y">Yes</option>							</select></div>'
+	}else if (qtype==";"){
+		otype="text"
+		retVal='<div class="ui-field-contain"><label  for="'+id+'">&nbsp;&nbsp;'+title+':</label>'
+		retVal+='<select name="'+id+'" id="'+id+'" data-role="slider" >'
+		retVal+='<option selected value="N">No</option>'
+		retVal+='<option value="Y">Yes</option>							</select></div>'
+	}else if(type=='T'){
+		otype="text"
+		retVal='<div class="ui-field-contain"><label  for="'+id+'">&nbsp;&nbsp;'+title+':</label><input type ="'+otype+'" name="'+id+'" id="'+id+'" ></div>'
+	}else if (type=="Y"){
+		otype="text"
+		retVal='<div class="ui-field-contain"><label  for="'+id+'">&nbsp;&nbsp;'+title+':</label>'
+		retVal+='<select name="'+id+'" id="'+id+'" data-role="slider" >'
+		retVal+='<option value="No">No</option>'
+		retVal+='<option selected value="Yes">Yes</option>							</select></div>'
+	}else if (type=="M"){
+		otype="text"
+		retVal='<label  for="'+id+'">'+title+':</label>'
+		retVal+='<DIV name=SUBQ"'+id+'" id="SUBQ'+id+'">'
+		retVal+='<P>Some Multi Choice here</DIV>'
+
+	}else if (type=="!"){
+		//otype="text"
+		//retVal='<div '+hidden+' class=" ui-field-contain"  id = "Div'+id+'" ><label  for="'+id+'">'+title+':</label>'
+		//retVal+='<DIV name=SUBQ"'+id+'" id="SUBQ'+id+'">'
+		//retVal+='</DIV></div>'
+		//otype="text"
+		//retVal='<label  for="'+id+'">'+title+':</label>'
+		//retVal+='<DIV name=SUBQ"'+id+'" id="SUBQ'+id+'">'
+		//retVal+='<P>Some List here</DIV>'
+		otype="text"
+			retVal='<div class="ui-field-contain"><label  for="'+id+'">&nbsp;&nbsp;'+title+':</label>'
+			retVal+='<select name="'+id+'" id="'+id+'" data-role="slider" >'
+			retVal+='<option value="No">No</option>'
+			retVal+='<option selected value="Yes">Yes</option>							</select></div>'
+	}else if (type==";"){
+		//otype="text"
+		//retVal='<label  for="'+id+'">'+title+':</label>'
+		//retVal+='<DIV name=SUBQ"'+id+'" id="SUBQ'+id+'">'
+		//retVal+='<P>Some radio here</DIV>'
+		otype="text"
+			retVal='<div class="ui-field-contain"><label  for="'+id+'">&nbsp;&nbsp;'+title+':</label>'
+			retVal+='<select name="'+id+'" id="'+id+'" data-role="slider" >'
+			retVal+='<option value="No">No</option>'
+			retVal+='<option selected value="Yes">Yes</option>							</select></div>'
+	}else if (qtype=="M"){
+		otype="text"
+		retVal='<label  for="'+id+'">&nbsp;&nbsp;'+title+'...</label><input type ="checkbox" name="'+id+'" id="'+id+'" >'
+
+	}else{
+		otype="text"
+			retVal='<label  for="'+id+'">&nbsp;&nbsp;'+title+':</label><input type ="'+otype+'" name="'+id+'" id="'+id+'" value="'+type+'">'
+		}
+		
+	
+	
+	return retVal;
+}
+function questionChanged(id)
+{	
+	
+	//alert($('#'+id).val())
+	var xstyle='none'
+	
+	var SQLStatement="Select * from surveyquestionchildren where questionid = "+id
+	//alert(SQLStatement)
+	html5sql.process(SQLStatement,
+			 function(transaction, results, rowsArray){
+					currentSQ=""
+					if( rowsArray.length>0) {
+
+						
+						items = rowsArray[0];
+						var qChildren = items.childquestions.split(":");
+						for (var n = 0; n < qChildren.length; n++) {
+							if(items.questionvalue==$("#"+id).val()){
+								$('#Div'+qChildren[n]).show();
+								}else{
+								$('#Div'+qChildren[n]).hide();
+								}
+							}
+						
+					}
+						
+						
+			 },
+			 function(error, statement){
+				alert("Error: " + error.message + " when SetConfigParam processing " + statement)
+			 }        
+			);	
+}
+</script>
+</body>
+
+
+</html>
+

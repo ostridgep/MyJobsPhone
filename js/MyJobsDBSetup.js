@@ -1908,8 +1908,7 @@ var cntx=0;
 						sqlstatement1=""
 						for(var ccnt=0; ccnt < MyReference.catprofile[cntx].codegroup[opscnt].codes.length ; ccnt++)
 							{	
-							x=MyReference.catprofile[cntx].codegroup[opscnt].codes[ccnt].code_text.replace(/'/g, "
-							");;
+							x=MyReference.catprofile[cntx].codegroup[opscnt].codes[ccnt].code_text.replace(/'/g, "");;
 							x=x.replace("\/", "");;
 							x=x.replace(/&/g, "");;
 							sqlstatement+='INSERT INTO RefCodes (scenario, profile , code_cat_group , code , code_text ) VALUES  ('+

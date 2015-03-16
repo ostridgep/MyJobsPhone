@@ -1,0 +1,782 @@
+{"Surveys":[
+{
+"SurveyID":"661178",
+"SurveyName":"New Water Connection",
+"Group":
+[
+{
+"GroupID":"004",
+"GroupName":"Customer Details",
+"GroupDescription":"Customer Details",
+"Question":
+[
+{
+"QuestionID":"023",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"CustName",
+"QuestionText":"Name",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"024",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"CustCompany",
+"QuestionText":"Company Name (Where Applicable)",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"025",
+"QuestionType":"Q",
+"QuestionDefaultValue":"",
+"QuestionName":"CustAddress",
+"QuestionText":"Address",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+{
+"SubQuestionID":"027",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ001",
+"SubQuestionText":"Address Name / Number",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"028",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ002",
+"SubQuestionText":"Address Line 1",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"029",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ003",
+"SubQuestionText":"Address Line 2",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"030",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ004",
+"SubQuestionText":"Town",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"031",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ005",
+"SubQuestionText":"PostCode",
+"SubQuestionDependsOn":""
+}
+]
+},
+{
+"QuestionID":"032",
+"QuestionType":"N",
+"QuestionDefaultValue":"",
+"QuestionName":"CustTelNo",
+"QuestionText":"Telephone Number",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"033",
+"QuestionType":"N",
+"QuestionDefaultValue":"",
+"QuestionName":"CustMobileNo",
+"QuestionText":"Mobile Number",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+}
+]
+},
+{
+"GroupID":"005",
+"GroupName":"Property Owners Details",
+"GroupDescription":"Property Owners Details",
+"Question":
+[
+{
+"QuestionID":"034",
+"QuestionType":"Y",
+"QuestionDefaultValue":"Y",
+"QuestionName":"PropOwner",
+"QuestionText":"Is The Applicant the property Owner?",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"035",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"PropName",
+"QuestionText":"Name",
+"QuestionDependsOn":"34:N",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"036",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"PropCompany",
+"QuestionText":"Company(where Applicable)",
+"QuestionDependsOn":"34:N",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"037",
+"QuestionType":"Q",
+"QuestionDefaultValue":"",
+"QuestionName":"PropAddress",
+"QuestionText":"Address",
+"QuestionDependsOn":"34:N",
+"SubQuestion":
+[
+{
+"SubQuestionID":"039",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ001",
+"SubQuestionText":"Address Name / Number",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"040",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ002",
+"SubQuestionText":"Address Line 1",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"041",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ003",
+"SubQuestionText":"Address Line 2",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"042",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ004",
+"SubQuestionText":"Town",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"043",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ005",
+"SubQuestionText":"PostCode",
+"SubQuestionDependsOn":""
+}
+]
+},
+{
+"QuestionID":"044",
+"QuestionType":"N",
+"QuestionDefaultValue":"",
+"QuestionName":"PropTelNo",
+"QuestionText":"Telephone Number",
+"QuestionDependsOn":"34:N",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"045",
+"QuestionType":"N",
+"QuestionDefaultValue":"",
+"QuestionName":"PropMobilePhone",
+"QuestionText":"Mobile Number",
+"QuestionDependsOn":"34:N",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"046",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"PropEmail",
+"QuestionText":"Email Address",
+"QuestionDependsOn":"34:N",
+"SubQuestion":
+[
+]
+}
+]
+},
+{
+"GroupID":"006",
+"GroupName":"Site Details",
+"GroupDescription":"Site Details",
+"Question":
+[
+{
+"QuestionID":"047",
+"QuestionType":"Q",
+"QuestionDefaultValue":"",
+"QuestionName":"SiteAddress",
+"QuestionText":"Address",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+{
+"SubQuestionID":"049",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ001",
+"SubQuestionText":"Address Name / Number",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"050",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ002",
+"SubQuestionText":"Address Line 1",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"051",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ003",
+"SubQuestionText":"Address Line 2",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"052",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ004",
+"SubQuestionText":"Town",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"053",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ005",
+"SubQuestionText":"PostCode",
+"SubQuestionDependsOn":""
+}
+]
+},
+{
+"QuestionID":"054",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"SitePlanningNo",
+"QuestionText":"Planning Application Number",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"055",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"SiteContactName",
+"QuestionText":"Site Contact Name",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"056",
+"QuestionType":"N",
+"QuestionDefaultValue":"",
+"QuestionName":"SiteContactTelNo",
+"QuestionText":"Site Contact Telephone Number",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"057",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"SiteContactEmail",
+"QuestionText":"Email",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+}
+]
+},
+{
+"GroupID":"007",
+"GroupName":"Previous use of the site and contamination",
+"GroupDescription":"Previous use of the site and contamination",
+"Question":
+[
+{
+"QuestionID":"058",
+"QuestionType":"M",
+"QuestionDefaultValue":"",
+"QuestionName":"PrevUseOfSite",
+"QuestionText":"Please tick the current/previous usage of your site",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+{
+"SubQuestionID":"059",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ001",
+"SubQuestionText":"Existing property",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"060",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ002",
+"SubQuestionText":"Greenfield site ",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"061",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ003",
+"SubQuestionText":"Brownfield site ",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"062",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ004",
+"SubQuestionText":"Petrol station ",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"063",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ005",
+"SubQuestionText":"Industrial use ",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"064",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ006",
+"SubQuestionText":"Garages ",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"065",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ007",
+"SubQuestionText":"Workshop",
+"SubQuestionDependsOn":""
+}
+]
+},
+{
+"QuestionID":"066",
+"QuestionType":"T",
+"QuestionDefaultValue":"",
+"QuestionName":"PrevUseOfSiteOther",
+"QuestionText":"Other - Please State",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"067",
+"QuestionType":"Y",
+"QuestionDefaultValue":"N",
+"QuestionName":"SiteConservation",
+"QuestionText":"Are you aware of any conservation or archaeological issues relating to this site?",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"068",
+"QuestionType":"T",
+"QuestionDefaultValue":"",
+"QuestionName":"SiteConservationDeta",
+"QuestionText":"If yes, please provide details",
+"QuestionDependsOn":"67:Y",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"069",
+"QuestionType":"Y",
+"QuestionDefaultValue":"N",
+"QuestionName":"SiteParking",
+"QuestionText":"Are there any parking bays of any kind in the vicinity of the site?",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"070",
+"QuestionType":"M",
+"QuestionDefaultValue":"",
+"QuestionName":"SiteParkingDetails",
+"QuestionText":"If yes which side of the road? (Please tick as applicable)",
+"QuestionDependsOn":"69:Y",
+"SubQuestion":
+[
+{
+"SubQuestionID":"071",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ001",
+"SubQuestionText":"Same side of the road ",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"072",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ002",
+"SubQuestionText":"On the other side of the road ",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"073",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ003",
+"SubQuestionText":"Both sides of the road",
+"SubQuestionDependsOn":""
+}
+]
+}
+]
+},
+{
+"GroupID":"008",
+"GroupName":"What supplies are there already on the site?",
+"GroupDescription":"What supplies are there already on the site?",
+"Question":
+[
+{
+"QuestionID":"074",
+"QuestionType":"Y",
+"QuestionDefaultValue":"N",
+"QuestionName":"Supply",
+"QuestionText":"Is there an existing supply at the site?",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"075",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"SupplyCustAccNo",
+"QuestionText":"Please provide your customer account number",
+"QuestionDependsOn":"74:Y",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"076",
+"QuestionType":"Y",
+"QuestionDefaultValue":"N",
+"QuestionName":"SupplyMetered",
+"QuestionText":"Is this supply metered?",
+"QuestionDependsOn":"74:Y",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"077",
+"QuestionType":"N",
+"QuestionDefaultValue":"",
+"QuestionName":"SupplyMeterNo",
+"QuestionText":"Meter Number",
+"QuestionDependsOn":"76:Y",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"078",
+"QuestionType":"Y",
+"QuestionDefaultValue":"N",
+"QuestionName":"SupplyKeep",
+"QuestionText":"Do you wish to retain this supply?",
+"QuestionDependsOn":"74:Y",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"079",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"SupplyPlot",
+"QuestionText":"Which plot would you like it to feed?",
+"QuestionDependsOn":"78:Y",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"080",
+"QuestionType":"Y",
+"QuestionDefaultValue":"",
+"QuestionName":"SupplyDisconnect",
+"QuestionText":"Do you require this supply to be disconnected?",
+"QuestionDependsOn":"78:N",
+"SubQuestion":
+[
+]
+}
+]
+},
+{
+"GroupID":"009",
+"GroupName":"Tell us about what new water connection(s).",
+"GroupDescription":"Tell us about what new water connection(s).",
+"Question":
+[
+{
+"QuestionID":"081",
+"QuestionType":"Y",
+"QuestionDefaultValue":"N",
+"QuestionName":"BuildingWater",
+"QuestionText":"Are you using an existing supply for building water?",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"082",
+"QuestionType":"Y",
+"QuestionDefaultValue":"",
+"QuestionName":"BuildingWaterYes",
+"QuestionText":"Is it metered?",
+"QuestionDependsOn":"81:Y",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"083",
+"QuestionType":"Y",
+"QuestionDefaultValue":"",
+"QuestionName":"BuildingSupplyConstr",
+"QuestionText":"Do you require a supply for building water/site welfare/ construction?",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+},
+{
+"QuestionID":"084",
+"QuestionType":"S",
+"QuestionDefaultValue":"",
+"QuestionName":"BuildingConstructVal",
+"QuestionText":"What is the total contract value of the construction works?",
+"QuestionDependsOn":"83:Y",
+"SubQuestion":
+[
+]
+}
+]
+},
+{
+"GroupID":"010",
+"GroupName":"What are the new supplies used for?",
+"GroupDescription":"What are the new supplies used for?",
+"Question":
+[
+{
+"QuestionID":"085",
+"QuestionType":";",
+"QuestionDefaultValue":"",
+"QuestionName":"SupplyUse",
+"QuestionText":"",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+{
+"SubQuestionID":"086",
+"SubQuestionType":";",
+"SubQuestionName":"SQ001",
+"SubQuestionText":"Flat",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"087",
+"SubQuestionType":";",
+"SubQuestionName":"SQ001",
+"SubQuestionText":"Number of Connections",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"090",
+"SubQuestionType":";",
+"SubQuestionName":"SQ002",
+"SubQuestionText":"Size",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"088",
+"SubQuestionType":";",
+"SubQuestionName":"SQ002",
+"SubQuestionText":"House",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"089",
+"SubQuestionType":";",
+"SubQuestionName":"SQ003",
+"SubQuestionText":"Site Compound",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"105",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ003",
+"SubQuestionText":"Notification required",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"091",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ004",
+"SubQuestionText":"Landlord supply ( i.e cleaners cupboard)",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"092",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ018",
+"SubQuestionText":"Bin store",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"093",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ017",
+"SubQuestionText":"Bike store",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"094",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ016",
+"SubQuestionText":"Barn conversion",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"095",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ015",
+"SubQuestionText":"Conversion of dwelling into flats",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"096",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ014",
+"SubQuestionText":"Conversion of dwelling into more than one dwelling",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"097",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ013",
+"SubQuestionText":"Upgrade of supply for domestic purposes",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"098",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ012",
+"SubQuestionText":"Upgrade of supply for non-domestic purposes",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"099",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ011",
+"SubQuestionText":"Separation of supply for domestic purposes",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"100",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ010",
+"SubQuestionText":"Separation of supply for non-domestic purposes",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"101",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ009",
+"SubQuestionText":"Industrial unit",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"102",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ008",
+"SubQuestionText":"Offices",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"103",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ007",
+"SubQuestionText":"Mobile home/Portakabin",
+"SubQuestionDependsOn":""
+},
+{
+"SubQuestionID":"104",
+"SubQuestionType":"T",
+"SubQuestionName":"SQ006",
+"SubQuestionText":"Retail unit",
+"SubQuestionDependsOn":""
+}
+]
+}
+]
+},
+{
+"GroupID":"012",
+"GroupName":"DummyLastGroup",
+"GroupDescription":"DummyLastGroup",
+"Question":
+[
+{
+"QuestionID":"113",
+"QuestionType":"T",
+"QuestionDefaultValue":"",
+"QuestionName":"DummyLastQ",
+"QuestionText":"",
+"QuestionDependsOn":"",
+"SubQuestion":
+[
+]
+}
+]
+}
+]}]}

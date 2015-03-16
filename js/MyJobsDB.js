@@ -821,99 +821,7 @@ switch(type) {
 	return TypeName;
 
 }
-function updateSurveys(id, name, type, description,datestamp)
-{
 
-
-	html5sql.process("UPDATE Surveys SET name = '"+name+"', type = '"+type+"', description = '"+description+"', datecreated = '"+datestamp+"' where id = '"+id+"';", 
-	 function(){
-		 //alert("Success dropping Tables");
-	 },
-	 function(error, statement){
-		opMessage("Error: " + error.message + " when Last Sync Update processing " + statement);
-	 }        
-	);
-}
-function updateSurveysDetail(detailid, group, sortseq,name,type,description,defaultval, next, attribute1,attribute2,attribute3,attribute4)
-{
-	html5sql.process("UPDATE SurveysDetail SET groupcode =  '"+group+"', sortseq =  '"+sortseq+"',  name =  '"+name+"',  type =  '"+type+"',  description = '"+description+"',  defaultval =  '"+defaultval+"',  next =  '"+next+"',  attribute1 =  '"+attribute1+"', attribute2 =  '"+attribute2+"', attribute3 =  '"+attribute3+"', attribute4  '"+attribute4+"' where id = '"+detailid+"' ",
-	 function(){
-		 //alert("Success dropping Tables");
-	 },
-	 function(error, statement){
-		opMessage("Error: " + error.message + " when updateSurveysDetail processing " + statement);
-	 }        
-	);	
-}
-
-function deleteAllSurveys(id)
-{
-
-	html5sql.process(	"DELETE FROM Surveys where id = '"+id+"';"+
-						"DELETE FROM SurveysDetail where surveyid = '"+id+"' "+
-						"DELETE FROM SurveysDetailAnswers where surveyid = '"+id+"';",
-		 function(){
-			 //alert("Success dropping Tables");
-		 },
-		 function(error, statement){
-			opMessage("Error: " + error.message + " when deleteAllSurveys processing " + statement);
-		 }        
-	);	
-}
-function deleteAllSurveysDetail(id)
-{
-
-
-	html5sql.process(	"DELETE FROM SurveysDetail where id = '"+id+"' "+
-						"DELETE FROM SurveysDetailAnswers where detailid = '"+id+"';",
-		 function(){
-			 //alert("Success dropping Tables");
-		 },
-		 function(error, statement){
-			opMessage("Error: " + error.message + " when deleteAllSurveysDetail processing " + statement);
-		 }        
-	);	
-}
-function createSurveys(name,type,description,datecreated)
-{
-
-
-	html5sql.process("INSERT INTO  Surveys (name , type, description , datecreated) VALUES ("+
-					 "'"+name+"','"+type+"','"+description+"','"+datecreated+"');'"	,
-	 function(){
-		 //alert("Success dropping Tables");
-	 },
-	 function(error, statement){
-		opMessage("Error: " + error.message + " when createSurveysDetailAnswers processing " + statement);
-	 }        
-	);
-}
-function createSurveysDetail(surveyid, group, sortseq,name,type,description,defaultval, next, attribute1,attribute2,attribute3,attribute4)
-{
-						
-	html5sql.process("INSERT INTO  SurveysDetail (surveyid, groupcode, sortseq, name , type, description , defaultval, next, attribute1,attribute2,attribute3,attribute3) VALUES ("+
-					 "'"+surveyid+"','"+group+"','"+sortseq+"','"+name+"','"+type+"','"+ description+ "','"+defaultval+"','"+next+"','"+attribute1+"','"+attribute2+"','"+attribute3+"','"+ attribute3+"');'"	,
-	 function(){
-		 //alert("Success dropping Tables");
-	 },
-	 function(error, statement){
-		opMessage("Error: " + error.message + " when createSurveysDetail processing " + statement);
-	 }        
-	);
-}
-function createSurveysDetailAnswers(surveyid,detailid,answertype,answercode,description, defaultval)
-{
-
-	html5sql.process("INSERT INTO  SurveysDetailAnswers (surveyid,detailid,answertype,answercode,description, defaultval) VALUES ("+
-					 "'"+surveyid+"','"+detailid+"','"+answertype+"','"+answercode+"','"+description+"','"+ defaultval+"');'"	,
-	 function(){
-		 //alert("Success dropping Tables");
-	 },
-	 function(error, statement){
-		opMessage("Error: " + error.message + " when createSurveysDetailAnswers processing " + statement);
-	 }        
-	);
-}
 //*************************************************************************************************************************
 //
 //  Update Routines
@@ -1160,9 +1068,11 @@ function createTables(type) {
 					 'CREATE TABLE IF NOT EXISTS RefNotifprofile  		( id integer primary key autoincrement, scenario TEXT, profile TEXT, notif_type TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS RefCodeGroups  		( id integer primary key autoincrement, scenario TEXT, profile TEXT, catalog_type TEXT, code_cat_group TEXT, codegroup TEXT, codegroup_text TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS RefCodes  				( id integer primary key autoincrement, scenario TEXT, profile TEXT, code_cat_group TEXT, code TEXT, code_text TEXT);'+
-					 'CREATE TABLE IF NOT EXISTS Surveys     			( id integer primary key autoincrement, name TEXT, type TEXT, datecreated TEXT, description TEXT);'+
-					 'CREATE TABLE IF NOT EXISTS SurveysDetail     		( id integer primary key autoincrement, surveyid TEXT, groupcode TEXT, sortseq TEXT, type TEXT, name TEXT, description TEXT, defaultval TEXT, next TEXT, attribute1 TEXT, attribute2 TEXT, attribute3 TEXT, attribute4 TEXT);'+
-					 'CREATE TABLE IF NOT EXISTS SurveysDetailAnswers  	( id integer primary key autoincrement, surveyid TEXT, detailid TEXT, answertype TEXT, answercode TEXT, description TEXT, defaultval TEXT);'+
+					 'CREATE TABLE IF NOT EXISTS Survey     			( id integer primary key autoincrement, surveyid TEXT, name TEXT);'+
+					 'CREATE TABLE IF NOT EXISTS SurveyGroup     		( id integer primary key autoincrement, surveyid TEXT, groupid TEXT, name TEXT, title TEXT);'+
+					 'CREATE TABLE IF NOT EXISTS SurveyQuestion    		( id integer primary key autoincrement, surveyid TEXT, groupid TEXT, questionid TEXT, questiontype TEXT, defaultvalue TEXT, name TEXT, title TEXT, dependsonid TEXT, dependsonval TEXT);'+
+					 'CREATE TABLE IF NOT EXISTS SurveySubQuestion  	( id integer primary key autoincrement, surveyid TEXT, groupid TEXT, questionid TEXT, subquestionid TEXT, subquestiontype TEXT, name TEXT, title TEXT, dependsonid TEXT, dependsonval TEXT);'+
+					 'CREATE TABLE IF NOT EXISTS SurveyQuestionChildren ( id integer primary key autoincrement, surveyid TEXT, groupid TEXT, questionid TEXT, questionvalue TEXT, childquestions TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS FuncLocs			  	( id integer primary key autoincrement, flid TEXT, description TEXT, swerk TEXT, level TEXT, parentid TEXT, children TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS TSActivities		    ( id integer primary key autoincrement, code TEXT, skill TEXT,  subskill TEXT, description TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS TSNPJobs			    ( id integer primary key autoincrement, jobno TEXT, subtype TEXT,  description TEXT);'+
@@ -1177,13 +1087,14 @@ function createTables(type) {
 					 'CREATE VIEW viewprioritycodes as select myrefordertypes.scenario, myrefordertypes.type as ordertype, myrefordertypes.priorityprofile, myrefprioritytypes.priority as priority, myrefprioritytypes.description as prioritydesc from myrefordertypes left join myrefprioritytypes on myrefordertypes.priorityprofile = myrefprioritytypes.type where myrefordertypes.scenario = myrefprioritytypes.scenario;';
 		html5sql.process(sqlstatement,
 						 function(){
+							
 							emptyTables(type);
-		
+							
 							
 						 },
 						 function(error, statement){
 							 opMessage("Error: " + error.message + " when create processing " + statement);
-							 //alert("Error: " + error.message + " when create processing " + statement);
+							
 							 
 						 }        
 				);
@@ -1234,9 +1145,11 @@ function dropTables() {
 						'DROP TABLE IF EXISTS RefNotifprofile;'+
 						'DROP TABLE IF EXISTS RefCodeGroups;'+
 						'DROP TABLE IF EXISTS RefCodes;'+
-						'DROP TABLE IF EXISTS Surveys;'+	
-						'DROP TABLE IF EXISTS SurveysDetail;'+
-						'DROP TABLE IF EXISTS SurveysDetailAnswers;'+
+						'DROP TABLE IF EXISTS Survey;'+	
+						'DROP TABLE IF EXISTS SurveyGroup;'+
+						'DROP TABLE IF EXISTS SurveyQuestion;'+
+						'DROP TABLE IF EXISTS SurveySubQuestion;'+
+						'DROP TABLE IF EXISTS SurveyQuestionChildren;'+
 						'DROP TABLE IF EXISTS FuncLocs;'+
 						'DROP TABLE IF EXISTS TSActivities;'+	
 						'DROP TABLE IF EXISTS TSNPJobs;'+
@@ -1262,6 +1175,7 @@ function dropTables() {
 				);
 }
 function emptyTables(type) { 
+	
 
 		sqlstatement=	'DELETE FROM  MyOrders;'+
 						'DELETE FROM  MyOperations;'+
@@ -1299,9 +1213,11 @@ function emptyTables(type) {
 						'DELETE FROM  RefNotifprofile;'+
 						'DELETE FROM  RefCodeGroups;'+
 						'DELETE FROM  RefCodes;'+  
-						'DELETE FROM  Surveys;'+	
-						'DELETE FROM  SurveysDetail;'+
-						'DELETE FROM  SurveysDetailAnswers;'+
+						'DELETE FROM  Survey;'+	
+						'DELETE FROM  SurveyGroup;'+
+						'DELETE FROM  SurveyQuestion;'+
+						'DELETE FROM  SurveySubQuestion;'+
+						'DELETE FROM  SurveyQuestionChildren;'+
 						'DELETE FROM  FuncLocs;'+
 						'DELETE FROM  TSActivities;'+	
 						'DELETE FROM  TSNPJobs;'+
@@ -1318,7 +1234,7 @@ function emptyTables(type) {
 						html5sql.process(sqlstatement,
 						 function(){
 							demoDataLoaded=type;
-	
+							//alert("0")
 							SetConfigParam("TRACE", "ON");
 							SetConfigParam("SYNC_REFERENCE_FREQUENCY", "8400000");
 							SetConfigParam("SYNC_TRANSACTIONAL_FREQUENCY", "600000");
@@ -1327,9 +1243,9 @@ function emptyTables(type) {
 							SetConfigParam("LASTSYNC_TRANSACTIONAL", "20130316224900");
 							SetConfigParam("LASTSYNC_UPLOAD", "20130316214900");
 							SetConfigParam("SERVERNAME", "http://elderberry.uk.logica.com:8083/sap/bc/bsp/sap/zorderlist/");
-
+							requestDEMOData('TestData\\MySurveys.json');
 							requestDEMOData('TestData\\MyOrdersData.json');
-							
+						
 							requestDEMOData('TestData\\MyNotificationsData.json');
 						
 							requestDEMOData('TestData\\MyUsersData.json');
@@ -1347,15 +1263,19 @@ function emptyTables(type) {
 						
 							requestDEMOData('TestData\\GASSurveyHdr.json');
 							requestDEMOData('TestData\\MyMessagesData.json');
-							
+							//
 							requestDEMOData('TestData\\TimeSheetNPJobs.json');
 							
 							requestDEMOData('TestData\\TimeSheetActivities.json');
+						
 							
+							
+						
 							CreateUser("MOBILED","AV54VSP", "MOBILED", "logica", "00059555");
 
 						 },
 						 function(error, statement){
+							 
 							 opMessage("Error: " + error.message + " when delete processing " + statement);
 						 }        
 				);
@@ -1397,9 +1317,11 @@ function resetTables() {
 					'DELETE FROM  RefNotifprofile;'+
 					'DELETE FROM  RefCodeGroups;'+
 					'DELETE FROM  RefCodes;'+  
-					'DELETE FROM  Surveys;'+	
-					'DELETE FROM  SurveysDetail;'+
-					'DELETE FROM  SurveysDetailAnswers;'+
+					'DELETE FROM  Survey;'+	
+					'DELETE FROM  SurveyGroup;'+
+					'DELETE FROM  SurveyQuestion;'+
+					'DELETE FROM  SurveySubQuestion;'+
+					'DELETE FROM  SurveyQuestionChildren;'+
 					'DELETE FROM  FuncLocs;'+
 					'DELETE FROM  TSActivities;'+	
 					'DELETE FROM  TSNPJobs;'+
@@ -1419,6 +1341,7 @@ function resetTables() {
 						requestDEMOData('TestData\\GASSurveyHdr.json');
 						requestDEMOData('TestData\\TimeSheetNPJobs.json');
 						requestDEMOData('TestData\\TimeSheetActivities.json');
+						requestDEMOData('TestData\\MySurveys.json');
 						SetConfigParam('LASTSYNC_REFERENCE', "20120101010101");
 						SetConfigParam('LASTSYNC_TRANSACTIONAL', "20120101010101");
 						syncReference();
@@ -1454,10 +1377,13 @@ function createDB(type){
 
 
 function requestDEMOData(page){
-		opMessage("DEMOLoad "+page);
 	
-		$.getJSON(page,function(data){ 	
+		opMessage("DEMOLoad "+page);
+		
+		$.getJSON(page,function(data,status){ 	
+			
 			if(page=='TestData\\MyOrdersData.json'){
+				
 				orderCB(data);
 				
 			}
@@ -1507,6 +1433,11 @@ function requestDEMOData(page){
 			}
 			if(page=='TestData\\TimeSheetActivities.json'){
 				tsactivitiesCB(data);
+
+			}
+			if(page=='TestData\\MySurveys.json'){
+				
+				surveysCB(data);
 
 			}
   });
@@ -2856,50 +2787,170 @@ opMessage("Callback Reference Data Codes triggured");
 
 	};
 }
-function createSurveyData()
-{
-var sqlstatement="";
 
-//Survey Creaate Data
 
-sqlstatement+="INSERT INTO Surveys (name, type, datecreated, description) VALUES ('Survey2', 'SurveyExtra', '20140804 130443', 'Survey2 Description');";
-//SurveyDetail Creaate Data
 
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '-2', '', '1', 'Group1', 'Is This a Secure Location?', 'Yes', '2', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '1', '', '2', 'What is the Condition of the Gate?', 'What is the Condition of the Gate?', '', '3', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ('1', '1', '', '1', 'What is The Fence Made of?', 'What is The Fence Made of?', '', '4', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '1', '', '4', 'How Many Gates are there?', 'How Many Gates are there?', '', '5', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ('1', '-1', '', '2', 'Is there a Car Park?', 'Is there a Car Park?', '', '6', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '-2', '', '10', 'Office', 'Is There a Office?', 'No', '7', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '6', '', '2', 'Type of Building?', 'Type of Building?', '', '8', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '6', '', '4', 'How many People Work here?', '', '', '9', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '6', '', '2', 'is there Internet Access?', '', '', '10', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '6', '', '6', 'What Type of Generator is on Site?', 'What Type of Generator is on Site?', '', '11', '', '', '', '');";
-sqlstatement+="INSERT INTO SurveysDetail (surveyid, groupcode, sortseq, type, name, description, defaultval, next, attribute1, attribute2, attribute3, attribute4) VALUES ( '1', '-1', '', '5', 'Any Other Comments?', 'Any Other Comments?', '', '-1', '', '', '', '');";
-//SurveyDetailAnswers Creaate Data
 
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '7', '2', '', '1', 'Needs replacing', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '2', '', '2', 'Needs maintenance', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '2', '', '3', 'No Problem', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '3', '', '1', 'Wood', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '3', '', '2', 'Metal', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '5', '', 'Yes', 'Yes', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '5', '', 'No', 'No', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '7', '', 'Brick', 'Brick Built', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '7', '', 'Wood', 'Wood Built', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '9', '', 'Yes', 'Yes', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '9', '', 'No', 'No', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '10', '', 'KV100', 'KV100', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '10', '', 'MP333', 'MP333', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '10', '', 'AB123', 'AB123', '');";
-sqlstatement+="INSERT INTO SurveysDetailAnswers ( surveyid, detailid, answertype, answercode, description, defaultval) VALUES ( '1', '10', '', 'VV777', 'VV777', '');";
-			html5sql.process(sqlstatement,
-				 function(){
-					 //alert("Success - Finished Loading Survey Data");
-				 },
+
+
+function surveysCB(data){
+	var sqlstatement="";
+	var ret = [];
+	var dependson;
+	
+	opMessage("Callback Surveys triggured");
+	
+		if(data.Surveys.length>0){
+
+				opMessage("Deleting Existing Reference Data");
+			
+				sqlstatement+='DELETE FROM Survey;';
+				sqlstatement+='DELETE FROM SurveyGroup;';
+				sqlstatement+='DELETE FROM SurveyQuestion;';
+				sqlstatement+='DELETE FROM SurveySubQuestion;';
+				sqlstatement+='DELETE FROM  SurveyQuestionChildren;';
+				sqlstatement1="";
+			
+				html5sql.process(sqlstatement,
+					 function(){
+						
+							sqlstatement='';
+							rcgcnt=0;
+							for(var cntx=0; cntx < data.Surveys.length ; cntx++)
+								{	
+								
+								sqlstatement+='INSERT INTO Survey (surveyid, name ) VALUES ('+
+										 '"'+data.Surveys[cntx].SurveyID+'",'+
+										 '"'+data.Surveys[cntx].SurveyName+'");';
+								for(var cntg=0; cntg < data.Surveys[cntx].Group.length ; cntg++)
+									{	
+									
+									sqlstatement+='INSERT INTO SurveyGroup (surveyid, groupid, name, title ) VALUES ('+
+											 '"'+data.Surveys[cntx].SurveyID+'",'+
+											 '"'+data.Surveys[cntx].Group[cntg].GroupID+'",'+
+											 '"'+data.Surveys[cntx].Group[cntg].GroupName+'",'+
+											 '"'+data.Surveys[cntx].Group[cntg].GroupDescription+'");';
+
+									
+									for(var cntq=0; cntq < data.Surveys[cntx].Group[cntg].Question.length ; cntq++)
+										{	
+										dependson=data.Surveys[cntx].Group[cntg].Question[cntq].QuestionDependsOn+": : ";
+										ret=dependson.split(':');
+										sqlstatement+='INSERT INTO SurveyQuestion (surveyid, groupid, questionid, questiontype, defaultvalue, name, title, dependsonid, dependsonval) VALUES ('+
+												 '"'+data.Surveys[cntx].SurveyID+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].GroupID+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].QuestionID+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].QuestionType+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].QuestionDefaultValue+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].QuestionName+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].QuestionText+'",'+
+												 '"'+ret[0]+'",'+	
+												 '"'+ret[1]+'");';
+										for(var cntsq=0; cntsq < data.Surveys[cntx].Group[cntg].Question[cntq].SubQuestion.length ; cntsq++)
+										{	
+										dependson=data.Surveys[cntx].Group[cntg].Question[cntq].SubQuestion[cntsq].SubQuestionDependsOn+": : ";
+										ret=dependson.split(':');
+										sqlstatement+='INSERT INTO SurveySubQuestion (surveyid, groupid, questionid, subquestionid, subquestiontype, name, title, dependsonid, dependsonval) VALUES ('+
+												 '"'+data.Surveys[cntx].SurveyID+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].GroupID+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].QuestionID+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].SubQuestion[cntsq].SubQuestionID+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].SubQuestion[cntsq].SubQuestionType+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].SubQuestion[cntsq].SubQuestionName+'",'+
+												 '"'+data.Surveys[cntx].Group[cntg].Question[cntq].SubQuestion[cntsq].SubQuestionText+'",'+
+												 '"'+ret[0]+'",'+	
+												 '"'+ret[1]+'");';
+											
+											
+
+											}																	
+											
+
+											}										
+										
+
+										}
+								
+								
+								
+									
+
+									}				 
+
+										
+								html5sql.process(sqlstatement,
+									 function(){
+										//alert("Success - Finished Loading Survey Data");
+									 },
+									 function(error, statement){
+										 //alert("Error: " + error.message + " when processing " + statement);
+									 }        
+								);	
+				BuildQuestionChildren();
+				},	
 				 function(error, statement){
 					 //alert("Error: " + error.message + " when processing " + statement);
 				 }        
-			);	
-// $.magnificPopup.close();
+			);		
+
+	}
+	
+}
+function BuildQuestionChildren(){
+	var sqlstatement="";
+	var sqlstatement1="";
+	var question = " ";
+	var questionchildren='';
+	var questionvalue="";
+	
+	opMessage("Building Survey Question Children");
+
+			
+				sqlstatement='Select * from SurveyQuestion where dependsonid > 0 order by dependsonid';
+
+				html5sql.process(sqlstatement,
+						function(transaction, results, rowsArray){
+							if( rowsArray.length > 0) {
+								for (var n = 0; n < rowsArray.length; n++) {
+									item = rowsArray[n];
+									//alert(item.questionid+"-"+item.name);
+								
+									if (item.dependsonid != question){
+										if (question != ' '){								
+										
+											sqlstatement1+='INSERT INTO surveyquestionchildren (surveyid , groupid, questionid, questionvalue, childquestions ) VALUES ("'+
+												item.surveyid+'", "'+item.groupid+'", "'+question+'", "'+questionvalue+'", "'+questionchildren+'");';
+										}
+
+									question=item.dependsonid;
+									questionvalue=item.dependsonval;
+									questionchildren =item.questionid;	
+									}else{
+										questionchildren += ":"+item.questionid;	
+									}
+
+									
+								}
+								
+								
+								html5sql.process(sqlstatement1,
+										function(transaction, results, rowsArray){
+											
+
+										},
+										 function(error, statement){
+											 window.console&&console.log("Error: " + error.message + " when processing " + statement);
+										 }   
+									);									
+					
+							}
+
+						},
+						 function(error, statement){
+							 window.console&&console.log("Error: " + error.message + " when processing " + statement);
+						 }   
+					);	
+
+	
+	
 }
