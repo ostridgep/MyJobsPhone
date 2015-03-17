@@ -76,6 +76,8 @@ html5sql.openDatabase("com.PJO.MyJobs","MyJobs", 5*1024*1024);
 			<TD><div id="right2" align="center" class="block highlight"><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Notification.gif"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="Notifications"></H1></TD></TR></TABLE></div></td></TR>
 			<TR><TD><div id="right3" align="center" class="block highlight"><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Timesheet.png"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="Timesheets"></H1></TD></TR></TABLE></div></td>
 			<TD><div id="right4" align="center" class="block highlight"><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Team.png"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="Team"></H1></TD></TR></TABLE></div></td></tr>
+			<TR><TD><div id="right5" align="center" class="block highlight"><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Survey.png"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="Survey"></H1></TD></TR></TABLE></div></td>
+			<TD><div id="right6" align="center" class="block highlight"><TABLE height="90%" width = "90%"><TR><TD align="left" valign = "center" width = "70%"><img src="images/Forms.png"  height="70" width="70"></TD><TD  align="center" valign="center" width = "50%"><H1 id="HRForms"></H1></TD></TR></TABLE></div></td></tr>
 			<TR><TD colspan="2"></TD></TR>
 			<TR><TD colspan="2" align = "center"><font color="red"><H3 id = "SystemMessage"></H3></font></TD></TR></TD></TR>
 		</table>
@@ -95,6 +97,7 @@ setHomeCounts();
 
 function setHomeCounts()
 {
+	HRCnt=0;
 	html5sql.process("SELECT * FROM MyOperations left join myoperationssplit on myoperations.orderno = myoperationssplit.orderno and myoperations.opno = myoperationssplit.opno where myoperationssplit.assignedto ='"+EmployeeID+"'",
 	 function(transaction, results, rowsArray){
 
@@ -120,7 +123,27 @@ function setHomeCounts()
 											 function(transaction, results, rowsArray){
 													$( "#Timesheets").html(rowsArray.length)
 													
+													html5sql.process("SELECT * FROM HRAbsence ",
+															 function(transaction, results, rowsArray){
+																	HRCnt=rowsArray.length;
+																	html5sql.process("SELECT * FROM HRTravel ",
+																			 function(transaction, results, rowsArray){
+																					$( "#HRForms").html(HRCnt+rowsArray.length)
+																					
 
+																				
+																			 },
+																			 function(error, statement){
+
+																			 }        
+																			);																	
+
+																
+															 },
+															 function(error, statement){
+
+															 }        
+															);	
 												
 											 },
 											 function(error, statement){
@@ -186,6 +209,16 @@ $( this ).toggleClass( "highlight" );
 window.location.href="JobsTeam.htm"
 
 });
+$("#right5").click(function () {
+	$( this ).toggleClass( "highlight" );
+	window.location.href="JobsSurvey.htm"
+
+	});
+$("#right6").click(function () {
+	$( this ).toggleClass( "highlight" );
+	window.location.href="JobsHRForms.htm"
+
+	});
 var w = null; // initialize variable
 function startBGSync()
 {

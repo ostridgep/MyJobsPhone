@@ -110,17 +110,26 @@ border-radius: 15px;
  
 </head>
 <body>
-<div align="center"  data-role="page" id="JobsNotifications"> 
-
+<div align="center"  data-role="page" id="JobsHRForms"> 
+ <div data-role="panel" id="options" data-position="right" data-display="overlay"> 
+    <h3>HR Forms</h3>
+	<TABLE>
+	<TR height ="40px"  id="ButtonAcceptedRow"><TD align = "center"><a data-role="button" data-mini="true" id="ButtonAbsence"  href='#popupCreateAbsence'  class="open-popup-link"  style="ui-btn-width:400px" >
+	Create Absence      </a></TD></TR>
+	<TR  height ="40px"  id="ButtonCancelRow"><TD align = "center"><a  data-role="button" data-mini="true" id="ButtonTravel"   href='#popupCreateTravel'  class="open-popup-link"      >
+	Create Travel Request</a></TD></TR>
+	
+	</table>
+  </div> 
 	<div   data-role="header" data-position="fixed">
 		<table width = "100%">
 			<TR height="50px">
 				<TD width = "20%"  align="left"><a style="font-size: 100%" href="javascript:window.location.href='JobsHome.htm'"  >
 				<i class="fa fa-home fa-2x pull-left fa-border"></i></a></td>
 			
-				<TD width = "60%"  align= "center"><h1 style="font-size: 100%"><B>MyJobs - Notifications</B></H1>
+				<TD width = "60%"  align= "center"><h1 style="font-size: 100%"><B>MyJobs - HR Forms</B></H1>
 				<a href="#lastSyncDets" data-rel="popup"style="color: green; text-decoration:none;"> <Small><P id="lastsync"></p></A></small></TD>
-				<TD width = "20%"  align="right"><a style="font-size: 100%" href='#popupCreate'  class="open-popup-link"  >
+				<TD width = "20%"  align="right"><a style="font-size: 100%" href="#options"    >
 				<i class="fa fa-plus fa-2x pull-right fa-border"></i></a></td>
 			</TR>
 		</table>			
@@ -131,7 +140,7 @@ border-radius: 15px;
 
 	<div  data-role="content">	
 		<DIV>
-			<table  id="NotificationList" name="NotificationList" cellspacing="0"  style="border-spacing: 0;" class="tablesorter1">
+			<table  id="HRList" name="HRList" cellspacing="0"  style="border-spacing: 0;" class="tablesorter1">
 				
 			</table>
 		</DIV>
@@ -153,15 +162,15 @@ border-radius: 15px;
 			  <p id='transactionalSyncDetails' ></p>
 			  <p id='uploadSyncDetails' ></p>
 			</div>
-			<div id="popupCreate"  class="white-popup mfp-hide">			
+			<div id="popupCreateAbsence"  class="white-popup mfp-hide">			
 				<div style="background-color:#E9E9E9 ; height:44px" align="center">
 					<table width = "100%">
 						<TR><TD align = "left">
 								<a onClick="PopupClose('CANCEL')"  ><i class="fa fa-times fa-2x pull-left fa-border"></i></a>
 							</td>
-							<TD align="center"><B>Create Notification</B></TD>
+							<TD align="center"><B>Create Absence Request</B></TD>
 							<TD align="right">
-							<a onClick="PopupClose('SAVE')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a>
+							<a onClick="PopupClose('SAVEABSENCE')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a>
 							</TD>
 						</TR>
 					</Table>
@@ -170,46 +179,69 @@ border-radius: 15px;
 				<div  >
 					<TABLE width = "100%">
 						<TR>
-						<TD align="left" width="20%"><label for="Type" class="select">Type:</label></TD><TD   width="80%"><select data-mini="true" name="Type" id="Type" ></select></TD>
-						<TD width="20%" valign ="middle"><a href="javascript:window.location.href='JobsSurvey.htm'"  ><i class="fa fa-list-alt fa-2x pull-right fa-border"></i></a></TD>
+						<TD align="left" width="20%"><label for="Type" class="select">Type:</label></TD><TD   width="80%"><select data-mini="true" name="AbsenceType" id="AbsenceType" >
+						<option value="Compassionate">Compassionate Leave</option>
+						<option value="Holiday">Holiday</option>
+						<option value="Sickness LT">Long Term Sickness</option>
+						<option value="Maternity">Maternity Leave</option>
+						<option value="Paternity">Paternity Leave</option>
+						<option value="Study LT">Study / Training Leave</option>
+						<option value="Lieu">Time Off in Lieu</option>
+						</select></TD>
 						</TR>
-						<TR>
-						<TD align="left" width="20%" ><label for="Priority" class="select">Priority:</label></TD><TD  colspan="2" width="80%"><select data-mini="true" name="Priority" id="Priority" ></select></TD>
-						</TR>
-						<TR>
-						<TD align="left" width="20%"><Label for="Groups" class="select">Source Code:</label></TD><TD   colspan="2" width="80%"><select data-mini="true" name="Groups" id="Groups" ></select></TD>
-						</TR>
-						<TR>
-						<TD align="left" width="10%" ><label for="Codes" class="select">Code:</label></TD><TD  colspan="2" width="80%"><select data-mini="true" name="Codes" id="Codes"></select></TD>
-						</TR>
-						<TR>
-						<TD  align="left">Start Date:</TD><TD  colspan="2" width="80%"><input data-mini="true" id="StartDate" type="date" data-format="dd-mm-yy" ></TD>
-						</TR>
-						<TR>
-						<TD align="left" width="10%">Time:</TD><TD  colspan="2" width="80%"><input data-mini="true" id="StartTime" type="time" ></TD></TR>
-						<TR>
-						<TD  align="left" width="20%"><label for="Description" class="select">Description:</label></TD><TD  colspan="2" width="80%"><input data-mini="true" id="Description" name="Description" type="text"  value=""/></TD>
-						</TR>
-						<TR>
-						<TD  align="left" width="20%"><label for="Details" class="select">Details:</label></TD><TD  width="60%"><textarea data-mini="true"  name="Details" id="Details"></textarea></TD>
-						<TD width="20%" valign ="middle"><a style="font-size: 100%" href='javascript:takePhoto()' >
-							<i class="fa fa-camera fa-2x pull-right fa-border"></i></a></TD>
-						</TR>
-						<TR>
-						<TD width="20%"><label for="FunctionalLocation" class="select">Functional Location:</label></TD>
-						<TD width="60%"><input data-mini="true" id="FunctionalLocation" name="FunctionalLocation" type="text"  value=""/></TD>
-						<TD width="20%" valign ="middle"><a href="#popupFLTree" class="open-popup-link" ><i class="fa fa-search fa-2x pull-right fa-border"></i></a></TD>
-						</TR>
-						<TR>
-						<TD width="20%"><label for="Equipment" >Equipment: </label></TD><TD width="60%" ><input data-mini="true" id="Equipment" name="Equipment" type="text"  value=""/></TD>
-						<TD width="20%" valign ="middle"><a href="javascript:Scan()"  ><i class="fa fa-barcode fa-2x pull-right fa-border"></i></a></TD></TR>
 
+						<TR>
+						<TD  align="left">Start Date:</TD><TD   width="80%"><input data-mini="true" id="AbsenceStartDate" type="date" data-format="dd-mm-yy" ></TD>
+						</TR>
+						<TR>
+						<TD  align="left">End Date:</TD><TD  width="80%"><input data-mini="true" id="AbsenceEndDate" type="date" data-format="dd-mm-yy" ></TD>
+						</TR>
+						<TR>
+						<TD align="left" width="10%">No of Days:</TD><TD width="80%"><input data-mini="true" id="AbsenceDays" type="number" ></TD></TR>
+						<TR>
+						<TD  align="left" width="20%">Comments</TD><TD width="80%"><textarea rows="4" cols="50" id="AbsenceComments"></textarea></TD>
+						</TR>
 					</TABLE>
   
 
-					<TABLE width="100%">
-						<TR><TD align = "center" width = "100%"><p id = "ErrorMess" name = "ErrorMess" color="red"></P></TD></TR> 
-					</Table>    
+    
+				</div>
+			</div>
+			<div id="popupCreateTravel"  class="white-popup mfp-hide">			
+				<div style="background-color:#E9E9E9 ; height:44px" align="center">
+					<table width = "100%">
+						<TR><TD align = "left">
+								<a onClick="PopupClose('CANCEL')"  ><i class="fa fa-times fa-2x pull-left fa-border"></i></a>
+							</td>
+							<TD align="center"><B>Create Travel Request</B></TD>
+							<TD align="right">
+							<a onClick="PopupClose('SAVETRAVEL')" ><i class="fa fa-save fa-2x pull-right fa-border"></i></a>
+							</TD>
+						</TR>
+					</Table>
+	
+				</div>
+				<div  >
+					<TABLE width = "100%">
+						<TR>
+						<TD  align="left">Start Date:</TD><TD   width="80%"><input data-mini="true" id="TravelStartDate" type="date" data-format="dd-mm-yy" ></TD>
+						</TR>
+						<TR>
+						<TD  align="left">End Date:</TD><TD  width="80%"><input data-mini="true" id="TravelEndDate" type="date" data-format="dd-mm-yy" ></TD>
+						</TR>
+						<TR>
+						<TD align="left" width="10%">From:</TD><TD width="80%"><input data-mini="true" id="TravelFrom" type="text" ></TD>
+						</TR>
+						<TR>
+						<TD align="left" width="10%">To:</TD><TD width="80%"><input data-mini="true" id="TravelTo" type="text" ></TD>
+						</TR>
+						<TR>
+						<TD  align="left" width="20%">Comments</TD><TD width="80%"><textarea rows="4" cols="50" id="TravelComments"></textarea></TD>
+						</TR>
+					</TABLE>
+  
+
+    
 				</div>
 			</div>
 		</div>
@@ -233,104 +265,33 @@ border-radius: 15px;
 
 var DeleteClicked=false;
 var PopupCloseType="";
-BuildCreateScreen();
-
-BuildNotificationList();
 
 
-$('#jstree').jstree({
-    'core' : {
-		'multiple'	:	false,
-		'themes'	:	{
-						'responsive' : false,
-
-						"variant"	:	"large",
-						"stripes" : true 
-						},
-        'data' 		: 	function (obj, cb) {
-							FetchData(obj,cb)
-							         
-						}
-		},
-	"plugins" : [ "wholerow", "themes", "ui" ]
-
-});
-$('#jstree')
-  // listen for event
-  .on('changed.jstree', function (e, data) {
-
-	 
-	$('#FunctionalLocation').val(data.instance.get_node(data.selected[0]).id)
-	    $.magnificPopup.open({
-        items: {
-            src: '#popupCreate' 
-        },
-        type: 'inline'
-    });
-
-  })
-function FetchData(object,cb){
-
-root=''
-if (object.id=='#'){
-	id = '0'
-	root=' , "type" : "root"'
-	sqlstatement="SELECT * from FuncLocs where level=0"
-	}else{
-	id = object.id
-	sqlstatement="SELECT * from FuncLocs where parentid = '"+id+"'"
-	}
-retval=""
-//alert(sqlstatement);
-	html5sql.process(
-		sqlstatement,
-		function(transaction, results, rowsArray){
-			if (rowsArray.length>0){
-				retval="["
-				}
-			lastrec=rowsArray.length-1
-			for(var cnt=0; cnt < rowsArray.length ; cnt++)
-				{
-			
-				if (rowsArray[cnt]['children'] =="1"){
-					children='true'
-					}else{
-					children='false'
-					}
-					
-	
-				retval+='{ "id" : "'+rowsArray[cnt]["flid"]+'", "text" : "'+rowsArray[cnt]["flid"]+' - '+rowsArray[cnt]["description"]+'", "children" : '+children+root+' }'
-				if(cnt<lastrec){
-					retval+=","
-				}
-			}
-			retval+="]"
-			//alert(retval)
-			cb.call(this,eval(retval))
-
-		},
-		 function(error, statement){
-			
-		 }   
-	);
-	
-	
-}
+BuildHRList();
 
 
-function BuildCreateScreen()
-{
 
 
-	BuildNotificationTypes();
-}
 
 
-function DeleteNotification(id)
+function DeleteAbsence(id)
 {
 
 DeleteClicked=true;
-	html5sql.process("DELETE from MyNotifications where id = '"+id+"'",
+	html5sql.process("DELETE from HRAbsence where id = '"+id+"'",
+	 function(transaction, results, rowsArray){
+			 location.reload();
+	 },
+	 function(error, statement){
+		
+	 }        
+	);
+}
+function DeleteTravel(id)
+{
+
+DeleteClicked=true;
+	html5sql.process("DELETE from HRTravel where id = '"+id+"'",
 	 function(transaction, results, rowsArray){
 			 location.reload();
 	 },
@@ -341,123 +302,69 @@ DeleteClicked=true;
 }
 function PopupClose(mode)
 {
+	
 	PopupCloseType=mode;
-	if(mode=="SAVE"){
-		
-		var ntype = $('#Type').val()+"|__|__|__"
-		var ng = $('#Groups').val()+"|__|__|__"
-		var ntypecode = ntype.split("|");
-		var ngrpcode = ng.split("|");;
-		if((ntypecode[0]=="__") ||
-		   (ngrpcode[0]=="__") ||
-		   (StartDate=="") ||
-		   (StartTime=="")||
-		   ($('#Codes').val()=="") ||
-		   ($('#Priority').val()=="")||
-		   ($('#Description').val()=="")){
-				
-				$("#ErrorMess").html("<font color='red'>Please Complete all Fields</font>")
-		   }else{
-		   
-				StartDate=$('#StartDate').val().substring(0,4)+$('#StartDate').val().substring(5,7)+$('#StartDate').val().substring(8,10);
-				StartTime=$('#StartTime').val().substring(0,2)+$('#StartTime').val().substring(3,5)		
-				createNotification(ntypecode[0],$('#Priority').val(),ngrpcode[1],$('#Codes').val(),$('#Groups').find(":selected").text(),$('#Codes').find(":selected").text(),
-				$('#Description').val(),$('#Details').val(),StartDate+" "+StartTime,$('#FunctionalLocation').val(),$('#Equipment').val())
-			}
-		}else{
+	if(mode=="SAVETRAVEL"){	   
+				StartDate=$('#TravelStartDate').val().substring(0,4)+$('#TravelStartDate').val().substring(5,7)+$('#TravelStartDate').val().substring(8,10);	
+				EndDate=$('#TravelEndDate').val().substring(0,4)+$('#TravelEndDate').val().substring(5,7)+$('#TravelEndDate').val().substring(8,10);	
 
-			$.magnificPopup.close();
-		}
-
-}
-
-
-
-
-function BuildNotificationTypes(){
-
-var HTMLToOutput='';
-
-var SQLStatement="";
-var FirstVal="";
-SQLStatement="SELECT MyRefNotifTypes.type , MyRefNotifTypes.description, MyRefNotifTypes.priority_type, profile from MyRefNotifTypes "
-SQLStatement+="join RefNotifprofile on MyRefNotifTypes.type = RefNotifprofile.notif_type "
-SQLStatement+="where MyRefNotifTypes.scenario = 'MAMDEMOLG'"
-var HTMLToOutput="";
-	html5sql.process(SQLStatement,
-	 function(transaction, results, rowsArray){
-			//alert(rowsArray.length)
-			for (var n = 0; n < rowsArray.length; n++) {
-				item = rowsArray[n];
-				if (n==0){
-				FirstVal = item.type+"|"+item.priority_type+"|"+item.profile;
+				createTravel($('#TravelFrom').val(),$('#TravelTo').val(),StartDate,EndDate,$('#TravelComments').val())
 				}
-				HTMLToOutput+= "<option value='"+item.type+"|"+item.priority_type+"|"+item.profile+"'>"+item.description+"</option>"
-			}
-			//alert(HTMLToOutput);
-			$( "#Type").html(HTMLToOutput);
+	if(mode=="SAVEABSENCE"){	   
+		StartDate=$('#AbsenceStartDate').val().substring(0,4)+$('#AbsenceStartDate').val().substring(5,7)+$('#AbsenceStartDate').val().substring(8,10);	
+		EndDate=$('#AbsenceEndDate').val().substring(0,4)+$('#AbsenceEndDate').val().substring(5,7)+$('#AbsenceEndDate').val().substring(8,10);	
 
-			 $("#Type option[value='"+FirstVal+"']").attr('selected', 'selected');
-			$( "#Type").trigger('create');
-	 },
-	 function(error, statement){
-		
-	 }        
-	);
-
+		createAbsence($('#AbsenceType').val(),StartDate,EndDate,$('#AbsenceDays').val(),$('#AbsenceComments').val())
+		}
+	$.magnificPopup.close();
+	 $("#options").panel("close");
 }
-function createNotification(type,priority,group,code,grouptext,codetext,description,details,startdate,funcloc,equipment)
+
+
+
+
+
+function createAbsence(type,startdate,enddate,days,comments)
 {
 
 var ReportedOn=getDate()+" "+getTime();
-var ReportedBy=localStorage.getItem("MobileUser");
 
-	html5sql.process("INSERT INTO  MyNotifications (notifno , type, startdate, shorttext, longtext , priority , pgroup , pcode , grouptext, codetext, funcloc, equipment, reportedby, reportedon, plant , orderno, funclocgis, equipmentgis) VALUES ("+
-					 "'NEW','"+type+"','"+startdate+"','"+description+"','"+details+"','"+priority+"','"+group+"','"+code+"','"+grouptext+"','"+codetext+"','"+funcloc+"','"+equipment+"','"+ReportedBy+"','"+ReportedOn+"','','','','');",
+
+	html5sql.process("INSERT INTO  HRAbsence (requesteddate, startdate, enddate, type, days, status, comments) VALUES ("+
+					 "'"+ReportedOn+"','"+startdate+"','"+enddate+"','"+type+"','"+days+"','NEW','"+comments+"');",
 	 function(transaction, results, rowsArray){
 
-		 BuildNotificationList();
-		 $.magnificPopup.close();
+		 BuildHRList();
+		 
 	 },
 	 function(error, statement){
 
-		opMessage("Error: " + error.message + " when createNotification processing " + statement);
+		opMessage("Error: " + error.message + " when createAbsence processing " + statement);
 		$.magnificPopup.close();
 	 }        
 	)
 }
-function BuildPriorities(priority_type){
 
-var HTMLToOutput='';
+function createTravel(from,to,startdate,enddate,comments)
+{
 
-var SQLStatement="";
-var FirstVal="";
-SQLStatement="SELECT priority , description "
-SQLStatement+="from MyRefPriorityTypes "
-SQLStatement+="where scenario = 'MAMDEMO' and type = '"+priority_type+"'"
-var HTMLToOutput="";
-	html5sql.process(SQLStatement,
+var ReportedOn=getDate()+" "+getTime();
+
+
+	html5sql.process("INSERT INTO  HRTravel (requesteddate, startdate, enddate, travelfrom, travelto, status, comments) VALUES ("+
+					 "'"+ReportedOn+"','"+startdate+"','"+enddate+"','"+from+"','"+to+"','NEW','"+comments+"');",
 	 function(transaction, results, rowsArray){
-			for (var n = 0; n < rowsArray.length; n++) {
-				item = rowsArray[n];
-				if (n==0){
-				FirstVal = item.priority;
-				}
-				HTMLToOutput+= "<option value='"+item.priority+"'>"+item.description+"</option>"
-			}
-			//alert(HTMLToOutput);
-			$( "#Priority").html(HTMLToOutput);
 
-			 $("#Priority option[value='"+FirstVal+"']").attr('selected', 'selected');
-			$( "#Priority").trigger('create');
+		 BuildHRList();
+		
 	 },
 	 function(error, statement){
-		
+
+		opMessage("Error: " + error.message + " when createTravel processing " + statement);
+		$.magnificPopup.close();
 	 }        
-	);
-
+	)
 }
-
 
 
 function zeroFill( number, width )
@@ -472,61 +379,87 @@ function zeroFill( number, width )
 function isEven(value) {
 return (value%2 == 0);
 }
-function BuildNotificationList(){
+function BuildHRList(){
 var Stripe="";
 var opMap="";
 var opAppt=""
 var HTMLToOutput='';
+var rowcnt = 0;
 var n=1;
 var SQLStatement="";
 HTMLToOutput=	'<thead >'+
 				'	<tr style="font-size:12px" >'+
-				'		<th >Notification</th>'+
 				'		<th>Type</th>'+
-				'		<th>Date</th>'+
-				'		<th>Del</th>'+
+				'		<th>Requested</th>'+
+				'		<th>Details</th>'+
+				'		<th> </th>'+
 				'	</tr>'+
 				'</thead><tbody >'
 				
-SQLStatement="SELECT * From MyNotifications "
+SQLStatement="SELECT * From HRTravel "
 	html5sql.process(SQLStatement,
 	 function(transaction, results, rowsArray){
 			for (var n = 0; n < rowsArray.length; n++) {
 				item = rowsArray[n];
-					opMap="";
-					opAppt="";
+					rowcnt = rowcnt+1;
 					Stripe="";
 					Delete="&nbsp;";
 					var No=""
-					if (isEven(n)){
+					if (isEven(rowcnt)){
 						Stripe='stripe';
 						}
-					if(item.notifno=="NEW"){
+					if(item.status=="NEW"){
 					
-						Delete="<a href='#' onClick='DeleteNotification("+item.id+")' ><img src='images\\delete.gif' width='15px' height='15px' ></A>"
+						Delete="<a href='#' onClick='DeleteTravel("+item.id+")' ><img src='images\\delete.gif' width='15px' height='15px' ></A>"
 					
 					}
-					No=item.notifno;
+;
 					HTMLToOutput+= '	<tr style="font-size:12px" class="'+Stripe+'">';	
-					HTMLToOutput+= '			<td >'+No+'</td>';
+					HTMLToOutput+= '			<td >Travel</td>';
 					HTMLToOutput+= '			<td hidden>'+item.id+'</td>';
-					HTMLToOutput+= '			<td>'+item.type+'</td>';
-					HTMLToOutput+= '			<td>'+convertDate(item.startdate)+'</td>';
+					HTMLToOutput+= '			<td>'+item.requesteddate+'</td>';
+					HTMLToOutput+= '			<td>'+item.travelfrom+' - '+item.travelto+'</td>';
 					HTMLToOutput+= '			<td>'+Delete+'</td></tr>';
-					HTMLToOutput+= '	<tr style="font-size:12px" class="tablesorter-childRow '+Stripe+'"><td hidden>'+No+'</td><td hidden>'+item.id+'</td><td>&nbsp;&nbsp;Description:</td><td colspan="3">'+item.shorttext+'</td></tr>';
-					HTMLToOutput+= '	<tr style="font-size:12px" class="tablesorter-childRow '+Stripe+'"><td hidden>'+No+'</td><td hidden>'+item.id+'</td><td>&nbsp;&nbsp;Priority:</td><td colspan="3">'+item.priority+'</td></tr>';
-					HTMLToOutput+= '	<tr style="font-size:12px" class="tablesorter-childRow '+Stripe+'"><td hidden>'+No+'</td><td hidden>'+item.id+'</td><td>&nbsp;&nbsp;Func Loc:</td><td colspan="3">'+item.funcloc+'</td></tr>';
-					HTMLToOutput+= '	<tr style="font-size:12px" class="tablesorter-childRow '+Stripe+'"><td hidden>'+No+'</td><td hidden>'+item.id+'</td><td>&nbsp;&nbsp;Equipment:</td><td colspan="3">'+item.equipment+'</td></tr>';
-					HTMLToOutput+= '	<tr style="font-size:12px"  class="tablesorter-childRow '+Stripe+'"><td hidden>'+No+'</td><td hidden>'+item.id+'</td><td>&nbsp;&nbsp;Group:</td><td colspan="3">'+item.grouptext+'</td></tr>';
-					HTMLToOutput+= '	<tr style="font-size:12px" class="tablesorter-childRow '+Stripe+'"><td hidden>'+No+'</td><td hidden>'+item.id+'</td><td>&nbsp;&nbsp;Codeing:</td><td colspan="3">'+item.codetext+'</td></tr>';
 
 					}
 
-			HTMLToOutput+=	'</tbody >'
-			$( "#NotificationList").html(HTMLToOutput);
-			$( "#NotificationList").trigger('create');
-			addRowHandlers();
-			SetTableSort();
+				SQLStatement="SELECT * From HRAbsence "
+				html5sql.process(SQLStatement,
+				 function(transaction, results, rowsArray){
+						for (var n = 0; n < rowsArray.length; n++) {
+							item = rowsArray[n];
+							rowcnt = rowcnt+1;
+								Stripe="";
+								Delete="&nbsp;";
+								var No=""
+								if (isEven(rowcnt)){
+									Stripe='stripe';
+									}
+								if(item.status=="NEW"){
+								
+									Delete="<a href='#' onClick='DeleteAbsence("+item.id+")' ><img src='images\\delete.gif' width='15px' height='15px' ></A>"
+								
+								}
+			;
+								HTMLToOutput+= '	<tr style="font-size:12px" class="'+Stripe+'">';	
+								HTMLToOutput+= '			<td >Absence</td>';
+								HTMLToOutput+= '			<td hidden>'+item.id+'</td>';
+								HTMLToOutput+= '			<td>'+item.requesteddate+'</td>';
+								HTMLToOutput+= '			<td>'+item.type+' - Days:'+item.days+'</td>';
+								HTMLToOutput+= '			<td>'+Delete+'</td></tr>';
+
+								}
+
+						HTMLToOutput+=	'</tbody >'
+						$( "#HRList").html(HTMLToOutput);
+						$( "#HRList").trigger('create');
+						//addRowHandlers();
+						SetTableSort();
+				 },
+				 function(error, statement){
+					
+				 }        
+				);
 	 },
 	 function(error, statement){
 		
@@ -543,24 +476,11 @@ $('.open-popup-link').magnificPopup({
   midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   callbacks: {
     open: function() {
-	
-	$('#Type').val('');
-	$('#StartDate').val("")
-	$('#StartTime').val("")
-	$('#EndDate').val("")
-	$('#EndTime').val("")
-	$('#Description').val("")
-	$('#Details').val("")
-	$('#FunctionalLocation').val("")
-	$('#Equipment').val("")
 
-	$("#Type").trigger('change');
-//$("[data-role='footer']").hide();
     },
     close: function() {
 		
-	
-			//location.reload();
+
 
 
 
@@ -570,84 +490,10 @@ $('.open-popup-link').magnificPopup({
 $(document).ready(function() {
 
 
-	$('select[name="Type"]').change(function(e) {
-		var s = $(e.target);
-		var res = s.val().split("|")
-		BuildPriorities(res[1]);
-		BuildGroups(res[2]);
-   		});
-	$('select[name="Groups"]').change(function(e) {
-		var s = $(e.target);
-		BuildCodes(s.val());
 
-   		});
 });
 
-function BuildCodes(Group){
 
-var HTMLToOutput='';
-
-var SQLStatement="";
-var res = Group.split("|")
-var FirstVal="";
-SQLStatement="SELECT *  "
-SQLStatement+="from RefCodes "
-SQLStatement+="where scenario = 'MAMDEMO' and profile = '"+res[0]+"' and code_cat_group = '"+res[1]+"'"
-var HTMLToOutput="";
-	html5sql.process(SQLStatement,
-	 function(transaction, results, rowsArray){
-			for (var n = 0; n < rowsArray.length; n++) {
-				item = rowsArray[n];
-				if (n==0){
-				FirstVal = item.code;
-				}
-				HTMLToOutput+= "<option value='"+item.code+"'>"+item.code_text+"</option>"
-			}
-			//alert(HTMLToOutput);
-			$( "#Codes").html(HTMLToOutput);
-
-			 $("#Codes option[value='"+FirstVal+"']").attr('selected', 'selected');
-			$( "#Codes").trigger('create');
-	 },
-	 function(error, statement){
-		
-	 }        
-	);
-
-}
-
-function BuildGroups(profile){
-
-var HTMLToOutput='';
-
-var SQLStatement="";
-var FirstVal="";
-SQLStatement="SELECT *  "
-SQLStatement+="from RefCodeGroups "
-SQLStatement+="where scenario = 'MAMDEMO' and catalog_type = 'X' and profile = '"+profile+"'"
-var HTMLToOutput="";
-	html5sql.process(SQLStatement,
-	 function(transaction, results, rowsArray){
-			for (var n = 0; n < rowsArray.length; n++) {
-				item = rowsArray[n];
-				if (n==0){
-				FirstVal = profile+"|"+item.code_cat_group;
-				}
-				HTMLToOutput+= "<option value='"+profile+"|"+item.code_cat_group+"'>"+item.codegroup_text+"</option>"
-			}
-			//alert(HTMLToOutput);
-			$( "#Groups").html(HTMLToOutput);
-
-			 $("#Groups option[value='"+FirstVal+"']").attr('selected', 'selected');
-			$( "#Groups").trigger('create');
-	 },
-	 function(error, statement){
-		
-	 }        
-	);
-
-}
-  
 function SetTableSort()
 {
   
@@ -718,28 +564,10 @@ function SetTableSort()
 				sorter: "text"
 			},
 			1: {
-				sorter: "text"
-			},
-			2: {
 				sorter: "date"
 			},
-			3: {
+			2: {
 				sorter: "text"
-			},
-			4: {
-				sorter: "text"
-			},
-			5: {
-				sorter: "text"
-			},
-			6: {
-				sorter: "text"
-			},
-			7: {
-				sorter: "text"
-			},
-			8: {
-				sorter: "false"
 			}
 		},
 

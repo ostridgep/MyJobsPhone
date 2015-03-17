@@ -1056,7 +1056,7 @@ function createTables(type) {
 					 'CREATE TABLE IF NOT EXISTS MyRefOrderTypes     	(  id integer primary key autoincrement, scenario TEXT, type TEXT, description TEXT, statusprofile TEXT, opstatusprofile TEXT, priorityprofile TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS MyRefNotifTypes     	(  id integer primary key autoincrement, scenario TEXT, type TEXT, description TEXT, statusprofile TEXT, taskstatusprofile TEXT,priority_type TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS MyRefPriorityTypes     (  id integer primary key autoincrement, scenario TEXT, type TEXT, priority TEXT, description TEXT);'+
-				  	 'CREATE TABLE IF NOT EXISTS MyRefUserStatusProfiles(  id integer primary key autoincrement, scenario TEXT, type TEXT, status TEXT, statuscode TEXT, statusdesc TEXT);'+
+				  	 'CREATE TABLE IF NOT EXISTS MyRefUserStatusProfiles (  id integer primary key autoincrement, scenario TEXT, type TEXT, status TEXT, statuscode TEXT, statusdesc TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS MyVehicles     		(  sysid integer primary key autoincrement, reg TEXT, id TEXT, mpoint TEXT,description TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS MyVehicleCheck     	(  id integer primary key autoincrement, reg TEXT,  mileage TEXT,  tax TEXT,  horn TEXT,  tyres TEXT,  wheels TEXT,  lights TEXT,  wipers TEXT, checktype TEXT,  datestamp TEXT,  user TEXT,  state TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS MyMessages    			(  id integer primary key autoincrement, msgid TEXT, type TEXT,  date TEXT, time TEXT, msgfromid TEXT, msgfromname TEXT, msgtoid TEXT, msgtoname TEXT, msgsubject TEXT, msgtext TEXT,  expirydate TEXT, state TEXT);'+
@@ -1068,6 +1068,12 @@ function createTables(type) {
 					 'CREATE TABLE IF NOT EXISTS RefNotifprofile  		( id integer primary key autoincrement, scenario TEXT, profile TEXT, notif_type TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS RefCodeGroups  		( id integer primary key autoincrement, scenario TEXT, profile TEXT, catalog_type TEXT, code_cat_group TEXT, codegroup TEXT, codegroup_text TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS RefCodes  				( id integer primary key autoincrement, scenario TEXT, profile TEXT, code_cat_group TEXT, code TEXT, code_text TEXT);'+
+					 'CREATE TABLE IF NOT EXISTS HRAbsence     			( id integer primary key autoincrement, requesteddate TEXT, startdate TEXT, enddate TEXT, type TEXT, days TEXT, status TEXT, comments TEXT);'+
+					 
+					 'CREATE TABLE IF NOT EXISTS HRTravel     			( id integer primary key autoincrement, requesteddate TEXT, startdate TEXT, enddate TEXT, travelfrom TEXT, travelto TEXT, status TEXT, comments TEXT);'+
+
+					 
+					 
 					 'CREATE TABLE IF NOT EXISTS Survey     			( id integer primary key autoincrement, surveyid TEXT, name TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS SurveyGroup     		( id integer primary key autoincrement, surveyid TEXT, groupid TEXT, name TEXT, title TEXT);'+
 					 'CREATE TABLE IF NOT EXISTS SurveyQuestion    		( id integer primary key autoincrement, surveyid TEXT, groupid TEXT, questionid TEXT, questiontype TEXT, defaultvalue TEXT, name TEXT, title TEXT, dependsonid TEXT, dependsonval TEXT);'+
@@ -1145,6 +1151,8 @@ function dropTables() {
 						'DROP TABLE IF EXISTS RefNotifprofile;'+
 						'DROP TABLE IF EXISTS RefCodeGroups;'+
 						'DROP TABLE IF EXISTS RefCodes;'+
+						'DROP TABLE IF EXISTS HRAbsence;'+	
+						'DROP TABLE IF EXISTS HRTravel;'+	
 						'DROP TABLE IF EXISTS Survey;'+	
 						'DROP TABLE IF EXISTS SurveyGroup;'+
 						'DROP TABLE IF EXISTS SurveyQuestion;'+
@@ -1212,7 +1220,9 @@ function emptyTables(type) {
 						'DELETE FROM  AssetMeasurementPoints;'+
 						'DELETE FROM  RefNotifprofile;'+
 						'DELETE FROM  RefCodeGroups;'+
-						'DELETE FROM  RefCodes;'+  
+						'DELETE FROM  RefCodes;'+ 
+						'DELETE FROM  HRAbsence;'+	
+						'DELETE FROM  HRTravel;'+	
 						'DELETE FROM  Survey;'+	
 						'DELETE FROM  SurveyGroup;'+
 						'DELETE FROM  SurveyQuestion;'+
@@ -1317,6 +1327,8 @@ function resetTables() {
 					'DELETE FROM  RefNotifprofile;'+
 					'DELETE FROM  RefCodeGroups;'+
 					'DELETE FROM  RefCodes;'+  
+					'DELETE FROM  HRAbsence;'+
+					'DELETE FROM  HRTravel;'+	
 					'DELETE FROM  Survey;'+	
 					'DELETE FROM  SurveyGroup;'+
 					'DELETE FROM  SurveyQuestion;'+
